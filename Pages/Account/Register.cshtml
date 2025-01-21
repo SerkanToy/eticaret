@@ -1,0 +1,89 @@
+﻿@page "~/register"
+@model eticaret.Pages.Account.RegisterModel
+@{
+}
+
+<section class="section-register padding-tb-50">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="bb-register" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="section-title bb-center">
+                                <div class="section-detail">
+                                    <h2 class="bb-title">Register</h2>
+                                    <p>Best place to buy and sell digital products</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <form method="post">
+                                <div class="bb-register-wrap bb-register-width-50">
+                                    <label>First Name*</label>
+                                    <input type="text" name="firstname" placeholder="Enter your first name" required>
+                                </div>
+                                <div class="bb-register-wrap bb-register-width-50">
+                                    <label>Last Name*</label>
+                                    <input type="text" name="Lasttname" placeholder="Enter your Last name" required>
+                                </div>
+                                <div class="bb-register-wrap bb-register-width-50">
+                                    <label>Email*</label>
+                                    <input type="email" name="email" placeholder="Enter your Email" required>
+                                </div>
+                                <div class="bb-register-wrap bb-register-width-50">
+                                    <label>Phone Number*</label>
+                                    <input type="text" name="phonenumber" placeholder="Enter your phone number" required>
+                                </div>
+                                <div class="bb-register-wrap bb-register-width-100">
+                                    <label>Address*</label>
+                                    <input type="text" name="phonenumber" placeholder="Address Line 1" required>
+                                </div>
+                                <div class="bb-register-wrap bb-register-width-50">
+                                    <label>City*</label>
+                                    <div class="custom-select">
+                                        <select>
+                                            <option value="option1">city 1</option>
+                                            <option value="option2">city 2</option>
+                                            <option value="option3">city 3</option>
+                                            <option value="option4">city 4</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="bb-register-wrap bb-register-width-50">
+                                    <label>Post Code*</label>
+                                    <input type="text" name="phonenumber" placeholder="Post Code" required>
+                                </div>
+                                <div class="bb-register-wrap bb-register-width-50">
+                                    <label>Country*</label>
+                                    <div class="custom-select">
+                                        <select>
+                                            <option value="option1">Country 1</option>
+                                            <option value="option2">Country 2</option>
+                                            <option value="option3">Country 3</option>
+                                            <option value="option4">Country 4</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="bb-register-wrap bb-register-width-50">
+                                    <label>Region State*</label>
+                                    <div class="custom-select">
+                                        <select>
+                                            <option value="option1">Region/State 1</option>
+                                            <option value="option2">Region/State 2</option>
+                                            <option value="option3">Region/State 3</option>
+                                            <option value="option4">Region/State 4</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="bb-register-button">
+                                    <button type="button" class="bb-btn-2">Register</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

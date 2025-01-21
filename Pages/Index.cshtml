@@ -1,0 +1,2791 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+
+<component type="typeof(eticaret.Pages.Shared.Components.Category.CategoryComponent)" render-mode="ServerPrerendered" />
+<component type="typeof(eticaret.Pages.Shared.Components.Hero.HeroComponent)" render-mode="ServerPrerendered" />
+
+<section class="section-deal padding-tb-50">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="section-title bb-deal" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                    <div class="section-detail">
+                        <h2 class="bb-title">Day of the <span>deal</span></h2>
+                        <p>Don't wait. The time will never be just right.</p>
+                    </div>
+                    <div id="dealend" class="dealend-timer"></div>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="bb-deal-slider">
+                    <div class="bb-deal-block owl-carousel">
+                        <div class="bb-deal-card-2" data-aos="fade-up" data-aos-duration="1000"
+                             data-aos-delay="200">
+                            <div class="bb-pro-box-2">
+                                <div class="bb-pro-img">
+                                    <span class="flags">
+                                        <span>New</span>
+                                    </span>
+                                    <a href="javascript:void(0)">
+                                        <div class="inner-img">
+                                            <img class="main-img" src="assets/img/product/5.jpg" alt="product-1">
+                                            <img class="hover-img" src="assets/img/product/back-5.jpg"
+                                                 alt="product-1">
+                                        </div>
+                                    </a>
+                                    <ul class="bb-pro-actions">
+                                        <li class="bb-btn-group">
+                                            <a href="javascript:void(0)" title="Wishlist">
+                                                <i class="ri-heart-line"></i>
+                                            </a>
+                                        </li>
+                                        <li class="bb-btn-group">
+                                            <a href="javascript:void(0)" data-link-action="quickview"
+                                               title="Quick View" data-bs-toggle="modal"
+                                               data-bs-target="#bry_quickview_modal">
+                                                <i class="ri-eye-line"></i>
+                                            </a>
+                                        </li>
+                                        <li class="bb-btn-group">
+                                            <a href="compare.html" title="Compare">
+                                                <i class="ri-repeat-line"></i>
+                                            </a>
+                                        </li>
+                                        <li class="bb-btn-group">
+                                            <a href="javascript:void(0)" title="Add To Cart">
+                                                <i class="ri-shopping-bag-4-line"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="bb-pro-contact">
+                                    <div class="bb-pro-subtitle">
+                                        <a href="shop-left-sidebar-col-3.html">Hoodies</a>
+                                        <span class="bb-pro-rating">
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-line"></i>
+                                        </span>
+                                    </div>
+                                    <h4 class="bb-pro-title">
+                                        <a href="product-left-sidebar.html">Cotton hoodies for men</a>
+                                    </h4>
+                                    <div class="bb-price">
+                                        <div class="inner-price">
+                                            <span class="new-price">$25</span>
+                                            <span class="old-price">$30</span>
+                                        </div>
+                                    </div>
+                                    <div class="bb-variations">
+                                        <div class="bb-colors">
+                                            <ul class="item-color">
+                                                <li class="bb-color active" style="background-color: #f44925;"></li>
+                                                <li class="bb-color" style="background-color: #dccc71;"></li>
+                                            </ul>
+                                        </div>
+                                        <div class="bb-sizes">
+                                            <ul class="item-size">
+                                                <li class="bb-size active">S</li>
+                                                <li class="bb-size">M</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bb-deal-card-2" data-aos="fade-up" data-aos-duration="1000"
+                             data-aos-delay="400">
+                            <div class="bb-pro-box-2">
+                                <div class="bb-pro-img">
+                                    <span class="flags">
+                                        <span>Hot</span>
+                                    </span>
+                                    <a href="javascript:void(0)">
+                                        <div class="inner-img">
+                                            <img class="main-img" src="assets/img/product/6.jpg" alt="product-2">
+                                            <img class="hover-img" src="assets/img/product/back-6.jpg"
+                                                 alt="product-2">
+                                        </div>
+                                    </a>
+                                    <ul class="bb-pro-actions">
+                                        <li class="bb-btn-group">
+                                            <a href="javascript:void(0)" title="Wishlist">
+                                                <i class="ri-heart-line"></i>
+                                            </a>
+                                        </li>
+                                        <li class="bb-btn-group">
+                                            <a href="javascript:void(0)" data-link-action="quickview"
+                                               title="Quick View" data-bs-toggle="modal"
+                                               data-bs-target="#bry_quickview_modal">
+                                                <i class="ri-eye-line"></i>
+                                            </a>
+                                        </li>
+                                        <li class="bb-btn-group">
+                                            <a href="compare.html" title="Compare">
+                                                <i class="ri-repeat-line"></i>
+                                            </a>
+                                        </li>
+                                        <li class="bb-btn-group">
+                                            <a href="javascript:void(0)" title="Add To Cart">
+                                                <i class="ri-shopping-bag-4-line"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="bb-pro-contact">
+                                    <div class="bb-pro-subtitle">
+                                        <a href="shop-left-sidebar-col-3.html">T-shirt</a>
+                                        <span class="bb-pro-rating">
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-line"></i>
+                                            <i class="ri-star-line"></i>
+                                            <i class="ri-star-line"></i>
+                                        </span>
+                                    </div>
+                                    <h4 class="bb-pro-title"><a href="product-left-sidebar.html">Half sleeve T-shirt for mens</a></h4>
+                                    <div class="bb-price">
+                                        <div class="inner-price">
+                                            <span class="new-price">$15</span>
+                                            <span class="item-left">3 Left</span>
+                                        </div>
+                                    </div>
+                                    <div class="bb-variations">
+                                        <div class="bb-colors">
+                                            <ul class="item-color">
+                                                <li class="bb-color active" style="background-color: #1772a8;"></li>
+                                            </ul>
+                                        </div>
+                                        <div class="bb-sizes">
+                                            <ul class="item-size">
+                                                <li class="bb-size active">S</li>
+                                                <li class="bb-size">XL</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bb-deal-card-2" data-aos="fade-up" data-aos-duration="1000"
+                             data-aos-delay="600">
+                            <div class="bb-pro-box-2">
+                                <div class="bb-pro-img">
+                                    <a href="javascript:void(0)">
+                                        <div class="inner-img">
+                                            <img class="main-img" src="assets/img/product/7.jpg" alt="product-3">
+                                            <img class="hover-img" src="assets/img/product/back-7.jpg"
+                                                 alt="product-3">
+                                        </div>
+                                    </a>
+                                    <ul class="bb-pro-actions">
+                                        <li class="bb-btn-group">
+                                            <a href="javascript:void(0)" title="Wishlist">
+                                                <i class="ri-heart-line"></i>
+                                            </a>
+                                        </li>
+                                        <li class="bb-btn-group">
+                                            <a href="javascript:void(0)" data-link-action="quickview"
+                                               title="Quick View" data-bs-toggle="modal"
+                                               data-bs-target="#bry_quickview_modal">
+                                                <i class="ri-eye-line"></i>
+                                            </a>
+                                        </li>
+                                        <li class="bb-btn-group">
+                                            <a href="compare.html" title="Compare">
+                                                <i class="ri-repeat-line"></i>
+                                            </a>
+                                        </li>
+                                        <li class="bb-btn-group">
+                                            <a href="javascript:void(0)" title="Add To Cart">
+                                                <i class="ri-shopping-bag-4-line"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="bb-pro-contact">
+                                    <div class="bb-pro-subtitle">
+                                        <a href="shop-left-sidebar-col-3.html">Shirt</a>
+                                        <span class="bb-pro-rating">
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                        </span>
+                                    </div>
+                                    <h4 class="bb-pro-title">
+                                        <a href="product-left-sidebar.html">5-6 Years boy shirt</a>
+                                    </h4>
+                                    <div class="bb-price">
+                                        <div class="inner-price">
+                                            <span class="new-price">$32</span>
+                                            <span class="old-price">$39</span>
+                                        </div>
+                                    </div>
+                                    <div class="bb-variations">
+                                        <div class="bb-colors">
+                                            <ul class="item-color">
+                                                <li class="bb-color active" style="background-color: #11b6a5;"></li>
+                                                <li class="bb-color" style="background-color: #495bd3;"></li>
+                                            </ul>
+                                        </div>
+                                        <div class="bb-sizes">
+                                            <ul class="item-size">
+                                                <li class="bb-size active">M</li>
+                                                <li class="bb-size">XXL</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bb-deal-card-2" data-aos="fade-up" data-aos-duration="1000"
+                             data-aos-delay="800">
+                            <div class="bb-pro-box-2">
+                                <div class="bb-pro-img">
+                                    <span class="flags">
+                                        <span>Sale</span>
+                                    </span>
+                                    <a href="javascript:void(0)">
+                                        <div class="inner-img">
+                                            <img class="main-img" src="assets/img/product/8.jpg" alt="product-4">
+                                            <img class="hover-img" src="assets/img/product/back-8.jpg"
+                                                 alt="product-4">
+                                        </div>
+                                    </a>
+                                    <ul class="bb-pro-actions">
+                                        <li class="bb-btn-group">
+                                            <a href="javascript:void(0)" title="Wishlist">
+                                                <i class="ri-heart-line"></i>
+                                            </a>
+                                        </li>
+                                        <li class="bb-btn-group">
+                                            <a href="javascript:void(0)" data-link-action="quickview"
+                                               title="Quick View" data-bs-toggle="modal"
+                                               data-bs-target="#bry_quickview_modal">
+                                                <i class="ri-eye-line"></i>
+                                            </a>
+                                        </li>
+                                        <li class="bb-btn-group">
+                                            <a href="compare.html" title="Compare">
+                                                <i class="ri-repeat-line"></i>
+                                            </a>
+                                        </li>
+                                        <li class="bb-btn-group">
+                                            <a href="javascript:void(0)" title="Add To Cart">
+                                                <i class="ri-shopping-bag-4-line"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="bb-pro-contact">
+                                    <div class="bb-pro-subtitle">
+                                        <a href="shop-left-sidebar-col-3.html">Top</a>
+                                        <span class="bb-pro-rating">
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-line"></i>
+                                        </span>
+                                    </div>
+                                    <h4 class="bb-pro-title"><a href="product-left-sidebar.html">4-6 Years girl top</a></h4>
+                                    <div class="bb-price">
+                                        <div class="inner-price">
+                                            <span class="new-price">$25</span>
+                                            <span class="item-left">Out Of Stock</span>
+                                        </div>
+                                    </div>
+                                    <div class="bb-variations">
+                                        <div class="bb-colors">
+                                            <ul class="item-color">
+                                                <li class="bb-color active" style="background-color: #e64791;"></li>
+                                            </ul>
+                                        </div>
+                                        <div class="bb-sizes">
+                                            <ul class="item-size">
+                                                <li class="bb-size active">S</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<component type="typeof(eticaret.Pages.Shared.Components.Banner.BannerComponent)" render-mode="ServerPrerendered" />
+
+<section class="section-product-tabs padding-tb-50">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="section-title bb-deal" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                    <div class="section-detail">
+                        <h2 class="bb-title">New <span>Arrivals</span></h2>
+                        <p>Shop online for new arrivals and get free shipping!</p>
+                    </div>
+                    <div class="bb-pro-tab">
+                        <ul class="bb-pro-tab-nav nav">
+                            <li class="nav-item">
+                                <a class="nav-link active" data-bs-toggle="tab" href="#all">All</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-bs-toggle="tab" href="#clothes">Clothes</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-bs-toggle="tab" href="#footwear">Footwear</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-bs-toggle="tab" href="#accessories">accessories</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mb-minus-24">
+            <div class="col">
+                <div class="tab-content">
+                    <!-- 1st Product tab start -->
+                    <div class="tab-pane fade show active" id="all">
+                        <div class="row">
+                            <div class="col-xl-3 col-md-4 col-6 mb-24 bb-product-box-2" data-aos="fade-up"
+                                 data-aos-duration="1000" data-aos-delay="400">
+                                <div class="bb-pro-box-2">
+                                    <div class="bb-pro-img">
+                                        <span class="flags">
+                                            <span>New</span>
+                                        </span>
+                                        <a href="javascript:void(0)">
+                                            <div class="inner-img">
+                                                <img class="main-img" src="assets/img/product/25.jpg"
+                                                     alt="product-2">
+                                                <img class="hover-img" src="assets/img/product/back-25.jpg"
+                                                     alt="product-2">
+                                            </div>
+                                        </a>
+                                        <ul class="bb-pro-actions">
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" title="Wishlist">
+                                                    <i class="ri-heart-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" data-link-action="quickview"
+                                                   title="Quick View" data-bs-toggle="modal"
+                                                   data-bs-target="#bry_quickview_modal">
+                                                    <i class="ri-eye-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="compare.html" title="Compare">
+                                                    <i class="ri-repeat-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" title="Add To Cart">
+                                                    <i class="ri-shopping-bag-4-line"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="bb-pro-contact">
+                                        <div class="bb-pro-subtitle">
+                                            <a href="shop-left-sidebar-col-3.html">belt</a>
+                                            <span class="bb-pro-rating">
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-line"></i>
+                                                <i class="ri-star-line"></i>
+                                            </span>
+                                        </div>
+                                        <h4 class="bb-pro-title"><a href="product-left-sidebar.html">Leather belt for men</a></h4>
+                                        <div class="bb-price">
+                                            <div class="inner-price">
+                                                <span class="new-price">$25</span>
+                                                <span class="old-price">$30</span>
+                                            </div>
+                                        </div>
+                                        <div class="bb-variations">
+                                            <div class="bb-colors">
+                                                <ul class="item-color">
+                                                    <li class="bb-color active" style="background-color: #a98976;"></li>
+                                                    <li class="bb-color" style="background-color: #292828;"></li>
+                                                </ul>
+                                            </div>
+                                            <div class="bb-sizes">
+                                                <ul class="item-size">
+                                                    <li class="bb-size active">4 ft</li>
+                                                    <li class="bb-size">3 ft</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-md-4 col-6 mb-24 bb-product-box-2" data-aos="fade-up"
+                                 data-aos-duration="1000" data-aos-delay="400">
+                                <div class="bb-pro-box-2">
+                                    <div class="bb-pro-img">
+                                        <a href="javascript:void(0)">
+                                            <div class="inner-img">
+                                                <img class="main-img" src="assets/img/product/back-13.jpg"
+                                                     alt="product-6">
+                                                <img class="hover-img" src="assets/img/product/13.jpg"
+                                                     alt="product-6">
+                                            </div>
+                                        </a>
+                                        <ul class="bb-pro-actions">
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" title="Wishlist">
+                                                    <i class="ri-heart-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" data-link-action="quickview"
+                                                   title="Quick View" data-bs-toggle="modal"
+                                                   data-bs-target="#bry_quickview_modal">
+                                                    <i class="ri-eye-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="compare.html" title="Compare">
+                                                    <i class="ri-repeat-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" title="Add To Cart">
+                                                    <i class="ri-shopping-bag-4-line"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="bb-pro-contact">
+                                        <div class="bb-pro-subtitle">
+                                            <a href="shop-left-sidebar-col-3.html">Shorts</a>
+                                            <span class="bb-pro-rating">
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-line"></i>
+                                                <i class="ri-star-line"></i>
+                                            </span>
+                                        </div>
+                                        <h4 class="bb-pro-title">
+                                            <a href="product-left-sidebar.html">Men's sport shorts</a>
+                                        </h4>
+                                        <div class="bb-price">
+                                            <div class="inner-price">
+                                                <span class="new-price">$15</span>
+                                                <span class="old-price">$17</span>
+                                            </div>
+                                        </div>
+                                        <div class="bb-variations">
+                                            <div class="bb-colors">
+                                                <ul class="item-color">
+                                                    <li class="bb-color" style="background-color: #a88a69;"></li>
+                                                    <li class="bb-color active" style="background-color: #73a9a2;"></li>
+                                                </ul>
+                                            </div>
+                                            <div class="bb-sizes">
+                                                <ul class="item-size">
+                                                    <li class="bb-size">S</li>
+                                                    <li class="bb-size active">L</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-md-4 col-6 mb-24 bb-product-box-2" data-aos="fade-up"
+                                 data-aos-duration="1000" data-aos-delay="400">
+                                <div class="bb-pro-box-2">
+                                    <div class="bb-pro-img">
+                                        <span class="flags">
+                                            <span>New</span>
+                                        </span>
+                                        <a href="javascript:void(0)">
+                                            <div class="inner-img">
+                                                <img class="main-img" src="assets/img/product/17.jpg"
+                                                     alt="product-2">
+                                                <img class="hover-img" src="assets/img/product/back-17.jpg"
+                                                     alt="product-2">
+                                            </div>
+                                        </a>
+                                        <ul class="bb-pro-actions">
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" title="Wishlist">
+                                                    <i class="ri-heart-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" data-link-action="quickview"
+                                                   title="Quick View" data-bs-toggle="modal"
+                                                   data-bs-target="#bry_quickview_modal">
+                                                    <i class="ri-eye-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="compare.html" title="Compare">
+                                                    <i class="ri-repeat-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" title="Add To Cart">
+                                                    <i class="ri-shopping-bag-4-line"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="bb-pro-contact">
+                                        <div class="bb-pro-subtitle">
+                                            <a href="shop-left-sidebar-col-3.html">Sandals</a>
+                                            <span class="bb-pro-rating">
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-line"></i>
+                                            </span>
+                                        </div>
+                                        <h4 class="bb-pro-title"><a href="product-left-sidebar.html">Sandals for men</a></h4>
+                                        <div class="bb-price">
+                                            <div class="inner-price">
+                                                <span class="new-price">$25</span>
+                                                <span class="old-price">$30</span>
+                                            </div>
+                                        </div>
+                                        <div class="bb-variations">
+                                            <div class="bb-colors">
+                                                <ul class="item-color">
+                                                    <li class="bb-color active" style="background-color: #b39c7d;"></li>
+                                                    <li class="bb-color" style="background-color: #78b98e;"></li>
+                                                    <li class="bb-color" style="background-color: #303632;"></li>
+                                                </ul>
+                                            </div>
+                                            <div class="bb-sizes">
+                                                <ul class="item-size">
+                                                    <li class="bb-size active">7</li>
+                                                    <li class="bb-size">9</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-md-4 col-6 mb-24 bb-product-box-2" data-aos="fade-up"
+                                 data-aos-duration="1000" data-aos-delay="800">
+                                <div class="bb-pro-box-2">
+                                    <div class="bb-pro-img">
+                                        <a href="javascript:void(0)">
+                                            <div class="inner-img">
+                                                <img class="main-img" src="assets/img/product/31.jpg"
+                                                     alt="product-8">
+                                                <img class="hover-img" src="assets/img/product/back-31.jpg"
+                                                     alt="product-8">
+                                            </div>
+                                        </a>
+                                        <ul class="bb-pro-actions">
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" title="Wishlist">
+                                                    <i class="ri-heart-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" data-link-action="quickview"
+                                                   title="Quick View" data-bs-toggle="modal"
+                                                   data-bs-target="#bry_quickview_modal">
+                                                    <i class="ri-eye-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="compare.html" title="Compare">
+                                                    <i class="ri-repeat-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" title="Add To Cart">
+                                                    <i class="ri-shopping-bag-4-line"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="bb-pro-contact">
+                                        <div class="bb-pro-subtitle">
+                                            <a href="shop-left-sidebar-col-3.html">Makeup</a>
+                                            <span class="bb-pro-rating">
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-line"></i>
+                                                <i class="ri-star-line"></i>
+                                            </span>
+                                        </div>
+                                        <h4 class="bb-pro-title">
+                                            <a href="product-left-sidebar.html">Beauty makeup kit</a>
+                                        </h4>
+                                        <div class="bb-price">
+                                            <div class="inner-price">
+                                                <span class="new-price">$499</span>
+                                                <span class="old-price">$710</span>
+                                            </div>
+                                        </div>
+                                        <div class="bb-variations">
+                                            <div class="bb-sizes">
+                                                <ul class="item-size">
+                                                    <li class="bb-size active">4 Shades</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-md-4 col-6 mb-24 bb-product-box-2" data-aos="fade-up"
+                                 data-aos-duration="1000" data-aos-delay="600">
+                                <div class="bb-pro-box-2">
+                                    <div class="bb-pro-img">
+                                        <a href="javascript:void(0)">
+                                            <div class="inner-img">
+                                                <img class="main-img" src="assets/img/product/26.jpg"
+                                                     alt="product-3">
+                                                <img class="hover-img" src="assets/img/product/back-26.jpg"
+                                                     alt="product-3">
+                                            </div>
+                                        </a>
+                                        <ul class="bb-pro-actions">
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" title="Wishlist">
+                                                    <i class="ri-heart-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" data-link-action="quickview"
+                                                   title="Quick View" data-bs-toggle="modal"
+                                                   data-bs-target="#bry_quickview_modal">
+                                                    <i class="ri-eye-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="compare.html" title="Compare">
+                                                    <i class="ri-repeat-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" title="Add To Cart">
+                                                    <i class="ri-shopping-bag-4-line"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="bb-pro-contact">
+                                        <div class="bb-pro-subtitle">
+                                            <a href="shop-left-sidebar-col-3.html">Perfume</a>
+                                            <span class="bb-pro-rating">
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-line"></i>
+                                            </span>
+                                        </div>
+                                        <h4 class="bb-pro-title"><a href="product-left-sidebar.html">Flower fragrance perfume</a></h4>
+                                        <div class="bb-price">
+                                            <div class="inner-price">
+                                                <span class="new-price">$66</span>
+                                                <span class="old-price">$85</span>
+                                            </div>
+                                        </div>
+                                        <div class="bb-variations">
+                                            <div class="bb-sizes">
+                                                <ul class="item-size">
+                                                    <li class="bb-size active">50 ml</li>
+                                                    <li class="bb-size">100 ml</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-md-4 col-6 mb-24 bb-product-box-2" data-aos="fade-up"
+                                 data-aos-duration="1000" data-aos-delay="600">
+                                <div class="bb-pro-box-2">
+                                    <div class="bb-pro-img">
+                                        <a href="javascript:void(0)">
+                                            <div class="inner-img">
+                                                <img class="main-img" src="assets/img/product/14.jpg"
+                                                     alt="product-7">
+                                                <img class="hover-img" src="assets/img/product/back-14.jpg"
+                                                     alt="product-7">
+                                            </div>
+                                        </a>
+                                        <ul class="bb-pro-actions">
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" title="Wishlist">
+                                                    <i class="ri-heart-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" data-link-action="quickview"
+                                                   title="Quick View" data-bs-toggle="modal"
+                                                   data-bs-target="#bry_quickview_modal">
+                                                    <i class="ri-eye-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="compare.html" title="Compare">
+                                                    <i class="ri-repeat-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" title="Add To Cart">
+                                                    <i class="ri-shopping-bag-4-line"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="bb-pro-contact">
+                                        <div class="bb-pro-subtitle">
+                                            <a href="shop-left-sidebar-col-3.html">Suits</a>
+                                            <span class="bb-pro-rating">
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                            </span>
+                                        </div>
+                                        <h4 class="bb-pro-title"><a href="product-left-sidebar.html">Men's official suits</a></h4>
+                                        <div class="bb-price">
+                                            <div class="inner-price">
+                                                <span class="new-price">$29</span>
+                                                <span class="old-price">$31</span>
+                                            </div>
+                                        </div>
+                                        <div class="bb-variations">
+                                            <div class="bb-colors">
+                                                <ul class="item-color">
+                                                    <li class="bb-color active" style="background-color: #4d6597;"></li>
+                                                    <li class="bb-color" style="background-color: #73a9a2;"></li>
+                                                </ul>
+                                            </div>
+                                            <div class="bb-sizes">
+                                                <ul class="item-size">
+                                                    <li class="bb-size">S</li>
+                                                    <li class="bb-size">M</li>
+                                                    <li class="bb-size active">XL</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-md-4 col-6 mb-24 bb-product-box-2" data-aos="fade-up"
+                                 data-aos-duration="1000" data-aos-delay="400">
+                                <div class="bb-pro-box-2">
+                                    <div class="bb-pro-img">
+                                        <a href="javascript:void(0)">
+                                            <div class="inner-img">
+                                                <img class="main-img" src="assets/img/product/29.jpg"
+                                                     alt="product-6">
+                                                <img class="hover-img" src="assets/img/product/back-29.jpg"
+                                                     alt="product-6">
+                                            </div>
+                                        </a>
+                                        <ul class="bb-pro-actions">
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" title="Wishlist">
+                                                    <i class="ri-heart-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" data-link-action="quickview"
+                                                   title="Quick View" data-bs-toggle="modal"
+                                                   data-bs-target="#bry_quickview_modal">
+                                                    <i class="ri-eye-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="compare.html" title="Compare">
+                                                    <i class="ri-repeat-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" title="Add To Cart">
+                                                    <i class="ri-shopping-bag-4-line"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="bb-pro-contact">
+                                        <div class="bb-pro-subtitle">
+                                            <a href="shop-left-sidebar-col-3.html">Jewellery</a>
+                                            <span class="bb-pro-rating">
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-line"></i>
+                                            </span>
+                                        </div>
+                                        <h4 class="bb-pro-title">
+                                            <a href="product-left-sidebar.html">Jewellery 22k gold necklace</a>
+                                        </h4>
+                                        <div class="bb-price">
+                                            <div class="inner-price">
+                                                <span class="new-price">$2587</span>
+                                                <span class="old-price">$3000</span>
+                                            </div>
+                                        </div>
+                                        <div class="bb-variations">
+                                            <div class="bb-sizes">
+                                                <ul class="item-size">
+                                                    <li class="bb-size active">Gold</li>
+                                                    <li class="bb-size">Silver</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-md-4 col-6 mb-24 bb-product-box-2" data-aos="fade-up"
+                                 data-aos-duration="1000" data-aos-delay="800">
+                                <div class="bb-pro-box-2">
+                                    <div class="bb-pro-img">
+                                        <span class="flags">
+                                            <span>Trend</span>
+                                        </span>
+                                        <a href="javascript:void(0)">
+                                            <div class="inner-img">
+                                                <img class="main-img" src="assets/img/product/10.jpg"
+                                                     alt="product-4">
+                                                <img class="hover-img" src="assets/img/product/back-10.jpg"
+                                                     alt="product-4">
+                                            </div>
+                                        </a>
+                                        <ul class="bb-pro-actions">
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" title="Wishlist">
+                                                    <i class="ri-heart-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" data-link-action="quickview"
+                                                   title="Quick View" data-bs-toggle="modal"
+                                                   data-bs-target="#bry_quickview_modal">
+                                                    <i class="ri-eye-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="compare.html" title="Compare">
+                                                    <i class="ri-repeat-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" title="Add To Cart">
+                                                    <i class="ri-shopping-bag-4-line"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="bb-pro-contact">
+                                        <div class="bb-pro-subtitle">
+                                            <a href="shop-left-sidebar-col-3.html">T-shirt</a>
+                                            <span class="bb-pro-rating">
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-line"></i>
+                                            </span>
+                                        </div>
+                                        <h4 class="bb-pro-title"><a href="product-left-sidebar.html">Men's half sleeve t-shit</a></h4>
+                                        <div class="bb-price">
+                                            <div class="inner-price">
+                                                <span class="new-price">$25</span>
+                                                <span class="item-left">Out Of Stock</span>
+                                            </div>
+                                        </div>
+                                        <div class="bb-variations">
+                                            <div class="bb-colors">
+                                                <ul class="item-color">
+                                                    <li class="bb-color" style="background-color: #92d68f;"></li>
+                                                    <li class="bb-color active" style="background-color: #fb7a8a;"></li>
+                                                </ul>
+                                            </div>
+                                            <div class="bb-sizes">
+                                                <ul class="item-size">
+                                                    <li class="bb-size active">M</li>
+                                                    <li class="bb-size">xl</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 2nd Product tab start -->
+                    <div class="tab-pane fade" id="clothes">
+                        <div class="row">
+                            <div class="col-xl-3 col-md-4 col-6 mb-24 bb-product-box-2" data-aos="fade-up"
+                                 data-aos-duration="1000" data-aos-delay="200">
+                                <div class="bb-pro-box-2">
+                                    <div class="bb-pro-img">
+                                        <span class="flags">
+                                            <span>New</span>
+                                        </span>
+                                        <a href="javascript:void(0)">
+                                            <div class="inner-img">
+                                                <img class="main-img" src="assets/img/product/9.jpg"
+                                                     alt="product-1">
+                                                <img class="hover-img" src="assets/img/product/back-9.jpg"
+                                                     alt="product-1">
+                                            </div>
+                                        </a>
+                                        <ul class="bb-pro-actions">
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" title="Wishlist">
+                                                    <i class="ri-heart-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" data-link-action="quickview"
+                                                   title="Quick View" data-bs-toggle="modal"
+                                                   data-bs-target="#bry_quickview_modal">
+                                                    <i class="ri-eye-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="compare.html" title="Compare">
+                                                    <i class="ri-repeat-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" title="Add To Cart">
+                                                    <i class="ri-shopping-bag-4-line"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="bb-pro-contact">
+                                        <div class="bb-pro-subtitle">
+                                            <a href="shop-left-sidebar-col-3.html">Fashion</a>
+                                            <span class="bb-pro-rating">
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-line"></i>
+                                            </span>
+                                        </div>
+                                        <h4 class="bb-pro-title"><a href="product-left-sidebar.html">Women's Gown party wear</a></h4>
+                                        <div class="bb-price">
+                                            <div class="inner-price">
+                                                <span class="new-price">$80</span>
+                                                <span class="old-price">$99</span>
+                                            </div>
+                                        </div>
+                                        <div class="bb-variations">
+                                            <div class="bb-colors">
+                                                <ul class="item-color">
+                                                    <li class="bb-color active" style="background-color: #f179ed;"></li>
+                                                    <li class="bb-color" style="background-color: #4a4ad0;"></li>
+                                                </ul>
+                                            </div>
+                                            <div class="bb-sizes">
+                                                <ul class="item-size">
+                                                    <li class="bb-size active">S</li>
+                                                    <li class="bb-size">M</li>
+                                                    <li class="bb-size">XL</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-md-4 col-6 mb-24 bb-product-box-2" data-aos="fade-up"
+                                 data-aos-duration="1000" data-aos-delay="600">
+                                <div class="bb-pro-box-2">
+                                    <div class="bb-pro-img">
+                                        <a href="javascript:void(0)">
+                                            <div class="inner-img">
+                                                <img class="main-img" src="assets/img/product/back-8.jpg"
+                                                     alt="product-3">
+                                                <img class="hover-img" src="assets/img/product/8.jpg"
+                                                     alt="product-3">
+                                            </div>
+                                        </a>
+                                        <ul class="bb-pro-actions">
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" title="Wishlist">
+                                                    <i class="ri-heart-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" data-link-action="quickview"
+                                                   title="Quick View" data-bs-toggle="modal"
+                                                   data-bs-target="#bry_quickview_modal">
+                                                    <i class="ri-eye-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="compare.html" title="Compare">
+                                                    <i class="ri-repeat-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" title="Add To Cart">
+                                                    <i class="ri-shopping-bag-4-line"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="bb-pro-contact">
+                                        <div class="bb-pro-subtitle">
+                                            <a href="shop-left-sidebar-col-3.html">Kids</a>
+                                            <span class="bb-pro-rating">
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-line"></i>
+                                            </span>
+                                        </div>
+                                        <h4 class="bb-pro-title"><a href="product-left-sidebar.html">4-6 Years girl top</a></h4>
+                                        <div class="bb-price">
+                                            <div class="inner-price">
+                                                <span class="new-price">$6</span>
+                                                <span class="old-price">$8</span>
+                                            </div>
+                                        </div>
+                                        <div class="bb-variations">
+                                            <div class="bb-colors">
+                                                <ul class="item-color">
+                                                    <li class="bb-color active" style="background-color: #fb7a8a;"></li>
+                                                </ul>
+                                            </div>
+                                            <div class="bb-sizes">
+                                                <ul class="item-size">
+                                                    <li class="bb-size active">S</li>
+                                                    <li class="bb-size">M</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-md-4 col-6 mb-24 bb-product-box-2" data-aos="fade-up"
+                                 data-aos-duration="1000" data-aos-delay="800">
+                                <div class="bb-pro-box-2">
+                                    <div class="bb-pro-img">
+                                        <span class="flags">
+                                            <span>Trend</span>
+                                        </span>
+                                        <a href="javascript:void(0)">
+                                            <div class="inner-img">
+                                                <img class="main-img" src="assets/img/product/10.jpg"
+                                                     alt="product-4">
+                                                <img class="hover-img" src="assets/img/product/back-10.jpg"
+                                                     alt="product-4">
+                                            </div>
+                                        </a>
+                                        <ul class="bb-pro-actions">
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" title="Wishlist">
+                                                    <i class="ri-heart-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" data-link-action="quickview"
+                                                   title="Quick View" data-bs-toggle="modal"
+                                                   data-bs-target="#bry_quickview_modal">
+                                                    <i class="ri-eye-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="compare.html" title="Compare">
+                                                    <i class="ri-repeat-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" title="Add To Cart">
+                                                    <i class="ri-shopping-bag-4-line"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="bb-pro-contact">
+                                        <div class="bb-pro-subtitle">
+                                            <a href="shop-left-sidebar-col-3.html">T-shirt</a>
+                                            <span class="bb-pro-rating">
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-line"></i>
+                                            </span>
+                                        </div>
+                                        <h4 class="bb-pro-title"><a href="product-left-sidebar.html">Men's half sleeve t-shit</a></h4>
+                                        <div class="bb-price">
+                                            <div class="inner-price">
+                                                <span class="new-price">$25</span>
+                                                <span class="item-left">Out Of Stock</span>
+                                            </div>
+                                        </div>
+                                        <div class="bb-variations">
+                                            <div class="bb-colors">
+                                                <ul class="item-color">
+                                                    <li class="bb-color" style="background-color: #92d68f;"></li>
+                                                    <li class="bb-color active" style="background-color: #fb7a8a;"></li>
+                                                </ul>
+                                            </div>
+                                            <div class="bb-sizes">
+                                                <ul class="item-size">
+                                                    <li class="bb-size active">M</li>
+                                                    <li class="bb-size">xl</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-md-4 col-6 mb-24 bb-product-box-2" data-aos="fade-up"
+                                 data-aos-duration="1000" data-aos-delay="800">
+                                <div class="bb-pro-box-2">
+                                    <div class="bb-pro-img">
+                                        <a href="javascript:void(0)">
+                                            <div class="inner-img">
+                                                <img class="main-img" src="assets/img/product/11.jpg"
+                                                     alt="product-4">
+                                                <img class="hover-img" src="assets/img/product/back-11.jpg"
+                                                     alt="product-4">
+                                            </div>
+                                        </a>
+                                        <ul class="bb-pro-actions">
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" title="Wishlist">
+                                                    <i class="ri-heart-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" data-link-action="quickview"
+                                                   title="Quick View" data-bs-toggle="modal"
+                                                   data-bs-target="#bry_quickview_modal">
+                                                    <i class="ri-eye-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="compare.html" title="Compare">
+                                                    <i class="ri-repeat-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" title="Add To Cart">
+                                                    <i class="ri-shopping-bag-4-line"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="bb-pro-contact">
+                                        <div class="bb-pro-subtitle">
+                                            <a href="shop-left-sidebar-col-3.html">Sports</a>
+                                            <span class="bb-pro-rating">
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                            </span>
+                                        </div>
+                                        <h4 class="bb-pro-title"><a href="product-left-sidebar.html">Sports wear men's</a></h4>
+                                        <div class="bb-price">
+                                            <div class="inner-price">
+                                                <span class="new-price">$25</span>
+                                                <span class="item-left">Out Of Stock</span>
+                                            </div>
+                                        </div>
+                                        <div class="bb-variations">
+                                            <div class="bb-colors">
+                                                <ul class="item-color">
+                                                    <li class="bb-color" style="background-color: #5fb7ee;"></li>
+                                                    <li class="bb-color active" style="background-color: #efe166;"></li>
+                                                </ul>
+                                            </div>
+                                            <div class="bb-sizes">
+                                                <ul class="item-size">
+                                                    <li class="bb-size">S</li>
+                                                    <li class="bb-size active">XXL</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-md-4 col-6 mb-24 bb-product-box-2" data-aos="fade-up"
+                                 data-aos-duration="1000" data-aos-delay="200">
+                                <div class="bb-pro-box-2">
+                                    <div class="bb-pro-img">
+                                        <span class="flags">
+                                            <span>Sale</span>
+                                        </span>
+                                        <a href="javascript:void(0)">
+                                            <div class="inner-img">
+                                                <img class="main-img" src="assets/img/product/12.jpg"
+                                                     alt="product-5">
+                                                <img class="hover-img" src="assets/img/product/back-12.jpg"
+                                                     alt="product-5">
+                                            </div>
+                                        </a>
+                                        <ul class="bb-pro-actions">
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" title="Wishlist">
+                                                    <i class="ri-heart-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" data-link-action="quickview"
+                                                   title="Quick View" data-bs-toggle="modal"
+                                                   data-bs-target="#bry_quickview_modal">
+                                                    <i class="ri-eye-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="compare.html" title="Compare">
+                                                    <i class="ri-repeat-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" title="Add To Cart">
+                                                    <i class="ri-shopping-bag-4-line"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="bb-pro-contact">
+                                        <div class="bb-pro-subtitle">
+                                            <a href="shop-left-sidebar-col-3.html">shorts</a>
+                                            <span class="bb-pro-rating">
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-line"></i>
+                                                <i class="ri-star-line"></i>
+                                            </span>
+                                        </div>
+                                        <h4 class="bb-pro-title"><a href="product-left-sidebar.html">Girl's shorts skirts</a></h4>
+                                        <div class="bb-price">
+                                            <div class="inner-price">
+                                                <span class="new-price">$32</span>
+                                                <span class="item-left">2 Left</span>
+                                            </div>
+                                        </div>
+                                        <div class="bb-variations">
+                                            <div class="bb-colors">
+                                                <ul class="item-color">
+                                                    <li class="bb-color active" style="background-color: #5f93ee;"></li>
+                                                </ul>
+                                            </div>
+                                            <div class="bb-sizes">
+                                                <ul class="item-size">
+                                                    <li class="bb-size">S</li>
+                                                    <li class="bb-size active">M</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-md-4 col-6 mb-24 bb-product-box-2" data-aos="fade-up"
+                                 data-aos-duration="1000" data-aos-delay="400">
+                                <div class="bb-pro-box-2">
+                                    <div class="bb-pro-img">
+                                        <a href="javascript:void(0)">
+                                            <div class="inner-img">
+                                                <img class="main-img" src="assets/img/product/back-13.jpg"
+                                                     alt="product-6">
+                                                <img class="hover-img" src="assets/img/product/13.jpg"
+                                                     alt="product-6">
+                                            </div>
+                                        </a>
+                                        <ul class="bb-pro-actions">
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" title="Wishlist">
+                                                    <i class="ri-heart-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" data-link-action="quickview"
+                                                   title="Quick View" data-bs-toggle="modal"
+                                                   data-bs-target="#bry_quickview_modal">
+                                                    <i class="ri-eye-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="compare.html" title="Compare">
+                                                    <i class="ri-repeat-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" title="Add To Cart">
+                                                    <i class="ri-shopping-bag-4-line"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="bb-pro-contact">
+                                        <div class="bb-pro-subtitle">
+                                            <a href="shop-left-sidebar-col-3.html">Shorts</a>
+                                            <span class="bb-pro-rating">
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-line"></i>
+                                                <i class="ri-star-line"></i>
+                                            </span>
+                                        </div>
+                                        <h4 class="bb-pro-title">
+                                            <a href="product-left-sidebar.html">Men's sport shorts</a>
+                                        </h4>
+                                        <div class="bb-price">
+                                            <div class="inner-price">
+                                                <span class="new-price">$15</span>
+                                                <span class="old-price">$17</span>
+                                            </div>
+                                        </div>
+                                        <div class="bb-variations">
+                                            <div class="bb-colors">
+                                                <ul class="item-color">
+                                                    <li class="bb-color" style="background-color: #a88a69;"></li>
+                                                    <li class="bb-color active" style="background-color: #73a9a2;"></li>
+                                                </ul>
+                                            </div>
+                                            <div class="bb-sizes">
+                                                <ul class="item-size">
+                                                    <li class="bb-size">S</li>
+                                                    <li class="bb-size active">L</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-md-4 col-6 mb-24 bb-product-box-2" data-aos="fade-up"
+                                 data-aos-duration="1000" data-aos-delay="600">
+                                <div class="bb-pro-box-2">
+                                    <div class="bb-pro-img">
+                                        <a href="javascript:void(0)">
+                                            <div class="inner-img">
+                                                <img class="main-img" src="assets/img/product/14.jpg"
+                                                     alt="product-7">
+                                                <img class="hover-img" src="assets/img/product/back-14.jpg"
+                                                     alt="product-7">
+                                            </div>
+                                        </a>
+                                        <ul class="bb-pro-actions">
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" title="Wishlist">
+                                                    <i class="ri-heart-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" data-link-action="quickview"
+                                                   title="Quick View" data-bs-toggle="modal"
+                                                   data-bs-target="#bry_quickview_modal">
+                                                    <i class="ri-eye-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="compare.html" title="Compare">
+                                                    <i class="ri-repeat-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" title="Add To Cart">
+                                                    <i class="ri-shopping-bag-4-line"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="bb-pro-contact">
+                                        <div class="bb-pro-subtitle">
+                                            <a href="shop-left-sidebar-col-3.html">Suits</a>
+                                            <span class="bb-pro-rating">
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                            </span>
+                                        </div>
+                                        <h4 class="bb-pro-title"><a href="product-left-sidebar.html">Men's official suits</a></h4>
+                                        <div class="bb-price">
+                                            <div class="inner-price">
+                                                <span class="new-price">$29</span>
+                                                <span class="old-price">$31</span>
+                                            </div>
+                                        </div>
+                                        <div class="bb-variations">
+                                            <div class="bb-colors">
+                                                <ul class="item-color">
+                                                    <li class="bb-color active" style="background-color: #4d6597;"></li>
+                                                    <li class="bb-color" style="background-color: #73a9a2;"></li>
+                                                </ul>
+                                            </div>
+                                            <div class="bb-sizes">
+                                                <ul class="item-size">
+                                                    <li class="bb-size">S</li>
+                                                    <li class="bb-size">M</li>
+                                                    <li class="bb-size active">XL</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-md-4 col-6 mb-24 bb-product-box-2" data-aos="fade-up"
+                                 data-aos-duration="1000" data-aos-delay="600">
+                                <div class="bb-pro-box-2">
+                                    <div class="bb-pro-img">
+                                        <a href="javascript:void(0)">
+                                            <div class="inner-img">
+                                                <img class="main-img" src="assets/img/product/15.jpg"
+                                                     alt="product-3">
+                                                <img class="hover-img" src="assets/img/product/back-15.jpg"
+                                                     alt="product-3">
+                                            </div>
+                                        </a>
+                                        <ul class="bb-pro-actions">
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" title="Wishlist">
+                                                    <i class="ri-heart-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" data-link-action="quickview"
+                                                   title="Quick View" data-bs-toggle="modal"
+                                                   data-bs-target="#bry_quickview_modal">
+                                                    <i class="ri-eye-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="compare.html" title="Compare">
+                                                    <i class="ri-repeat-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" title="Add To Cart">
+                                                    <i class="ri-shopping-bag-4-line"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="bb-pro-contact">
+                                        <div class="bb-pro-subtitle">
+                                            <a href="shop-left-sidebar-col-3.html">Jacket</a>
+                                            <span class="bb-pro-rating">
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                            </span>
+                                        </div>
+                                        <h4 class="bb-pro-title"><a href="product-left-sidebar.html">Winter jacket men's</a></h4>
+                                        <div class="bb-price">
+                                            <div class="inner-price">
+                                                <span class="new-price">$10</span>
+                                                <span class="old-price">$15</span>
+                                            </div>
+                                        </div>
+                                        <div class="bb-variations">
+                                            <div class="bb-colors">
+                                                <ul class="item-color">
+                                                    <li class="bb-color active" style="background-color: #7699a1;"></li>
+                                                    <li class="bb-color" style="background-color: #645e7f;"></li>
+                                                    <li class="bb-color" style="background-color: #de85b6;"></li>
+                                                </ul>
+                                            </div>
+                                            <div class="bb-sizes">
+                                                <ul class="item-size">
+                                                    <li class="bb-size active">S</li>
+                                                    <li class="bb-size">M</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 3rd Product tab start -->
+                    <div class="tab-pane fade" id="footwear">
+                        <div class="row">
+                            <div class="col-xl-3 col-md-4 col-6 mb-24 bb-product-box-2" data-aos="fade-up"
+                                 data-aos-duration="1000" data-aos-delay="200">
+                                <div class="bb-pro-box-2">
+                                    <div class="bb-pro-img">
+                                        <span class="flags">
+                                            <span>New</span>
+                                        </span>
+                                        <a href="javascript:void(0)">
+                                            <div class="inner-img">
+                                                <img class="main-img" src="assets/img/product/16.jpg"
+                                                     alt="product-1">
+                                                <img class="hover-img" src="assets/img/product/back-16.jpg"
+                                                     alt="product-1">
+                                            </div>
+                                        </a>
+                                        <ul class="bb-pro-actions">
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" title="Wishlist">
+                                                    <i class="ri-heart-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" data-link-action="quickview"
+                                                   title="Quick View" data-bs-toggle="modal"
+                                                   data-bs-target="#bry_quickview_modal">
+                                                    <i class="ri-eye-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="compare.html" title="Compare">
+                                                    <i class="ri-repeat-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" title="Add To Cart">
+                                                    <i class="ri-shopping-bag-4-line"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="bb-pro-contact">
+                                        <div class="bb-pro-subtitle">
+                                            <a href="shop-left-sidebar-col-3.html">Sports</a>
+                                            <span class="bb-pro-rating">
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-line"></i>
+                                                <i class="ri-star-line"></i>
+                                                <i class="ri-star-line"></i>
+                                            </span>
+                                        </div>
+                                        <h4 class="bb-pro-title"><a href="product-left-sidebar.html">Men's sports shoes</a></h4>
+                                        <div class="bb-price">
+                                            <div class="inner-price">
+                                                <span class="new-price">$55</span>
+                                                <span class="old-price">$67</span>
+                                            </div>
+                                        </div>
+                                        <div class="bb-variations">
+                                            <div class="bb-colors">
+                                                <ul class="item-color">
+                                                    <li class="bb-color" style="background-color: #78b98e;"></li>
+                                                    <li class="bb-color active" style="background-color: #b39c7d;"></li>
+                                                </ul>
+                                            </div>
+                                            <div class="bb-sizes">
+                                                <ul class="item-size">
+                                                    <li class="bb-size active">7</li>
+                                                    <li class="bb-size">8</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-md-4 col-6 mb-24 bb-product-box-2" data-aos="fade-up"
+                                 data-aos-duration="1000" data-aos-delay="400">
+                                <div class="bb-pro-box-2">
+                                    <div class="bb-pro-img">
+                                        <span class="flags">
+                                            <span>New</span>
+                                        </span>
+                                        <a href="javascript:void(0)">
+                                            <div class="inner-img">
+                                                <img class="main-img" src="assets/img/product/17.jpg"
+                                                     alt="product-2">
+                                                <img class="hover-img" src="assets/img/product/back-17.jpg"
+                                                     alt="product-2">
+                                            </div>
+                                        </a>
+                                        <ul class="bb-pro-actions">
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" title="Wishlist">
+                                                    <i class="ri-heart-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" data-link-action="quickview"
+                                                   title="Quick View" data-bs-toggle="modal"
+                                                   data-bs-target="#bry_quickview_modal">
+                                                    <i class="ri-eye-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="compare.html" title="Compare">
+                                                    <i class="ri-repeat-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" title="Add To Cart">
+                                                    <i class="ri-shopping-bag-4-line"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="bb-pro-contact">
+                                        <div class="bb-pro-subtitle">
+                                            <a href="shop-left-sidebar-col-3.html">Sandals</a>
+                                            <span class="bb-pro-rating">
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-line"></i>
+                                            </span>
+                                        </div>
+                                        <h4 class="bb-pro-title"><a href="product-left-sidebar.html">Sandals for men</a></h4>
+                                        <div class="bb-price">
+                                            <div class="inner-price">
+                                                <span class="new-price">$25</span>
+                                                <span class="old-price">$30</span>
+                                            </div>
+                                        </div>
+                                        <div class="bb-variations">
+                                            <div class="bb-colors">
+                                                <ul class="item-color">
+                                                    <li class="bb-color active" style="background-color: #b39c7d;"></li>
+                                                    <li class="bb-color" style="background-color: #78b98e;"></li>
+                                                    <li class="bb-color" style="background-color: #303632;"></li>
+                                                </ul>
+                                            </div>
+                                            <div class="bb-sizes">
+                                                <ul class="item-size">
+                                                    <li class="bb-size active">7</li>
+                                                    <li class="bb-size">9</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-md-4 col-6 mb-24 bb-product-box-2" data-aos="fade-up"
+                                 data-aos-duration="1000" data-aos-delay="600">
+                                <div class="bb-pro-box-2">
+                                    <div class="bb-pro-img">
+                                        <a href="javascript:void(0)">
+                                            <div class="inner-img">
+                                                <img class="main-img" src="assets/img/product/18.jpg"
+                                                     alt="product-3">
+                                                <img class="hover-img" src="assets/img/product/back-18.jpg"
+                                                     alt="product-3">
+                                            </div>
+                                        </a>
+                                        <ul class="bb-pro-actions">
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" title="Wishlist">
+                                                    <i class="ri-heart-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" data-link-action="quickview"
+                                                   title="Quick View" data-bs-toggle="modal"
+                                                   data-bs-target="#bry_quickview_modal">
+                                                    <i class="ri-eye-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="compare.html" title="Compare">
+                                                    <i class="ri-repeat-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" title="Add To Cart">
+                                                    <i class="ri-shopping-bag-4-line"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="bb-pro-contact">
+                                        <div class="bb-pro-subtitle">
+                                            <a href="shop-left-sidebar-col-3.html">Slippers</a>
+                                            <span class="bb-pro-rating">
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                            </span>
+                                        </div>
+                                        <h4 class="bb-pro-title"><a href="product-left-sidebar.html">Slippers for kids</a></h4>
+                                        <div class="bb-price">
+                                            <div class="inner-price">
+                                                <span class="new-price">$16</span>
+                                                <span class="old-price">$18</span>
+                                            </div>
+                                        </div>
+                                        <div class="bb-variations">
+                                            <div class="bb-colors">
+                                                <ul class="item-color">
+                                                    <li class="bb-color" style="background-color: #df6969;"></li>
+                                                    <li class="bb-color active" style="background-color: #7dd0d4;"></li>
+                                                    <li class="bb-color" style="background-color: #4c6cc5;"></li>
+                                                </ul>
+                                            </div>
+                                            <div class="bb-sizes">
+                                                <ul class="item-size">
+                                                    <li class="bb-size active">6</li>
+                                                    <li class="bb-size">7</li>
+                                                    <li class="bb-size">8</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-md-4 col-6 mb-24 bb-product-box-2" data-aos="fade-up"
+                                 data-aos-duration="1000" data-aos-delay="800">
+                                <div class="bb-pro-box-2">
+                                    <div class="bb-pro-img">
+                                        <a href="javascript:void(0)">
+                                            <div class="inner-img">
+                                                <img class="main-img" src="assets/img/product/19.jpg"
+                                                     alt="product-4">
+                                                <img class="hover-img" src="assets/img/product/back-19.jpg"
+                                                     alt="product-4">
+                                            </div>
+                                        </a>
+                                        <ul class="bb-pro-actions">
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" title="Wishlist">
+                                                    <i class="ri-heart-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" data-link-action="quickview"
+                                                   title="Quick View" data-bs-toggle="modal"
+                                                   data-bs-target="#bry_quickview_modal">
+                                                    <i class="ri-eye-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="compare.html" title="Compare">
+                                                    <i class="ri-repeat-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" title="Add To Cart">
+                                                    <i class="ri-shopping-bag-4-line"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="bb-pro-contact">
+                                        <div class="bb-pro-subtitle">
+                                            <a href="shop-left-sidebar-col-3.html">Sandals</a>
+                                            <span class="bb-pro-rating">
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-line"></i>
+                                                <i class="ri-star-line"></i>
+                                                <i class="ri-star-line"></i>
+                                            </span>
+                                        </div>
+                                        <h4 class="bb-pro-title"><a href="product-left-sidebar.html">Unisex leather sandals</a></h4>
+                                        <div class="bb-price">
+                                            <div class="inner-price">
+                                                <span class="new-price">$32</span>
+                                                <span class="item-left">Out Of Stock</span>
+                                            </div>
+                                        </div>
+                                        <div class="bb-variations">
+                                            <div class="bb-colors">
+                                                <ul class="item-color">
+                                                    <li class="bb-color active" style="background-color: #b0866b;"></li>
+                                                </ul>
+                                            </div>
+                                            <div class="bb-sizes">
+                                                <ul class="item-size">
+                                                    <li class="bb-size active">6</li>
+                                                    <li class="bb-size">7</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-md-4 col-6 mb-24 bb-product-box-2" data-aos="fade-up"
+                                 data-aos-duration="1000" data-aos-delay="200">
+                                <div class="bb-pro-box-2">
+                                    <div class="bb-pro-img">
+                                        <span class="flags">
+                                            <span>Sale</span>
+                                        </span>
+                                        <a href="javascript:void(0)">
+                                            <div class="inner-img">
+                                                <img class="main-img" src="assets/img/product/20.jpg"
+                                                     alt="product-5">
+                                                <img class="hover-img" src="assets/img/product/back-20.jpg"
+                                                     alt="product-5">
+                                            </div>
+                                        </a>
+                                        <ul class="bb-pro-actions">
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" title="Wishlist">
+                                                    <i class="ri-heart-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" data-link-action="quickview"
+                                                   title="Quick View" data-bs-toggle="modal"
+                                                   data-bs-target="#bry_quickview_modal">
+                                                    <i class="ri-eye-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="compare.html" title="Compare">
+                                                    <i class="ri-repeat-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" title="Add To Cart">
+                                                    <i class="ri-shopping-bag-4-line"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="bb-pro-contact">
+                                        <div class="bb-pro-subtitle">
+                                            <a href="shop-left-sidebar-col-3.html">sandals</a>
+                                            <span class="bb-pro-rating">
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                            </span>
+                                        </div>
+                                        <h4 class="bb-pro-title"><a href="product-left-sidebar.html">Unisex leather shoe cum sandals</a></h4>
+                                        <div class="bb-price">
+                                            <div class="inner-price">
+                                                <span class="new-price">$60</span>
+                                                <span class="item-left">2 Left</span>
+                                            </div>
+                                        </div>
+                                        <div class="bb-variations">
+                                            <div class="bb-colors">
+                                                <ul class="item-color">
+                                                    <li class="bb-color active" style="background-color: #74ca95;"></li>
+                                                    <li class="bb-color" style="background-color: #b0866b;"></li>
+                                                </ul>
+                                            </div>
+                                            <div class="bb-sizes">
+                                                <ul class="item-size">
+                                                    <li class="bb-size active">6</li>
+                                                    <li class="bb-size">7</li>
+                                                    <li class="bb-size">9</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-md-4 col-6 mb-24 bb-product-box-2" data-aos="fade-up"
+                                 data-aos-duration="1000" data-aos-delay="400">
+                                <div class="bb-pro-box-2">
+                                    <div class="bb-pro-img">
+                                        <a href="javascript:void(0)">
+                                            <div class="inner-img">
+                                                <img class="main-img" src="assets/img/product/21.jpg"
+                                                     alt="product-6">
+                                                <img class="hover-img" src="assets/img/product/back-21.jpg"
+                                                     alt="product-6">
+                                            </div>
+                                        </a>
+                                        <ul class="bb-pro-actions">
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" title="Wishlist">
+                                                    <i class="ri-heart-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" data-link-action="quickview"
+                                                   title="Quick View" data-bs-toggle="modal"
+                                                   data-bs-target="#bry_quickview_modal">
+                                                    <i class="ri-eye-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="compare.html" title="Compare">
+                                                    <i class="ri-repeat-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" title="Add To Cart">
+                                                    <i class="ri-shopping-bag-4-line"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="bb-pro-contact">
+                                        <div class="bb-pro-subtitle">
+                                            <a href="shop-left-sidebar-col-3.html">Heels</a>
+                                            <span class="bb-pro-rating">
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-line"></i>
+                                                <i class="ri-star-line"></i>
+                                                <i class="ri-star-line"></i>
+                                                <i class="ri-star-line"></i>
+                                            </span>
+                                        </div>
+                                        <h4 class="bb-pro-title">
+                                            <a href="product-left-sidebar.html">Ladies shoes high heels</a>
+                                        </h4>
+                                        <div class="bb-price">
+                                            <div class="inner-price">
+                                                <span class="new-price">$15</span>
+                                                <span class="old-price">$17</span>
+                                            </div>
+                                        </div>
+                                        <div class="bb-variations">
+                                            <div class="bb-colors">
+                                                <ul class="item-color">
+                                                    <li class="bb-color active" style="background-color: #d76a6a;"></li>
+                                                    <li class="bb-color" style="background-color: #28282c;"></li>
+                                                    <li class="bb-color" style="background-color: #5c54ca;"></li>
+                                                </ul>
+                                            </div>
+                                            <div class="bb-sizes">
+                                                <ul class="item-size">
+                                                    <li class="bb-size active">9</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-md-4 col-6 mb-24 bb-product-box-2" data-aos="fade-up"
+                                 data-aos-duration="1000" data-aos-delay="600">
+                                <div class="bb-pro-box-2">
+                                    <div class="bb-pro-img">
+                                        <span class="flags">
+                                            <span>Hot</span>
+                                        </span>
+                                        <a href="javascript:void(0)">
+                                            <div class="inner-img">
+                                                <img class="main-img" src="assets/img/product/22.jpg"
+                                                     alt="product-7">
+                                                <img class="hover-img" src="assets/img/product/back-22.jpg"
+                                                     alt="product-7">
+                                            </div>
+                                        </a>
+                                        <ul class="bb-pro-actions">
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" title="Wishlist">
+                                                    <i class="ri-heart-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" data-link-action="quickview"
+                                                   title="Quick View" data-bs-toggle="modal"
+                                                   data-bs-target="#bry_quickview_modal">
+                                                    <i class="ri-eye-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="compare.html" title="Compare">
+                                                    <i class="ri-repeat-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" title="Add To Cart">
+                                                    <i class="ri-shopping-bag-4-line"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="bb-pro-contact">
+                                        <div class="bb-pro-subtitle">
+                                            <a href="shop-left-sidebar-col-3.html">Shoes</a>
+                                            <span class="bb-pro-rating">
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                            </span>
+                                        </div>
+                                        <h4 class="bb-pro-title"><a href="product-left-sidebar.html">Sport shoes</a></h4>
+                                        <div class="bb-price">
+                                            <div class="inner-price">
+                                                <span class="new-price">$29</span>
+                                                <span class="old-price">$31</span>
+                                            </div>
+                                        </div>
+                                        <div class="bb-variations">
+                                            <div class="bb-colors">
+                                                <ul class="item-color">
+                                                    <li class="bb-color active" style="background-color: #d76a6a;"></li>
+                                                    <li class="bb-color" style="background-color: #28282c;"></li>
+                                                    <li class="bb-color" style="background-color: #c2ca54;"></li>
+                                                </ul>
+                                            </div>
+                                            <div class="bb-sizes">
+                                                <ul class="item-size">
+                                                    <li class="bb-size active">8</li>
+                                                    <li class="bb-size">9</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-md-4 col-6 mb-24 bb-product-box-2" data-aos="fade-up"
+                                 data-aos-duration="1000" data-aos-delay="800">
+                                <div class="bb-pro-box-2">
+                                    <div class="bb-pro-img">
+                                        <a href="javascript:void(0)">
+                                            <div class="inner-img">
+                                                <img class="main-img" src="assets/img/product/23.jpg"
+                                                     alt="product-8">
+                                                <img class="hover-img" src="assets/img/product/back-23.jpg"
+                                                     alt="product-8">
+                                            </div>
+                                        </a>
+                                        <ul class="bb-pro-actions">
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" title="Wishlist">
+                                                    <i class="ri-heart-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" data-link-action="quickview"
+                                                   title="Quick View" data-bs-toggle="modal"
+                                                   data-bs-target="#bry_quickview_modal">
+                                                    <i class="ri-eye-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="compare.html" title="Compare">
+                                                    <i class="ri-repeat-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" title="Add To Cart">
+                                                    <i class="ri-shopping-bag-4-line"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="bb-pro-contact">
+                                        <div class="bb-pro-subtitle">
+                                            <a href="shop-left-sidebar-col-3.html">Heels</a>
+                                            <span class="bb-pro-rating">
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-line"></i>
+                                            </span>
+                                        </div>
+                                        <h4 class="bb-pro-title"><a href="product-left-sidebar.html">Women's shoes high heels</a></h4>
+                                        <div class="bb-price">
+                                            <div class="inner-price">
+                                                <span class="new-price">$49</span>
+                                                <span class="old-price">$59</span>
+                                            </div>
+                                        </div>
+                                        <div class="bb-variations">
+                                            <div class="bb-colors">
+                                                <ul class="item-color">
+                                                    <li class="bb-color active" style="background-color: #d7a06a;"></li>
+                                                    <li class="bb-color" style="background-color: #e39feb;"></li>
+                                                </ul>
+                                            </div>
+                                            <div class="bb-sizes">
+                                                <ul class="item-size">
+                                                    <li class="bb-size active">7</li>
+                                                    <li class="bb-size">9</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 4th Product tab start -->
+                    <div class="tab-pane fade" id="accessories">
+                        <div class="row">
+                            <div class="col-xl-3 col-md-4 col-6 mb-24 bb-product-box-2" data-aos="fade-up"
+                                 data-aos-duration="1000" data-aos-delay="200">
+                                <div class="bb-pro-box-2">
+                                    <div class="bb-pro-img">
+                                        <span class="flags">
+                                            <span>Hot</span>
+                                        </span>
+                                        <a href="javascript:void(0)">
+                                            <div class="inner-img">
+                                                <img class="main-img" src="assets/img/product/24.jpg"
+                                                     alt="product-1">
+                                                <img class="hover-img" src="assets/img/product/back-24.jpg"
+                                                     alt="product-1">
+                                            </div>
+                                        </a>
+                                        <ul class="bb-pro-actions">
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" title="Wishlist">
+                                                    <i class="ri-heart-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" data-link-action="quickview"
+                                                   title="Quick View" data-bs-toggle="modal"
+                                                   data-bs-target="#bry_quickview_modal">
+                                                    <i class="ri-eye-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="compare.html" title="Compare">
+                                                    <i class="ri-repeat-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" title="Add To Cart">
+                                                    <i class="ri-shopping-bag-4-line"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="bb-pro-contact">
+                                        <div class="bb-pro-subtitle">
+                                            <a href="shop-left-sidebar-col-3.html">Handbag</a>
+                                            <span class="bb-pro-rating">
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                            </span>
+                                        </div>
+                                        <h4 class="bb-pro-title"><a href="product-left-sidebar.html">Leather handbag purse</a></h4>
+                                        <div class="bb-price">
+                                            <div class="inner-price">
+                                                <span class="new-price">$55</span>
+                                                <span class="old-price">$75</span>
+                                            </div>
+                                        </div>
+                                        <div class="bb-variations">
+                                            <div class="bb-colors">
+                                                <ul class="item-color">
+                                                    <li class="bb-color active" style="background-color: #7cb0dd;"></li>
+                                                    <li class="bb-color" style="background-color: #cd3753;"></li>
+                                                    <li class="bb-color" style="background-color: #69c284;"></li>
+                                                </ul>
+                                            </div>
+                                            <div class="bb-sizes">
+                                                <ul class="item-size">
+                                                    <li class="bb-size active">M</li>
+                                                    <li class="bb-size">L</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-md-4 col-6 mb-24 bb-product-box-2" data-aos="fade-up"
+                                 data-aos-duration="1000" data-aos-delay="400">
+                                <div class="bb-pro-box-2">
+                                    <div class="bb-pro-img">
+                                        <span class="flags">
+                                            <span>New</span>
+                                        </span>
+                                        <a href="javascript:void(0)">
+                                            <div class="inner-img">
+                                                <img class="main-img" src="assets/img/product/25.jpg"
+                                                     alt="product-2">
+                                                <img class="hover-img" src="assets/img/product/back-25.jpg"
+                                                     alt="product-2">
+                                            </div>
+                                        </a>
+                                        <ul class="bb-pro-actions">
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" title="Wishlist">
+                                                    <i class="ri-heart-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" data-link-action="quickview"
+                                                   title="Quick View" data-bs-toggle="modal"
+                                                   data-bs-target="#bry_quickview_modal">
+                                                    <i class="ri-eye-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="compare.html" title="Compare">
+                                                    <i class="ri-repeat-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" title="Add To Cart">
+                                                    <i class="ri-shopping-bag-4-line"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="bb-pro-contact">
+                                        <div class="bb-pro-subtitle">
+                                            <a href="shop-left-sidebar-col-3.html">belt</a>
+                                            <span class="bb-pro-rating">
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-line"></i>
+                                                <i class="ri-star-line"></i>
+                                            </span>
+                                        </div>
+                                        <h4 class="bb-pro-title"><a href="product-left-sidebar.html">Leather belt for men</a></h4>
+                                        <div class="bb-price">
+                                            <div class="inner-price">
+                                                <span class="new-price">$25</span>
+                                                <span class="old-price">$30</span>
+                                            </div>
+                                        </div>
+                                        <div class="bb-variations">
+                                            <div class="bb-colors">
+                                                <ul class="item-color">
+                                                    <li class="bb-color active" style="background-color: #a98976;"></li>
+                                                    <li class="bb-color" style="background-color: #292828;"></li>
+                                                </ul>
+                                            </div>
+                                            <div class="bb-sizes">
+                                                <ul class="item-size">
+                                                    <li class="bb-size active">4 ft</li>
+                                                    <li class="bb-size">3 ft</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-md-4 col-6 mb-24 bb-product-box-2" data-aos="fade-up"
+                                 data-aos-duration="1000" data-aos-delay="600">
+                                <div class="bb-pro-box-2">
+                                    <div class="bb-pro-img">
+                                        <a href="javascript:void(0)">
+                                            <div class="inner-img">
+                                                <img class="main-img" src="assets/img/product/26.jpg"
+                                                     alt="product-3">
+                                                <img class="hover-img" src="assets/img/product/back-26.jpg"
+                                                     alt="product-3">
+                                            </div>
+                                        </a>
+                                        <ul class="bb-pro-actions">
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" title="Wishlist">
+                                                    <i class="ri-heart-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" data-link-action="quickview"
+                                                   title="Quick View" data-bs-toggle="modal"
+                                                   data-bs-target="#bry_quickview_modal">
+                                                    <i class="ri-eye-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="compare.html" title="Compare">
+                                                    <i class="ri-repeat-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" title="Add To Cart">
+                                                    <i class="ri-shopping-bag-4-line"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="bb-pro-contact">
+                                        <div class="bb-pro-subtitle">
+                                            <a href="shop-left-sidebar-col-3.html">Perfume</a>
+                                            <span class="bb-pro-rating">
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-line"></i>
+                                            </span>
+                                        </div>
+                                        <h4 class="bb-pro-title"><a href="product-left-sidebar.html">Flower fragrance perfume</a></h4>
+                                        <div class="bb-price">
+                                            <div class="inner-price">
+                                                <span class="new-price">$66</span>
+                                                <span class="old-price">$85</span>
+                                            </div>
+                                        </div>
+                                        <div class="bb-variations">
+                                            <div class="bb-sizes">
+                                                <ul class="item-size">
+                                                    <li class="bb-size active">50 ml</li>
+                                                    <li class="bb-size">100 ml</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-md-4 col-6 mb-24 bb-product-box-2" data-aos="fade-up"
+                                 data-aos-duration="1000" data-aos-delay="800">
+                                <div class="bb-pro-box-2">
+                                    <div class="bb-pro-img">
+                                        <span class="flags">
+                                            <span>Trend</span>
+                                        </span>
+                                        <a href="javascript:void(0)">
+                                            <div class="inner-img">
+                                                <img class="main-img" src="assets/img/product/27.jpg"
+                                                     alt="product-4">
+                                                <img class="hover-img" src="assets/img/product/back-27.jpg"
+                                                     alt="product-4">
+                                            </div>
+                                        </a>
+                                        <ul class="bb-pro-actions">
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" title="Wishlist">
+                                                    <i class="ri-heart-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" data-link-action="quickview"
+                                                   title="Quick View" data-bs-toggle="modal"
+                                                   data-bs-target="#bry_quickview_modal">
+                                                    <i class="ri-eye-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="compare.html" title="Compare">
+                                                    <i class="ri-repeat-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" title="Add To Cart">
+                                                    <i class="ri-shopping-bag-4-line"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="bb-pro-contact">
+                                        <div class="bb-pro-subtitle">
+                                            <a href="shop-left-sidebar-col-3.html">Cosmetics</a>
+                                            <span class="bb-pro-rating">
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-line"></i>
+                                                <i class="ri-star-line"></i>
+                                                <i class="ri-star-line"></i>
+                                            </span>
+                                        </div>
+                                        <h4 class="bb-pro-title"><a href="product-left-sidebar.html">Beauty cosmetics kit</a></h4>
+                                        <div class="bb-price">
+                                            <div class="inner-price">
+                                                <span class="new-price">$280</span>
+                                                <span class="item-left">Out Of Stock</span>
+                                            </div>
+                                        </div>
+                                        <div class="bb-variations">
+                                            <div class="bb-sizes">
+                                                <ul class="item-size">
+                                                    <li class="bb-size active">80 ml</li>
+                                                    <li class="bb-size">100 ml</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-md-4 col-6 mb-24 bb-product-box-2" data-aos="fade-up"
+                                 data-aos-duration="1000" data-aos-delay="200">
+                                <div class="bb-pro-box-2">
+                                    <div class="bb-pro-img">
+                                        <span class="flags">
+                                            <span>Sale</span>
+                                        </span>
+                                        <a href="javascript:void(0)">
+                                            <div class="inner-img">
+                                                <img class="main-img" src="assets/img/product/28.jpg"
+                                                     alt="product-5">
+                                                <img class="hover-img" src="assets/img/product/back-28.jpg"
+                                                     alt="product-5">
+                                            </div>
+                                        </a>
+                                        <ul class="bb-pro-actions">
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" title="Wishlist">
+                                                    <i class="ri-heart-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" data-link-action="quickview"
+                                                   title="Quick View" data-bs-toggle="modal"
+                                                   data-bs-target="#bry_quickview_modal">
+                                                    <i class="ri-eye-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="compare.html" title="Compare">
+                                                    <i class="ri-repeat-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" title="Add To Cart">
+                                                    <i class="ri-shopping-bag-4-line"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="bb-pro-contact">
+                                        <div class="bb-pro-subtitle">
+                                            <a href="shop-left-sidebar-col-3.html">Cosmetics</a>
+                                            <span class="bb-pro-rating">
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-line"></i>
+                                            </span>
+                                        </div>
+                                        <h4 class="bb-pro-title"><a href="product-left-sidebar.html">Beauty body cream</a></h4>
+                                        <div class="bb-price">
+                                            <div class="inner-price">
+                                                <span class="new-price">$29</span>
+                                                <span class="item-left">2 Left</span>
+                                            </div>
+                                        </div>
+                                        <div class="bb-variations">
+                                            <div class="bb-sizes">
+                                                <ul class="item-size">
+                                                    <li class="bb-size active">100 g</li>
+                                                    <li class="bb-size">250 g</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-md-4 col-6 mb-24 bb-product-box-2" data-aos="fade-up"
+                                 data-aos-duration="1000" data-aos-delay="400">
+                                <div class="bb-pro-box-2">
+                                    <div class="bb-pro-img">
+                                        <a href="javascript:void(0)">
+                                            <div class="inner-img">
+                                                <img class="main-img" src="assets/img/product/29.jpg"
+                                                     alt="product-6">
+                                                <img class="hover-img" src="assets/img/product/back-29.jpg"
+                                                     alt="product-6">
+                                            </div>
+                                        </a>
+                                        <ul class="bb-pro-actions">
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" title="Wishlist">
+                                                    <i class="ri-heart-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" data-link-action="quickview"
+                                                   title="Quick View" data-bs-toggle="modal"
+                                                   data-bs-target="#bry_quickview_modal">
+                                                    <i class="ri-eye-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="compare.html" title="Compare">
+                                                    <i class="ri-repeat-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" title="Add To Cart">
+                                                    <i class="ri-shopping-bag-4-line"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="bb-pro-contact">
+                                        <div class="bb-pro-subtitle">
+                                            <a href="shop-left-sidebar-col-3.html">Jewellery</a>
+                                            <span class="bb-pro-rating">
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-line"></i>
+                                            </span>
+                                        </div>
+                                        <h4 class="bb-pro-title">
+                                            <a href="product-left-sidebar.html">Jewellery 22k gold necklace</a>
+                                        </h4>
+                                        <div class="bb-price">
+                                            <div class="inner-price">
+                                                <span class="new-price">$2587</span>
+                                                <span class="old-price">$3000</span>
+                                            </div>
+                                        </div>
+                                        <div class="bb-variations">
+                                            <div class="bb-sizes">
+                                                <ul class="item-size">
+                                                    <li class="bb-size active">Gold</li>
+                                                    <li class="bb-size">Silver</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-md-4 col-6 mb-24 bb-product-box-2" data-aos="fade-up"
+                                 data-aos-duration="1000" data-aos-delay="600">
+                                <div class="bb-pro-box-2">
+                                    <div class="bb-pro-img">
+                                        <a href="javascript:void(0)">
+                                            <div class="inner-img">
+                                                <img class="main-img" src="assets/img/product/30.jpg"
+                                                     alt="product-7">
+                                                <img class="hover-img" src="assets/img/product/back-30.jpg"
+                                                     alt="product-7">
+                                            </div>
+                                        </a>
+                                        <ul class="bb-pro-actions">
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" title="Wishlist">
+                                                    <i class="ri-heart-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" data-link-action="quickview"
+                                                   title="Quick View" data-bs-toggle="modal"
+                                                   data-bs-target="#bry_quickview_modal">
+                                                    <i class="ri-eye-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="compare.html" title="Compare">
+                                                    <i class="ri-repeat-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" title="Add To Cart">
+                                                    <i class="ri-shopping-bag-4-line"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="bb-pro-contact">
+                                        <div class="bb-pro-subtitle">
+                                            <a href="shop-left-sidebar-col-3.html">Jewellery</a>
+                                            <span class="bb-pro-rating">
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                            </span>
+                                        </div>
+                                        <h4 class="bb-pro-title"><a href="product-left-sidebar.html">Jewellery gold ring</a></h4>
+                                        <div class="bb-price">
+                                            <div class="inner-price">
+                                                <span class="new-price">$793</span>
+                                                <span class="old-price">$854</span>
+                                            </div>
+                                        </div>
+                                        <div class="bb-variations">
+                                            <div class="bb-sizes">
+                                                <ul class="item-size">
+                                                    <li class="bb-size active">Gold</li>
+                                                    <li class="bb-size">Rose Gold</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-md-4 col-6 mb-24 bb-product-box-2" data-aos="fade-up"
+                                 data-aos-duration="1000" data-aos-delay="800">
+                                <div class="bb-pro-box-2">
+                                    <div class="bb-pro-img">
+                                        <a href="javascript:void(0)">
+                                            <div class="inner-img">
+                                                <img class="main-img" src="assets/img/product/31.jpg"
+                                                     alt="product-8">
+                                                <img class="hover-img" src="assets/img/product/back-31.jpg"
+                                                     alt="product-8">
+                                            </div>
+                                        </a>
+                                        <ul class="bb-pro-actions">
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" title="Wishlist">
+                                                    <i class="ri-heart-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" data-link-action="quickview"
+                                                   title="Quick View" data-bs-toggle="modal"
+                                                   data-bs-target="#bry_quickview_modal">
+                                                    <i class="ri-eye-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="compare.html" title="Compare">
+                                                    <i class="ri-repeat-line"></i>
+                                                </a>
+                                            </li>
+                                            <li class="bb-btn-group">
+                                                <a href="javascript:void(0)" title="Add To Cart">
+                                                    <i class="ri-shopping-bag-4-line"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="bb-pro-contact">
+                                        <div class="bb-pro-subtitle">
+                                            <a href="shop-left-sidebar-col-3.html">Makeup</a>
+                                            <span class="bb-pro-rating">
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-line"></i>
+                                                <i class="ri-star-line"></i>
+                                            </span>
+                                        </div>
+                                        <h4 class="bb-pro-title">
+                                            <a href="product-left-sidebar.html">Beauty makeup kit</a>
+                                        </h4>
+                                        <div class="bb-price">
+                                            <div class="inner-price">
+                                                <span class="new-price">$499</span>
+                                                <span class="old-price">$710</span>
+                                            </div>
+                                        </div>
+                                        <div class="bb-variations">
+                                            <div class="bb-sizes">
+                                                <ul class="item-size">
+                                                    <li class="bb-size active">4 Shades</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<component type="typeof(eticaret.Pages.Shared.Components.Services.ServicesComponent)" render-mode="ServerPrerendered" />
+
+<section class="section-testimonials-2 padding-tb-100" data-aos="fade-up" data-aos-duration="1000"
+         data-aos-delay="400">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="section-title bb-center">
+                    <div class="section-detail">
+                        <h2 class="bb-title">Our <span>Testimonials</span></h2>
+                        <p>Customer Voices, Organized for You. Find the Feedback That Matters Most.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="bb-testimonials-2">
+                    <div class="owl-carousel testimonials-slider-2">
+                        <div class="bb-testimonials-inner">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="testimonials-contact">
+                                        <div class="user">
+                                            <img src="assets/img/testimonials/1.jpg" alt="testimonials">
+                                            <div class="detail">
+                                                <h4>Isabella Oliver</h4>
+                                                <span>(Manager)</span>
+                                            </div>
+                                        </div>
+                                        <div class="inner-contact">
+                                            <p>
+                                                "Lorem ipsum dolor sit amet consectetur adipis dicing elit.
+                                                Architecto
+                                                at sint eligendi possimus perspiciatis asperiores."
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bb-testimonials-inner">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="testimonials-contact">
+                                        <div class="user">
+                                            <img src="assets/img/testimonials/2.jpg" alt="testimonials">
+                                            <div class="detail">
+                                                <h4>Nikki Albart</h4>
+                                                <span>(Team Leader)</span>
+                                            </div>
+                                        </div>
+                                        <div class="inner-contact">
+                                            <p>
+                                                "Lorem ipsum dolor sit amet consectetur adipis dicing elit.
+                                                Architecto
+                                                at sint eligendi possimus perspiciatis asperiores."
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bb-testimonials-inner">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="testimonials-contact">
+                                        <div class="user">
+                                            <img src="assets/img/testimonials/3.jpg" alt="testimonials">
+                                            <div class="detail">
+                                                <h4>Stephen Smith</h4>
+                                                <span>(Co Founder)</span>
+                                            </div>
+                                        </div>
+                                        <div class="inner-contact">
+                                            <p>
+                                                "Lorem ipsum dolor sit amet consectetur adipis dicing elit.
+                                                Architecto
+                                                at sint eligendi possimus perspiciatis asperiores."
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<component type="typeof(eticaret.Pages.Shared.Components.Blog.BlogComponent)" render-mode="ServerPrerendered" />
+
+<component type="typeof(eticaret.Pages.Shared.Components.Instagram.InstagramComponent)" render-mode="ServerPrerendered" />
