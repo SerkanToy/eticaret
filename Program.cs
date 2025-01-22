@@ -1,6 +1,6 @@
 using eticaret.Domain.Database.Context;
+using eticaret.Domain.Extensions;
 using eticaret.Models.MailMessageSend;
-using eticaret.Pages.Shared.Components.Header;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +11,12 @@ builder.Services.Configure<EmailConfiguration>(builder.Configuration.GetSection(
 
 builder.Services.AddDbContext<CommerceContext>();
 builder.Services.AddServerSideBlazor();
+
+builder.Services.IdentityAdd();
+builder.Services.PolicyAdd();
+
+builder.Services.TransientAdd();
+builder.Services.ScopedAdd();
 
 var app = builder.Build();
 

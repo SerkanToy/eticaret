@@ -9,28 +9,31 @@
             <div class="col-12">
                 <div class="section-title bb-center" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
                     <div class="section-detail">
-                        <h2 class="bb-title">Log <span>In</span></h2>
-                        <p>Best place to buy and sell digital products</p>
+                        <h2 class="bb-title">Giriş <span>Yap</span></h2>
+                        <p>Bizi tercih ettiğiniz için teşekkür ederiz.</p>
                     </div>
                 </div>
             </div>
             <div class="col-12">
                 <div class="bb-login-contact" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
-                    <form>
+                    <form method="post" asp-page="login" asp-page-handler="LoginData" asp-route-ReturnUrl='Request.Query["ReturnUrl"]' autocomplete="off">
+                        <div class="text-danger field-validation-valid" asp-validation-summary="ModelOnly"></div>
                         <div class="bb-login-wrap">
-                            <label for="email">Email*</label>
-                            <input type="email" id="email" name="email" placeholder="Enter Your Email">
+                            <label for="email">E-Posta*</label>
+                            <input type="email" asp-for="loginViewModel.Email" placeholder="E-Posta" />
+                            <span class="text-danger field-validation-valid" asp-validation-for="loginViewModel.Email"></span>
                         </div>
                         <div class="bb-login-wrap">
-                            <label for="email">Password*</label>
-                            <input type="password" id="password" name="password" placeholder="Enter Your Password">
+                            <label for="email">Şifre*</label>
+                            <input type="password" asp-for="loginViewModel.Password" placeholder="Şifre" />
+                            <span class="text-danger field-validation-valid" asp-validation-for="loginViewModel.Password"></span>
                         </div>
                         <div class="bb-login-wrap">
-                            <a href="javascript:void(0)">Forgot Password?</a>
+                            <a href="javascript:void(0)">Şifremi Unuttum?</a>
                         </div>
                         <div class="bb-login-button">
-                            <button class="bb-btn-2" type="submit">Login</button>
-                            <a href="register.html">Register</a>
+                            <button class="bb-btn-2" type="submit">Giriş Yap</button>
+                            <a href="register.html">Kayıt Ol</a>
                         </div>
                     </form>
                 </div>
