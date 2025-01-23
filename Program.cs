@@ -10,7 +10,7 @@ builder.Services.AddRazorPages();
 builder.Services.Configure<EmailConfiguration>(builder.Configuration.GetSection("EmailConfiguration"));
 
 builder.Services.AddDbContext<CommerceContext>();
-builder.Services.AddServerSideBlazor();
+builder.Services.AddServerSideBlazor().AddInteractiveServerComponents();
 
 builder.Services.IdentityAdd();
 builder.Services.PolicyAdd();

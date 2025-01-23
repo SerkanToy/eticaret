@@ -1,17 +1,27 @@
-﻿<section class="section-breadcrumb margin-b-50">
+﻿
+<section class="section-breadcrumb margin-b-50">
     <div class="container">
         <div class="row">
             <div class="col-12">
                 <div class="row bb-breadcrumb-inner">
                     <div class="col-md-6 col-sm-12">
-                        <h2 class="bb-breadcrumb-title">About Us</h2>
+                        @if (Title != null)
+                        {
+                            <h2 class="bb-breadcrumb-title">@Title</h2>
+                        }
                     </div>
                     <div class="col-md-6 col-sm-12">
-                        <ul class="bb-breadcrumb-list">
-                            <li class="bb-breadcrumb-item"><a href="index.html">Home</a></li>
-                            <li><i class="ri-arrow-right-double-fill"></i></li>
-                            <li class="bb-breadcrumb-item active">About Us</li>
-                        </ul>
+                        @if (Titles != null)
+                        {
+                            <ul class="bb-breadcrumb-list">
+                                <li class="bb-breadcrumb-item"><a href="/">Home</a></li>
+                                @foreach (var item in Titles.ToList())
+                                {
+                                    <li><i class="ri-arrow-right-double-fill"></i></li>
+                                    <li class="bb-breadcrumb-item active">@item</li>
+                                }
+                            </ul>
+                        }
                     </div>
                 </div>
             </div>
@@ -20,5 +30,8 @@
 </section>
 
 @code {
-
+    [Parameter]
+    public string? Title { get; set; }
+    [Parameter]
+    public List<string>? Titles { get; set; } = new List<string>();
 }

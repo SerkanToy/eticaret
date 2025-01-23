@@ -3,6 +3,7 @@
 @{
 }
 
+@(await Html.RenderComponentAsync<eticaret.Pages.Shared.Components.Breadcrumb.BreadcrumbComponent>(RenderMode.ServerPrerendered, new { Title = "Track Order", Titles = new List<string> { "Track Order" } }))
 
 <section class="section-track padding-tb-50">
     <div class="container">

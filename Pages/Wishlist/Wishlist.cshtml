@@ -3,6 +3,7 @@
 @{
 }
 
+@(await Html.RenderComponentAsync<eticaret.Pages.Shared.Components.Breadcrumb.BreadcrumbComponent>(RenderMode.ServerPrerendered, new { Title = "Wish List", Titles = new List<string> { "Wish List" } }))
 
 <section class="section-wishlist padding-tb-50">
     <div class="container">

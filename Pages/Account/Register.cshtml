@@ -3,6 +3,8 @@
 @{
 }
 
+@(await Html.RenderComponentAsync<eticaret.Pages.Shared.Components.Breadcrumb.BreadcrumbComponent>(RenderMode.ServerPrerendered, new { Title = "Register", Titles = new List<string> { "Register" } }))
+
 <section class="section-register padding-tb-50">
     <div class="container">
         <div class="row">

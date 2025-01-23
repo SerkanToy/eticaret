@@ -3,6 +3,7 @@
 @{
 }
 
+@(await Html.RenderComponentAsync<eticaret.Pages.Shared.Components.Breadcrumb.BreadcrumbComponent>(RenderMode.ServerPrerendered, new { Title = "Question", Titles = new List<string> { "Question" } }))
 
 <section class="section-faq padding-tb-50">
     <div class="container">

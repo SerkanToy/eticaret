@@ -27,18 +27,17 @@ namespace eticaret.Pages.Account
 
         public async Task OnPostLoginData(string? ReturnUrl = null)
         {
-            ReturnUrl = ReturnUrl ?? Url.Action("Index", "Home", new { area = "" });
+            //ReturnUrl = ReturnUrl ?? Url.Action("Index", "Home", new { area = "" });
             if (ModelState.IsValid)
             {
                 User hasUser = await _userManager.FindByEmailAsync(loginViewModel.Email);
 
                 if (hasUser == null)
                 {
-                    ModelState.AddModelError("", "Kullanýcý  Bulunmamaktadýr!");
-                    ModelState.AddModelError($"{loginViewModel.Email}", "Giriþ Ýþlemi Baþarýsýz.");
+                    ModelState.AddModelError($"{loginViewModel.Email}", "Kullanýcý  Bulunmamaktadýr!");
                 }
 
-                if (!hasUser.IsLocked && hasUser.IsDeleted)
+                if (!hasUser.IsLocked && !hasUser.IsDeleted)
                 {
                     Microsoft.AspNetCore.Identity.SignInResult result = await _signInManager.PasswordSignInAsync(user: hasUser, password: loginViewModel.Password, isPersistent: loginViewModel.RememberMe, lockoutOnFailure: true);
 
