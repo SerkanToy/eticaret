@@ -4,9 +4,10 @@
     
 }
 
-@*<component type="typeof(eticaret.Pages.Shared.Components.Breadcrumb.BreadcrumbComponent)" render-mode="ServerPrerendered"  Title="Login" Titles='@(new List<string> { "Login" })' />*@
+<component type="typeof(eticaret.Pages.Shared.Components.Breadcrumb.BreadcrumbComponent)" render-mode="ServerPrerendered"  param-Title="@("Login")" param-Titles="@(new List<string> { "Login" })" />
 
-@(await Html.RenderComponentAsync<eticaret.Pages.Shared.Components.Breadcrumb.BreadcrumbComponent>(RenderMode.ServerPrerendered, new { Title = "Login", Titles = new List<string> { "Login" } }))
+@*<component type="typeof(eticaret.Pages.Shared.Components.Breadcrumb.BreadcrumbComponent)" render-mode="ServerPrerendered"  Title="Login" Titles='@(new List<string> { "Login" })' />
+@(await Html.RenderComponentAsync<eticaret.Pages.Shared.Components.Breadcrumb.BreadcrumbComponent>(RenderMode.ServerPrerendered, new { Title = "Login", Titles = new List<string> { "Login" } }))*@
 
 <section class="section-login padding-tb-50">
     <div class="container">
@@ -21,7 +22,7 @@
             </div>
             <div class="col-12">
                 <div class="bb-login-contact" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
-                    <form method="post" asp-page="login" asp-page-handler="LoginData" asp-route-ReturnUrl='Request.Query["ReturnUrl"]' autocomplete="off">
+                    <form method="post" asp-page="login" asp-page-handler="LoginData" asp-route-ReturnUrl='@RouteData.Values["ReturnUrl"]' autocomplete="off">
                         <div class="text-danger field-validation-valid" asp-validation-summary="ModelOnly"></div>
                         <div class="bb-login-wrap">
                             <label for="email">E-Posta*</label>
