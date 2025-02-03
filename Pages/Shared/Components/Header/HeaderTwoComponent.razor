@@ -1,4 +1,6 @@
-﻿<header class="bb-header">
+﻿@using Microsoft.AspNetCore.Mvc.TagHelpers
+
+<header class="bb-header">
 
     <div class="top-header">
         <div class="container">
@@ -105,9 +107,9 @@
                                                         </div>
                                                     </a>
                                                     <ul class="bb-dropdown-menu">
-                                                        <li><a class="dropdown-item" href="register.html">My</a></li>
-                                                        <li><a class="dropdown-item" href="checkout.html">Checkout</a></li>
-                                                        <li><a class="dropdown-item" href="login.html">Output</a></li>
+                                                        <li><a class="dropdown-item" href="register.html">Hesabim</a></li>
+                                                        <li><a class="dropdown-item" href="checkout.html">Ayarlar</a></li>
+                                                        <li><a class="dropdown-item" href="login?handler=Output">Çıkış Yap</a></li>
                                                     </ul>
                                                 </div>
                                                 <a href="wishlist.html" class="bb-header-btn bb-wish-toggle" title="Wishlist">
@@ -134,7 +136,7 @@
                                                     </div>
                                                     <div class="bb-btn-desc">
                                                         <span class="bb-btn-title"><b class="bb-cart-count">4</b> items</span>
-                                                        <span class="bb-btn-stitle">Cart</span>
+                                                        <span class="bb-btn-stitle">Sepet</span>
                                                     </div>
                                                 </a>
                                                 <a href="javascript:void(0)" class="bb-toggle-menu">
@@ -158,14 +160,13 @@
                                                             </svg>
                                                         </div>
                                                         <div class="bb-btn-desc">
-                                                            <span class="bb-btn-title">Account</span>
-                                                            <span class="bb-btn-stitle">Login</span>
+                                                            <span class="bb-btn-title">Kayıt Ol</span>
+                                                            <span class="bb-btn-stitle">Giriş Yap</span>
                                                         </div>
                                                     </a>
                                                     <ul class="bb-dropdown-menu">
-                                                        <li><a class="dropdown-item" href="register.html">Register</a></li>
-                                                        <li><a class="dropdown-item" href="checkout.html">Checkout</a></li>
-                                                        <li><a class="dropdown-item" href="login.html">Login</a></li>
+                                                        <li><a class="dropdown-item" href="/register">Kayıt Ol</a></li>
+                                                        <li><a class="dropdown-item" href="/login">Giriş Yap</a></li>
                                                     </ul>
                                                 </div>
                                                 <a href="wishlist.html" class="bb-header-btn bb-wish-toggle" title="Wishlist">
@@ -191,8 +192,8 @@
                                                         <span class="main-label-note-new"></span>
                                                     </div>
                                                     <div class="bb-btn-desc">
-                                                        <span class="bb-btn-title"><b class="bb-cart-count">4</b> items</span>
-                                                        <span class="bb-btn-stitle">Cart</span>
+                                                        <span class="bb-btn-title"><b class="bb-cart-count">0</b> Adet</span>
+                                                        <span class="bb-btn-stitle">Sepet</span>
                                                     </div>
                                                 </a>
                                                 <a href="javascript:void(0)" class="bb-toggle-menu">
@@ -260,11 +261,7 @@
             <div class="bb-menu-content">
                 <ul>
                     <li>
-                        <a href="javascript:void(0)">Home</a>
-                        <ul class="sub-menu">
-                            <li><a href="index.html">Grocery</a></li>
-                            <li><a href="demo-2.html">Fashion</a></li>
-                        </ul>
+                        <a href="/">Anasayfa</a>
                     </li>
                     <li>
                         <a href="javascript:void(0)">Categories</a>

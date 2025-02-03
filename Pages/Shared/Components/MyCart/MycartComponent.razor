@@ -77,104 +77,154 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-7 col-12">
-                <div class="bb-inner-cart">
-                    <div class="bb-top-contact">
-                        <div class="bb-cart-title">
-                            <h4>My cart</h4>
-                            <a href="javascript:void(0)" class="bb-cart-close" title="Close Cart"></a>
+
+        <Microsoft.AspNetCore.Components.Authorization.CascadingAuthenticationState>
+            <Microsoft.AspNetCore.Components.Authorization.AuthorizeView>
+                <Authorized>
+
+                    <div class="col-md-7 col-12">
+                        <div class="bb-inner-cart">
+                            <div class="bb-top-contact">
+                                <div class="bb-cart-title">
+                                    <h4>Sepet</h4>
+                                    <a href="javascript:void(0)" class="bb-cart-close" title="Close Cart"></a>
+                                </div>
+                            </div>
+                            <div class="bb-cart-box item">
+                                <ul class="bb-cart-items">
+                                    <li class="cart-sidebar-list">
+                                        <a href="javascript:void(0)" class="cart-remove-item"><i class="ri-close-line"></i></a>
+                                        <a href="javascript:void(0)" class="bb-cart-pro-img">
+                                            <img src="/assets/img/product/11.jpg" alt="product-img-1">
+                                        </a>
+                                        <div class="bb-cart-contact">
+                                            <a href="product-left-sidebar.html" class="bb-cart-sub-title">Sports T-shirt for men</a>
+                                            <span class="cart-price">
+                                                <span class="new-price">$99</span>
+                                            </span>
+                                            <div class="qty-plus-minus">
+                                                <input class="qty-input" type="text" name="bb-qtybtn" value="1">
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="cart-sidebar-list">
+                                        <a href="javascript:void(0)" class="cart-remove-item"><i class="ri-close-line"></i></a>
+                                        <a href="javascript:void(0)" class="bb-cart-pro-img">
+                                            <img src="/assets/img/product/17.jpg" alt="product-img-2">
+                                        </a>
+                                        <div class="bb-cart-contact">
+                                            <a href="product-left-sidebar.html" class="bb-cart-sub-title">Leather sandals for men</a>
+                                            <span class="cart-price">
+                                                <span class="new-price">$25</span>
+                                            </span>
+                                            <div class="qty-plus-minus">
+                                                <input class="qty-input" type="text" name="bb-qtybtn" value="1">
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="cart-sidebar-list">
+                                        <a href="javascript:void(0)" class="cart-remove-item"><i class="ri-close-line"></i></a>
+                                        <a href="javascript:void(0)" class="bb-cart-pro-img">
+                                            <img src="/assets/img/product/24.jpg" alt="product-img-3">
+                                        </a>
+                                        <div class="bb-cart-contact">
+                                            <a href="product-left-sidebar.html" class="bb-cart-sub-title">Handbag Purses</a>
+                                            <span class="cart-price">
+                                                <span class="new-price">$151</span>
+                                            </span>
+                                            <div class="qty-plus-minus">
+                                                <input class="qty-input" type="text" name="bb-qtybtn" value="1">
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="cart-sidebar-list">
+                                        <a href="javascript:void(0)" class="cart-remove-item"><i class="ri-close-line"></i></a>
+                                        <a href="javascript:void(0)" class="bb-cart-pro-img">
+                                            <img src="/assets/img/product/6.jpg" alt="product-img-3">
+                                        </a>
+                                        <div class="bb-cart-contact">
+                                            <a href="product-left-sidebar.html" class="bb-cart-sub-title">Half Sleeve T-shirt</a>
+                                            <span class="cart-price">
+                                                <span class="new-price">$25</span>
+                                            </span>
+                                            <div class="qty-plus-minus">
+                                                <input class="qty-input" type="text" name="bb-qtybtn" value="1">
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="bb-bottom-cart">
+                                <div class="cart-sub-total">
+                                    <table class="table cart-table">
+                                        <tbody>
+                                            <tr>
+                                                <td class="title">Toplam :</td>
+                                                <td class="price">$300.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="title">KDV (20%) :</td>
+                                                <td class="price">$60.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="title">Genel Toplam :</td>
+                                                <td class="price">$360.00</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="cart-btn">
+                                    <a href="cart.html" class="bb-btn-1">View Cart</a>
+                                    <a href="checkout.html" class="bb-btn-2">Checkout</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="bb-cart-box item">
-                        <ul class="bb-cart-items">
-                            <li class="cart-sidebar-list">
-                                <a href="javascript:void(0)" class="cart-remove-item"><i class="ri-close-line"></i></a>
-                                <a href="javascript:void(0)" class="bb-cart-pro-img">
-                                    <img src="/assets/img/product/11.jpg" alt="product-img-1">
-                                </a>
-                                <div class="bb-cart-contact">
-                                    <a href="product-left-sidebar.html" class="bb-cart-sub-title">Sports T-shirt for men</a>
-                                    <span class="cart-price">
-                                        <span class="new-price">$99</span>
-                                    </span>
-                                    <div class="qty-plus-minus">
-                                        <input class="qty-input" type="text" name="bb-qtybtn" value="1">
-                                    </div>
+
+                </Authorized>
+                <NotAuthorized>
+                    <div class="col-md-7 col-12">
+                        <div class="bb-inner-cart">
+                            <div class="bb-top-contact">
+                                <div class="bb-cart-title">
+                                    <h4>Sepet</h4>
+                                    <a href="javascript:void(0)" class="bb-cart-close" title="Close Cart"></a>
                                 </div>
-                            </li>
-                            <li class="cart-sidebar-list">
-                                <a href="javascript:void(0)" class="cart-remove-item"><i class="ri-close-line"></i></a>
-                                <a href="javascript:void(0)" class="bb-cart-pro-img">
-                                    <img src="/assets/img/product/17.jpg" alt="product-img-2">
-                                </a>
-                                <div class="bb-cart-contact">
-                                    <a href="product-left-sidebar.html" class="bb-cart-sub-title">Leather sandals for men</a>
-                                    <span class="cart-price">
-                                        <span class="new-price">$25</span>
-                                    </span>
-                                    <div class="qty-plus-minus">
-                                        <input class="qty-input" type="text" name="bb-qtybtn" value="1">
-                                    </div>
+                            </div>
+                            <div class="bb-cart-box item">
+                                
+                            </div>
+                            <div class="bb-bottom-cart">
+                                <div class="cart-sub-total">
+                                    <table class="table cart-table">
+                                        <tbody>
+                                            <tr>
+                                                <td class="title">Toplam :</td>
+                                                <td class="price">0</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="title">KDV :</td>
+                                                <td class="price">0</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="title">Genel Toplam :</td>
+                                                <td class="price">0</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
-                            </li>
-                            <li class="cart-sidebar-list">
-                                <a href="javascript:void(0)" class="cart-remove-item"><i class="ri-close-line"></i></a>
-                                <a href="javascript:void(0)" class="bb-cart-pro-img">
-                                    <img src="/assets/img/product/24.jpg" alt="product-img-3">
-                                </a>
-                                <div class="bb-cart-contact">
-                                    <a href="product-left-sidebar.html" class="bb-cart-sub-title">Handbag Purses</a>
-                                    <span class="cart-price">
-                                        <span class="new-price">$151</span>
-                                    </span>
-                                    <div class="qty-plus-minus">
-                                        <input class="qty-input" type="text" name="bb-qtybtn" value="1">
-                                    </div>
+                                <div class="cart-btn">
+                                    <a href="cart.html" class="bb-btn-1">View Cart</a>
+                                    <a href="checkout.html" class="bb-btn-2">Checkout</a>
                                 </div>
-                            </li>
-                            <li class="cart-sidebar-list">
-                                <a href="javascript:void(0)" class="cart-remove-item"><i class="ri-close-line"></i></a>
-                                <a href="javascript:void(0)" class="bb-cart-pro-img">
-                                    <img src="/assets/img/product/6.jpg" alt="product-img-3">
-                                </a>
-                                <div class="bb-cart-contact">
-                                    <a href="product-left-sidebar.html" class="bb-cart-sub-title">Half Sleeve T-shirt</a>
-                                    <span class="cart-price">
-                                        <span class="new-price">$25</span>
-                                    </span>
-                                    <div class="qty-plus-minus">
-                                        <input class="qty-input" type="text" name="bb-qtybtn" value="1">
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="bb-bottom-cart">
-                        <div class="cart-sub-total">
-                            <table class="table cart-table">
-                                <tbody>
-                                    <tr>
-                                        <td class="title">Sub-Total :</td>
-                                        <td class="price">$300.00</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="title">VAT (20%) :</td>
-                                        <td class="price">$60.00</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="title">Total :</td>
-                                        <td class="price">$360.00</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <div class="cart-btn">
-                            <a href="cart.html" class="bb-btn-1">View Cart</a>
-                            <a href="checkout.html" class="bb-btn-2">Checkout</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
+                </NotAuthorized>
+            </Microsoft.AspNetCore.Components.Authorization.AuthorizeView>
+        </Microsoft.AspNetCore.Components.Authorization.CascadingAuthenticationState>
+
+            
         </div>
     </div>
 

@@ -8,7 +8,7 @@ namespace eticaret.Domain.Entities.Users
     {
         public string Name { get; set; }
         public string SurName { get; set; }
-        public string TC { get; set; }
+        public string? TC { get; set; }
         public ICollection<Address> Address { get; set; }
         public string CreateBy { get; set; }
         public string? ModifiedBy { get; set; }

@@ -3,7 +3,7 @@
 @{
 }
 
-@(await Html.RenderComponentAsync<eticaret.Pages.Shared.Components.Breadcrumb.BreadcrumbComponent>(RenderMode.ServerPrerendered, new { Title = "Register", Titles = new List<string> { "Register" } }))
+@(await Html.RenderComponentAsync<eticaret.Pages.Shared.Components.Breadcrumb.BreadcrumbComponent>(RenderMode.ServerPrerendered, new { Title = "Kayıt Ol", Titles = new List<string> { "Kayıt Ol" } }))
 
 <section class="section-register padding-tb-50">
     <div class="container">
@@ -11,75 +11,60 @@
             <div class="col-12">
                 <div class="bb-register" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
                     <div class="row">
+                        @if (Model.registerViewModel.Messages is not null)
+                        {
+                            if (Model.registerViewModel.Messages.Succeeded)
+                            {
+                                foreach (var item in Model.registerViewModel.Messages.TextMessage)
+                                {
+                                    <div class="alert alert-success" role="alert">
+                                        @item
+                                    </div>
+                                }
+                            }
+                            else
+                            {
+                                foreach (var item in Model.registerViewModel.Messages.TextMessage)
+                                {
+                                    <div class="alert alert-danger" role="alert">
+                                        @item
+                                    </div>
+                                }
+                            }
+                        }
                         <div class="col-12">
                             <div class="section-title bb-center">
                                 <div class="section-detail">
-                                    <h2 class="bb-title">Register</h2>
-                                    <p>Best place to buy and sell digital products</p>
+                                    <h2 class="bb-title">Kayıt Ol</h2>
+                                    <p>Bizi seçtiğiniz için teşekkür ederiz.</p>
                                 </div>
                             </div>
                         </div>
                         <div class="col-12">
-                            <form method="post">
-                                <div class="bb-register-wrap bb-register-width-50">
-                                    <label>First Name*</label>
-                                    <input type="text" name="firstname" placeholder="Enter your first name" required>
-                                </div>
-                                <div class="bb-register-wrap bb-register-width-50">
-                                    <label>Last Name*</label>
-                                    <input type="text" name="Lasttname" placeholder="Enter your Last name" required>
-                                </div>
-                                <div class="bb-register-wrap bb-register-width-50">
-                                    <label>Email*</label>
-                                    <input type="email" name="email" placeholder="Enter your Email" required>
-                                </div>
-                                <div class="bb-register-wrap bb-register-width-50">
-                                    <label>Phone Number*</label>
-                                    <input type="text" name="phonenumber" placeholder="Enter your phone number" required>
+                            <form method="post" asp-page="register" asp-page-handler="Register" autocomplete="off">
+                                <div class="text-danger field-validation-valid" asp-validation-summary="ModelOnly"></div>
+                                <div class="bb-register-wrap bb-register-width-100">
+                                    <label>Ad*</label>
+                                    <input type="text" asp-for="registerViewModel.Name" placeholder="Ad" required>
+                                    <span class="text-danger field-validation-valid" asp-validation-for="registerViewModel.Name"></span>
                                 </div>
                                 <div class="bb-register-wrap bb-register-width-100">
-                                    <label>Address*</label>
-                                    <input type="text" name="phonenumber" placeholder="Address Line 1" required>
+                                    <label>Soyad*</label>
+                                    <input type="text" asp-for="registerViewModel.SurName" placeholder="Soyad" required>
+                                    <span class="text-danger field-validation-valid" asp-validation-for="registerViewModel.SurName"></span>
                                 </div>
-                                <div class="bb-register-wrap bb-register-width-50">
-                                    <label>City*</label>
-                                    <div class="custom-select">
-                                        <select>
-                                            <option value="option1">city 1</option>
-                                            <option value="option2">city 2</option>
-                                            <option value="option3">city 3</option>
-                                            <option value="option4">city 4</option>
-                                        </select>
-                                    </div>
+                                <div class="bb-register-wrap bb-register-width-100">
+                                    <label>EPosta*</label>
+                                    <input type="email" asp-for="registerViewModel.Email" placeholder="EPosta" required>
+                                    <span class="text-danger field-validation-valid" asp-validation-for="registerViewModel.Email"></span>
                                 </div>
-                                <div class="bb-register-wrap bb-register-width-50">
-                                    <label>Post Code*</label>
-                                    <input type="text" name="phonenumber" placeholder="Post Code" required>
-                                </div>
-                                <div class="bb-register-wrap bb-register-width-50">
-                                    <label>Country*</label>
-                                    <div class="custom-select">
-                                        <select>
-                                            <option value="option1">Country 1</option>
-                                            <option value="option2">Country 2</option>
-                                            <option value="option3">Country 3</option>
-                                            <option value="option4">Country 4</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="bb-register-wrap bb-register-width-50">
-                                    <label>Region State*</label>
-                                    <div class="custom-select">
-                                        <select>
-                                            <option value="option1">Region/State 1</option>
-                                            <option value="option2">Region/State 2</option>
-                                            <option value="option3">Region/State 3</option>
-                                            <option value="option4">Region/State 4</option>
-                                        </select>
-                                    </div>
+                                <div class="bb-register-wrap bb-register-width-100">
+                                    <label>Şifre*</label>
+                                    <input type="password" asp-for="registerViewModel.Psswrd" placeholder="Şifre" required>
+                                    <span class="text-danger field-validation-valid" asp-validation-for="registerViewModel.Psswrd"></span>
                                 </div>
                                 <div class="bb-register-button">
-                                    <button type="button" class="bb-btn-2">Register</button>
+                                    <button type="submit" class="bb-btn-2">Kaydet</button>
                                 </div>
                             </form>
                         </div>

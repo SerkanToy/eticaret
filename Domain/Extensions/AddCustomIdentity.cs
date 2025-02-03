@@ -41,7 +41,7 @@ namespace eticaret.Domain.Extensions
                 opt.Lockout.MaxFailedAccessAttempts = 3;
                 opt.Lockout.AllowedForNewUsers = true;
 
-                opt.User.AllowedUserNameCharacters = "abcdefghijklmnopqrstuvwxyz";
+                opt.User.AllowedUserNameCharacters = "abcçdefgğhiıjklmnoöpqrsştuüvwxyz";
                 opt.User.RequireUniqueEmail = true;
             });
 
