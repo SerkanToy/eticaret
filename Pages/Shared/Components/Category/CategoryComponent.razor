@@ -7,9 +7,9 @@
         <div class="bb-cat-2">
             <div class="bb-category-block-2 owl-carousel">
 
-                @if (unitofWork.GetRepository<Category>().GetAllIQueryable().Any())
+                @if (unitofWork.GetRepository<Category>().GetAllIQueryable(x => x.IsDeleted == false).Any())
                 {
-                    foreach (var item in unitofWork.GetRepository<Category>().GetAllIQueryable())
+                    foreach (var item in unitofWork.GetRepository<Category>().GetAllIQueryable(x => x.IsDeleted == false))
                     {
                         <div class="bb-category-box" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="200">
                             <div class="category-detail">

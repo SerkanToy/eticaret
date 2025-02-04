@@ -9,6 +9,7 @@ namespace eticaret.Domain.Database.Mapping.CategoryMappings
         public void Configure(EntityTypeBuilder<Category> builder)
         {
             builder.HasKey(x => x.Id);
+            builder.HasMany(x => x.CategoryProducts).WithOne(y => y.Category).OnDelete(DeleteBehavior.NoAction);
             builder.HasData(_categories());
         }
 

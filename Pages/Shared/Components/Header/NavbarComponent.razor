@@ -10,9 +10,9 @@
             <a class="nav-link bb-dropdown-item" href="javascript:void(0)">Kategori</a>
             <ul class="mega-menu">
                 <li>
-                    @if (unitofWork.GetRepository<Category>().GetAllIQueryable().Any())
+                    @if (unitofWork.GetRepository<Category>().GetAllIQueryable(x => x.IsDeleted == false).Any())
                     {
-                        foreach (var item in unitofWork.GetRepository<Category>().GetAllIQueryable())
+                        foreach (var item in unitofWork.GetRepository<Category>().GetAllIQueryable(x => x.IsDeleted == false))
                         {
                             <ul class="mega-block">
                                 <li class="menu_title"><a href="javascript:void(0)">@item.Name</a></li>

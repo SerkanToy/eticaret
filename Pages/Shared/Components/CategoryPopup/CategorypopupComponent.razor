@@ -8,7 +8,7 @@
         <div class="container-fluid">
             <div class="row mb-minus-24">
 
-                @if (unitofWork.GetRepository<Category>().GetAllIQueryable().Any())
+                @if (unitofWork.GetRepository<Category>().GetAllIQueryable(x => x.IsDeleted == false).Any())
                 {
                     <div class="col-12">
                         <div class="bb-category-tags">
@@ -17,7 +17,7 @@
                             </div>
                             <div class="bb-tags">
                                 <ul>
-                                    @foreach (var item in unitofWork.GetRepository<Category>().GetAllIQueryable())
+                                    @foreach (var item in unitofWork.GetRepository<Category>().GetAllIQueryable(x => x.IsDeleted == false))
                                     {
                                         <li>
                                             <a href="javascript:void(0)">@item.Name</a>
@@ -36,7 +36,7 @@
                                 </div>
                             </div>
 
-                            @foreach (var item in unitofWork.GetRepository<Category>().GetAllIQueryable())
+                            @foreach (var item in unitofWork.GetRepository<Category>().GetTakeIQueryable(x => x.IsDeleted == false, take: 6).OrderByDescending(x => x.Id))
                             {
                                 <div class="col-xl-2 col-md-4 col-sm-6 col-12 mb-24">
                                     <div class="bb-category-box category-items-1">

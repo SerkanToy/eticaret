@@ -2,7 +2,7 @@
 
 namespace eticaret.Domain.Core.Entities
 {
-    public class Category: IModel
+    public class Product: IModel
     {
         public int Id { get; set; }
         public string Name { get; set; }

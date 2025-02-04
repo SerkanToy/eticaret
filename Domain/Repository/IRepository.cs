@@ -11,6 +11,8 @@ namespace eticaret.Domain.Repository
         void Insert(TEntity entity);
         Task<IQueryable<TEntity>> GetAllIQueryableAsync(Expression<Func<TEntity, bool>> predicate = null);
         IQueryable<TEntity> GetAllIQueryable(Expression<Func<TEntity, bool>> predicate = null);
+        IQueryable<TEntity> GetTakeIQueryable(Expression<Func<TEntity, bool>> predicate = null, int take = 0);
+        Task<IQueryable<TEntity>> GetTakeIQueryableAsync(Expression<Func<TEntity, bool>> predicate = null, int take = 0);
         Task<IEnumerable<TEntity>> Includes(
             Expression<Func<TEntity, bool>> predicate = null,
             int take = 0,

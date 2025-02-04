@@ -1,6 +1,7 @@
 ﻿using eticaret.Domain.Database.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Query;
+using Microsoft.EntityFrameworkCore.SqlServer.Query.Internal;
 using System.Linq.Expressions;
 
 namespace eticaret.Domain.Repository
@@ -75,6 +76,20 @@ namespace eticaret.Domain.Repository
             }
         }
 
+        public async Task<IQueryable<TEntity>> GetTakeIQueryableAsync(Expression<Func<TEntity, bool>> predicate = null, int take = 0)
+        {
+            if (predicate == null)
+            {
+                var veri = await _dbSet.ToListAsync();
+                return veri.AsQueryable();
+            }
+            else
+            {
+                var veri = await _dbSet.Where(predicate).ToListAsync();
+                return veri.Take(take).AsQueryable();
+            }
+        }
+
         public async Task<List<TEntity>> GetAllAsync()
         {
             using (var con = context)
@@ -104,6 +119,20 @@ namespace eticaret.Domain.Repository
             {
                 var veri = _dbSet.Where(predicate).ToList();
                 return veri.AsQueryable();
+            }
+        }
+
+        public IQueryable<TEntity> GetTakeIQueryable(Expression<Func<TEntity, bool>> predicate = null, int take = 0)
+        {
+            if (predicate == null)
+            {
+                var veri = _dbSet.ToList();
+                return veri.AsQueryable();
+            }
+            else
+            {
+                var veri = _dbSet.Where(predicate).ToList();
+                return veri.Take(take).AsQueryable();
             }
         }
     }
