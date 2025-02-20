@@ -15,5 +15,6 @@ namespace eticaret.Domain.Core.Entities
         public bool IsDeleted { get; set; }
         public string Flag { get; set; }
         public ICollection<CategoryProduct> CategoryProducts { get; set; }
+        public ICollection<RatinProduct> RatinProducts { get; set; }
     }
 }

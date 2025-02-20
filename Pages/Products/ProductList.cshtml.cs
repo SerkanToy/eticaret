@@ -1,13 +1,8 @@
-﻿using eticaret.Domain.UnitOfWork;
+﻿using eticaret.Domain.Core.Entities;
+using eticaret.Domain.UnitOfWork;
+using eticaret.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using eticaret.Domain.Core.Entities;
-using Microsoft.AspNetCore.Components;
-using Microsoft.EntityFrameworkCore;
-using System.Dynamic;
-using System.Collections.Immutable;
-using System.Collections.Generic;
-using eticaret.Models;
 using System.Linq;
 
 namespace eticaret.Pages.Products
@@ -20,6 +15,8 @@ namespace eticaret.Pages.Products
         public IEnumerable<dynamic> productExpandoObject { get; set; } = new List<Dynamic>();
         [BindProperty]
         public IEnumerable<Category> categoryViewModel { get; set; }
+        [BindProperty]
+        public IEnumerable<Ratin> ratinViewModel { get; set; }
         [BindProperty(SupportsGet = true)]
         public string? flag { get; set; }
 
@@ -28,30 +25,34 @@ namespace eticaret.Pages.Products
         public ProductListModel(IUnitofWork unitofWork)
         {
             this.unitofWork = unitofWork;
+            categoryViewModel = unitofWork.GetRepository<Category>().GetAllIQueryable(x => x.IsDeleted == false);
+            ratinViewModel = unitofWork.GetRepository<Ratin>().GetAllIQueryable();
+            productViewModel = unitofWork.GetRepository<Product>().GetAllIQueryable(x => x.IsDeleted == false).ToList();
         }
 
         public void OnGet()
-        {
-            var veri = unitofWork.GetRepository<Product>().GetAllIQueryable(x => x.IsDeleted == false).ToList();
-
-            productExpandoObject = veri.Select(c => new Dynamic
-                                    {
-                                        ["Name"] = c.Name
-                                    });
-
-            /*productViewModel = (List<Domain.Core.Entities.Product>)unitofWork.GetRepository<eticaret.Domain.Core.Entities.Product>()
-            .GetAllIQueryable(f => f.IsDeleted == false).Select(z => new eticaret.Domain.Core.Entities.Product { 
-                Name = z.Name,
-                Flag = z.Flag
-            });
+        {            
             if(flag is not null)
             {
-                var id = unitofWork.GetRepository<Category>().GetFindAsync(x => x.Flag == flag).Result.Id;
-                productViewModel = unitofWork.GetRepository<Product>().Includes(predicate:y => y.IsDeleted == false,includes: x => x.Include(c => c.CategoryProducts.Where(f => f.CategoryId == id)),orderBy: );//.GetAllIQueryable(x => x.IsDeleted == false && x.CategoryProducts.Where(x => x.Category.Flag == flag));
+                productViewModel = unitofWork.GetRepository<Product>().GetAllIQueryable(x => x.IsDeleted == false && x.CategoryProducts.Any(f => f.Category.Flag == flag)).ToList();
+                productExpandoObject = productViewModel.Select(c => new Dynamic
+                {
+                    ["Name"] = c.Name,
+                    ["CategoryProducts"] = c.CategoryProducts,
+                    ["Categorys"] = c.CategoryProducts,
+                    ["Rating"] = c.RatinProducts
+                });
+                //.GetAllIQueryable(x => x.IsDeleted == false && x.CategoryProducts.Where(x => x.Category.Flag == flag));
                 return;
             }
-            productViewModel = unitofWork.GetRepository<Product>().GetAllIQueryable(x => x.IsDeleted == false);*/
-            categoryViewModel = unitofWork.GetRepository<Category>().GetAllIQueryable(x => x.IsDeleted == false);
+            productViewModel = unitofWork.GetRepository<Product>().GetAllIQueryable(x => x.IsDeleted == false).ToList();
+            productExpandoObject = productViewModel.Select(c => new Dynamic
+            {
+                ["Name"] = c.Name,
+                ["CategoryProducts"] = c.CategoryProducts,
+                ["Categorys"] = c.CategoryProducts, // == null ? new Dictionary<string, object>() : c.CategoryProducts,
+                ["Rating"] = c.RatinProducts // == null? new Dictionary<string, object>() : c.RatinProducts
+            });
         }
     }
 }

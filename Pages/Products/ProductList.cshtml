@@ -4,8 +4,6 @@
 }
 
 @(await Html.RenderComponentAsync<eticaret.Pages.Shared.Components.Breadcrumb.BreadcrumbComponent>(RenderMode.ServerPrerendered, new { Title = $"Ürün Listesi", Titles = new List<string> { "Ürünler" } }))
-
-
 @(await Html.RenderComponentAsync<eticaret.Pages.Shared.Components.ShopCategory.ShopcategoryComponent>(RenderMode.ServerPrerendered))
 
 <section class="section-shop padding-b-50">
@@ -14,7 +12,6 @@
             <div class="col-lg-9 col-12 mb-24">
                 <div class="bb-shop-pro-inner">
                     <div class="row mb-minus-24">
-
                         <div class="col-12">
                             <div class="bb-pro-list-top">
                                 <div class="row">
@@ -54,52 +51,14 @@
                                 <div class="col-xl-3 col-lg-4 col-6 mb-24 bb-product-box pro-bb-content" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
                                     <div class="bb-pro-box">
                                         <div class="bb-pro-img">
-                                            <span class="flags">
-                                                <span>New</span>
-                                            </span>
-                                            <a href="javascript:void(0)">
-                                                <div class="inner-img">
-                                                    <img class="main-img" src="assets/img/new-product/1.jpg"
-                                                    alt="product-1">
-                                                    <img class="hover-img" src="assets/img/new-product/back-1.jpg"
-                                                    alt="product-1">
-                                                </div>
-                                            </a>
-                                            <ul class="bb-pro-actions">
-                                                <li class="bb-btn-group">
-                                                    <a href="javascript:void(0)">
-                                                        <i class="ri-heart-line"></i>
-                                                    </a>
-                                                </li>
-                                                <li class="bb-btn-group">
-                                                    <a href="javascript:void(0)"
-                                                    data-link-action="quickview" title="Quick view" data-bs-toggle="modal"
-                                                    data-bs-target="#bry_quickview_modal">
-                                                        <i class="ri-eye-line"></i>
-                                                    </a>
-                                                </li>
-                                                <li class="bb-btn-group">
-                                                    <a href="compare.html">
-                                                        <i class="ri-repeat-line"></i>
-                                                    </a>
-                                                </li>
-                                                <li class="bb-btn-group">
-                                                    <a href="javascript:void(0)">
-                                                        <i class="ri-shopping-bag-4-line"></i>
-                                                    </a>
-                                                </li>
-                                            </ul>
+                                            @(await Html.RenderComponentAsync<eticaret.Pages.Shared.Components.News.NewComponent>(RenderMode.ServerPrerendered))
+                                            @(await Html.RenderComponentAsync<eticaret.Pages.Shared.Components.ProductImg.ImgComponent>(RenderMode.ServerPrerendered))
+                                            @(await Html.RenderComponentAsync<eticaret.Pages.Shared.Components.Pro.ProactionsComponent>(RenderMode.ServerPrerendered))
                                         </div>
                                         <div class="bb-pro-contact">
                                             <div class="bb-pro-subtitle">
                                                 <a href="shop-left-sidebar-col-3.html">@item.Name</a>
-                                                <span class="bb-pro-rating">
-                                                    <i class="ri-star-fill"></i>
-                                                    <i class="ri-star-fill"></i>
-                                                    <i class="ri-star-fill"></i>
-                                                    <i class="ri-star-fill"></i>
-                                                    <i class="ri-star-line"></i>
-                                                </span>
+                                                @(await Html.RenderComponentAsync<eticaret.Pages.Shared.Components.Ratings.RatingComponent>(RenderMode.ServerPrerendered))
                                             </div>
                                             <h4 class="bb-pro-title">
                                                 <a href="product-left-sidebar.html">Ground Nuts Oil Pack</a>
@@ -127,6 +86,9 @@
                             <div class="bb-pro-pagination">
                                 <p>Showing 1-12 of 21 item(s)</p>
                                 <ul>
+                                    <li>
+                                        <a href="javascript:void(0)" class="next">Geri <i class="ri-arrow-right-s-line"></i></a>
+                                    </li>
                                     <li class="active">
                                         <a href="javascript:void(0)">1</a>
                                     </li>
@@ -140,7 +102,7 @@
                                         <a href="javascript:void(0)">4</a>
                                     </li>
                                     <li>
-                                        <a href="javascript:void(0)" class="next">Next <i class="ri-arrow-right-s-line"></i></a>
+                                        <a href="javascript:void(0)" class="next">İleri <i class="ri-arrow-right-s-line"></i></a>
                                     </li>
                                 </ul>
                             </div>
@@ -218,58 +180,73 @@
                     </div>
                     <div class="bb-sidebar-block">
                         <div class="bb-sidebar-title">
-                            <h3>Color</h3>
+                            <h3>Puan</h3>
                         </div>
-                        <div class="bb-color-contact">
+                        <div class="bb-sidebar-contact">
                             <ul>
-                                <li class="color-sidebar-active">
+                                <li>
                                     <div class="bb-sidebar-block-item">
-                                        <span class="pro-color-1"></span>
+                                        <input type="checkbox">
+                                        <a href="javascript:void(0)">
+                                            <i class="ri-star-fill" style="color:#fea99a;"></i>
+                                            <i class="ri-star-line"></i>
+                                            <i class="ri-star-line"></i>
+                                            <i class="ri-star-line"></i>
+                                            <i class="ri-star-line"></i>
+                                        </a>
+                                        <span class="checked"></span>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="bb-sidebar-block-item">
-                                        <span class="pro-color-2"></span>
+                                        <input type="checkbox">
+                                        <a href="javascript:void(0)">
+                                            <i class="ri-star-fill" style="color:#fea99a;"></i>
+                                            <i class="ri-star-fill" style="color:#fea99a;"></i>
+                                            <i class="ri-star-line"></i>
+                                            <i class="ri-star-line"></i>
+                                            <i class="ri-star-line"></i>
+                                        </a>
+                                        <span class="checked"></span>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="bb-sidebar-block-item">
-                                        <span class="pro-color-3"></span>
+                                        <input type="checkbox">
+                                        <a href="javascript:void(0)">
+                                            <i class="ri-star-fill" style="color:#fea99a;"></i>
+                                            <i class="ri-star-fill" style="color:#fea99a;"></i>
+                                            <i class="ri-star-fill" style="color:#fea99a;"></i>
+                                            <i class="ri-star-line"></i>
+                                            <i class="ri-star-line"></i>
+                                        </a>
+                                        <span class="checked"></span>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="bb-sidebar-block-item">
-                                        <span class="pro-color-4"></span>
+                                        <input type="checkbox">
+                                        <a href="javascript:void(0)">
+                                            <i class="ri-star-fill" style="color:#fea99a;"></i>
+                                            <i class="ri-star-fill" style="color:#fea99a;"></i>
+                                            <i class="ri-star-fill" style="color:#fea99a;"></i>
+                                            <i class="ri-star-fill" style="color:#fea99a;"></i>
+                                            <i class="ri-star-line"></i>
+                                        </a>
+                                        <span class="checked"></span>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="bb-sidebar-block-item">
-                                        <span class="pro-color-5"></span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="bb-sidebar-block-item">
-                                        <span class="pro-color-6"></span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="bb-sidebar-block-item">
-                                        <span class="pro-color-7"></span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="bb-sidebar-block-item">
-                                        <span class="pro-color-8"></span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="bb-sidebar-block-item">
-                                        <span class="pro-color-9"></span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="bb-sidebar-block-item">
-                                        <span class="pro-color-10"></span>
+                                        <input type="checkbox">
+                                        <a href="javascript:void(0)">
+                                            <i class="ri-star-fill" style="color:#fea99a;"></i>
+                                            <i class="ri-star-fill" style="color:#fea99a;"></i>
+                                            <i class="ri-star-fill" style="color:#fea99a;"></i>
+                                            <i class="ri-star-fill" style="color:#fea99a;"></i>
+                                            <i class="ri-star-fill" style="color:#fea99a;"></i>
+                                        </a>
+                                        <span class="checked"></span>
                                     </div>
                                 </li>
                             </ul>
@@ -286,42 +263,6 @@
                                 </p>
                                 <div id="slider-range" class="range-bar"></div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="bb-sidebar-block">
-                        <div class="bb-sidebar-title">
-                            <h3>Tags</h3>
-                        </div>
-                        <div class="bb-tags">
-                            <ul>
-                                <li>
-                                    <a href="javascript:void(0)">Clothes</a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)">Fruits</a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)">Snacks</a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)">Dairy</a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)">Seafood</a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)">Toys</a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)">perfume</a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)">jewelry</a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)">Bags</a>
-                                </li>
-                            </ul>
                         </div>
                     </div>
                 </div>
