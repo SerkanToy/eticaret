@@ -1,4 +1,5 @@
 ﻿using eticaret.Domain.Interfaced;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace eticaret.Domain.Core.Entities
 {
@@ -14,6 +15,11 @@ namespace eticaret.Domain.Core.Entities
         public string? DeleteDate { get; set; }
         public bool IsDeleted { get; set; }
         public string Flag { get; set; }
+        public int RatinAVG { get; set; }
+        [NotMapped]
+        public int RatinMax { get; set; }
+        [NotMapped]
+        public Category CategoryName { get; set; }
         public ICollection<CategoryProduct> CategoryProducts { get; set; }
         public ICollection<RatinProduct> RatinProducts { get; set; }
     }

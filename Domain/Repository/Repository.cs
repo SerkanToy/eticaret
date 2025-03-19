@@ -135,5 +135,19 @@ namespace eticaret.Domain.Repository
                 return veri.Take(take).AsQueryable();
             }
         }
+
+        public int TEntityMax(Expression<Func<TEntity, bool>> predicate = null, Expression<Func<TEntity, int>> predicateMax = null)
+        {
+            if (predicate == null)
+            {
+                var veri = _dbSet.Where(predicate).Max(predicateMax);
+                return veri;
+            }
+            else
+            {
+                var veri = _dbSet.Where(predicate).Max(predicateMax);
+                return veri;
+            }
+        }
     }
 }

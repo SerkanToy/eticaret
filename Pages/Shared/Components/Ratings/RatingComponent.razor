@@ -1,11 +1,16 @@
-﻿<span class="bb-pro-rating">
+﻿
+@if(yes > 0)
+{
+    <i class="ri-star-line"></i>
+
+}
+else
+{
     <i class="ri-star-fill"></i>
-    <i class="ri-star-line"></i>
-    <i class="ri-star-line"></i>
-    <i class="ri-star-line"></i>
-    <i class="ri-star-line"></i>
-</span>
+}
+
 
 @code {
-
+    [Parameter]
+    public int yes { get; set; } = 0;
 }

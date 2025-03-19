@@ -26,6 +26,7 @@ namespace eticaret.Domain.Repository
         void Update(TEntity entity);
         void Delete(TEntity entity);
         void DeleteIEnumerable(IEnumerable<TEntity> entity);
+        int TEntityMax(Expression<Func<TEntity, bool>> predicate = null, Expression<Func<TEntity, int>> predicateMax = null);
 
     }
 }
