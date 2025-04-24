@@ -1,40 +1,35 @@
-﻿@inject eticaret.Domain.UnitOfWork.IUnitofWork unitofWork
+﻿@inject eticaret.Domain.Repository.Interface.ICategoryRepository categoryRepository    
 @using eticaret.Domain.Core.Entities
 
 <div class="bb-main-menu" id="navbarSupportedContent">
     <ul class="navbar-nav">
-        <li class="nav-item bb-main-dropdown">
-            <a class="nav-link" href="/">Anasayfa</a>
+        <li class="nav-item">
+            <a class="nav-link" href="/">
+                <svg width="128" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <path d="M19 21H5a1 1 0 0 1-1-1v-9H1l10.327-9.388a1 1 0 0 1 1.346 0L23 11h-3v9a1 1 0 0 1-1 1zM6 19h12V9.157l-6-5.454l-6 5.454V19zm6-4a2.5 2.5 0 1 1 0-5a2.5 2.5 0 0 1 0 5z" fill="currentColor" />
+                </svg>
+            </a>
         </li>
         <li class="nav-item bb-main-dropdown">
             <a class="nav-link bb-dropdown-item" href="javascript:void(0)">Kategori</a>
-            <ul class="mega-menu">
-                <li>
-                    @if (unitofWork.GetRepository<Category>().GetAllIQueryable(x => x.IsDeleted == false).Any())
+            <ul class="mega-menu" style="align-items: flex-start;">
+                <li style="align-items: flex-start;">
+                    @if (categories.Any())
                     {
-                        foreach (var item in unitofWork.GetRepository<Category>().GetAllIQueryable(x => x.IsDeleted == false))
+                        foreach (var item in categories)
                         {
                             <ul class="mega-block">
                                 <li class="menu_title"><a href="javascript:void(0)">@item.Name</a></li>
-                                <li>
-                                    <a href="shop-left-sidebar-col-3.html">Left sidebar 3 column</a>
-                                </li>
-                                <li>
-                                    <a href="shop-left-sidebar-col-4.html">Left sidebar 4 column</a>
-                                </li>
-                                <li>
-                                    <a href="shop-right-sidebar-col-3.html">
-                                        Right sidebar 3
-                                        column
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="shop-right-sidebar-col-4.html">
-                                        Right sidebar 4
-                                        column
-                                    </a>
-                                </li>
-                                <li><a href="shop-full-width.html">Full width 4 column</a></li>
+
+                                @if(item.SubCategorys.Any())
+                                {
+                                    foreach (var g in item.SubCategorys)
+                                    {
+                                        <li>
+                                            <a href="shop-left-sidebar-col-3.html">@g.Name</a>
+                                        </li>
+                                    }
+                                }
                             </ul>
                         }
                     }
@@ -148,5 +143,12 @@
 </div>
 
 @code {
+
+    List<Category> categories = new List<Category>();
+
+    protected override void OnInitialized()
+    {
+        categories = categoryRepository.CategorySubCategory(isDelete: false);
+    }
 
 }

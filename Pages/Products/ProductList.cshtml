@@ -6,7 +6,7 @@
 @(await Html.RenderComponentAsync<eticaret.Pages.Shared.Components.Breadcrumb.BreadcrumbComponent>(RenderMode.ServerPrerendered, new { Title = $"Ürün Listesi", Titles = new List<string> { "Ürünler" } }))
 @(await Html.RenderComponentAsync<eticaret.Pages.Shared.Components.ShopCategory.ShopcategoryComponent>(RenderMode.ServerPrerendered))
 
-<section class="section-shop padding-b-50">
+<section class="section-shop">
     <div class="container">
         <div class="row mb-minus-24">
             <div class="col-lg-9 col-12 mb-24">
@@ -48,7 +48,8 @@
                         {
                             foreach (var item in Model.productExpandoObject)
                             {
-                                <div class="col-xl-3 col-lg-4 col-6 mb-24 bb-product-box pro-bb-content" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+
+                                <div class="col-md-4 col-6 mb-24 bb-product-box pro-bb-content" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
                                     <div class="bb-pro-box">
                                         <div class="bb-pro-img">
                                             @(await Html.RenderComponentAsync<eticaret.Pages.Shared.Components.News.NewComponent>(RenderMode.ServerPrerendered))
@@ -57,19 +58,7 @@
                                         </div>
                                         <div class="bb-pro-contact">
                                             <div class="bb-pro-subtitle">
-                                                @{
-                                                    var i = 0;
-                                                    foreach (var a in item.Category)
-                                                    {
-                                                        if (i < 1)
-                                                        {
-                                                            i++;
-                                                            <a href="shop-left-sidebar-col-3.html">@a.Name</a>
-                                                        }
-                                                        break;
-                                                    }
-                                                }
-                                                
+                                                <a href="shop-left-sidebar-col-3.html">@item.SubCategory.Name</a>
                                                 <span class="bb-pro-rating">
                                                     @for (var v = 1; v != 6; v++)
                                                     {
@@ -81,7 +70,6 @@
                                                         {
                                                             <i class="ri-star-fill"></i>
                                                         }
-                                                        
                                                         @*@(await Html.RenderComponentAsync<eticaret.Pages.Shared.Components.Ratings.RatingComponent>(RenderMode.ServerPrerendered, new { yes = v.ratin }))*@
                                                     }
                                                 </span>
@@ -90,10 +78,6 @@
                                                 <a href="product-left-sidebar.html">@item.Name</a>
                                             </h4>
                                             <p>
-                                                @*@foreach (var a in item.Category)
-                                                {
-                                                    <text>@a.Name</text>
-                                                }*@
                                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque consectetur
                                                 sit mollitia nihil magnam
                                                 perspiciatis eos atque qui cupiditate delectus. Provident totam optio
@@ -111,32 +95,6 @@
                                 </div>
                             }
                         }
-
-                        <div class="col-12">
-                            <div class="bb-pro-pagination">
-                                <p>Showing 1-12 of 21 item(s)</p>
-                                <ul>
-                                    <li>
-                                        <a href="javascript:void(0)" class="next">Geri <i class="ri-arrow-right-s-line"></i></a>
-                                    </li>
-                                    <li class="active">
-                                        <a href="javascript:void(0)">1</a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0)">2</a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0)">3</a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0)">4</a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0)" class="next">İleri <i class="ri-arrow-right-s-line"></i></a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -147,16 +105,18 @@
                             <h3>Kategori</h3>
                         </div>
                         <div class="bb-sidebar-contact">
-                            <ul>
+                            <ul style="font-size:11px;">
                                 @if (Model.categoryViewModel.Any())
                                 {
                                     foreach (var item in Model.categoryViewModel)
                                     {
                                         <li>
                                             <div class="bb-sidebar-block-item">
-                                                <input type="checkbox">
-                                                <a href="/product-list/@item.Flag">@item.Name</a>
-                                                <span class="checked"></span>
+                                                <a href="/product-list/@item.Flag" style="margin:0px;">
+                                                    <svg width="12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M5 11V13H19V11H5Z" color="#6c7fd8"></path></svg>
+
+                                                    @item.Name
+                                                </a>
                                             </div>
                                         </li>
                                     }
@@ -164,50 +124,6 @@
                             </ul>
                         </div>
                     </div>
-                    <!--<div class="bb-sidebar-block">
-                        <div class="bb-sidebar-title">
-                            <h3>Weight</h3>
-                        </div>
-                        <div class="bb-sidebar-contact">
-                            <ul>
-                                <li>
-                                    <div class="bb-sidebar-block-item">
-                                        <input type="checkbox">
-                                        <a href="javascript:void(0)">200gm pack</a>
-                                        <span class="checked"></span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="bb-sidebar-block-item">
-                                        <input type="checkbox">
-                                        <a href="javascript:void(0)">500gm pack</a>
-                                        <span class="checked"></span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="bb-sidebar-block-item">
-                                        <input type="checkbox">
-                                        <a href="javascript:void(0)">1kg pack</a>
-                                        <span class="checked"></span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="bb-sidebar-block-item">
-                                        <input type="checkbox">
-                                        <a href="javascript:void(0)">5kg pack</a>
-                                        <span class="checked"></span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="bb-sidebar-block-item">
-                                        <input type="checkbox">
-                                        <a href="javascript:void(0)">10kg pack</a>
-                                        <span class="checked"></span>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>-->
                     <div class="bb-sidebar-block">
                         <div class="bb-sidebar-title">
                             <h3>Puan</h3>
@@ -216,65 +132,116 @@
                             <ul>
                                 <li>
                                     <div class="bb-sidebar-block-item">
-                                        <input type="checkbox">
-                                        <a href="javascript:void(0)">
+                                        <a href="javascript:void(0)" style="margin:0;">
                                             <i class="ri-star-fill" style="color:#fea99a;"></i>
                                             <i class="ri-star-line"></i>
                                             <i class="ri-star-line"></i>
                                             <i class="ri-star-line"></i>
                                             <i class="ri-star-line"></i>
                                         </a>
-                                        <span class="checked"></span>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="bb-sidebar-block-item">
-                                        <input type="checkbox">
-                                        <a href="javascript:void(0)">
+                                        <a href="javascript:void(0)" style="margin:0;">
                                             <i class="ri-star-fill" style="color:#fea99a;"></i>
                                             <i class="ri-star-fill" style="color:#fea99a;"></i>
                                             <i class="ri-star-line"></i>
                                             <i class="ri-star-line"></i>
                                             <i class="ri-star-line"></i>
                                         </a>
-                                        <span class="checked"></span>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="bb-sidebar-block-item">
-                                        <input type="checkbox">
-                                        <a href="javascript:void(0)">
+                                        <a href="javascript:void(0)" style="margin:0;">
                                             <i class="ri-star-fill" style="color:#fea99a;"></i>
                                             <i class="ri-star-fill" style="color:#fea99a;"></i>
                                             <i class="ri-star-fill" style="color:#fea99a;"></i>
                                             <i class="ri-star-line"></i>
                                             <i class="ri-star-line"></i>
                                         </a>
-                                        <span class="checked"></span>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="bb-sidebar-block-item">
-                                        <a href="javascript:void(0)">
+                                        <a href="javascript:void(0)" style="margin:0;">
                                             <i class="ri-star-fill" style="color:#fea99a;"></i>
                                             <i class="ri-star-fill" style="color:#fea99a;"></i>
                                             <i class="ri-star-fill" style="color:#fea99a;"></i>
                                             <i class="ri-star-fill" style="color:#fea99a;"></i>
                                             <i class="ri-star-line"></i>
                                         </a>
-                                        <span class="checked"></span>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="bb-sidebar-block-item">
-                                        <a href="javascript:void(0)">
+                                        <a href="javascript:void(0)" style="margin:0;">
                                             <i class="ri-star-fill" style="color:#fea99a;"></i>
                                             <i class="ri-star-fill" style="color:#fea99a;"></i>
                                             <i class="ri-star-fill" style="color:#fea99a;"></i>
                                             <i class="ri-star-fill" style="color:#fea99a;"></i>
                                             <i class="ri-star-fill" style="color:#fea99a;"></i>
                                         </a>
-                                        <span class="checked"></span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="bb-sidebar-block">
+                        <div class="bb-sidebar-title">
+                            <h3>Color</h3>
+                        </div>
+                        <div class="bb-color-contact">
+                            <ul>
+                                <li class="color-sidebar-active">
+                                    <div class="bb-sidebar-block-item">
+                                        <span class="pro-color-1"></span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="bb-sidebar-block-item">
+                                        <span class="pro-color-2"></span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="bb-sidebar-block-item">
+                                        <span class="pro-color-3"></span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="bb-sidebar-block-item">
+                                        <span class="pro-color-4"></span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="bb-sidebar-block-item">
+                                        <span class="pro-color-5"></span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="bb-sidebar-block-item">
+                                        <span class="pro-color-6"></span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="bb-sidebar-block-item">
+                                        <span class="pro-color-7"></span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="bb-sidebar-block-item">
+                                        <span class="pro-color-8"></span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="bb-sidebar-block-item">
+                                        <span class="pro-color-9"></span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="bb-sidebar-block-item">
+                                        <span class="pro-color-10"></span>
                                     </div>
                                 </li>
                             </ul>
@@ -293,8 +260,48 @@
                             </div>
                         </div>
                     </div>
+                    <div class="bb-sidebar-block">
+                        <div class="bb-sidebar-title">
+                            <h3>Tags</h3>
+                        </div>
+                        <div class="bb-tags">
+                            <ul>
+                                <li>
+                                    <a href="javascript:void(0)">Clothes</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">Fruits</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">Snacks</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">Dairy</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">Seafood</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">Toys</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">perfume</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">jewelry</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">Bags</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+
+
+

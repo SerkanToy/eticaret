@@ -1,5 +1,7 @@
 ﻿using eticaret.Domain.Database.Context;
 using eticaret.Domain.Repository;
+using eticaret.Domain.Repository.Interface;
+using eticaret.Domain.Repository.Repositorys;
 
 namespace eticaret.Domain.UnitOfWork
 {
@@ -7,9 +9,15 @@ namespace eticaret.Domain.UnitOfWork
     {
         private bool disposed = false;
         protected CommerceContext context;
-        public UnitofWork(CommerceContext context)
+        private ICategoryRepository catetgoryRepository;
+        private IProductRepository productRepository;
+        public UnitofWork(CommerceContext context, 
+            ICategoryRepository catetgoryRepository = null,
+            IProductRepository productRepository = null)
         {
             this.context = context;
+            this.catetgoryRepository = catetgoryRepository;
+            this.productRepository = productRepository;
         }
 
         public IRepository<TEntity> GetRepository<TEntity>() where TEntity : class, new()
@@ -44,6 +52,16 @@ namespace eticaret.Domain.UnitOfWork
         {
             Dispose(true);
             GC.SuppressFinalize(this);
+        }
+
+        public ICategoryRepository Catetgory()
+        {
+            return catetgoryRepository ??= new CategoryRepository(context);
+        }
+
+        public IProductRepository Product()
+        {
+            return productRepository ??= new ProductRepository(context);
         }
     }
 }

@@ -42,10 +42,14 @@ namespace eticaret.Domain.Database.Mapping.ProductMappings
                 new CategoryProduct { ProductId = 18, CategoryId = 6},
                 new CategoryProduct { ProductId = 19, CategoryId = 6},
                 new CategoryProduct { ProductId = 20, CategoryId = 5},
-                new CategoryProduct { ProductId = 21, CategoryId = 6},new CategoryProduct { ProductId = 21, CategoryId = 5},
-                new CategoryProduct { ProductId = 22, CategoryId = 5},new CategoryProduct { ProductId = 22, CategoryId = 6},
-                new CategoryProduct { ProductId = 23, CategoryId = 6},new CategoryProduct { ProductId = 23, CategoryId = 5},
-                new CategoryProduct { ProductId = 24, CategoryId = 5},new CategoryProduct { ProductId = 24, CategoryId = 6},
+                new CategoryProduct { ProductId = 21, CategoryId = 6},
+                new CategoryProduct { ProductId = 21, CategoryId = 5},
+                new CategoryProduct { ProductId = 22, CategoryId = 5},
+                new CategoryProduct { ProductId = 22, CategoryId = 6},
+                new CategoryProduct { ProductId = 23, CategoryId = 6},
+                new CategoryProduct { ProductId = 23, CategoryId = 5},
+                new CategoryProduct { ProductId = 24, CategoryId = 5},
+                new CategoryProduct { ProductId = 24, CategoryId = 6},
                 new CategoryProduct { ProductId = 25, CategoryId = 6}
             };
         }

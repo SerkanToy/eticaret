@@ -21,6 +21,8 @@ namespace eticaret.Domain.Core.Entities
         [NotMapped]
         public Category CategoryName { get; set; }
         public ICollection<CategoryProduct> CategoryProducts { get; set; }
+        public int SubCategoryId { get; set; }
+        public SubCategory SubCategory { get; set; }
         public ICollection<RatinProduct> RatinProducts { get; set; }
     }
 }

@@ -1,7 +1,6 @@
 ﻿using eticaret.Domain.Database.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Query;
-using Microsoft.EntityFrameworkCore.SqlServer.Query.Internal;
 using System.Linq.Expressions;
 
 namespace eticaret.Domain.Repository

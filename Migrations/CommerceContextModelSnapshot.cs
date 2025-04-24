@@ -70,8 +70,8 @@ namespace eticaret.Migrations
                         {
                             Id = 1,
                             CreateBy = "Sistem",
-                            CreateDate = "27.02.2025 10:58:19",
-                            Flag = "20d549cd-ddc7-4f88-9102-5db8e516fae3",
+                            CreateDate = "19.03.2025 16:25:40",
+                            Flag = "3f612125-22af-45b1-80fe-d2caf9eeb8c7",
                             IsDeleted = false,
                             Name = "Category 1"
                         },
@@ -79,8 +79,8 @@ namespace eticaret.Migrations
                         {
                             Id = 2,
                             CreateBy = "Sistem",
-                            CreateDate = "27.02.2025 10:58:19",
-                            Flag = "d05ff479-fc75-42a5-a709-2fc0109bf3af",
+                            CreateDate = "19.03.2025 16:25:40",
+                            Flag = "8bc16f85-3ec9-46d9-9644-89b4860a1e22",
                             IsDeleted = false,
                             Name = "Category 2"
                         },
@@ -88,8 +88,8 @@ namespace eticaret.Migrations
                         {
                             Id = 3,
                             CreateBy = "Sistem",
-                            CreateDate = "27.02.2025 10:58:19",
-                            Flag = "a2c188ea-62c0-46dc-a680-244eb27ddbc6",
+                            CreateDate = "19.03.2025 16:25:40",
+                            Flag = "c049463a-7f16-4ad8-8a43-ee61d540c796",
                             IsDeleted = false,
                             Name = "Category 3"
                         },
@@ -97,8 +97,8 @@ namespace eticaret.Migrations
                         {
                             Id = 4,
                             CreateBy = "Sistem",
-                            CreateDate = "27.02.2025 10:58:19",
-                            Flag = "1f7efc10-62ea-4320-93da-9f9faaa4c000",
+                            CreateDate = "19.03.2025 16:25:40",
+                            Flag = "b91f8ba8-c462-424a-bb65-2bf9c59a6502",
                             IsDeleted = false,
                             Name = "Category 4"
                         },
@@ -106,8 +106,8 @@ namespace eticaret.Migrations
                         {
                             Id = 5,
                             CreateBy = "Sistem",
-                            CreateDate = "27.02.2025 10:58:19",
-                            Flag = "51044383-4606-41da-a79e-23dc08b81f21",
+                            CreateDate = "19.03.2025 16:25:40",
+                            Flag = "94b2f655-6a06-4a03-9032-fa8141ccbd90",
                             IsDeleted = false,
                             Name = "Category 5"
                         },
@@ -115,8 +115,8 @@ namespace eticaret.Migrations
                         {
                             Id = 6,
                             CreateBy = "Sistem",
-                            CreateDate = "27.02.2025 10:58:19",
-                            Flag = "2e2c3fba-5a8e-453a-a3ba-b0963c5ed16f",
+                            CreateDate = "19.03.2025 16:25:40",
+                            Flag = "0684d5d7-7cb3-4448-a8a7-95ef05bc7b19",
                             IsDeleted = false,
                             Name = "Category 6"
                         });
@@ -346,7 +346,12 @@ namespace eticaret.Migrations
                     b.Property<int>("RatinAVG")
                         .HasColumnType("int");
 
+                    b.Property<int>("SubCategoryId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("SubCategoryId");
 
                     b.ToTable("Product");
 
@@ -355,251 +360,276 @@ namespace eticaret.Migrations
                         {
                             Id = 1,
                             CreateBy = "Sistem",
-                            CreateDate = "27.02.2025 10:58:19",
-                            Flag = "75f45653-6483-4ae4-acd9-bab45f5c359d",
+                            CreateDate = "19.03.2025 16:25:40",
+                            Flag = "f7ca4124-3294-4806-9675-e88ffebe541d",
                             IsDeleted = false,
                             Name = "Product 1",
-                            RatinAVG = 0
+                            RatinAVG = 0,
+                            SubCategoryId = 1
                         },
                         new
                         {
                             Id = 2,
                             CreateBy = "Sistem",
-                            CreateDate = "27.02.2025 10:58:19",
-                            Flag = "0bb94b8c-538a-4502-af3f-5e06e1a36511",
+                            CreateDate = "19.03.2025 16:25:40",
+                            Flag = "8e3da1e7-2209-46e8-8bd4-afc74b858af1",
                             IsDeleted = false,
                             Name = "Product 2",
-                            RatinAVG = 0
+                            RatinAVG = 0,
+                            SubCategoryId = 1
                         },
                         new
                         {
                             Id = 3,
                             CreateBy = "Sistem",
-                            CreateDate = "27.02.2025 10:58:19",
-                            Flag = "7962b9b1-7653-4502-8a9a-09129e6334dc",
+                            CreateDate = "19.03.2025 16:25:40",
+                            Flag = "0cd44917-f318-4453-b39f-c9cf50ba3ba5",
                             IsDeleted = false,
                             Name = "Product 3",
-                            RatinAVG = 0
+                            RatinAVG = 0,
+                            SubCategoryId = 1
                         },
                         new
                         {
                             Id = 4,
                             CreateBy = "Sistem",
-                            CreateDate = "27.02.2025 10:58:19",
-                            Flag = "679aa956-9b49-4d3d-bc68-d1d13964bff3",
+                            CreateDate = "19.03.2025 16:25:40",
+                            Flag = "451843b5-e9af-4a21-a001-88bc20cb3cd2",
                             IsDeleted = false,
                             Name = "Product 4",
-                            RatinAVG = 0
+                            RatinAVG = 0,
+                            SubCategoryId = 1
                         },
                         new
                         {
                             Id = 5,
                             CreateBy = "Sistem",
-                            CreateDate = "27.02.2025 10:58:19",
-                            Flag = "2e775b79-c12f-487b-b7fc-4848ce3b2f43",
+                            CreateDate = "19.03.2025 16:25:40",
+                            Flag = "27012d19-1c41-4a83-9395-c2d3007f9379",
                             IsDeleted = false,
                             Name = "Product 5",
-                            RatinAVG = 0
+                            RatinAVG = 0,
+                            SubCategoryId = 1
                         },
                         new
                         {
                             Id = 6,
                             CreateBy = "Sistem",
-                            CreateDate = "27.02.2025 10:58:19",
-                            Flag = "6c359dcb-3843-43e0-8a53-d1ca1cf1ce03",
+                            CreateDate = "19.03.2025 16:25:40",
+                            Flag = "5aa80bc6-1725-4f30-8828-ea9eed54d350",
                             IsDeleted = false,
                             Name = "Product 6",
-                            RatinAVG = 0
+                            RatinAVG = 0,
+                            SubCategoryId = 1
                         },
                         new
                         {
                             Id = 7,
                             CreateBy = "Sistem",
-                            CreateDate = "27.02.2025 10:58:19",
-                            Flag = "dcf2de4c-46b7-4dee-a8de-8606f284ae8c",
+                            CreateDate = "19.03.2025 16:25:40",
+                            Flag = "55a443e5-a453-42c1-be3e-8d449b45d494",
                             IsDeleted = false,
                             Name = "Product 7",
-                            RatinAVG = 0
+                            RatinAVG = 0,
+                            SubCategoryId = 3
                         },
                         new
                         {
                             Id = 8,
                             CreateBy = "Sistem",
-                            CreateDate = "27.02.2025 10:58:19",
-                            Flag = "6e356d4f-f33c-4d66-8518-e4803091e53b",
+                            CreateDate = "19.03.2025 16:25:40",
+                            Flag = "894d962e-4ac5-412a-8c39-ceb4aa48c1bf",
                             IsDeleted = false,
                             Name = "Product 8",
-                            RatinAVG = 0
+                            RatinAVG = 0,
+                            SubCategoryId = 3
                         },
                         new
                         {
                             Id = 9,
                             CreateBy = "Sistem",
-                            CreateDate = "27.02.2025 10:58:19",
-                            Flag = "8e611357-58ed-45f3-98ed-706fd6e0ceec",
+                            CreateDate = "19.03.2025 16:25:40",
+                            Flag = "fd895cb5-5c04-4403-83b8-fa0e6c5c649a",
                             IsDeleted = false,
                             Name = "Product 9",
-                            RatinAVG = 0
+                            RatinAVG = 0,
+                            SubCategoryId = 3
                         },
                         new
                         {
                             Id = 10,
                             CreateBy = "Sistem",
-                            CreateDate = "27.02.2025 10:58:19",
-                            Flag = "f7f26eb1-fa27-4015-9f5b-55508a53e729",
+                            CreateDate = "19.03.2025 16:25:40",
+                            Flag = "cc6d0c95-c62a-486f-8fd8-d944547890eb",
                             IsDeleted = false,
                             Name = "Product 10",
-                            RatinAVG = 0
+                            RatinAVG = 0,
+                            SubCategoryId = 4
                         },
                         new
                         {
                             Id = 11,
                             CreateBy = "Sistem",
-                            CreateDate = "27.02.2025 10:58:19",
-                            Flag = "f91605d1-ba11-40f0-9fb3-33c1020f0e9e",
+                            CreateDate = "19.03.2025 16:25:40",
+                            Flag = "d627d29b-a86f-4881-bdd8-8d991b6c530c",
                             IsDeleted = false,
                             Name = "Product 11",
-                            RatinAVG = 0
+                            RatinAVG = 0,
+                            SubCategoryId = 4
                         },
                         new
                         {
                             Id = 12,
                             CreateBy = "Sistem",
-                            CreateDate = "27.02.2025 10:58:19",
-                            Flag = "ba8a4e82-356e-4eea-a754-0997b755b23f",
+                            CreateDate = "19.03.2025 16:25:40",
+                            Flag = "396da384-b399-4ddd-842a-31583094a3c8",
                             IsDeleted = false,
                             Name = "Product 12",
-                            RatinAVG = 0
+                            RatinAVG = 0,
+                            SubCategoryId = 4
                         },
                         new
                         {
                             Id = 13,
                             CreateBy = "Sistem",
-                            CreateDate = "27.02.2025 10:58:19",
-                            Flag = "eb5074f7-7377-4cad-9a2e-8890cb9286c9",
+                            CreateDate = "19.03.2025 16:25:40",
+                            Flag = "dd6a222c-8292-4fbc-9623-d4c1fbfb6591",
                             IsDeleted = false,
                             Name = "Product 13",
-                            RatinAVG = 0
+                            RatinAVG = 0,
+                            SubCategoryId = 4
                         },
                         new
                         {
                             Id = 14,
                             CreateBy = "Sistem",
-                            CreateDate = "27.02.2025 10:58:19",
-                            Flag = "89c1b77e-18a0-4dc8-a485-e09b6311585f",
+                            CreateDate = "19.03.2025 16:25:40",
+                            Flag = "e9a23a56-b899-479c-83d4-1258b46499b7",
                             IsDeleted = false,
                             Name = "Product 14",
-                            RatinAVG = 0
+                            RatinAVG = 0,
+                            SubCategoryId = 5
                         },
                         new
                         {
                             Id = 15,
                             CreateBy = "Sistem",
-                            CreateDate = "27.02.2025 10:58:19",
-                            Flag = "0a3885e8-9f59-48a7-a46b-2cd6178c01a9",
+                            CreateDate = "19.03.2025 16:25:40",
+                            Flag = "60a97777-e0bf-49cc-9c24-91585f8b37e8",
                             IsDeleted = false,
                             Name = "Product 15",
-                            RatinAVG = 0
+                            RatinAVG = 0,
+                            SubCategoryId = 5
                         },
                         new
                         {
                             Id = 16,
                             CreateBy = "Sistem",
-                            CreateDate = "27.02.2025 10:58:19",
-                            Flag = "74f237b6-5f81-422c-b903-c6ad38d3a83a",
+                            CreateDate = "19.03.2025 16:25:40",
+                            Flag = "e399c1af-0193-4a4f-b181-c69965c421f1",
                             IsDeleted = false,
                             Name = "Product 16",
-                            RatinAVG = 0
+                            RatinAVG = 0,
+                            SubCategoryId = 6
                         },
                         new
                         {
                             Id = 17,
                             CreateBy = "Sistem",
-                            CreateDate = "27.02.2025 10:58:19",
-                            Flag = "af79fb92-cf72-4e02-9d0a-b94ec3487213",
+                            CreateDate = "19.03.2025 16:25:40",
+                            Flag = "3bfa310b-290a-45f8-abb0-531163dec0d1",
                             IsDeleted = false,
                             Name = "Product 17",
-                            RatinAVG = 0
+                            RatinAVG = 0,
+                            SubCategoryId = 6
                         },
                         new
                         {
                             Id = 18,
                             CreateBy = "Sistem",
-                            CreateDate = "27.02.2025 10:58:19",
-                            Flag = "3ae442ae-675e-41a9-94a3-ca5ffb516b69",
+                            CreateDate = "19.03.2025 16:25:40",
+                            Flag = "55b29c21-c6c4-4188-9587-165f559fea27",
                             IsDeleted = false,
                             Name = "Product 18",
-                            RatinAVG = 0
+                            RatinAVG = 0,
+                            SubCategoryId = 5
                         },
                         new
                         {
                             Id = 19,
                             CreateBy = "Sistem",
-                            CreateDate = "27.02.2025 10:58:19",
-                            Flag = "b32ac3e0-186b-4f1c-a161-aaa4606358af",
+                            CreateDate = "19.03.2025 16:25:40",
+                            Flag = "475b33d1-413a-4cc1-9f2b-9f8d1bd672f2",
                             IsDeleted = false,
                             Name = "Product 19",
-                            RatinAVG = 0
+                            RatinAVG = 0,
+                            SubCategoryId = 5
                         },
                         new
                         {
                             Id = 20,
                             CreateBy = "Sistem",
-                            CreateDate = "27.02.2025 10:58:19",
-                            Flag = "3fdf56d7-2ca1-4cac-8dba-4547f0529efd",
+                            CreateDate = "19.03.2025 16:25:40",
+                            Flag = "a9d71e4d-a66b-4c59-8ec7-ea6d0ea75b54",
                             IsDeleted = false,
                             Name = "Product 20",
-                            RatinAVG = 0
+                            RatinAVG = 0,
+                            SubCategoryId = 6
                         },
                         new
                         {
                             Id = 21,
                             CreateBy = "Sistem",
-                            CreateDate = "27.02.2025 10:58:19",
-                            Flag = "78c57da5-aada-4d92-bdf6-f5afc33356e0",
+                            CreateDate = "19.03.2025 16:25:40",
+                            Flag = "33ca9a12-6a3f-4f23-9390-b623e94f5059",
                             IsDeleted = false,
                             Name = "Product 21",
-                            RatinAVG = 0
+                            RatinAVG = 0,
+                            SubCategoryId = 6
                         },
                         new
                         {
                             Id = 22,
                             CreateBy = "Sistem",
-                            CreateDate = "27.02.2025 10:58:19",
-                            Flag = "f1f65cc5-4a9a-4204-acdc-2f03311431f8",
+                            CreateDate = "19.03.2025 16:25:40",
+                            Flag = "e90e2fcb-5bc5-41da-978d-c8e09a82e87d",
                             IsDeleted = false,
                             Name = "Product 22",
-                            RatinAVG = 0
+                            RatinAVG = 0,
+                            SubCategoryId = 5
                         },
                         new
                         {
                             Id = 23,
                             CreateBy = "Sistem",
-                            CreateDate = "27.02.2025 10:58:19",
-                            Flag = "939a5a36-d00d-46bf-8d64-16cc40edff40",
+                            CreateDate = "19.03.2025 16:25:40",
+                            Flag = "84027766-5664-48b5-a705-4669558dbe27",
                             IsDeleted = false,
                             Name = "Product 23",
-                            RatinAVG = 0
+                            RatinAVG = 0,
+                            SubCategoryId = 5
                         },
                         new
                         {
                             Id = 24,
                             CreateBy = "Sistem",
-                            CreateDate = "27.02.2025 10:58:19",
-                            Flag = "f8fdf6f5-2779-41c7-8cbe-8badb8af5a4d",
+                            CreateDate = "19.03.2025 16:25:40",
+                            Flag = "e6ce00cc-0f18-4440-9f0c-30d39f1aaa76",
                             IsDeleted = false,
                             Name = "Product 24",
-                            RatinAVG = 0
+                            RatinAVG = 0,
+                            SubCategoryId = 6
                         },
                         new
                         {
                             Id = 25,
                             CreateBy = "Sistem",
-                            CreateDate = "27.02.2025 10:58:19",
-                            Flag = "a58d8cf4-64a3-4f52-970b-6bc3927b37af",
+                            CreateDate = "19.03.2025 16:25:40",
+                            Flag = "15d8d1ec-2a97-456f-9d22-7ae06766f156",
                             IsDeleted = false,
                             Name = "Product 25",
-                            RatinAVG = 0
+                            RatinAVG = 0,
+                            SubCategoryId = 6
                         });
                 });
 
@@ -705,6 +735,117 @@ namespace eticaret.Migrations
                             UserId = 1,
                             ProductId = 5,
                             RatinId = 1
+                        });
+                });
+
+            modelBuilder.Entity("eticaret.Domain.Core.Entities.SubCategory", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("CreateBy")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CreateDate")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("DeleteBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("DeleteDate")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Flag")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("ModifiedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ModifiedDate")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CategoryId");
+
+                    b.ToTable("SubCategory");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CategoryId = 1,
+                            CreateBy = "Sistem",
+                            CreateDate = "19.03.2025 16:25:40",
+                            Flag = "e07be7df-2d4d-46df-b212-9ae10826f597",
+                            IsDeleted = false,
+                            Name = "SubCategory 1"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CategoryId = 2,
+                            CreateBy = "Sistem",
+                            CreateDate = "19.03.2025 16:25:40",
+                            Flag = "4432e216-f9b9-4e58-9632-17e464666915",
+                            IsDeleted = false,
+                            Name = "SubCategory 2"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CategoryId = 3,
+                            CreateBy = "Sistem",
+                            CreateDate = "19.03.2025 16:25:40",
+                            Flag = "09d69cb2-8082-485b-8948-34da1805bf8a",
+                            IsDeleted = false,
+                            Name = "SubCategory 3"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CategoryId = 4,
+                            CreateBy = "Sistem",
+                            CreateDate = "19.03.2025 16:25:40",
+                            Flag = "43fa02e3-c8cb-42c4-b01d-4c4323b8789e",
+                            IsDeleted = false,
+                            Name = "SubCategory 4"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            CategoryId = 5,
+                            CreateBy = "Sistem",
+                            CreateDate = "19.03.2025 16:25:40",
+                            Flag = "6c225687-68ac-45b9-87e4-91ea2d168901",
+                            IsDeleted = false,
+                            Name = "SubCategory 5"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            CategoryId = 6,
+                            CreateBy = "Sistem",
+                            CreateDate = "19.03.2025 16:25:40",
+                            Flag = "c81a154a-61d6-4c7b-86bf-8cfa4583bd49",
+                            IsDeleted = false,
+                            Name = "SubCategory 6"
                         });
                 });
 
@@ -867,7 +1008,7 @@ namespace eticaret.Migrations
                             Id = 1,
                             ConcurrencyStamp = "924B836D-B087-4D37-A52D-210ABD72CD96",
                             CreateBy = "Sistem",
-                            CreateDate = "27.02.2025 10:58:19",
+                            CreateDate = "19.03.2025 16:25:40",
                             Flag = "46D16588-9420-4F85-A768-D21419075284",
                             IsDeleted = false,
                             Name = "superuser",
@@ -878,7 +1019,7 @@ namespace eticaret.Migrations
                             Id = 2,
                             ConcurrencyStamp = "232D9C58-01CE-466A-90D0-EB7039C75465",
                             CreateBy = "Sistem",
-                            CreateDate = "27.02.2025 10:58:19",
+                            CreateDate = "19.03.2025 16:25:40",
                             Flag = "70449BCD-A6DC-4601-867E-35AD80657B28",
                             IsDeleted = false,
                             Name = "admin",
@@ -1023,9 +1164,9 @@ namespace eticaret.Migrations
                         {
                             Id = 1,
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "ece0da4c-5a62-4f75-8916-e41626cdd023",
+                            ConcurrencyStamp = "4bc88bbf-c939-4c41-824e-545b300f51c5",
                             CreateBy = "Sistem",
-                            CreateDate = "27.02.2025 10:58:19",
+                            CreateDate = "19.03.2025 16:25:40",
                             Email = "stoy@windowslive.com",
                             EmailConfirmed = false,
                             Flag = "D90E65E6-9611-4B5F-9F24-BBD468398D51",
@@ -1035,7 +1176,7 @@ namespace eticaret.Migrations
                             Name = "Serkan",
                             NormalizedEmail = "STOY@WINDOWSLIVE.COM",
                             NormalizedUserName = "STOY",
-                            PasswordHash = "AQAAAAIAAYagAAAAEHoxZbBS89mhTTdoIc4wV0QWf0V345xWbxcZTQ0PeXLkwJciPIgG3Ad3T3/zoxRJUg==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEAYzpp26IgUPCXNPQWsGIt+LpzWs8wqvd1fKNI+8x6I/3wWfDmkszPHbaAzxj3oEog==",
                             PhoneNumber = "0(533) 656 30 95",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "63742240-5787-4E6A-8AE2-FE8BA5381630",
@@ -1164,6 +1305,17 @@ namespace eticaret.Migrations
                     b.Navigation("Product");
                 });
 
+            modelBuilder.Entity("eticaret.Domain.Core.Entities.Product", b =>
+                {
+                    b.HasOne("eticaret.Domain.Core.Entities.SubCategory", "SubCategory")
+                        .WithMany("Products")
+                        .HasForeignKey("SubCategoryId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.Navigation("SubCategory");
+                });
+
             modelBuilder.Entity("eticaret.Domain.Core.Entities.RatinProduct", b =>
                 {
                     b.HasOne("eticaret.Domain.Core.Entities.Product", "Product")
@@ -1189,6 +1341,17 @@ namespace eticaret.Migrations
                     b.Navigation("Ratin");
 
                     b.Navigation("User");
+                });
+
+            modelBuilder.Entity("eticaret.Domain.Core.Entities.SubCategory", b =>
+                {
+                    b.HasOne("eticaret.Domain.Core.Entities.Category", "Categorys")
+                        .WithMany("SubCategorys")
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.Navigation("Categorys");
                 });
 
             modelBuilder.Entity("eticaret.Domain.Entities.Address", b =>
@@ -1256,6 +1419,8 @@ namespace eticaret.Migrations
             modelBuilder.Entity("eticaret.Domain.Core.Entities.Category", b =>
                 {
                     b.Navigation("CategoryProducts");
+
+                    b.Navigation("SubCategorys");
                 });
 
             modelBuilder.Entity("eticaret.Domain.Core.Entities.Product", b =>
@@ -1268,6 +1433,11 @@ namespace eticaret.Migrations
             modelBuilder.Entity("eticaret.Domain.Core.Entities.Ratin", b =>
                 {
                     b.Navigation("RatinProducts");
+                });
+
+            modelBuilder.Entity("eticaret.Domain.Core.Entities.SubCategory", b =>
+                {
+                    b.Navigation("Products");
                 });
 
             modelBuilder.Entity("eticaret.Domain.Entities.Users.Role", b =>

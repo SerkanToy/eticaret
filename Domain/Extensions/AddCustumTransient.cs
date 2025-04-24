@@ -13,6 +13,7 @@ namespace eticaret.Domain.Extensions
             services.AddTransient(typeof(IUnitofWork), typeof(UnitofWork));
             services.AddTransient(typeof(IRepository<>), typeof(Repository<>));
             services.AddTransient(typeof(IProductRepository), typeof(ProductRepository));
+            services.AddTransient(typeof(ICategoryRepository), typeof(CategoryRepository));
             services.AddTransient(typeof(IEmailServis), typeof(EmailServis));
         }
     }
