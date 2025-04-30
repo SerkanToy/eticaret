@@ -1,6 +1,7 @@
 ﻿using eticaret.Domain.Core.Entities;
 using eticaret.Domain.Database.Context;
 using eticaret.Domain.Repository.Interface;
+using eticaret.Migrations;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
@@ -19,6 +20,7 @@ namespace eticaret.Domain.Repository.Repositorys
             return context.Product.Where(predicate).
                 Include(j => j.CategoryProducts).ThenInclude(g => g.Category).
                 Include(s => s.SubCategory).
+                Include(i => i.Images).
                 Include(r => r.RatinProducts).ThenInclude(g => g.Ratin).Select(x => new Product
                 {
                     Id = x.Id,
@@ -36,6 +38,15 @@ namespace eticaret.Domain.Repository.Repositorys
                             Id = v.Ratin.Id,
                             Rating = v.Ratin.Rating
                         }
+                    }).ToList(),
+                    NewPrice = x.NewPrice,
+                    OldPrice = x.OldPrice,
+                    Description = x.Description,
+                    Images = x.Images.Where(x => x.IsDeleted == false).Select(i => new Image
+                    {
+                        Id = i.Id,
+                        Name = i.Name,
+                        IsShowcase = i.IsShowcase
                     }).ToList(),
                     RatinMax = x.RatinProducts.Count() != 0 ? x.RatinProducts.Select(v => new RatinProduct
                     {

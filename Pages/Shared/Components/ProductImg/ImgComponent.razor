@@ -1,12 +1,11 @@
 ﻿<a href="javascript:void(0)">
     <div class="inner-img">
-        <img class="main-img" src="assets/img/new-product/1.jpg"
-             alt="product-1">
-        <img class="hover-img" src="assets/img/new-product/back-1.jpg"
-             alt="product-1">
+        <img class="main-img" src="assets/img/new-product/@Name" alt="product-1">
+        <img class="hover-img" src="assets/img/new-product/@Name" alt="product-1">
     </div>
 </a>
 
 @code {
-
+    [Parameter]
+    public string Name { get; set; }
 }

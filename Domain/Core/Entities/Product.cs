@@ -14,6 +14,9 @@ namespace eticaret.Domain.Core.Entities
         public string? ModifiedDate { get; set; }
         public string? DeleteDate { get; set; }
         public bool IsDeleted { get; set; }
+        public string? OldPrice { get; set; }
+        public string? NewPrice { get; set; }
+        public string Description { get; set; }
         public string Flag { get; set; }
         public int RatinAVG { get; set; }
         [NotMapped]
@@ -24,5 +27,6 @@ namespace eticaret.Domain.Core.Entities
         public int SubCategoryId { get; set; }
         public SubCategory SubCategory { get; set; }
         public ICollection<RatinProduct> RatinProducts { get; set; }
+        public ICollection<Image>? Images { get; set; }
     }
 }

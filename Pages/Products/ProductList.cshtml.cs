@@ -38,9 +38,13 @@ namespace eticaret.Pages.Products
                 {
                     ["Name"] = c.Name,
                     ["SubCategory"] = c.SubCategory,
+                    ["Images"] = c.Images.Where(b => b.IsShowcase == true).Count() > 0 ? c.Images.Where(b => b.IsShowcase == true) : null,
+                    ["Description"] = c.Description,
                     ["Rating"] = c.RatinProducts.Select(v => new Dynamic { ["ratin"] = Convert.ToInt32(v.Ratin.Rating) }),
                     ["RatinMax"] = c.RatinMax,
-                    ["Category"] = c.CategoryProducts.Select(v => new Dynamic { ["Name"] = v.Category.Name, ["CategoryId"] = v.CategoryId })
+                    ["Category"] = c.CategoryProducts.Select(v => new Dynamic { ["Name"] = v.Category.Name, ["CategoryId"] = v.CategoryId }),
+                    ["NewPrice"] = c.NewPrice,
+                    ["OldPrice"] = c.OldPrice
 
                 }).ToList();
                 //.GetAllIQueryable(x => x.IsDeleted == false && x.CategoryProducts.Where(x => x.Category.Flag == flag));
@@ -50,11 +54,16 @@ namespace eticaret.Pages.Products
             {
                 ["Name"] = c.Name,
                 ["SubCategory"] = c.SubCategory,
+                ["Images"] = c.Images.Where(b => b.IsShowcase == true).Count() > 0 ? c.Images.Where(b => b.IsShowcase == true):null,
+                ["Description"] = c.Description,
                 ["Rating"] = c.RatinProducts.Select(v => new Dynamic { ["ratin"] = Convert.ToInt32(v.Ratin.Rating) }),
                 ["RatinMax"] = c.RatinMax,
-                ["Category"] = c.CategoryProducts.Select(v => new Dynamic { ["Name"] = v.Category.Name, ["CategoryId"] = v.CategoryId })
+                ["Category"] = c.CategoryProducts.Select(v => new Dynamic { ["Name"] = v.Category.Name, ["CategoryId"] = v.CategoryId }),
+                ["NewPrice"] = c.NewPrice,
+                ["OldPrice"] = c.OldPrice
             }).ToList();
             //(c.CategoryProducts.Select(v => new Dynamic { ["Name"] = v.Category.Name, ["CategoryId"] = v.CategoryId.ToString() }))
+           
         }
     }
 }
