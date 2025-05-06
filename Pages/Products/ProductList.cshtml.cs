@@ -4,6 +4,7 @@ using eticaret.Domain.UnitOfWork;
 using eticaret.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.EntityFrameworkCore;
 
 namespace eticaret.Pages.Products
 {
@@ -31,39 +32,94 @@ namespace eticaret.Pages.Products
         {
             categoryViewModel = unitofWork.GetRepository<SubCategory>().GetAllIQueryable(x => x.IsDeleted == false); // unitofWork.Catetgory().CategorySubCategory(); //unitofWork.GetRepository<Category>().GetAllIQueryable(x => x.IsDeleted == false);
             productViewModel = productRepository.ProductJoin(predicate: x => x.IsDeleted == false);
-            if (flag is not null)
-            {
-                //productViewModel = unitofWork.GetRepository<Product>().GetAllIQueryable(x => x.IsDeleted == false && x.CategoryProducts.Any(f => f.Category.Flag == flag)).ToList();
-                productExpandoObject = productViewModel.Where(f => f.SubCategory.Flag == flag).Select(c => new Dynamic
-                {
-                    ["Name"] = c.Name,
-                    ["SubCategory"] = c.SubCategory,
-                    ["Images"] = c.Images.Where(b => b.IsShowcase == true).Count() > 0 ? c.Images.Where(b => b.IsShowcase == true) : null,
-                    ["Description"] = c.Description,
-                    ["Rating"] = c.RatinProducts.Select(v => new Dynamic { ["ratin"] = Convert.ToInt32(v.Ratin.Rating) }),
-                    ["RatinMax"] = c.RatinMax,
-                    ["Category"] = c.CategoryProducts.Select(v => new Dynamic { ["Name"] = v.Category.Name, ["CategoryId"] = v.CategoryId }),
-                    ["NewPrice"] = c.NewPrice,
-                    ["OldPrice"] = c.OldPrice
-
-                }).ToList();
-                //.GetAllIQueryable(x => x.IsDeleted == false && x.CategoryProducts.Where(x => x.Category.Flag == flag));
-                return;
-            }
             productExpandoObject = productViewModel.Select(c => new Dynamic
             {
                 ["Name"] = c.Name,
                 ["SubCategory"] = c.SubCategory,
-                ["Images"] = c.Images.Where(b => b.IsShowcase == true).Count() > 0 ? c.Images.Where(b => b.IsShowcase == true):null,
+                ["Images"] = c.Images.Where(b => b.IsShowcase == true).Count() > 0 ? c.Images.Where(b => b.IsShowcase == true) : null,
                 ["Description"] = c.Description,
                 ["Rating"] = c.RatinProducts.Select(v => new Dynamic { ["ratin"] = Convert.ToInt32(v.Ratin.Rating) }),
                 ["RatinMax"] = c.RatinMax,
-                ["Category"] = c.CategoryProducts.Select(v => new Dynamic { ["Name"] = v.Category.Name, ["CategoryId"] = v.CategoryId }),
-                ["NewPrice"] = c.NewPrice,
-                ["OldPrice"] = c.OldPrice
+                ["Category"] = c.Category,
+                ["NewPrice"] = Convert.ToDecimal(c.NewPrice),
+                ["OldPrice"] = Convert.ToDecimal(c.OldPrice)
             }).ToList();
-            //(c.CategoryProducts.Select(v => new Dynamic { ["Name"] = v.Category.Name, ["CategoryId"] = v.CategoryId.ToString() }))
-           
+        }
+
+        public async Task OnGetCategory(string flag = null)
+        {
+            categoryViewModel = unitofWork.GetRepository<SubCategory>().GetAllIQueryable(x => x.IsDeleted == false); // unitofWork.Catetgory().CategorySubCategory(); //unitofWork.GetRepository<Category>().GetAllIQueryable(x => x.IsDeleted == false);
+            productViewModel = productRepository.ProductJoin(predicate: x => x.IsDeleted == false).Where(x => x.SubCategory.Category?.Flag == flag);
+            productExpandoObject = productViewModel.Select(c => new Dynamic
+            {
+                ["Name"] = c.Name,
+                ["SubCategory"] = c.SubCategory,
+                ["Images"] = c.Images.Where(b => b.IsShowcase == true).Count() > 0 ? c.Images.Where(b => b.IsShowcase == true) : null,
+                ["Description"] = c.Description,
+                ["Rating"] = c.RatinProducts.Select(v => new Dynamic { ["ratin"] = Convert.ToInt32(v.Ratin.Rating) }),
+                ["RatinMax"] = c.RatinMax,
+                ["Category"] = c.Category,
+                ["NewPrice"] = Convert.ToDecimal(c.NewPrice),
+                ["OldPrice"] = Convert.ToDecimal(c.OldPrice)
+
+            }).ToList();
+        }
+
+        public async Task OnGetSubCategory(string flag = null)
+        {
+            categoryViewModel = unitofWork.GetRepository<SubCategory>().GetAllIQueryable(x => x.IsDeleted == false); // unitofWork.Catetgory().CategorySubCategory(); //unitofWork.GetRepository<Category>().GetAllIQueryable(x => x.IsDeleted == false);
+            productViewModel = productRepository.ProductJoin(predicate: x => x.IsDeleted == false);
+            productExpandoObject = productViewModel.Where(f => f.SubCategory.Flag == flag).Select(c => new Dynamic
+            {
+                ["Name"] = c.Name,
+                ["SubCategory"] = c.SubCategory,
+                ["Images"] = c.Images.Where(b => b.IsShowcase == true).Count() > 0 ? c.Images.Where(b => b.IsShowcase == true) : null,
+                ["Description"] = c.Description,
+                ["Rating"] = c.RatinProducts.Select(v => new Dynamic { ["ratin"] = Convert.ToInt32(v.Ratin.Rating) }),
+                ["RatinMax"] = c.RatinMax,
+                ["Category"] = c.Category,
+                ["NewPrice"] = Convert.ToDecimal(c.NewPrice),
+                ["OldPrice"] = Convert.ToDecimal(c.OldPrice)
+
+            }).ToList();
+        }
+
+        public async Task OnGetPoint(string flag = null)
+        {
+            categoryViewModel = unitofWork.GetRepository<SubCategory>().GetAllIQueryable(x => x.IsDeleted == false); // unitofWork.Catetgory().CategorySubCategory(); //unitofWork.GetRepository<Category>().GetAllIQueryable(x => x.IsDeleted == false);
+            productViewModel = productRepository.ProductJoin(predicate: x => x.IsDeleted == false);
+            productExpandoObject = productViewModel.Where(f => f.SubCategory.Flag == flag).Select(c => new Dynamic
+            {
+                ["Name"] = c.Name,
+                ["SubCategory"] = c.SubCategory,
+                ["Images"] = c.Images.Where(b => b.IsShowcase == true).Count() > 0 ? c.Images.Where(b => b.IsShowcase == true) : null,
+                ["Description"] = c.Description,
+                ["Rating"] = c.RatinProducts.Select(v => new Dynamic { ["ratin"] = Convert.ToInt32(v.Ratin.Rating) }),
+                ["RatinMax"] = c.RatinMax,
+                ["Category"] = c.Category,
+                ["NewPrice"] = Convert.ToDecimal(c.NewPrice),
+                ["OldPrice"] = Convert.ToDecimal(c.OldPrice)
+
+            }).ToList();
+        }
+
+        public async Task OnGetColor(string flag = null)
+        {
+            categoryViewModel = unitofWork.GetRepository<SubCategory>().GetAllIQueryable(x => x.IsDeleted == false); // unitofWork.Catetgory().CategorySubCategory(); //unitofWork.GetRepository<Category>().GetAllIQueryable(x => x.IsDeleted == false);
+            productViewModel = productRepository.ProductJoin(predicate: x => x.IsDeleted == false);
+            productExpandoObject = productViewModel.Where(f => f.SubCategory.Flag == flag).Select(c => new Dynamic
+            {
+                ["Name"] = c.Name,
+                ["SubCategory"] = c.SubCategory,
+                ["Images"] = c.Images.Where(b => b.IsShowcase == true).Count() > 0 ? c.Images.Where(b => b.IsShowcase == true) : null,
+                ["Description"] = c.Description,
+                ["Rating"] = c.RatinProducts.Select(v => new Dynamic { ["ratin"] = Convert.ToInt32(v.Ratin.Rating) }),
+                ["RatinMax"] = c.RatinMax,
+                ["Category"] = c.Category,
+                ["NewPrice"] = Convert.ToDecimal(c.NewPrice),
+                ["OldPrice"] = Convert.ToDecimal(c.OldPrice)
+
+            }).ToList();
         }
     }
 }

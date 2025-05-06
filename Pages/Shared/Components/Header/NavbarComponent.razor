@@ -1,5 +1,6 @@
-﻿@inject eticaret.Domain.Repository.Interface.ICategoryRepository categoryRepository    
+﻿@inject eticaret.Domain.Repository.Interface.ICategoryRepository categoryRepository
 @using eticaret.Domain.Core.Entities
+@using Microsoft.AspNetCore.Mvc.TagHelpers
 
 <div class="bb-main-menu" id="navbarSupportedContent">
     <ul class="navbar-nav">
@@ -11,117 +12,45 @@
             </a>
         </li>
         <li class="nav-item bb-main-dropdown">
-            <a class="nav-link bb-dropdown-item" href="javascript:void(0)">Kategori</a>
-            <ul class="mega-menu" style="align-items: flex-start;">
-                <li style="align-items: flex-start;">
+            <a class="nav-link bb-dropdown-item" href="/product-list">Ürünler</a>
+            <ul class="mega-menu" style="width:'auto'">
+                <li style="display: flex;flex-wrap: wrap;align-items: flex-start;">
                     @if (categories.Any())
                     {
                         foreach (var item in categories)
                         {
                             <ul class="mega-block">
-                                <li class="menu_title"><a href="javascript:void(0)">@item.Name</a></li>
+                                <li class="menu_title"><a href="/product-list/Category/@item.Flag">@item.Name</a></li>
 
-                                @if(item.SubCategorys.Any())
+                                @if (item.SubCategorys.Any())
                                 {
                                     foreach (var g in item.SubCategorys)
                                     {
                                         <li>
-                                            <a href="shop-left-sidebar-col-3.html">@g.Name</a>
+                                            <a href="/product-list/SubCategory/@g.Flag">@g.Name</a>
                                         </li>
                                     }
                                 }
                             </ul>
                         }
                     }
-                    
                 </li>
             </ul>
         </li>
-        <li class="nav-item bb-dropdown">
-            <a class="nav-link bb-dropdown-item" href="javascript:void(0)">Products</a>
-            <ul class="bb-dropdown-menu">
-                <li class="bb-mega-dropdown">
-                    <a class="bb-mega-item" href="javascript:void(0)">Product page</a>
-                    <ul class="bb-mega-menu">
-                        <li>
-                            <a class="dropdown-item"
-                               href="product-left-sidebar.html">Product left sidebar</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item"
-                               href="product-right-sidebar.html">Product right sidebar</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="bb-mega-dropdown">
-                    <a class="bb-mega-item" href="javascript:void(0)">Product Accordion</a>
-                    <ul class="bb-mega-menu">
-                        <li>
-                            <a class="dropdown-item"
-                               href="product-accordion-left-sidebar.html">left sidebar</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item"
-                               href="product-accordion-right-sidebar.html">
-                                right
-                                sidebar
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="product-full-width.html">Product full width</a>
-                </li>
-                <li>
-                    <a href="product-accordion-full-width.html">accordion full width</a>
-                </li>
-            </ul>
+        <li class="nav-item">
+            <a class="nav-link" href="/">
+                Hakkımızda
+            </a>
         </li>
-        <li class="nav-item bb-dropdown">
-            <a class="nav-link bb-dropdown-item" href="javascript:void(0)">Pages</a>
-            <ul class="bb-dropdown-menu">
-                <li><a class="dropdown-item" href="about-us.html">About Us</a></li>
-                <li><a class="dropdown-item" href="contact-us.html">Contact Us</a></li>
-                <li><a class="dropdown-item" href="cart.html">Cart</a></li>
-                <li><a class="dropdown-item" href="checkout.html">Checkout</a></li>
-                <li><a class="dropdown-item" href="compare.html">Compare</a></li>
-                <li><a class="dropdown-item" href="faq.html">Faq</a></li>
-                <li><a class="dropdown-item" href="login.html">Login</a></li>
-                <li><a class="dropdown-item" href="register.html">Register</a></li>
-            </ul>
+        <li class="nav-item">
+            <a class="nav-link" href="/">
+                Blog
+            </a>
         </li>
-        <li class="nav-item bb-dropdown">
-            <a class="nav-link bb-dropdown-item" href="javascript:void(0)">Blog</a>
-            <ul class="bb-dropdown-menu">
-                <li>
-                    <a class="dropdown-item" href="blog-left-sidebar.html">Left Sidebar</a>
-                </li>
-                <li>
-                    <a class="dropdown-item" href="blog-right-sidebar.html">
-                        Right
-                        Sidebar
-                    </a>
-                </li>
-                <li><a class="dropdown-item" href="blog-full-width.html">Full Width</a></li>
-                <li>
-                    <a class="dropdown-item" href="blog-detail-left-sidebar.html">
-                        Detail
-                        Left Sidebar
-                    </a>
-                </li>
-                <li>
-                    <a class="dropdown-item" href="blog-detail-right-sidebar.html">
-                        Detail
-                        Right Sidebar
-                    </a>
-                </li>
-                <li>
-                    <a class="dropdown-item" href="blog-detail-full-width.html">
-                        Detail Full
-                        Width
-                    </a>
-                </li>
-            </ul>
+        <li class="nav-item">
+            <a class="nav-link" href="/">
+                İletişim
+            </a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="offer.html">

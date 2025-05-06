@@ -18,9 +18,9 @@ namespace eticaret.Domain.Repository.Repositorys
         {
             if(predicate != null)
             {
-                return context.Category.Where(predicate).Include(j => j.CategoryProducts.Where(g => g.Product.IsDeleted == isDelete)).ThenInclude(g => g.Product).ToList();
+                return context.Category.Where(predicate).Include(j => j.SubCategorys).ThenInclude(g => g.Products.Where(x => x.IsDeleted == false)).ToList();
             }
-            return context.Category.Include(j => j.CategoryProducts).ThenInclude(g => g.Product).ToList();
+            return context.Category.Include(j => j.SubCategorys).ThenInclude(g => g.Products.Where(x => x.IsDeleted == false)).ToList();
         }
 
         public List<Category> CategoryJoin(string flag, bool isDelete = false)

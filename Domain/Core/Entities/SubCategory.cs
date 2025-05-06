@@ -15,7 +15,7 @@ namespace eticaret.Domain.Core.Entities
         public string? DeleteDate { get; set; }
         public bool IsDeleted { get; set; }
         public int CategoryId { get; set; }
-        public Category Categorys { get; set; }
+        public Category Category { get; set; }
         public ICollection<Product> Products { get; set; }
     }
 }

@@ -18,16 +18,15 @@ namespace eticaret.Domain.Repository.Repositorys
         public List<Product> ProductJoin(Expression<Func<Product, bool>> predicate = null)
         {
             return context.Product.Where(predicate).
-                Include(j => j.CategoryProducts).ThenInclude(g => g.Category).
-                Include(s => s.SubCategory).
+                Include(j => j.SubCategory).ThenInclude(g => g.Category).
                 Include(i => i.Images).
                 Include(r => r.RatinProducts).ThenInclude(g => g.Ratin).Select(x => new Product
                 {
                     Id = x.Id,
                     Name = x.Name,
                     IsDeleted = x.IsDeleted,
-                    CategoryProducts = x.CategoryProducts,
                     SubCategory = x.SubCategory,
+                    Category = x.SubCategory.Category,
                     RatinProducts = x.RatinProducts.Select(v => new RatinProduct
                     {
                         Id = v.Id,
@@ -61,17 +60,18 @@ namespace eticaret.Domain.Repository.Repositorys
                     }).Max(f => f.Ratin.Rating) : 0,
                 }).ToList();
         }
+       
 
         public List<Product> ProductJoinCategory(Expression<Func<Product, bool>> predicate = null)
         {
             return context.Product.Where(predicate).
-                Include(j => j.CategoryProducts).ThenInclude(g => g.Category).
+                Include(j => j.SubCategory).ThenInclude(g => g.Category).
                 Include(r => r.RatinProducts).ThenInclude(g => g.Ratin).Select(x => new Product
                 {
                     Id = x.Id,
                     Name = x.Name,
                     IsDeleted = x.IsDeleted,
-                    CategoryProducts = x.CategoryProducts,
+                    SubCategory = x.SubCategory,
                     RatinProducts = x.RatinProducts.Select(v => new RatinProduct
                     {
                         Id = v.Id,
@@ -100,13 +100,12 @@ namespace eticaret.Domain.Repository.Repositorys
         public List<Product> ProductJoinSubCategory(Expression<Func<Product, bool>> predicate = null)
         {
             return context.Product.Where(predicate).
-                Include(j => j.CategoryProducts).ThenInclude(g => g.Category).
+                Include(j => j.SubCategory).ThenInclude(g => g.Category).
                 Include(r => r.RatinProducts).ThenInclude(g => g.Ratin).Select(x => new Product
                 {
                     Id = x.Id,
                     Name = x.Name,
                     IsDeleted = x.IsDeleted,
-                    CategoryProducts = x.CategoryProducts,
                     RatinProducts = x.RatinProducts.Select(v => new RatinProduct
                     {
                         Id = v.Id,

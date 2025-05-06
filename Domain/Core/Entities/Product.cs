@@ -22,8 +22,7 @@ namespace eticaret.Domain.Core.Entities
         [NotMapped]
         public int RatinMax { get; set; }
         [NotMapped]
-        public Category CategoryName { get; set; }
-        public ICollection<CategoryProduct> CategoryProducts { get; set; }
+        public Category? Category { get; set; }
         public int SubCategoryId { get; set; }
         public SubCategory SubCategory { get; set; }
         public ICollection<RatinProduct> RatinProducts { get; set; }
