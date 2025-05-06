@@ -88,7 +88,7 @@ namespace eticaret.Pages.Products
         {
             categoryViewModel = unitofWork.GetRepository<SubCategory>().GetAllIQueryable(x => x.IsDeleted == false); // unitofWork.Catetgory().CategorySubCategory(); //unitofWork.GetRepository<Category>().GetAllIQueryable(x => x.IsDeleted == false);
             productViewModel = productRepository.ProductJoin(predicate: x => x.IsDeleted == false);
-            productExpandoObject = productViewModel.Where(f => f.SubCategory.Flag == flag).Select(c => new Dynamic
+            productExpandoObject = productViewModel.Where(f => f.RatinMax == Convert.ToInt32(flag)).Select(c => new Dynamic
             {
                 ["Name"] = c.Name,
                 ["SubCategory"] = c.SubCategory,
