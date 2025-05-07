@@ -1,7 +1,11 @@
 ﻿@using Microsoft.AspNetCore.Mvc.TagHelpers
+@inject eticaret.Domain.Repository.Interface.ICategoryRepository categoryRepository
+@using eticaret.Domain.Core.Entities
+
 
 <header class="bb-header">
 
+    <!--
     <div class="top-header">
         <div class="container">
             <div class="row">
@@ -41,7 +45,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>-->
     
     <div class="bottom-header">
         <div class="container">
@@ -69,10 +73,14 @@
                                     <div class="inner-select">
                                         <div class="custom-select">
                                             <select>
-                                                <option value="option1">vegetables</option>
-                                                <option value="option2">Cold Drinks</option>
-                                                <option value="option3">Fruits</option>
-                                                <option value="option4">Bakery</option>
+                                                <option>Kategoriler</option>
+                                                @if (categories.Any())
+                                                {
+                                                    foreach (var item in categories)
+                                                    {
+                                                        <option value="@item.Flag">@item.Name</option>
+                                                    }
+                                                }
                                             </select>
                                         </div>
                                     </div>
@@ -238,10 +246,7 @@
                                 </svg>
                                 <div class="custom-select">
                                     <select>
-                                        <option value="option1">Surat</option>
-                                        <option value="option2">Delhi</option>
-                                        <option value="option3">Rajkot</option>
-                                        <option value="option4">Udaipur</option>
+                                        <option value="option1">Konum</option>
                                     </select>
                                 </div>
                             </div>
@@ -387,4 +392,12 @@
 
 @code {
 
+    List<Category> categories = new List<Category>();
+
+    protected override void OnInitialized()
+    {
+        categories = categoryRepository.CategorySubCategory(isDelete: false);
+    }
+
 }
+

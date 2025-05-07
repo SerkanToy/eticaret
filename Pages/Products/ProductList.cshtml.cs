@@ -16,6 +16,8 @@ namespace eticaret.Pages.Products
         public IEnumerable<dynamic> productExpandoObject { get; set; } = new List<Dynamic>();
         [BindProperty]
         public IEnumerable<SubCategory> categoryViewModel { get; set; }
+        [BindProperty]
+        public IEnumerable<Colors> colorsViewModel { get; set; }
         [BindProperty(SupportsGet = true)]
         public string? flag { get; set; }
 
@@ -32,6 +34,7 @@ namespace eticaret.Pages.Products
         {
             categoryViewModel = unitofWork.GetRepository<SubCategory>().GetAllIQueryable(x => x.IsDeleted == false); // unitofWork.Catetgory().CategorySubCategory(); //unitofWork.GetRepository<Category>().GetAllIQueryable(x => x.IsDeleted == false);
             productViewModel = productRepository.ProductJoin(predicate: x => x.IsDeleted == false);
+            colorsViewModel = unitofWork.GetRepository<Colors>().GetAllIQueryable(x => x.IsDeleted == false);
             productExpandoObject = productViewModel.Select(c => new Dynamic
             {
                 ["Name"] = c.Name,
@@ -49,6 +52,7 @@ namespace eticaret.Pages.Products
         public async Task OnGetCategory(string flag = null)
         {
             categoryViewModel = unitofWork.GetRepository<SubCategory>().GetAllIQueryable(x => x.IsDeleted == false); // unitofWork.Catetgory().CategorySubCategory(); //unitofWork.GetRepository<Category>().GetAllIQueryable(x => x.IsDeleted == false);
+            colorsViewModel = unitofWork.GetRepository<Colors>().GetAllIQueryable(x => x.IsDeleted == false);
             productViewModel = productRepository.ProductJoin(predicate: x => x.IsDeleted == false).Where(x => x.SubCategory.Category?.Flag == flag);
             productExpandoObject = productViewModel.Select(c => new Dynamic
             {

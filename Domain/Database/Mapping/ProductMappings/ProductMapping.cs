@@ -11,6 +11,7 @@ namespace eticaret.Domain.Database.Mapping.ProductMappings
             builder.HasKey(x => x.Id);
             builder.HasOne(x => x.SubCategory).WithMany(y => y.Products).OnDelete(DeleteBehavior.NoAction);
             builder.HasMany(x => x.RatinProducts).WithOne(y => y.Product).OnDelete(deleteBehavior: DeleteBehavior.NoAction);
+            builder.HasMany(x => x.ColorProduct).WithOne(y => y.Product).OnDelete(deleteBehavior: DeleteBehavior.NoAction);
             builder.HasMany(x => x.Images).WithOne(y => y.Product).OnDelete(deleteBehavior: DeleteBehavior.NoAction);
             builder.HasData(_products());
         }

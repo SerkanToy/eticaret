@@ -226,56 +226,19 @@
                         </div>
                         <div class="bb-color-contact">
                             <ul>
-                                <li class="color-sidebar-active">
-                                    <div class="bb-sidebar-block-item">
-                                        <span class="pro-color-1"></span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="bb-sidebar-block-item">
-                                        <span class="pro-color-2"></span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="bb-sidebar-block-item">
-                                        <span class="pro-color-3"></span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="bb-sidebar-block-item">
-                                        <span class="pro-color-4"></span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="bb-sidebar-block-item">
-                                        <span class="pro-color-5"></span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="bb-sidebar-block-item">
-                                        <span class="pro-color-6"></span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="bb-sidebar-block-item">
-                                        <span class="pro-color-7"></span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="bb-sidebar-block-item">
-                                        <span class="pro-color-8"></span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="bb-sidebar-block-item">
-                                        <span class="pro-color-9"></span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="bb-sidebar-block-item">
-                                        <span class="pro-color-10"></span>
-                                    </div>
-                                </li>
+                                @if (Model.colorsViewModel.Any())
+                                {
+                                    foreach (var item in Model.colorsViewModel)
+                                    {
+                                        <li title="@item.Name">
+                                            <a href="/product-list/Color/@item.Id">
+                                                <div class="bb-sidebar-block-item">
+                                                    <span class="pro-color-1" style="background-color:@item.Colorvalue"></span>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    }
+                                }
                             </ul>
                         </div>
                     </div>

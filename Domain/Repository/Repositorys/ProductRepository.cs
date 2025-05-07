@@ -19,6 +19,7 @@ namespace eticaret.Domain.Repository.Repositorys
         {
             return context.Product.Where(predicate).
                 Include(j => j.SubCategory).ThenInclude(g => g.Category).
+                Include(j => j.ColorProduct).ThenInclude(g => g.Colors).
                 Include(i => i.Images).
                 Include(r => r.RatinProducts).ThenInclude(g => g.Ratin).Select(x => new Product
                 {
@@ -27,6 +28,11 @@ namespace eticaret.Domain.Repository.Repositorys
                     IsDeleted = x.IsDeleted,
                     SubCategory = x.SubCategory,
                     Category = x.SubCategory.Category,
+                    Colors = x.ColorProduct.Select(c => new Colors
+                    {
+                        Id = c.Colors.Id,
+                        Colorvalue = c.Colors.Colorvalue,
+                    }).ToList(),
                     RatinProducts = x.RatinProducts.Select(v => new RatinProduct
                     {
                         Id = v.Id,
