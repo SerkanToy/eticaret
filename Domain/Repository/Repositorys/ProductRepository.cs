@@ -28,6 +28,7 @@ namespace eticaret.Domain.Repository.Repositorys
                     IsDeleted = x.IsDeleted,
                     SubCategory = x.SubCategory,
                     Category = x.SubCategory.Category,
+                    ColorProduct = x.ColorProduct,
                     Colors = x.ColorProduct.Select(c => new Colors
                     {
                         Id = c.Colors.Id,
