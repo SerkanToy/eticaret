@@ -1,174 +1,42 @@
-﻿<footer class="bb-footer margin-t-50">
+﻿@inject eticaret.Domain.Repository.Interface.ICategoryRepository categoryRepository
+@using eticaret.Domain.Core.Entities
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+
+<footer class="bb-footer margin-t-50">
     <div class="footer-directory padding-tb-50">
         <div class="container">
             <div class="row">
                 <div class="col-12" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
                     <div class="directory-title">
-                        <h4>Brands Directory</h4>
+                        <h4>KATEGORİLER</h4>
                     </div>
                     <div class="directory-contact">
                         <div class="row">
-                            <div class="col-lg-6 col-12">
-                                <div class="inner-contact">
-                                    <ul>
-                                        <li>
-                                            <span>Jewellery :</span>
-                                        </li>
-                                        <li>
-                                            <a href="shop-left-sidebar-col-3.html">Necklace</a>
-                                        </li>
-                                        <li>
-                                            <a href="shop-left-sidebar-col-3.html">Earrings</a>
-                                        </li>
-                                        <li>
-                                            <a href="shop-left-sidebar-col-3.html">Couple Rings</a>
-                                        </li>
-                                        <li>
-                                            <a href="shop-left-sidebar-col-3.html">Pendants</a>
-                                        </li>
-                                        <li>
-                                            <a href="shop-left-sidebar-col-3.html">crystal</a>
-                                        </li>
-                                        <li>
-                                            <a href="shop-left-sidebar-col-3.html">Bangles</a>
-                                        </li>
-                                        <li>
-                                            <a href="shop-left-sidebar-col-3.html">Bracelets</a>
-                                        </li>
-                                        <li>
-                                            <a href="shop-left-sidebar-col-3.html">Nose pin</a>
-                                        </li>
-                                        <li>
-                                            <a href="shop-left-sidebar-col-3.html">Chain</a>
-                                        </li>
-                                        <li>
-                                            <a href="shop-left-sidebar-col-3.html">Earrings</a>
-                                        </li>
-                                        <li>
-                                            <a href="shop-left-sidebar-col-3.html">Couple Rings</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="inner-contact">
-                                    <ul>
-                                        <li>
-                                            <span>Footwear :</span>
-                                        </li>
-                                        <li>
-                                            <a href="shop-left-sidebar-col-3.html">Sport</a>
-                                        </li>
-                                        <li>
-                                            <a href="shop-left-sidebar-col-3.html">Formal</a>
-                                        </li>
-                                        <li>
-                                            <a href="shop-left-sidebar-col-3.html">Boots</a>
-                                        </li>
-                                        <li>
-                                            <a href="shop-left-sidebar-col-3.html">Casual</a>
-                                        </li>
-                                        <li>
-                                            <a href="shop-left-sidebar-col-3.html">Cowboy Shoes</a>
-                                        </li>
-                                        <li>
-                                            <a href="shop-left-sidebar-col-3.html">Safety Shoes</a>
-                                        </li>
-                                        <li>
-                                            <a href="shop-left-sidebar-col-3.html">Party Wear Shoes</a>
-                                        </li>
-                                        <li>
-                                            <a href="shop-left-sidebar-col-3.html">Branded</a>
-                                        </li>
-                                        <li>
-                                            <a href="shop-left-sidebar-col-3.html">First copy</a>
-                                        </li>
-                                        <li>
-                                            <a href="shop-left-sidebar-col-3.html">Long Shoes</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-12">
-                                <div class="inner-contact">
-                                    <ul>
-                                        <li>
-                                            <span>Fashion :</span>
-                                        </li>
-                                        <li>
-                                            <a href="shop-left-sidebar-col-3.html">T-Shirt</a>
-                                        </li>
-                                        <li>
-                                            <a href="shop-left-sidebar-col-3.html">Short & Jeans</a>
-                                        </li>
-                                        <li>
-                                            <a href="shop-left-sidebar-col-3.html">Jacket</a>
-                                        </li>
-                                        <li>
-                                            <a href="shop-left-sidebar-col-3.html">Dress & Frock</a>
-                                        </li>
-                                        <li>
-                                            <a href="shop-left-sidebar-col-3.html">Inner wear</a>
-                                        </li>
-                                        <li>
-                                            <a href="shop-left-sidebar-col-3.html">Hosiery</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="inner-contact">
-                                    <ul>
-                                        <li>
-                                            <span>Cosmetics :</span>
-                                        </li>
-                                        <li>
-                                            <a href="shop-left-sidebar-col-3.html">Shampoo</a>
-                                        </li>
-                                        <li>
-                                            <a href="shop-left-sidebar-col-3.html">Body wash</a>
-                                        </li>
-                                        <li>
-                                            <a href="shop-left-sidebar-col-3.html">face wash</a>
-                                        </li>
-                                        <li>
-                                            <a href="shop-left-sidebar-col-3.html">Makeup kit</a>
-                                        </li>
-                                        <li>
-                                            <a href="shop-left-sidebar-col-3.html">Liner</a>
-                                        </li>
-                                        <li>
-                                            <a href="shop-left-sidebar-col-3.html">Lipstick</a>
-                                        </li>
-                                        <li>
-                                            <a href="shop-left-sidebar-col-3.html">Perfume</a>
-                                        </li>
-                                        <li>
-                                            <a href="shop-left-sidebar-col-3.html">Body Shop</a>
-                                        </li>
-                                        <li>
-                                            <a href="shop-left-sidebar-col-3.html">Scrub</a>
-                                        </li>
-                                        <li>
-                                            <a href="shop-left-sidebar-col-3.html">Hair Gel</a>
-                                        </li>
-                                        <li>
-                                            <a href="shop-left-sidebar-col-3.html">Hair colors</a>
-                                        </li>
-                                        <li>
-                                            <a href="shop-left-sidebar-col-3.html">Hair Dye</a>
-                                        </li>
-                                        <li>
-                                            <a href="shop-left-sidebar-col-3.html">Sunscreen</a>
-                                        </li>
-                                        <li>
-                                            <a href="shop-left-sidebar-col-3.html">Skin Lotion</a>
-                                        </li>
-                                        <li>
-                                            <a href="shop-left-sidebar-col-3.html">Liner</a>
-                                        </li>
-                                        <li>
-                                            <a href="shop-left-sidebar-col-3.html">Lipstick</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
+
+                            @if (categories.Any())
+                            {
+                                foreach (var item in categories)
+                                {
+                                    <div class="col-lg-6 col-12">
+                                        <div class="inner-contact">
+                                            <ul>
+                                                <li>
+                                                    <span>@item.Name :</span>
+                                                </li>
+                                                @if (item.SubCategorys.Any())
+                                                {
+                                                    foreach (var g in item.SubCategorys)
+                                                    {
+                                                        <li>
+                                                            <a href="/product-list/SubCategory/@g.Flag">@g.Name</a>
+                                                        </li>
+                                                    }
+                                                }
+                                            </ul>
+                                        </div>
+                                    </div>
+                                }
+                            }
                         </div>
                     </div>
                 </div>
@@ -197,82 +65,46 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-12 col-lg-2 bb-footer-info">
+                    <div class="col-sm-12 col-lg-3 bb-footer-account">
                         <div class="bb-footer-widget">
-                            <h4 class="bb-footer-heading">Category</h4>
+                            <h4 class="bb-footer-heading">Menü</h4>
                             <div class="bb-footer-links bb-footer-dropdown">
                                 <ul class="align-items-center">
                                     <li class="bb-footer-link">
-                                        <a href="shop-left-sidebar-col-3.html">Dairy & Milk</a>
+                                        <a href="about-us.html">Ürünler</a>
                                     </li>
                                     <li class="bb-footer-link">
-                                        <a href="shop-banner-left-sidebar-col-3.html">Snack & Spice</a>
+                                        <a href="about-us.html">Hakkımızda</a>
                                     </li>
                                     <li class="bb-footer-link">
-                                        <a href="shop-full-width-col-5.html">Fast Food</a>
+                                        <a href="track-order.html">Blog</a>
                                     </li>
                                     <li class="bb-footer-link">
-                                        <a href="shop-list-left-sidebar.html">Juice & Drinks</a>
+                                        <a href="faq.html">İletişim</a>
                                     </li>
                                     <li class="bb-footer-link">
-                                        <a href="shop-list-full-col-2.html">Bakery</a>
-                                    </li>
-                                    <li class="bb-footer-link">
-                                        <a href="shop-banner-right-sidebar-col-4.html">Seafood</a>
+                                        <a href="terms.html">Size Özel</a>
                                     </li>
                                 </ul>
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-12 col-lg-2 bb-footer-account">
+                    <div class="col-sm-12 col-lg-3 bb-footer-service">
                         <div class="bb-footer-widget">
-                            <h4 class="bb-footer-heading">Company</h4>
+                            <h4 class="bb-footer-heading">Kullanıcı İşlemleri</h4>
                             <div class="bb-footer-links bb-footer-dropdown">
                                 <ul class="align-items-center">
                                     <li class="bb-footer-link">
-                                        <a href="about-us.html">About us</a>
+                                        <a href="login.html">Giriş Yap</a>
                                     </li>
                                     <li class="bb-footer-link">
-                                        <a href="track-order.html">Delivery</a>
+                                        <a href="cart.html">Kayıt Ol</a>
                                     </li>
                                     <li class="bb-footer-link">
-                                        <a href="faq.html">Legal Notice</a>
+                                        <a href="faq.html">Sepet</a>
                                     </li>
                                     <li class="bb-footer-link">
-                                        <a href="terms.html">Terms & conditions</a>
-                                    </li>
-                                    <li class="bb-footer-link">
-                                        <a href="checkout.html">Secure payment</a>
-                                    </li>
-                                    <li class="bb-footer-link">
-                                        <a href="contact-us.html">Contact us</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-lg-2 bb-footer-service">
-                        <div class="bb-footer-widget">
-                            <h4 class="bb-footer-heading">Account</h4>
-                            <div class="bb-footer-links bb-footer-dropdown">
-                                <ul class="align-items-center">
-                                    <li class="bb-footer-link">
-                                        <a href="login.html">Sign In</a>
-                                    </li>
-                                    <li class="bb-footer-link">
-                                        <a href="cart.html">View Cart</a>
-                                    </li>
-                                    <li class="bb-footer-link">
-                                        <a href="faq.html">Return Policy</a>
-                                    </li>
-                                    <li class="bb-footer-link">
-                                        <a href="shop-left-sidebar-col-3.html">Become a Vendor</a>
-                                    </li>
-                                    <li class="bb-footer-link">
-                                        <a href="product-left-sidebar.html">Affiliate Program</a>
-                                    </li>
-                                    <li class="bb-footer-link">
-                                        <a href="checkout.html">Payments</a>
+                                        <a href="shop-left-sidebar-col-3.html">Poliçe</a>
                                     </li>
                                 </ul>
                             </div>
@@ -281,7 +113,7 @@
                     <div class="col-sm-12 col-lg-3 bb-footer-cont-social">
                         <div class="bb-footer-contact">
                             <div class="bb-footer-widget">
-                                <h4 class="bb-footer-heading">Contact</h4>
+                                <h4 class="bb-footer-heading">İletişim</h4>
                                 <div class="bb-footer-links bb-footer-dropdown">
                                     <ul class="align-items-center">
                                         <li class="bb-footer-link bb-foo-location">
@@ -338,7 +170,7 @@
                             <div class="footer-bottom-copy ">
                                 <div class="bb-copy">
                                     Copyright © <span id="copyright_year"></span>
-                                    <a class="site-name" href="index.html">BlueBerry</a> all rights reserved.
+                                    <a class="site-name" href="index.html">ZeyZey</a> Atölye.
                                 </div>
                             </div>
                         </div>
@@ -357,5 +189,12 @@
 </footer>
 
 @code {
+
+    List<Category> categories = new List<Category>();
+
+    protected override void OnInitialized()
+    {
+        categories = categoryRepository.CategorySubCategory(isDelete: false);
+    }
 
 }
