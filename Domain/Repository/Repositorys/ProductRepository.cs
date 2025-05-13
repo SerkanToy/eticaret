@@ -1,7 +1,6 @@
 ﻿using eticaret.Domain.Core.Entities;
 using eticaret.Domain.Database.Context;
 using eticaret.Domain.Repository.Interface;
-using eticaret.Migrations;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
@@ -9,7 +8,7 @@ using System.Linq.Expressions;
 
 namespace eticaret.Domain.Repository.Repositorys
 {
-    public class ProductRepository : Repository<Product> , IProductRepository
+    public class ProductRepository : Repository<Product>, IProductRepository
     {
         public ProductRepository(CommerceContext context) : base(context)
         {
@@ -67,7 +66,7 @@ namespace eticaret.Domain.Repository.Repositorys
                     }).Max(f => f.Ratin.Rating) : 0,
                 }).ToList();
         }
-       
+
 
         public List<Product> ProductJoinCategory(Expression<Func<Product, bool>> predicate = null)
         {
@@ -91,16 +90,16 @@ namespace eticaret.Domain.Repository.Repositorys
                         }
                     }).ToList(),
                     RatinMax = x.RatinProducts.Count() != 0 ? x.RatinProducts.Select(v => new RatinProduct
-                                        {
-                                            Id = v.Id,
-                                            ProductId = v.ProductId,
-                                            RatinId = v.RatinId,
-                                            Ratin = new Ratin
-                                            {
-                                                Id = v.Ratin.Id,
-                                                Rating = v.Ratin.Rating
-                                            }
-                                        }).Max(f => f.Ratin.Rating):0,
+                    {
+                        Id = v.Id,
+                        ProductId = v.ProductId,
+                        RatinId = v.RatinId,
+                        Ratin = new Ratin
+                        {
+                            Id = v.Ratin.Id,
+                            Rating = v.Ratin.Rating
+                        }
+                    }).Max(f => f.Ratin.Rating) : 0,
                 }).ToList();
         }
 

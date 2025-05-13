@@ -1,4 +1,5 @@
 ﻿using eticaret.Domain.Interfaced;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace eticaret.Domain.Core.Entities
@@ -14,8 +15,10 @@ namespace eticaret.Domain.Core.Entities
         public string? ModifiedDate { get; set; }
         public string? DeleteDate { get; set; }
         public bool IsDeleted { get; set; }
-        public string? OldPrice { get; set; }
-        public string? NewPrice { get; set; }
+        [DisplayFormat(DataFormatString = "{18:2}")]
+        public decimal OldPrice { get; set; } = 0;
+        [DisplayFormat(DataFormatString = "{18:2}")]
+        public decimal NewPrice { get; set; } = 0;
         public string Description { get; set; }
         public string Flag { get; set; }
         public int RatinAVG { get; set; }

@@ -1,37 +1,33 @@
 ﻿@inject eticaret.Domain.UnitOfWork.IUnitofWork unitofWork
 @using eticaret.Domain.Core.Entities
 
-<section class="section-deal padding-tb-50">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="section-title bb-deal" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
-                    <div class="section-detail">
-                        <h2 class="bb-title">İndirimli <span>Ürünler</span></h2>
-                        <p>Kampanyamızdan yararlanmak için son dakikalar</p>
+@if (products.Any(x => x.NewPrice > 0))
+{
+    <section class="section-deal padding-tb-50">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-title bb-deal" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                        <div class="section-detail">
+                            <h2 class="bb-title">İndirimli <span>Ürünler</span></h2>
+                            <p>Kampanyamızdan yararlanmak için son dakikalar</p>
+                        </div>
+                        <div id="dealend" class="dealend-timer"></div>
                     </div>
-                    <!--<div id="dealend" class="dealend-timer"></div>-->
                 </div>
-            </div>
-            <div class="col-12">
-                <div class="bb-deal-slider">
-                    <div class="bb-deal-block owl-carousel">
-
-                        @if (products.Any())
-                        {
-                            foreach (var item in products)
+                <div class="col-12">
+                    <div class="bb-deal-slider">
+                        <div class="bb-deal-block owl-carousel">
+                            @foreach (var item in products)
                             {
                                 <div class="bb-deal-card-2" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
                                     <div class="bb-pro-box-2">
                                         <div class="bb-pro-img">
-                                            <!--<span class="flags">
-                                                <span>New</span>
-                                            </span>-->
                                             <a href="javascript:void(0)">
                                                 <div class="inner-img">
                                                     @if (item.Images.Any(c => c.IsShowcase == true))
                                                     {
-                                                        @foreach (var image in item.Images.Take(10).Where(c => c.IsShowcase == true))
+                                                        @foreach (var image in item.Images.Where(c => c.IsShowcase == true))
                                                         {
                                                             <img class="main-img" src="assets/img/product/@image.Name" alt="@item.Name">
                                                         }
@@ -72,7 +68,7 @@
                                         </div>
                                         <div class="bb-pro-contact">
                                             <div class="bb-pro-subtitle">
-                                                <a href="shop-left-sidebar-col-3.html">@item.Category.Name</a>
+                                                <a href="shop-left-sidebar-col-3.html">@item.SubCategory.Name</a>
                                                 <span class="bb-pro-rating">
                                                     @for (var v = 1; v != 6; v++)
                                                     {
@@ -92,8 +88,15 @@
                                             </h4>
                                             <div class="bb-price">
                                                 <div class="inner-price">
-                                                    <span class="new-price">$25</span>
-                                                    <span class="old-price">$30</span>
+                                                    @if (item.NewPrice == 0)
+                                                    {
+                                                        <span class="new-price">@item.OldPrice</span>
+                                                    }
+                                                    else
+                                                    {
+                                                        <span class="new-price">@item.NewPrice</span>
+                                                        <span class="old-price">@item.OldPrice</span>
+                                                    }
                                                 </div>
                                             </div>
                                             <div class="bb-variations">
@@ -120,19 +123,19 @@
                                     </div>
                                 </div>
                             }
-                        }
+
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
-
+    </section>
+}
 @code {
     List<Product> products = new List<Product>();
 
     protected override void OnInitialized()
     {
-        products = unitofWork.Product().ProductJoin(predicate: x => x.IsDeleted == false);
+        products = unitofWork.Product().ProductJoin(predicate: x => (x.IsDeleted == false) && (x.NewPrice > 0));
     }
 }
