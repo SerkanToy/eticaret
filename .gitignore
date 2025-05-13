@@ -367,5 +367,5 @@ FodyWeavers.xsd
 
 appsettings.json
 
-Migrations/
+Migrations/*.*
 Migrations
