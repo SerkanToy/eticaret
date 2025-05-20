@@ -1,10 +1,10 @@
 ﻿@page "~/about"
-@model eticaret.Pages.About.AboutModel
+@model eticaret.Pages.Aboutus.AboutusModel
 @{
-    
 }
 
-@(await Html.RenderComponentAsync<eticaret.Pages.Shared.Components.Breadcrumb.BreadcrumbComponent>(RenderMode.ServerPrerendered, new { Title = "About Us", Titles = new List<string> { "About Us" } }))
+
+@(await Html.RenderComponentAsync<eticaret.Pages.Shared.Components.Breadcrumb.BreadcrumbComponent>(RenderMode.ServerPrerendered, new { Title = "Bizi Tanıyın", Titles = new List<string> { "Hakkımızda" } }))
 
 <section class="section-about padding-tb-50">
     <div class="container">
@@ -18,52 +18,43 @@
                 <div class="bb-about-contact">
                     <div class="section-title" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
                         <div class="section-detail">
-                            <h2 class="bb-title">About the <span>BlueBerry</span></h2>
+                            <h2 class="bb-title"> <span>@Model.aboutusViewModel.Name</span></h2>
                         </div>
                     </div>
                     <div class="about-inner-contact" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
-                        <h4>Farm-fresh Goodness, just a click Away.</h4>
+                        <h4>@Model.aboutusViewModel.Slogan</h4>
                         <p>
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit, rem! Et
-                            obcaecati rem nulla, aut assumenda unde minima earum distinctio porro excepturi
-                            veritatis officiis dolorem quod. sapiente amet rerum beatae dignissimos aperiam
-                            id quae quia velit. Ab optio doloribus hic quas sit corporis numquam.
-                        </p>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit, rem! Et
-                            obcaecati rem nulla, aut assumenda unde minima earum distinctio porro excepturi
-                            veritatis officiis dolorem quod. sapiente amet rerum beatae dignissimos aperiam
-                            id quae quia velit. Ab optio doloribus hic quas sit corporis numquam.
+                            @Model.aboutusViewModel.Description
                         </p>
                     </div>
                     <div class="bb-vendor-rows row mb-minus-24" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
                         <div class="col-sm-4 mb-24">
                             <div class="bb-vendor-box">
                                 <div class="bb-count">
-                                    <h5 class="counter">200 +</h5>
+                                    <h5 class="counter">@Model.productCount +</h5>
                                 </div>
                                 <div class="inner-text">
-                                    <p>vendors</p>
+                                    <p>Ürün Sayısı</p>
                                 </div>
                             </div>
                         </div>
                         <div class="col-sm-4 mb-24">
                             <div class="bb-vendor-box">
                                 <div class="bb-count">
-                                    <h5 class="counter">654k +</h5>
+                                    <h5 class="counter">@Model.userCount +</h5>
                                 </div>
                                 <div class="inner-text">
-                                    <p>Sales</p>
+                                    <p>Satış</p>
                                 </div>
                             </div>
                         </div>
                         <div class="col-sm-4 mb-24">
                             <div class="bb-vendor-box">
                                 <div class="bb-count">
-                                    <h5 class="counter">587k +</h5>
+                                    <h5 class="counter">@Model.userCount +</h5>
                                 </div>
                                 <div class="inner-text">
-                                    <p>Customers</p>
+                                    <p>Kullanıcı</p>
                                 </div>
                             </div>
                         </div>
