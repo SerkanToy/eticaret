@@ -14,7 +14,7 @@
                     <a href="/">Anasayfa</a>
                 </li>
                 <li>
-                    <a href="javascript:void(0)">Kategori</a>
+                    <a href="javascript:void(0)">Ürünler</a>
                     <ul class="sub-menu">
 
                         @if (categories.Any())
@@ -22,14 +22,14 @@
                             foreach (var item in categories)
                             {
                                 <li>
-                                    <a href="javascript:void(0)">@item.Name</a>
+                                    <a href="/product-list/category/@item.Flag">@item.Name</a>
 
                                     @if (item.SubCategorys.Any())
                                     {
                                         <ul class="sub-menu">
                                         @foreach (var g in item.SubCategorys)
                                         {
-                                                <li><a href="shop-left-sidebar-col-3.html">@g.Name</a></li>
+                                                <li><a href="/product-list/subCategory/@g.Flag">@g.Name</a></li>
                                         }
                                         </ul>
                                     }
@@ -40,49 +40,18 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="javascript:void(0)">Products</a>
-                    <ul class="sub-menu">
-                        <li>
-                            <a href="javascript:void(0)">Product page</a>
-                            <ul class="sub-menu">
-                                <li><a href="product-left-sidebar.html">Product left sidebar</a></li>
-                                <li><a href="product-right-sidebar.html">Product right sidebar</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)">Product Accordion</a>
-                            <ul class="sub-menu">
-                                <li><a href="product-accordion-left-sidebar.html">left sidebar</a></li>
-                                <li><a href="product-accordion-right-sidebar.html">right sidebar</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="product-full-width.html">Product full width</a></li>
-                        <li><a href="product-accordion-full-width.html">accordion full width</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="javascript:void(0)">Pages</a>
-                    <ul class="sub-menu">
-                        <li><a href="about-us.html">About Us</a></li>
-                        <li><a href="contact-us.html">Contact Us</a></li>
-                        <li><a href="cart.html">Cart</a></li>
-                        <li><a href="checkout.html">Checkout</a></li>
-                        <li><a href="compare.html">Compare</a></li>
-                        <li><a href="faq.html">Faq</a></li>
-                        <li><a href="login.html">Login</a></li>
-                        <li><a href="register.html">Register</a></li>
-                    </ul>
+                    <a href="javascript:void(0)">Hakkımızda</a>                   
                 </li>
                 <li>
                     <a href="javascript:void(0)">Blog</a>
-                    <ul class="sub-menu">
-                        <li><a href="blog-left-sidebar.html">Left Sidebar</a></li>
-                        <li><a href="blog-right-sidebar.html">Right Sidebar</a></li>
-                        <li><a href="blog-full-width.html">Full Width</a></li>
-                        <li><a href="blog-detail-left-sidebar.html">Detail Left Sidebar</a></li>
-                        <li><a href="blog-detail-right-sidebar.html">Detail Right Sidebar</a></li>
-                        <li><a href="blog-detail-full-width.html">Detail Full Width</a></li>
-                    </ul>
+                </li>
+                <li>
+                    <a href="/contact">İletişim</a>                    
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="offer.html">
+                        Size Özel
+                    </a>
                 </li>
             </ul>
         </div>

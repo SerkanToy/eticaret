@@ -2,6 +2,7 @@
 using eticaret.Domain.Repository.Interface;
 using eticaret.Domain.UnitOfWork;
 using eticaret.Models;
+using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
@@ -54,6 +55,8 @@ namespace eticaret.Pages.Products
             }).ToList();
         }
 
+
+        [ActionName(name: "category")]
         public async Task OnGetCategory(string flag = null)
         {
             /*categoryViewModel = unitofWork.GetRepository<SubCategory>().GetAllIQueryable(x => x.IsDeleted == false); // unitofWork.Catetgory().CategorySubCategory(); //unitofWork.GetRepository<Category>().GetAllIQueryable(x => x.IsDeleted == false);
@@ -75,6 +78,7 @@ namespace eticaret.Pages.Products
             }).ToList();
         }
 
+        [ActionName(name: "subcategory")]
         public async Task OnGetSubCategory(string flag = null)
         {
             /*categoryViewModel = unitofWork.GetRepository<SubCategory>().GetAllIQueryable(x => x.IsDeleted == false); // unitofWork.Catetgory().CategorySubCategory(); //unitofWork.GetRepository<Category>().GetAllIQueryable(x => x.IsDeleted == false);
@@ -94,6 +98,7 @@ namespace eticaret.Pages.Products
             }).ToList();
         }
 
+        [ActionName(name:"point")]
         public async Task OnGetPoint(string flag = null)
         {
             /*categoryViewModel = unitofWork.GetRepository<SubCategory>().GetAllIQueryable(x => x.IsDeleted == false); // unitofWork.Catetgory().CategorySubCategory(); //unitofWork.GetRepository<Category>().GetAllIQueryable(x => x.IsDeleted == false);
@@ -113,6 +118,7 @@ namespace eticaret.Pages.Products
             }).ToList();
         }
 
+        [ActionName(name:"color")]
         public async Task OnGetColor(int flag = 0)
         {
             /*categoryViewModel = unitofWork.GetRepository<SubCategory>().GetAllIQueryable(x => x.IsDeleted == false); // unitofWork.Catetgory().CategorySubCategory(); //unitofWork.GetRepository<Category>().GetAllIQueryable(x => x.IsDeleted == false);

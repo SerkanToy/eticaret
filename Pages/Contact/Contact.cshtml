@@ -3,7 +3,7 @@
 @{
 }
 
-@(await Html.RenderComponentAsync<eticaret.Pages.Shared.Components.Breadcrumb.BreadcrumbComponent>(RenderMode.ServerPrerendered, new { Title = "Contact", Titles = new List<string> { "Contact" } }))
+@(await Html.RenderComponentAsync<eticaret.Pages.Shared.Components.Breadcrumb.BreadcrumbComponent>(RenderMode.ServerPrerendered, new { Title = "İletişim", Titles = new List<string> { "İletişim" } }))
 
 <section class="section-contact padding-tb-50">
     <div class="container">
@@ -11,10 +11,9 @@
             <div class="col-12">
                 <div class="section-title bb-center" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
                     <div class="section-detail">
-                        <h2 class="bb-title">Get In <span>Touch</span></h2>
+                        <h2 class="bb-title">Bizimle İletişime <span>Geçin</span></h2>
                         <p>
-                            Please select a topic below related to you inquiry. If you don't fint what you need, fill
-                            out our contact form.
+                            7/24 Sizin için buradayız. İletişim formunu doldurarak bizimle iletişime geçebilirsiniz.
                         </p>
                     </div>
                 </div>
@@ -23,30 +22,31 @@
                 <div class="bb-contact-form">
                     <form method="post">
                         <div class="bb-contact-wrap">
-                            <input type="text" name="firstname" placeholder="Enter Your First Name">
+                            <input type="text" name="firstname" placeholder="Ad Soyad">
+                        </div>                        
+                        <div class="bb-contact-wrap">
+                            <input type="email" name="email" placeholder="E-Posta">
                         </div>
                         <div class="bb-contact-wrap">
-                            <input type="text" name="lastname" placeholder="Enter Your Last Name">
+                            <input type="text" name="phonenumber" placeholder="Telefon NUmarası">
                         </div>
                         <div class="bb-contact-wrap">
-                            <input type="email" name="email" placeholder="Enter Your Email">
+                            <input type="text" name="lastname" placeholder="Konu">
                         </div>
                         <div class="bb-contact-wrap">
-                            <input type="text" name="phonenumber" placeholder="Enter Your Phone Number">
-                        </div>
-                        <div class="bb-contact-wrap">
-                            <textarea name="address" placeholder="Please leave your comments here.."></textarea>
+                            <textarea name="address" placeholder="Mesaj"></textarea>
                         </div>
                         <div class="bb-contact-button">
-                            <button class="bb-btn-2" type="submit">Submit</button>
+                            <button class="bb-btn-2" type="submit">Gönder</button>
                         </div>
                     </form>
                 </div>
             </div>
             <div class="col-lg-6 col-12 mb-24" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
                 <div class="bb-contact-maps">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d929.6923186886103!2d72.9043573711624!3d21.240995949535076!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1718947386404!5m2!1sen!2sin"
-                            loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe src="https://www.google.com/maps/place/ZeyZey+tasar%C4%B1m+at%C3%B6lyesi/@@40.7761265,30.4001386,20.75z"
+                            loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
                 </div>
             </div>
         </div>
