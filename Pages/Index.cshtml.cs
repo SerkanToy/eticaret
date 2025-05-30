@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace eticaret.Pages
@@ -12,9 +12,12 @@ namespace eticaret.Pages
             _logger = logger;
         }
 
+        
+
         public void OnGet()
         {
 
         }
+
     }
 }

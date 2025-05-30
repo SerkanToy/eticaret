@@ -11,6 +11,8 @@ namespace eticaret.Domain.Database.Context.Mapping.UsersMappings
         {
             builder.HasKey(x => x.Id);
             builder.HasMany(x => x.Address).WithOne(x => x.User).OnDelete(deleteBehavior:DeleteBehavior.NoAction);
+            builder.HasMany(x => x.BlogInfos).WithOne(x => x.User).HasForeignKey(x => x.UserId).OnDelete(deleteBehavior:DeleteBehavior.NoAction);
+            builder.HasMany(x => x.BlogInfoAndComment).WithOne(x => x.User).HasForeignKey(x => x.UserId).OnDelete(deleteBehavior:DeleteBehavior.NoAction);
             builder.HasData(User());
         }
         private User User()

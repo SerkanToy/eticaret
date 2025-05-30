@@ -1,23 +1,52 @@
-﻿<div class="bb-popnews-bg"></div>
-    <div class="bb-popnews-box">
-        <div class="bb-popnews-close" title="Close"></div>
-        <div class="row">
-            <div class="col-md-6 col-12">
-                <img src="assets/img/newsletter/newsletter-2.jpg" alt="newsletter">
-            </div>
-            <div class="col-md-6 col-12">
-                <div class="bb-popnews-box-content">
-                    <h2>Newsletter.</h2>
-                    <p>Subscribe the BlueBerry to get in touch and get the future update.</p>
-                    <form class="bb-popnews-form" action="#" method="post">
-                        <input type="email" name="newsemail" placeholder="Email Address" required>
-                        <button type="button" class="bb-btn-2" name="subscribe">Subscribe</button>
-                    </form>
-                </div>
+﻿@using Microsoft.AspNetCore.Components.Forms
+@using Microsoft.AspNetCore.Components.Web
+@using eticaret.Domain.Core.Entities
+
+@inject eticaret.Domain.UnitOfWork.IUnitofWork unitofWork
+@inject Microsoft.AspNetCore.Components.NavigationManager navigation
+
+@rendermode RenderMode.InteractiveAuto
+
+<div class="bb-popnews-bg"></div>
+<div class="bb-popnews-box">
+    <div class="bb-popnews-close" title="Close"></div>
+    <div class="row">
+        <div class="col-md-5 col-12">
+            <img src="assets/img/newsletter/newsletter-2.jpg" alt="newsletter">
+        </div>
+        <div class="col-md-7 col-12">
+            <div class="bb-popnews-box-content">
+                    <p>İndirimler, Yeni Ürünler, Özel Günler vb birçok gelişmede ve yenilikten haberin olsun istiyorsan bize katıl.</p>
+                <form>
+                    <input class="form-control" placeholder="E-Posta" for="Name" @bind="@subscribe.Name" />
+                    <button type="button" class="bb-btn-2" @onclick="@PostNew">Abone Ol</button>
+                </form>        
             </div>
         </div>
     </div>
+</div>
 
 @code {
+    public Subscribe subscribe = new Subscribe();
+
+    public void OnInitialized()
+    {
+        
+    }
+
+    public void PostNew()
+    {
+        if (subscribe is null)
+        {
+            return;
+        }
+        var subscriptionEntity = new Subscribe
+        {
+            Name = subscribe.Name,
+        };
+        unitofWork.GetRepository<Subscribe>().Insert(subscriptionEntity);
+        unitofWork.SaveChanges();
+        navigation.NavigateTo("/");
+    }
 
 }

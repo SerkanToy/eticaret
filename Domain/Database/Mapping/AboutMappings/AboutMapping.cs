@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace eticaret.Domain.Database.Context.Mapping.AboutMappings
 {
-    public class ColorMapping : IEntityTypeConfiguration<About>
+    public class AboutMapping : IEntityTypeConfiguration<About>
     {
         public void Configure(EntityTypeBuilder<About> builder)
         {

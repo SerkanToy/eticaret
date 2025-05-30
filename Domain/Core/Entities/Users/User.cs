@@ -1,4 +1,5 @@
-﻿using eticaret.Domain.Interfaced;
+﻿using eticaret.Domain.Core.Entities;
+using eticaret.Domain.Interfaced;
 using Microsoft.AspNetCore.Identity;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -21,5 +22,7 @@ namespace eticaret.Domain.Entities.Users
         public string Flag {  get; set; }
         [NotMapped]
         public ICollection<UserRole> UserRole { get; set; }
+        public ICollection<BlogInfo> BlogInfos { get; set; }
+        public ICollection<BlogInfoAndComment> BlogInfoAndComment { get; set; }
     }
 }
