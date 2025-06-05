@@ -1,6 +1,7 @@
 ﻿@page "~/blog"
 @model eticaret.Pages.Blog.BlogModel
 @{
+    Layout = "~/Pages/Shared/_Layout.cshtml";
 }
 
 @(await Html.RenderComponentAsync<eticaret.Pages.Shared.Components.Breadcrumb.BreadcrumbComponent>(RenderMode.ServerPrerendered, new { Title = "Blog", Titles = new List<string> { "Blog" } }))
@@ -34,24 +35,7 @@
 
             <div class="col-12">
                 <div class="bb-pro-pagination">
-                    <p>Toplam Blog Yazısı @Model.blogInfoViewModel.Count() </p>
-                    <ul>
-                        <li class="active">
-                            <a href="javascript:void(0)">1</a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)">2</a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)">3</a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)">4</a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)" class="next">Next <i class="ri-arrow-right-s-line"></i></a>
-                        </li>
-                    </ul>
+                    <p>Toplam Blog Yazısı @Model.blogInfoViewModel.Count() </p>                    
                 </div>
             </div>
         </div>

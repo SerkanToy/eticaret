@@ -44,6 +44,7 @@ namespace eticaret.Pages.Products
             productExpandoObject = productViewModel.Select(c => new Dynamic
             {
                 ["Name"] = c.Name,
+                ["Flag"] = c.Flag,
                 ["SubCategory"] = c.SubCategory,
                 ["Images"] = c.Images.Where(b => b.IsShowcase == true).Count() > 0 ? c.Images.Where(b => b.IsShowcase == true) : null,
                 ["Description"] = c.Description,

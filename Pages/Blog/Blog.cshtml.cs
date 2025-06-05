@@ -18,7 +18,7 @@ namespace eticaret.Pages.Blog
         }
         public void OnGet()
         {
-            blogInfoViewModel = unitofWork.GetRepository<BlogInfo>().GetAllIQueryable(x => x.IsDeleted == false).OrderByDescending(o => o.CreateDate).ToList();
+            blogInfoViewModel = unitofWork.GetRepository<BlogInfo>().GetAllIQueryable(x => x.IsDeleted == false).OrderBy(o => o.CreateDate).ToList();
         }
     }
 }

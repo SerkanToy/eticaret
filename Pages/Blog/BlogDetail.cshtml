@@ -1,6 +1,7 @@
 ﻿@page "~/blog-detail"
 @model eticaret.Pages.Blog.BlogDetailModel
 @{
+    Layout = "~/Pages/Shared/_Layout.cshtml";
 }
 
 @(await Html.RenderComponentAsync<eticaret.Pages.Shared.Components.Breadcrumb.BreadcrumbComponent>(RenderMode.ServerPrerendered, new { Title = "Blog", Titles = new List<string> { "Blog","Blog Detay", $"{Model.blogDetailViewModel.Title}" } }))
@@ -52,20 +53,31 @@
                             suscipit accusamus fuga veniam laborum cumque vitae cum? Cumque, aliquid.
                         </p>
                     </div>
-                    <div class="col-12">
-                        <div class="bb-pro-pagination">
-                            <p>Toplam Blog Yazısı @Model.count</p>
-                            <ul>
-                                <li>
-                                    <a asp-page="BlogDetail" asp-route-id="@(Model.blogDetailViewModel.Id - 1)" class="next">Geri <i class="ri-arrow-right-s-line"></i></a>
-                                </li>
-                                
-                                <li>
-                                    <a asp-page="BlogDetail" asp-route-id="@(Model.blogDetailViewModel.Id + 1)" class="next">İleri <i class="ri-arrow-right-s-line"></i></a>
-                                </li>
-                            </ul>
-                        </div>
+                    <div class="row mb-minus-24">
+                        @if (Model.blogViewModel.Any())
+                        {
+                            foreach (var blog in Model.blogViewModel)
+                            {
+                                <div class="col-lg-3 col-md-6 col-12 mb-24" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                                    <div class="bb-blog-card">
+                                        <div class="blog-image">
+                                            <img src="assets/img/blog/1.jpg" alt="blog-1">
+                                        </div>
+                                        <div class="blog-contact">
+                                            <h5><a asp-page="BlogDetail" asp-route-id="@blog.Id">@blog.Title</a></h5>
+                                            <div style="display: flex;flex-direction:row;justify-content:space-between;font-size:12px;">
+                                                <span>@(blog.ModifiedBy ?? blog.CreateBy)</span>
+                                                <span>@(blog.ModifiedDate ?? blog.CreateDate)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        }
                     </div>
+                    <br />
+                    <br />
+
                     <div class="bb-blog-details-comment">
                         <div class="main-title">
                             <h4>Comments</h4>
