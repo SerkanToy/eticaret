@@ -1,6 +1,8 @@
 ﻿@page "~/product-list/{handler?}/{flag?}"
 @model eticaret.Pages.Products.ProductListModel
 @{
+    ViewData["Title"] = "Ürün Listesi";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
 }
 
 @(await Html.RenderComponentAsync<eticaret.Pages.Shared.Components.Breadcrumb.BreadcrumbComponent>(RenderMode.ServerPrerendered, new { Title = $"Ürün Listesi", Titles = new List<string> { "Ürünler" } }))

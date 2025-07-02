@@ -17,7 +17,6 @@
         <div class="row mb-minus-24">
             <div class="col">
                 <div class="tab-content">
-
                     @if (products.Any())
                     {
                         <div class="tab-pane fade show active">
@@ -95,7 +94,7 @@
                                                         }
                                                     </span>
                                                 </div>
-                                                <h4 class="bb-pro-title"><a href="/product-detail/@item.Flag">@item.Name</a></h4>
+                                                <h4 class="bb-pro-title"><a href="/product/@item.Flag">@item.Name</a></h4>
                                                 <div class="bb-price">
                                                     <div class="inner-price">
                                                         @if (item.NewPrice == 0)

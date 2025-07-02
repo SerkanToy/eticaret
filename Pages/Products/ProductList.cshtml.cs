@@ -2,11 +2,8 @@
 using eticaret.Domain.Repository.Interface;
 using eticaret.Domain.UnitOfWork;
 using eticaret.Models;
-using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.EntityFrameworkCore;
-using System.Reflection.Metadata.Ecma335;
 
 namespace eticaret.Pages.Products
 {
@@ -63,10 +60,11 @@ namespace eticaret.Pages.Products
             /*categoryViewModel = unitofWork.GetRepository<SubCategory>().GetAllIQueryable(x => x.IsDeleted == false); // unitofWork.Catetgory().CategorySubCategory(); //unitofWork.GetRepository<Category>().GetAllIQueryable(x => x.IsDeleted == false);
             colorsViewModel = unitofWork.GetRepository<Colors>().GetAllIQueryable(x => x.IsDeleted == false);
             productViewModel = productRepository.ProductJoin(predicate: x => x.IsDeleted == false).Where(x => x.SubCategory.Category?.Flag == flag);*/
-           
+
             productExpandoObject = productViewModel.Where(x => x.SubCategory.Category?.Flag == flag).Select(c => new Dynamic
             {
                 ["Name"] = c.Name,
+                ["Flag"] = c.Flag,
                 ["SubCategory"] = c.SubCategory,
                 ["Images"] = c.Images.Where(b => b.IsShowcase == true).Count() > 0 ? c.Images.Where(b => b.IsShowcase == true) : null,
                 ["Description"] = c.Description,
@@ -75,7 +73,6 @@ namespace eticaret.Pages.Products
                 ["Category"] = c.Category,
                 ["NewPrice"] = Convert.ToDecimal(c.NewPrice),
                 ["OldPrice"] = Convert.ToDecimal(c.OldPrice)
-
             }).ToList();
         }
 
@@ -87,6 +84,7 @@ namespace eticaret.Pages.Products
             productExpandoObject = productViewModel.Where(f => f.SubCategory.Flag == flag).Select(c => new Dynamic
             {
                 ["Name"] = c.Name,
+                ["Flag"] = c.Flag,
                 ["SubCategory"] = c.SubCategory,
                 ["Images"] = c.Images.Where(b => b.IsShowcase == true).Count() > 0 ? c.Images.Where(b => b.IsShowcase == true) : null,
                 ["Description"] = c.Description,
@@ -95,18 +93,18 @@ namespace eticaret.Pages.Products
                 ["Category"] = c.Category,
                 ["NewPrice"] = Convert.ToDecimal(c.NewPrice),
                 ["OldPrice"] = Convert.ToDecimal(c.OldPrice)
-
             }).ToList();
         }
 
-        [ActionName(name:"point")]
-        public async Task OnGetPoint(string flag = null)
+        [ActionName(name: "point")]
+        public async Task OnGetPoint(string flag)
         {
             /*categoryViewModel = unitofWork.GetRepository<SubCategory>().GetAllIQueryable(x => x.IsDeleted == false); // unitofWork.Catetgory().CategorySubCategory(); //unitofWork.GetRepository<Category>().GetAllIQueryable(x => x.IsDeleted == false);
             productViewModel = productRepository.ProductJoin(predicate: x => x.IsDeleted == false);*/
             productExpandoObject = productViewModel.Where(f => f.RatinMax == Convert.ToInt32(flag)).Select(c => new Dynamic
             {
                 ["Name"] = c.Name,
+                ["Flag"] = c.Flag,
                 ["SubCategory"] = c.SubCategory,
                 ["Images"] = c.Images.Where(b => b.IsShowcase == true).Count() > 0 ? c.Images.Where(b => b.IsShowcase == true) : null,
                 ["Description"] = c.Description,
@@ -115,28 +113,27 @@ namespace eticaret.Pages.Products
                 ["Category"] = c.Category,
                 ["NewPrice"] = Convert.ToDecimal(c.NewPrice),
                 ["OldPrice"] = Convert.ToDecimal(c.OldPrice)
-
             }).ToList();
         }
 
-        [ActionName(name:"color")]
+        [ActionName(name: "color")]
         public async Task OnGetColor(int flag = 0)
         {
             /*categoryViewModel = unitofWork.GetRepository<SubCategory>().GetAllIQueryable(x => x.IsDeleted == false); // unitofWork.Catetgory().CategorySubCategory(); //unitofWork.GetRepository<Category>().GetAllIQueryable(x => x.IsDeleted == false);
             productViewModel = productRepository.ProductJoin(predicate: x => x.IsDeleted == false);*/
             productExpandoObject = productViewModel.Where(g => g.ColorProduct.Any(n => n.ColorsId == flag)).Select(c => new Dynamic
-                    {
-                        ["Name"] = c.Name,
-                        ["SubCategory"] = c.SubCategory,
-                        ["Images"] = c.Images.Where(b => b.IsShowcase == true).Count() > 0 ? c.Images.Where(b => b.IsShowcase == true) : null,
-                        ["Description"] = c.Description,
-                        ["Rating"] = c.RatinProducts.Select(v => new Dynamic { ["ratin"] = Convert.ToInt32(v.Ratin.Rating) }),
-                        ["RatinMax"] = c.RatinMax,
-                        ["Category"] = c.Category,
-                        ["NewPrice"] = Convert.ToDecimal(c.NewPrice),
-                        ["OldPrice"] = Convert.ToDecimal(c.OldPrice)
-
-                    }).ToList();
+            {
+                ["Name"] = c.Name,
+                ["Flag"] = c.Flag,
+                ["SubCategory"] = c.SubCategory,
+                ["Images"] = c.Images.Where(b => b.IsShowcase == true).Count() > 0 ? c.Images.Where(b => b.IsShowcase == true) : null,
+                ["Description"] = c.Description,
+                ["Rating"] = c.RatinProducts.Select(v => new Dynamic { ["ratin"] = Convert.ToInt32(v.Ratin.Rating) }),
+                ["RatinMax"] = c.RatinMax,
+                ["Category"] = c.Category,
+                ["NewPrice"] = Convert.ToDecimal(c.NewPrice),
+                ["OldPrice"] = Convert.ToDecimal(c.OldPrice)
+            }).ToList();
         }
     }
 }

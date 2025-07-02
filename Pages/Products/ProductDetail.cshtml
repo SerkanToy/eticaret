@@ -1,9 +1,12 @@
 ﻿@page "~/product/{flag}"
 @model eticaret.Pages.Products.ProductDetailModel
 @{
+    ViewData["Title"] = "Ürün Detay";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+    //Model.productViewModel = Model.productViewModel ?? new eticaret.Models.ProductViewModel(); // Ensure productViewModel is initialized
 }
 
-@(await Html.RenderComponentAsync<eticaret.Pages.Shared.Components.Breadcrumb.BreadcrumbComponent>(RenderMode.ServerPrerendered, new { Title = "Product", Titles = new List<string> { "Product" } }))
+@(await Html.RenderComponentAsync<eticaret.Pages.Shared.Components.Breadcrumb.BreadcrumbComponent>(RenderMode.ServerPrerendered, new { Title = $"{Model.productViewModel.Name}", Titles = new List<string> { "Ürün Detay", $"{Model.productViewModel.Category.Name}", $"{Model.productViewModel.Name}" } }))
 
 <section class="section-product padding-tb-50">
     <div class="container">
@@ -13,80 +16,82 @@
                     <div class="row">
                         <div class="col-lg-5 col-12 mb-24">
                             <div class="single-pro-slider">
-                                <div class="single-product-cover">
-                                    <div class="single-slide zoom-image-hover">
-                                        <img class="img-responsive" src="assets/img/new-product/1.jpg" alt="product-1">
+                                @if (Model.productViewModel.Images.Any())
+                                {
+                                    <div class="single-product-cover">
+                                        @foreach (var item in Model.productViewModel.Images)
+                                        {
+                                            <div class="single-slide zoom-image-hover">
+                                                <img class="img-responsive" src="assets/img/new-product/@item.Name" alt="product-1">
+                                            </div>
+                                        }
                                     </div>
-                                    <div class="single-slide zoom-image-hover">
-                                        <img class="img-responsive" src="assets/img/new-product/2.jpg" alt="product-2">
+                                    <div class="single-nav-thumb">
+                                        @foreach (var item in Model.productViewModel.Images)
+                                        {
+                                            <div class="single-slide">
+                                                <img class="img-responsive" src="assets/img/new-product/@item.Name" alt="product-1">
+                                            </div>
+                                        }
                                     </div>
-                                    <div class="single-slide zoom-image-hover">
-                                        <img class="img-responsive" src="assets/img/new-product/3.jpg" alt="product-3">
+
+                                }
+                                else
+                                {
+                                    <div class="single-product-cover">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="rgba(173,184,194,1)">
+                                                            <path d="M5 11.1005L7 9.1005L12.5 14.6005L16 11.1005L19 14.1005V5H5V11.1005ZM5 13.9289V19H8.1005L11.0858 16.0147L7 11.9289L5 13.9289ZM10.9289 19H19V16.9289L16 13.9289L10.9289 19ZM4 3H20C20.5523 3 21 3.44772 21 4V20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V4C3 3.44772 3.44772 3 4 3ZM15.5 10C14.6716 10 14 9.32843 14 8.5C14 7.67157 14.6716 7 15.5 7C16.3284 7 17 7.67157 17 8.5C17 9.32843 16.3284 10 15.5 10Z">
+                                                            </path>
+                                                        </svg>
                                     </div>
-                                    <div class="single-slide zoom-image-hover">
-                                        <img class="img-responsive" src="assets/img/new-product/4.jpg" alt="product-4">
-                                    </div>
-                                    <div class="single-slide zoom-image-hover">
-                                        <img class="img-responsive" src="assets/img/new-product/5.jpg" alt="product-5">
-                                    </div>
-                                </div>
-                                <div class="single-nav-thumb">
-                                    <div class="single-slide">
-                                        <img class="img-responsive" src="assets/img/new-product/1.jpg" alt="product-1">
-                                    </div>
-                                    <div class="single-slide">
-                                        <img class="img-responsive" src="assets/img/new-product/2.jpg" alt="product-2">
-                                    </div>
-                                    <div class="single-slide">
-                                        <img class="img-responsive" src="assets/img/new-product/3.jpg" alt="product-3">
-                                    </div>
-                                    <div class="single-slide">
-                                        <img class="img-responsive" src="assets/img/new-product/4.jpg" alt="product-4">
-                                    </div>
-                                    <div class="single-slide">
-                                        <img class="img-responsive" src="assets/img/new-product/5.jpg" alt="product-5">
-                                    </div>
-                                </div>
+                                }                                
                             </div>
                         </div>
                         <div class="col-lg-7 col-12 mb-24">
                             <div class="bb-single-pro-contact">
                                 <div class="bb-sub-title">
-                                    <h4>Ground Nuts Oil Pack 52g</h4>
+                                    <h4>@Model.productViewModel.Name</h4>
                                 </div>
                                 <div class="bb-single-rating">
                                     <span class="bb-pro-rating">
-                                        <i class="ri-star-fill"></i>
-                                        <i class="ri-star-fill"></i>
-                                        <i class="ri-star-fill"></i>
-                                        <i class="ri-star-fill"></i>
-                                        <i class="ri-star-line"></i>
+                                        @for (var v = 1; v != 6; v++)
+                                        {
+                                            if (v > Model.productViewModel.RatinMax)
+                                            {
+                                                <i class="ri-star-line"></i>
+                                            }
+                                            else
+                                            {
+                                                <i class="ri-star-fill"></i>
+                                            }
+                                        }
                                     </span>
                                     <span class="bb-read-review">
-                                        |&nbsp;&nbsp;<a href="#bb-spt-nav-review">992 Ratings</a>
+                                        |&nbsp;&nbsp;<a>@Model.productViewModel.RatinCount Değerlendirme</a>
                                     </span>
                                 </div>
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas nihil laboriosam
-                                    voluptatem
-                                    ab consectetur dolorum id, soluta sunt at culpa commodi totam quod natus qui!
+                                    @Model.productViewModel.Description.Substring(0, 150)...
                                 </p>
                                 <div class="bb-single-price-wrap">
                                     <div class="bb-single-price">
-                                        <div class="price">
-                                            <h5>$923.00 <span>-78%</span></h5>
-                                        </div>
-                                        <div class="mrp">
-                                            <p>M.R.P. : <span>$1,999.00</span></p>
-                                        </div>
-                                    </div>
-                                    <div class="bb-single-price">
-                                        <div class="sku">
-                                            <h5>SKU#: WH12</h5>
-                                        </div>
-                                        <div class="stock">
-                                            <span>In stock</span>
-                                        </div>
+
+                                        @if (Model.productViewModel.NewPrice == 0)
+                                        {
+                                            <div class="price">
+                                                <h5>@Model.productViewModel.OldPrice TL</h5>
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <div class="price">
+                                                <h5>@Model.productViewModel.NewPrice TL</h5>
+                                            </div>
+                                            <div class="mrp">
+                                                <p>Eski Fiyat : <span>@Model.productViewModel.OldPrice TL</span></p>
+                                            </div>
+                                        }
+                                                                                
                                     </div>
                                 </div>
                                 <div class="bb-single-list">
@@ -98,23 +103,13 @@
                                     </ul>
                                 </div>
                                 <div class="bb-single-pro-weight">
-                                    <div class="pro-title">
-                                        <h4>Weight</h4>
-                                    </div>
                                     <div class="bb-pro-variation-contant">
                                         <ul>
-                                            <li class="active-variation">
-                                                <span>250g</span>
-                                            </li>
-                                            <li>
-                                                <span>500g</span>
-                                            </li>
-                                            <li>
-                                                <span>1kg</span>
-                                            </li>
-                                            <li>
-                                                <span>2kg</span>
-                                            </li>
+                                            @foreach(var item in Model.productViewModel.Colors)
+                                            {
+                                                <li class="variation" style="background-color: @item.Colorvalue;witdh:32px;height:32px;border-radius:32px;">
+                                                </li>
+                                            }
                                         </ul>
                                     </div>
                                 </div>
@@ -123,16 +118,16 @@
                                         <input class="qty-input" type="text" name="bb-qtybtn" value="1">
                                     </div>
                                     <div class="buttons">
-                                        <a href="javascript:void(0)" class="bb-btn-2">View Cart</a>
+                                        <a href="@Model.productViewModel.Flag" class="bb-btn-2">Sepete Ekle</a>
                                     </div>
                                     <ul class="bb-pro-actions">
                                         <li class="bb-btn-group">
-                                            <a href="javascript:void(0)">
+                                            <a href="@Model.productViewModel.Flag">
                                                 <i class="ri-heart-line"></i>
                                             </a>
                                         </li>
                                         <li class="bb-btn-group">
-                                            <a href="javascript:void(0)" data-link-action="quickview" title="Quick view" data-bs-toggle="modal"
+                                            <a href="@Model.productViewModel.Flag" data-link-action="quickview" title="Quick view" data-bs-toggle="modal"
                                                data-bs-target="#bry_quickview_modal">
                                                 <i class="ri-eye-line"></i>
                                             </a>
@@ -149,18 +144,15 @@
                             <h2 class="accordion-header">
                                 <button class="accordion-button" type="button" data-bs-toggle="collapse"
                                         data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    Product Detail
+                                    Ürün Açıklaması
                                 </button>
                             </h2>
-                            <div id="collapseOne" class="accordion-collapse collapse show"
+                            <div id="collapseOne" class="accordion-collapse collapse"
                                  data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
                                     <div class="bb-details">
                                         <p>
-                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero,
-                                            voluptatum. Vitae dolores alias repellat eligendi, officiis, exercitationem corporis
-                                            quisquam delectus cum non recusandae numquam dignissimos molestiae
-                                            magnam hic natus. Cumque.
+                                            @Model.productViewModel.Description
                                         </p>
                                         <div class="details-info">
                                             <ul>
@@ -211,10 +203,10 @@
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                         data-bs-target="#collapseThree" aria-expanded="false"
                                         aria-controls="collapseThree">
-                                    Reviews
+                                    Yorumlar
                                 </button>
                             </h2>
-                            <div id="collapseThree" class="accordion-collapse collapse"
+                            <div id="collapseThree" class="accordion-collapse collapse show"
                                  data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
                                     <div class="bb-reviews">
