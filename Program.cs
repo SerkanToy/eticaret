@@ -1,4 +1,4 @@
-using eticaret.Domain.Database.Context;
+﻿using eticaret.Domain.Database.Context;
 using eticaret.Domain.Extensions;
 using eticaret.Models.MailMessageSend;
 

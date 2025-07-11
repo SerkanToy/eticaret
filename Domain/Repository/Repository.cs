@@ -55,6 +55,11 @@ namespace eticaret.Domain.Repository
             return await _dbSet.FirstOrDefaultAsync(predicate);
         }
 
+        public TEntity GetFindEmail(Expression<Func<TEntity, bool>> predicate = null)
+        {
+            return _dbSet.FirstOrDefault(predicate);
+        }
+
         public async Task<TEntity> GetByIdAsync(int Id)
         {
             return await _dbSet.FindAsync(Id);

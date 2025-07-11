@@ -8,6 +8,7 @@ namespace eticaret.Domain.Repository
         Task<List<TEntity>> GetAllAsync();
         Task<TEntity> GetByIdAsync(int Id);
         Task<TEntity> GetFindAsync(Expression<Func<TEntity, bool>> predicate = null);
+        TEntity GetFindEmail(Expression<Func<TEntity, bool>> predicate = null);
         void Insert(TEntity entity);
         Task<IQueryable<TEntity>> GetAllIQueryableAsync(Expression<Func<TEntity, bool>> predicate = null);
         IQueryable<TEntity> GetAllIQueryable(Expression<Func<TEntity, bool>> predicate = null);

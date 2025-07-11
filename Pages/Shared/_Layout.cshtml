@@ -22,20 +22,20 @@
 
 </head>
 <body>
-    <component type="typeof(eticaret.Pages.Shared.Components.Loader.LoaderComponent)" render-mode="ServerPrerendered" />
-    <component type="typeof(eticaret.Pages.Shared.Components.Header.HeaderTwoComponent)" render-mode="ServerPrerendered" />
-    <component type="typeof(eticaret.Pages.Shared.Components.Mobilemenu.MobilemenuComponent)" render-mode="ServerPrerendered" />
+    <component type="typeof(eticaret.Pages.Shared.Components.Loader.LoaderComponent)" render-mode="WebAssemblyPrerendered" />
+    <component type="typeof(eticaret.Pages.Shared.Components.Header.HeaderTwoComponent)" render-mode="WebAssemblyPrerendered" />
+    <component type="typeof(eticaret.Pages.Shared.Components.Mobilemenu.MobilemenuComponent)" render-mode="WebAssemblyPrerendered" />
     
 
     @RenderBody()
 
 
-    <component type="typeof(eticaret.Pages.Shared.Components.Footer.FooterComponent)" render-mode="ServerPrerendered" />
+    <component type="typeof(eticaret.Pages.Shared.Components.Footer.FooterComponent)" render-mode="WebAssemblyPrerendered" />
 
-    <component type="typeof(eticaret.Pages.Shared.Components.MyCart.MycartComponent)" render-mode="ServerPrerendered" />
+    <component type="typeof(eticaret.Pages.Shared.Components.MyCart.MycartComponent)" render-mode="WebAssemblyPrerendered" />
 
     <!-- Category Popup -->
-   <component type="typeof(eticaret.Pages.Shared.Components.CategoryPopup.CategorypopupComponent)" render-mode="ServerPrerendered" />
+    <component type="typeof(eticaret.Pages.Shared.Components.CategoryPopup.CategorypopupComponent)" render-mode="WebAssemblyPrerendered" />
 
     <!-- Quick view Modal -->
     <div class="modal fade quickview-modal" id="bry_quickview_modal" tabindex="-1" role="dialog">
@@ -114,10 +114,10 @@
     </div>
 
     <!-- Newsletter Modal -->
-    <component type="typeof(eticaret.Pages.Shared.Components.Newsletter.NewsletterComponent)" render-mode="ServerPrerendered" />   
+    <component type="typeof(eticaret.Pages.Shared.Components.Newsletter.NewsletterComponent)" render-mode="ServerPrerendered" />
 
-    <component type="typeof(eticaret.Pages.Shared.Components.Top.TopComponent)" render-mode="ServerPrerendered" />
-
+    <component type="typeof(eticaret.Pages.Shared.Components.Top.TopComponent)" render-mode="WebAssemblyPrerendered" />
+    <script src="_framework/blazor.server.js"></script>
     <!-- Plugins -->
     <script src="~/assets/js/vendor/bootstrap.bundle.min.js"></script>
     <script src="~/assets/js/vendor/jquery.min.js"></script>
@@ -135,5 +135,7 @@
     <script src="~/assets/js/main.js" asp-append-version="true"></script>
 
     @await RenderSectionAsync("Scripts", required: false)
+
+    
 </body>
 </html>

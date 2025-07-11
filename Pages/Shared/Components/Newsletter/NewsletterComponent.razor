@@ -1,12 +1,7 @@
-﻿@using Microsoft.AspNetCore.Components.Forms
-@using Microsoft.AspNetCore.Components.Web
-@using eticaret.Domain.Core.Entities
+﻿@using System.Text.RegularExpressions
+@attribute [RequireAntiforgeryToken(required: false)]
 
 @inject eticaret.Domain.UnitOfWork.IUnitofWork unitofWork
-@inject Microsoft.AspNetCore.Components.NavigationManager navigation
-
-@rendermode RenderMode.InteractiveAuto
-
 <div class="bb-popnews-bg"></div>
 <div class="bb-popnews-box">
     <div class="bb-popnews-close" title="Close"></div>
@@ -16,37 +11,91 @@
         </div>
         <div class="col-md-7 col-12">
             <div class="bb-popnews-box-content">
-                    <p>İndirimler, Yeni Ürünler, Özel Günler vb birçok gelişmede ve yenilikten haberin olsun istiyorsan bize katıl.</p>
-                <form>
-                    <input class="form-control" placeholder="E-Posta" for="Name" @bind="@subscribe.Name" />
-                    <button type="button" class="bb-btn-2" @onclick="@PostNew">Abone Ol</button>
-                </form>        
-            </div>
+                <p>İndirimler, Yeni Ürünler, Özel Günler vb birçok gelişmede ve yenilikten haberin olsun istiyorsan bize katıl.</p>
+                @if (error is not null)
+                {
+                    foreach (var item in error)
+                    {
+                        <div class="alert alert-danger" role="alert">
+                            @item
+                        </div>
+                    }                    
+                }
+                else if (success)
+                {
+                    <div class="alert alert-success" role="alert">
+                        Aboneliğiniz başarıyla kaydedildi. Teşekkür ederiz.
+                    </div>
+                }
+                else
+                {
+                    <input class="form-control mt-3" placeholder="E-Posta" name="subscribe.Name" @bind="subscribe.Name" style="width:90%;" autocomplete="off" />
+                    <button type="button" class="btn btn-primary mb-3" @onclick="Newsave">Abone Ol!</button>
+                }                
+              </div>
         </div>
     </div>
 </div>
 
+<script>
+    (function ($) {
+        /* Newsletter popup Homepage */
+        setTimeout(function () {
+            $(".bb-popnews-bg").fadeIn();
+            $(".bb-popnews-box").fadeIn();
+        }, 5000);
+
+        $(".bb-popnews-close").click(() => {
+            $(".bb-popnews-bg").fadeOut();
+            $(".bb-popnews-box").fadeOut();
+        });
+
+        $(".bb-popnews-bg").click(() => {
+            $(".bb-popnews-bg").fadeOut();
+            $(".bb-popnews-box").fadeOut();
+        });
+    })(jQuery);
+</script>
+
 @code {
-    public Subscribe subscribe = new Subscribe();
+    [SupplyParameterFromForm(FormName = "SubScribe")]
+    private Subscribe subscribe { get; set; } = new Subscribe();
 
-    public void OnInitialized()
-    {
-        
-    }
+    private string[]? error { get; set; }
+    private bool success { get; set; } = false;
 
-    public void PostNew()
+    private void Newsave()
     {
-        if (subscribe is null)
+        Regex regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
+        Match match = regex.Match(subscribe.Name);
+        if (!match.Success)
         {
+            error = new string[] { "Lütfen E-Posta Adresinizi Doğru Formatta Giriniz!" };
+            //ModelState.AddModelError("subscribe.Name", "Lütfen E-Posta Adresinizi Giriniz!");
+            return;
+        }
+        if (subscribe.Name is null)
+        {
+            error = new string[] { "Lütfen E-Posta Adresinizi Giriniz!" };
             return;
         }
         var subscriptionEntity = new Subscribe
         {
             Name = subscribe.Name,
         };
+
+        var control = unitofWork.GetRepository<Subscribe>().GetFindEmail(x => x.Name.ToLower() == subscribe.Name.ToLower());
+
+        if (control is not null)
+        {
+            error = new string[] { "Bu E-Posta Adresi Zaten Abone Olunmuş!" };
+            return;
+        }
+
         unitofWork.GetRepository<Subscribe>().Insert(subscriptionEntity);
         unitofWork.SaveChanges();
-        navigation.NavigateTo("/");
+        success = true;
+        //navigation.NavigateTo("/");
     }
 
 }

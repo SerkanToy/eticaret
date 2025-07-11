@@ -1,4 +1,4 @@
-/* main js */
+﻿/* main js */
 (function ($) {
     "use strict";
 
@@ -712,7 +712,7 @@
         },
     });
 
-    /* Newsletter popup Homepage */
+    /* Newsletter popup Homepage 
     setTimeout(function () {
         $(".bb-popnews-bg").fadeIn();
         $(".bb-popnews-box").fadeIn();
@@ -726,7 +726,7 @@
     $(".bb-popnews-bg").click(() => {
         $(".bb-popnews-bg").fadeOut();
         $(".bb-popnews-box").fadeOut();
-    });
+    });*/
 
     /* Copyright years JS  */
     var date = new Date().getFullYear();
