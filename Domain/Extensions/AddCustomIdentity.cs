@@ -10,7 +10,7 @@ namespace eticaret.Domain.Extensions
     {
         public static void IdentityAdd(this IServiceCollection services)
         {
-            services.AddIdentity<User, Role>()
+            services.AddIdentity<UserApp, Role>()
             .AddDefaultTokenProviders()
             .AddUserValidator<CustomUserValidator>()
             .AddErrorDescriber<CustomIdentityErrorDescriber>()

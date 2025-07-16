@@ -113,27 +113,7 @@
                                         </ul>
                                     </div>
                                 </div>
-                                <div class="bb-single-qty">
-                                    <div class="qty-plus-minus">
-                                        <input class="qty-input" type="text" name="bb-qtybtn" value="1">
-                                    </div>
-                                    <div class="buttons">
-                                        <a href="@Model.productViewModel.Flag" class="bb-btn-2">Sepete Ekle</a>
-                                    </div>
-                                    <ul class="bb-pro-actions">
-                                        <li class="bb-btn-group">
-                                            <a href="@Model.productViewModel.Flag">
-                                                <i class="ri-heart-line"></i>
-                                            </a>
-                                        </li>
-                                        <li class="bb-btn-group">
-                                            <a href="@Model.productViewModel.Flag" data-link-action="quickview" title="Quick view" data-bs-toggle="modal"
-                                               data-bs-target="#bry_quickview_modal">
-                                                <i class="ri-eye-line"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
+                                @(await Html.RenderComponentAsync<eticaret.Pages.Shared.Components.Pro.ProactionsDetailComponent>(RenderMode.ServerPrerendered, new { Flag = Model.productViewModel.Flag }))
                             </div>
                         </div>
                     </div>
@@ -289,3 +269,5 @@
         </div>
     </div>
 </section>
+
+

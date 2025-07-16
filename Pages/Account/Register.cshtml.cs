@@ -12,8 +12,8 @@ namespace eticaret.Pages.Account
     {
         [BindProperty]
         public RegisterViewModel registerViewModel { get; set; }
-        private UserManager<User> _userManager;
-        public RegisterModel(UserManager<User> _userManager)
+        private UserManager<UserApp> _userManager;
+        public RegisterModel(UserManager<UserApp> _userManager)
         {
             this._userManager = _userManager;
         }
@@ -39,7 +39,7 @@ namespace eticaret.Pages.Account
                     return;
                 }
 
-                IdentityResult result = await _userManager.CreateAsync(new User
+                IdentityResult result = await _userManager.CreateAsync(new UserApp
                 {
                     Name = registerViewModel.Name.CustomToLower().Trim(),
                     SurName = registerViewModel.SurName.CustomToLower().Trim(),

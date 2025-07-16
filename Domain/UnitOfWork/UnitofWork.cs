@@ -1,4 +1,5 @@
 ﻿using eticaret.Domain.Database.Context;
+using eticaret.Domain.Entities.Users;
 using eticaret.Domain.Repository;
 using eticaret.Domain.Repository.Interface;
 using eticaret.Domain.Repository.Repositorys;
@@ -54,6 +55,11 @@ namespace eticaret.Domain.UnitOfWork
             GC.SuppressFinalize(this);
         }
 
+        public int GetUserById(string username)
+        {
+            var user = context.User.FirstOrDefault(x => x.UserName == username);
+            return user.Id;
+        }
         public ICategoryRepository Catetgory()
         {
             return catetgoryRepository ??= new CategoryRepository(context);

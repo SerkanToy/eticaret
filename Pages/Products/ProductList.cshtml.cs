@@ -40,6 +40,7 @@ namespace eticaret.Pages.Products
             colorsViewModel = unitofWork.GetRepository<Colors>().GetAllIQueryable(x => x.IsDeleted == false);*/
             productExpandoObject = productViewModel.Select(c => new Dynamic
             {
+                ["Id"] = c.Id,
                 ["Name"] = c.Name,
                 ["Flag"] = c.Flag,
                 ["SubCategory"] = c.SubCategory,
@@ -63,6 +64,7 @@ namespace eticaret.Pages.Products
 
             productExpandoObject = productViewModel.Where(x => x.SubCategory.Category?.Flag == flag).Select(c => new Dynamic
             {
+                ["Id"] = c.Id,
                 ["Name"] = c.Name,
                 ["Flag"] = c.Flag,
                 ["SubCategory"] = c.SubCategory,
@@ -83,6 +85,7 @@ namespace eticaret.Pages.Products
             productViewModel = productRepository.ProductJoin(predicate: x => x.IsDeleted == false);*/
             productExpandoObject = productViewModel.Where(f => f.SubCategory.Flag == flag).Select(c => new Dynamic
             {
+                ["Id"] = c.Id,
                 ["Name"] = c.Name,
                 ["Flag"] = c.Flag,
                 ["SubCategory"] = c.SubCategory,
@@ -103,6 +106,7 @@ namespace eticaret.Pages.Products
             productViewModel = productRepository.ProductJoin(predicate: x => x.IsDeleted == false);*/
             productExpandoObject = productViewModel.Where(f => f.RatinMax == Convert.ToInt32(flag)).Select(c => new Dynamic
             {
+                ["Id"] = c.Id,
                 ["Name"] = c.Name,
                 ["Flag"] = c.Flag,
                 ["SubCategory"] = c.SubCategory,
@@ -123,6 +127,7 @@ namespace eticaret.Pages.Products
             productViewModel = productRepository.ProductJoin(predicate: x => x.IsDeleted == false);*/
             productExpandoObject = productViewModel.Where(g => g.ColorProduct.Any(n => n.ColorsId == flag)).Select(c => new Dynamic
             {
+                ["Id"] = c.Id,
                 ["Name"] = c.Name,
                 ["Flag"] = c.Flag,
                 ["SubCategory"] = c.SubCategory,

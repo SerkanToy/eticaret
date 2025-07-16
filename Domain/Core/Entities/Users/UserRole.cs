@@ -7,7 +7,7 @@ namespace eticaret.Domain.Entities.Users
     {
         //public override int UserId { get; set; } = default!;
         [NotMapped]
-        public virtual User User { get; set; }
+        public virtual UserApp User { get; set; }
         //public override int RoleId { get; set; } = default!;
         [NotMapped]
         public virtual Role Role { get; set; }

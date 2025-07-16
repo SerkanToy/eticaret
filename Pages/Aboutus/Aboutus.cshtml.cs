@@ -23,7 +23,7 @@ namespace eticaret.Pages.Aboutus
             this.unitofWork = unitofWork;
             aboutusViewModel = unitofWork.GetRepository<About>().GetAllIQueryable(x => x.IsDeleted == false).FirstOrDefault();
             productCount = unitofWork.GetRepository<Product>().GetAllIQueryable(x => x.IsDeleted == false).Count();
-            userCount = unitofWork.GetRepository<User>().GetAllIQueryable(x => x.IsDeleted == false).Count();
+            userCount = unitofWork.GetRepository<UserApp>().GetAllIQueryable(x => x.IsDeleted == false).Count();
         }
 
         public async Task OnGet()

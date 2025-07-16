@@ -15,7 +15,7 @@ namespace eticaret.Domain.Core.Entities
         public string Description { get; set; }
         public ICollection<BlogInfoAndComment> BlogInfoAndComment { get; set; }
         public int UserId { get; set; }
-        public User User { get; set; }
+        public UserApp User { get; set; }
         public string CreateBy { get; set; }
         public string? ModifiedBy { get; set; }
         public string? DeleteBy { get; set; }

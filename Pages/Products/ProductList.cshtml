@@ -74,7 +74,7 @@
                                                 </a>
                                             }
 
-                                            @(await Html.RenderComponentAsync<eticaret.Pages.Shared.Components.Pro.ProactionsComponent>(RenderMode.ServerPrerendered))
+                                            @(await Html.RenderComponentAsync<eticaret.Pages.Shared.Components.Pro.ProactionsComponent>(RenderMode.ServerPrerendered, new { ProductId = item.Id.ToString() }))
                                         </div>
                                         <div class="bb-pro-contact">
                                             <div class="bb-pro-subtitle">

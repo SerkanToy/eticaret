@@ -15,7 +15,7 @@ namespace eticaret.Domain.Entities
         public string Name { get; set; }
         public int UserId { get; set; }
         [NotMapped]
-        public User User { get; set; }
+        public UserApp User { get; set; }
         public string CreateBy { get; set; }
         public string? ModifiedBy { get; set; }
         public string? DeleteBy { get; set; }

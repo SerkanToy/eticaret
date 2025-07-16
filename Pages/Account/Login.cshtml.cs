@@ -10,9 +10,9 @@ namespace eticaret.Pages.Account
 {
 	public class LoginModel : PageModel
 	{
-		private UserManager<User> _userManager;
-		private SignInManager<User> _signInManager;
-		public LoginModel(UserManager<User> _userManager, SignInManager<User> _signInManager)
+		private UserManager<UserApp> _userManager;
+		private SignInManager<UserApp> _signInManager;
+		public LoginModel(UserManager<UserApp> _userManager, SignInManager<UserApp> _signInManager)
 		{
 			this._userManager = _userManager;
 			this._signInManager = _signInManager;
@@ -30,7 +30,7 @@ namespace eticaret.Pages.Account
 			//ReturnUrl = ReturnUrl ?? Url.Action("Index", "Home", new { area = "" });
 			if (ModelState.IsValid)
 			{
-				User hasUser = await _userManager.FindByEmailAsync(loginViewModel.Email);
+                UserApp hasUser = await _userManager.FindByEmailAsync(loginViewModel.Email);
 
 				if (hasUser == null)
 				{

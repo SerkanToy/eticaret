@@ -4,9 +4,9 @@ using eticaret.Domain.Entities.Users;
 
 namespace eticaret.Domain.ErrorTr
 {
-    public class CustomUserValidator : IUserValidator<User>
+    public class CustomUserValidator : IUserValidator<UserApp>
     {
-        public async Task<IdentityResult> ValidateAsync(UserManager<User> manager, User user)
+        public async Task<IdentityResult> ValidateAsync(UserManager<UserApp> manager, UserApp user)
         {
             List<IdentityError> errors = new List<IdentityError>();
             var con = await manager.Users.FirstOrDefaultAsync(x =>

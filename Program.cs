@@ -35,10 +35,10 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapStaticAssets();
-app.MapRazorPages()
-   .WithStaticAssets();
+app.MapRazorPages().WithStaticAssets();
 
 app.MapBlazorHub();
-//app.MapRazorComponents<NavbarComponent>();
+//app.MapRazorComponents<ProactionsComponent>().AddInteractiveServerRenderMode(o => o.DisableWebSocketCompression = true);
+//app.MapRazorComponents<NewsletterComponent>().AddInteractiveServerRenderMode(o => o.DisableWebSocketCompression = true);
 
 app.Run();

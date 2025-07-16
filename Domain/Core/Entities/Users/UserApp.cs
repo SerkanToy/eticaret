@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace eticaret.Domain.Entities.Users
 {
-    public class User : IdentityUser<int>, IModel
+    public class UserApp : IdentityUser<int>, IModel
     {
         public string Name { get; set; }
         public string SurName { get; set; }
@@ -22,6 +22,7 @@ namespace eticaret.Domain.Entities.Users
         public string Flag {  get; set; }
         [NotMapped]
         public ICollection<UserRole> UserRole { get; set; }
+        public ICollection<Favorites>? Favorites { get; set; }
         public ICollection<BlogInfo> BlogInfos { get; set; }
         public ICollection<BlogInfoAndComment> BlogInfoAndComment { get; set; }
     }

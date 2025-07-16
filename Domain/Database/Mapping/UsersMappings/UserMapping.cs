@@ -5,9 +5,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace eticaret.Domain.Database.Context.Mapping.UsersMappings
 {
-    public class UserMapping : IEntityTypeConfiguration<User>
+    public class UserMapping : IEntityTypeConfiguration<UserApp>
     {
-        public void Configure(EntityTypeBuilder<User> builder)
+        public void Configure(EntityTypeBuilder<UserApp> builder)
         {
             builder.HasKey(x => x.Id);
             builder.HasMany(x => x.Address).WithOne(x => x.User).OnDelete(deleteBehavior:DeleteBehavior.NoAction);
@@ -15,9 +15,9 @@ namespace eticaret.Domain.Database.Context.Mapping.UsersMappings
             builder.HasMany(x => x.BlogInfoAndComment).WithOne(x => x.User).HasForeignKey(x => x.UserId).OnDelete(deleteBehavior:DeleteBehavior.NoAction);
             builder.HasData(User());
         }
-        private User User()
+        private UserApp User()
         {
-            var user = new User
+            var user = new UserApp
             {
                 Id = 1,
                 Email = "stoy@windowslive.com",
@@ -38,9 +38,9 @@ namespace eticaret.Domain.Database.Context.Mapping.UsersMappings
             return user;
         }
 
-        private string CreatePasswordHash(User user, string password)
+        private string CreatePasswordHash(UserApp user, string password)
         {
-            var passwordHash = new PasswordHasher<User>();
+            var passwordHash = new PasswordHasher<UserApp>();
             return passwordHash.HashPassword(user, password);
         }
 

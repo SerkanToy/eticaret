@@ -3,9 +3,9 @@ using eticaret.Domain.Entities.Users;
 
 namespace eticaret.Domain.ErrorTr
 {
-    public class CustomPasswordValidator : IPasswordValidator<User>
+    public class CustomPasswordValidator : IPasswordValidator<UserApp>
     {
-        public async Task<IdentityResult> ValidateAsync(UserManager<User> manager, User user, string password)
+        public async Task<IdentityResult> ValidateAsync(UserManager<UserApp> manager, UserApp user, string password)
         {
             List<IdentityError> errors = new List<IdentityError>();
 

@@ -1,6 +1,7 @@
 ﻿<ul class="bb-pro-actions">
     <li class="bb-btn-group">
-        <a href="javascript:void(0)">
+        <a href="javascript:void(0)" @onclick="((a) => Favorite(ProductId))">
+            @Id @ProductId
             <i class="ri-heart-line"></i>
         </a>
     </li>
@@ -24,5 +25,17 @@
 </ul>
 
 @code {
+    [Parameter]
+    public string ProductId { get; set; } = string.Empty;
+    [SupplyParameterFromForm]
+    public string Id { get; set; } = string.Empty;
+    public void OnInitialized()
+    {
+        Id = ProductId;
+    }
 
+    private void Favorite(string data)
+    {
+        Id = "Serkan TOY";
+    }
 }

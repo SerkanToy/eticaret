@@ -30,6 +30,7 @@ namespace eticaret.Domain.Core.Entities
         public Category? Category { get; set; }
         [NotMapped]
         public ICollection<Colors>? Colors { get; set; }
+        public ICollection<Favorites>? Favorites { get; set; }
         public ICollection<ColorProduct> ColorProduct { get; set; }
         public int SubCategoryId { get; set; }
         public SubCategory SubCategory { get; set; }
