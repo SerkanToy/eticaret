@@ -76,7 +76,7 @@
                 UserId = userId,
                 ProductId = product.Id
             });
-            unitofWork.SaveChangesAsync();
+            await unitofWork.SaveChangesAsync();
             IsBoolean = true;
         }
         else

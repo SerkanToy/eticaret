@@ -1,8 +1,17 @@
-﻿<ul class="bb-pro-actions">
+﻿@inject AuthenticationStateProvider AuthenticationStateProvider
+@inject eticaret.Domain.UnitOfWork.IUnitofWork unitofWork
+
+<ul class="bb-pro-actions">
     <li class="bb-btn-group">
-        <a href="javascript:void(0)" @onclick="((a) => Favorite(ProductId))">
-            @Id @ProductId
-            <i class="ri-heart-line"></i>
+        <a href="javascript:void(0)" @onclick="() => Favori(ProductId)">
+            @if (IsBoolean)
+            {
+                <i class="ri-check-double-line"></i>
+            }
+            else
+            {
+                <i class="ri-heart-line"></i>
+            }
         </a>
     </li>
     <li class="bb-btn-group">
@@ -25,17 +34,48 @@
 </ul>
 
 @code {
-    [Parameter]
-    public string ProductId { get; set; } = string.Empty;
-    [SupplyParameterFromForm]
-    public string Id { get; set; } = string.Empty;
+        [Parameter]
+        public string ProductId { get; set; } = string.Empty;
+        [Parameter]
+        public string Flag { get; set; } = string.Empty;
+        [Parameter]
+        public bool IsBoolean { get; set; } = false;
+
+
+    private AuthenticationState authenticationState;
+
+
     public void OnInitialized()
     {
-        Id = ProductId;
+
     }
 
-    private void Favorite(string data)
+    public async Task Favori(string a)
     {
-        Id = "Serkan TOY";
+        authenticationState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        var user = authenticationState.User;
+        if (user.Identity?.IsAuthenticated == true)
+        {
+            var userId = unitofWork.GetUserById(user.Identity!.Name!);
+            var product = await unitofWork.GetRepository<Product>().GetFindAsync(x => x.Id == Convert.ToInt32(a));
+            var favorite = await unitofWork.GetRepository<Favorites>().GetFindAsync(x => x.UserId == userId && x.ProductId == product.Id);
+            if (favorite is not null)
+            {
+                IsBoolean = true;
+                return;
+            }
+
+            unitofWork.GetRepository<Favorites>().Insert(new Favorites
+            {
+                UserId = userId,
+                ProductId = product.Id
+            });
+            await unitofWork.SaveChangesAsync();
+            IsBoolean = true;
+        }
+        else
+        {
+            IsBoolean = false;
+        }
     }
 }
