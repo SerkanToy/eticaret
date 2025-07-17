@@ -3,267 +3,84 @@
 @{
 }
 
-@(await Html.RenderComponentAsync<eticaret.Pages.Shared.Components.Breadcrumb.BreadcrumbComponent>(RenderMode.ServerPrerendered, new { Title = "Wish List", Titles = new List<string> { "Wish List" } }))
+@(await Html.RenderComponentAsync<eticaret.Pages.Shared.Components.Breadcrumb.BreadcrumbComponent>(RenderMode.ServerPrerendered, new { Title = "Favoriler", Titles = new List<string> { "Favoriler" } }))
+
 
 <section class="section-wishlist padding-tb-50">
     <div class="container">
         <div class="row mb-minus-24 bb-wish-rightside">
-            <div class="col-lg-3 col-md-6 col-12 mb-24 bb-wishlist">
-                <div class="bb-pro-box">
-                    <div class="bb-pro-img">
-                        <span class="bb-remove-wish">
-                            <a href="javascript:void(0)">
-                                <i class="ri-close-circle-fill"></i>
-                            </a>
-                        </span>
-                        <span class="flags">
-                            <span>New</span>
-                        </span>
-                        <a href="javascript:void(0)">
-                            <div class="inner-img">
-                                <img class="main-img" src="assets/img/product/1.jpg" alt="product-1">
-                                <img class="hover-img" src="assets/img/product/back-1.jpg" alt="product-1">
+
+            @if (Model.wishlistViewModel.Any())
+            {
+                foreach (var item in Model.wishlistViewModel)
+                {
+                    <div class="col-lg-3 col-md-6 col-12 mb-24 bb-wishlist">
+                        <div class="bb-pro-box">
+                            <div class="bb-pro-img">
+                                @(await Html.RenderComponentAsync<eticaret.Pages.Shared.Components.Wishlist.WishlistremoveComponent>(RenderMode.ServerPrerendered, new { ProductId = item.Id.ToString() }))
+
+                                @if (item.Images.Count() > 0)
+                                {                                    
+                                    foreach (var img in item.Images)
+                                    {
+                                        @(await Html.RenderComponentAsync<eticaret.Pages.Shared.Components.ProductImg.ImgComponent>(RenderMode.ServerPrerendered, new { Name = img.Name }))
+                                    }
+                                }
+                                else
+                                {
+                                    <a href="javascript:void(0)">
+                                        <div class="inner-img">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="rgba(173,184,194,1)">
+                                                <path d="M5 11.1005L7 9.1005L12.5 14.6005L16 11.1005L19 14.1005V5H5V11.1005ZM5 13.9289V19H8.1005L11.0858 16.0147L7 11.9289L5 13.9289ZM10.9289 19H19V16.9289L16 13.9289L10.9289 19ZM4 3H20C20.5523 3 21 3.44772 21 4V20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V4C3 3.44772 3.44772 3 4 3ZM15.5 10C14.6716 10 14 9.32843 14 8.5C14 7.67157 14.6716 7 15.5 7C16.3284 7 17 7.67157 17 8.5C17 9.32843 16.3284 10 15.5 10Z">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                    </a>
+                                }
+
+                                @(await Html.RenderComponentAsync<eticaret.Pages.Shared.Components.Pro.ProactionsComponent>(RenderMode.ServerPrerendered, new { ProductId = item.Id.ToString() }))
+
                             </div>
-                        </a>
-                        <ul class="bb-pro-actions">
-                            <li class="bb-btn-group">
-                                <a href="javascript:void(0)">
-                                    <i class="ri-heart-line"></i>
-                                </a>
-                            </li>
-                            <li class="bb-btn-group">
-                                <a href="javascript:void(0)"
-                                   data-link-action="quickview" title="Quick view" data-bs-toggle="modal"
-                                   data-bs-target="#bry_quickview_modal">
-                                    <i class="ri-eye-line"></i>
-                                </a>
-                            </li>
-                            <li class="bb-btn-group">
-                                <a href="compare.html">
-                                    <i class="ri-repeat-line"></i>
-                                </a>
-                            </li>
-                            <li class="bb-btn-group">
-                                <a href="javascript:void(0)">
-                                    <i class="ri-shopping-bag-4-line"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="bb-pro-contact">
-                        <div class="bb-pro-subtitle">
-                            <a href="shop-left-sidebar-col-3.html">Chocolates</a>
-                            <span class="bb-pro-rating">
-                                <i class="ri-star-fill"></i>
-                                <i class="ri-star-fill"></i>
-                                <i class="ri-star-fill"></i>
-                                <i class="ri-star-fill"></i>
-                                <i class="ri-star-line"></i>
-                            </span>
-                        </div>
-                        <h4 class="bb-pro-title">
-                            <a href="product-left-sidebar.html">Mixed Fruits Chocolates Pack</a>
-                        </h4>
-                        <div class="bb-price">
-                            <div class="inner-price">
-                                <span class="new-price">$25</span>
-                                <span class="old-price">$30</span>
-                            </div>
-                            <span class="last-items">1 Pack</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-12 mb-24 bb-wishlist">
-                <div class="bb-pro-box">
-                    <div class="bb-pro-img">
-                        <span class="bb-remove-wish">
-                            <a href="javascript:void(0)">
-                                <i class="ri-close-circle-fill"></i>
-                            </a>
-                        </span>
-                        <span class="flags">
-                            <span>Hot</span>
-                        </span>
-                        <a href="javascript:void(0)">
-                            <div class="inner-img">
-                                <img class="main-img" src="assets/img/product/2.jpg" alt="product-2">
-                                <img class="hover-img" src="assets/img/product/back-2.jpg" alt="product-2">
-                            </div>
-                        </a>
-                        <ul class="bb-pro-actions">
-                            <li class="bb-btn-group">
-                                <a href="javascript:void(0)">
-                                    <i class="ri-heart-line"></i>
-                                </a>
-                            </li>
-                            <li class="bb-btn-group">
-                                <a href="javascript:void(0)"
-                                   data-link-action="quickview" title="Quick view" data-bs-toggle="modal"
-                                   data-bs-target="#bry_quickview_modal">
-                                    <i class="ri-eye-line"></i>
-                                </a>
-                            </li>
-                            <li class="bb-btn-group">
-                                <a href="compare.html">
-                                    <i class="ri-repeat-line"></i>
-                                </a>
-                            </li>
-                            <li class="bb-btn-group">
-                                <a href="javascript:void(0)">
-                                    <i class="ri-shopping-bag-4-line"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="bb-pro-contact">
-                        <div class="bb-pro-subtitle">
-                            <a href="shop-left-sidebar-col-3.html">Juice</a>
-                            <span class="bb-pro-rating">
-                                <i class="ri-star-fill"></i>
-                                <i class="ri-star-fill"></i>
-                                <i class="ri-star-fill"></i>
-                                <i class="ri-star-fill"></i>
-                                <i class="ri-star-line"></i>
-                            </span>
-                        </div>
-                        <h4 class="bb-pro-title"><a href="product-left-sidebar.html">Organic Apple Juice Pack</a></h4>
-                        <div class="bb-price">
-                            <div class="inner-price">
-                                <span class="new-price">$15</span>
-                                <span class="item-left">3 Left</span>
-                            </div>
-                            <span class="last-items">100 ml</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-12 mb-24 bb-wishlist">
-                <div class="bb-pro-box">
-                    <div class="bb-pro-img">
-                        <span class="bb-remove-wish">
-                            <a href="javascript:void(0)">
-                                <i class="ri-close-circle-fill"></i>
-                            </a>
-                        </span>
-                        <a href="javascript:void(0)">
-                            <div class="inner-img">
-                                <img class="main-img" src="assets/img/product/3.jpg" alt="product-3">
-                                <img class="hover-img" src="assets/img/product/back-3.jpg" alt="product-3">
-                            </div>
-                        </a>
-                        <ul class="bb-pro-actions">
-                            <li class="bb-btn-group">
-                                <a href="javascript:void(0)">
-                                    <i class="ri-heart-line"></i>
-                                </a>
-                            </li>
-                            <li class="bb-btn-group">
-                                <a href="javascript:void(0)"
-                                   data-link-action="quickview" title="Quick view" data-bs-toggle="modal"
-                                   data-bs-target="#bry_quickview_modal">
-                                    <i class="ri-eye-line"></i>
-                                </a>
-                            </li>
-                            <li class="bb-btn-group">
-                                <a href="compare.html">
-                                    <i class="ri-repeat-line"></i>
-                                </a>
-                            </li>
-                            <li class="bb-btn-group">
-                                <a href="javascript:void(0)">
-                                    <i class="ri-shopping-bag-4-line"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="bb-pro-contact">
-                        <div class="bb-pro-subtitle">
-                            <a href="shop-left-sidebar-col-3.html">Juice</a>
-                            <span class="bb-pro-rating">
-                                <i class="ri-star-fill"></i>
-                                <i class="ri-star-fill"></i>
-                                <i class="ri-star-fill"></i>
-                                <i class="ri-star-fill"></i>
-                                <i class="ri-star-line"></i>
-                            </span>
-                        </div>
-                        <h4 class="bb-pro-title">
-                            <a href="product-left-sidebar.html">Mixed Almond nuts juice Pack</a>
-                        </h4>
-                        <div class="bb-price">
-                            <div class="inner-price">
-                                <span class="new-price">$32</span>
-                                <span class="old-price">$39</span>
-                            </div>
-                            <span class="last-items">250 g</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-12 mb-24 bb-wishlist">
-                <div class="bb-pro-box">
-                    <div class="bb-pro-img">
-                        <span class="bb-remove-wish">
-                            <a href="javascript:void(0)">
-                                <i class="ri-close-circle-fill"></i>
-                            </a>
-                        </span>
-                        <span class="flags">
-                            <span>Sale</span>
-                        </span>
-                        <a href="javascript:void(0)">
-                            <div class="inner-img">
-                                <img class="main-img" src="assets/img/product/4.jpg" alt="product-4">
-                                <img class="hover-img" src="assets/img/product/back-4.jpg" alt="product-4">
-                            </div>
-                        </a>
-                        <ul class="bb-pro-actions">
-                            <li class="bb-btn-group">
-                                <a href="javascript:void(0)">
-                                    <i class="ri-heart-line"></i>
-                                </a>
-                            </li>
-                            <li class="bb-btn-group">
-                                <a href="javascript:void(0)"
-                                   data-link-action="quickview" title="Quick view" data-bs-toggle="modal"
-                                   data-bs-target="#bry_quickview_modal">
-                                    <i class="ri-eye-line"></i>
-                                </a>
-                            </li>
-                            <li class="bb-btn-group">
-                                <a href="compare.html">
-                                    <i class="ri-repeat-line"></i>
-                                </a>
-                            </li>
-                            <li class="bb-btn-group">
-                                <a href="javascript:void(0)">
-                                    <i class="ri-shopping-bag-4-line"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="bb-pro-contact">
-                        <div class="bb-pro-subtitle">
-                            <a href="shop-left-sidebar-col-3.html">Fruits</a>
-                            <span class="bb-pro-rating">
-                                <i class="ri-star-fill"></i>
-                                <i class="ri-star-fill"></i>
-                                <i class="ri-star-fill"></i>
-                                <i class="ri-star-fill"></i>
-                                <i class="ri-star-line"></i>
-                            </span>
-                        </div>
-                        <h4 class="bb-pro-title"><a href="product-left-sidebar.html">Fresh Mango Slice Juice</a></h4>
-                        <div class="bb-price">
-                            <div class="inner-price">
-                                <span class="new-price">$25</span>
-                                <span class="item-left">Out Of Stock</span>
+                            <div class="bb-pro-contact">
+                                <div class="bb-pro-subtitle">
+                                    <a href="shop-left-sidebar-col-3.html">@item.Category.Name</a>
+                                    <span class="bb-pro-rating">
+                                        @for (var v = 1; v != 6; v++)
+                                        {
+                                            if (v > item.RatinMax)
+                                            {
+                                                <i class="ri-star-line"></i>
+                                            }
+                                            else
+                                            {
+                                                <i class="ri-star-fill"></i>
+                                            }
+                                        }
+                                    </span>
+                                </div>
+                                <h4 class="bb-pro-title">
+                                    <a href="product-left-sidebar.html">@item.Name</a>
+                                </h4>
+                                <div class="bb-price">
+                                    <div class="inner-price">
+                                        @if (item.NewPrice == 0)
+                                        {
+                                            <span class="new-price">@item.OldPrice</span>
+                                        }
+                                        else
+                                        {
+                                            <span class="new-price">@item.NewPrice</span>
+                                            <span class="old-price">@item.OldPrice</span>
+                                        }
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
+                }
+            }
+
+                    
         </div>
     </div>
 </section>

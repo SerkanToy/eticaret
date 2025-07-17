@@ -53,7 +53,7 @@
             }
         };
 
-        $(window).on("scroll", function () {
+        /*$(window).on("scroll", function () {
             var distance = $('.next, .section-breadcrumb').offset().top,
                 $window = $(window);
 
@@ -63,7 +63,7 @@
             else {
                 checkScroll();
             }
-        });
+        });*/
 
     /* Banner three tilt */
     jQuery(document).ready(function ($) {
@@ -467,13 +467,13 @@
     });
 
     /* Remove product on wishlist page */
-    $(".bb-remove-wish").on("click", function () {
+    /*$(".bb-remove-wish").on("click", function () {
         $(this).parents(".bb-wishlist").remove();
         var wish_product_count = $(".bb-wishlist").length;
         if (wish_product_count == 0) {
             $('.bb-wish-rightside').html('<p class="bb-wishlist-msg">Your wishlist is empty!</p>');
         }
-    });
+    });*/
 
     /* On click active color and size on product card  */
     $(".bb-color").on("click", function () {
@@ -712,12 +712,12 @@
         },
     });
 
-    /* Newsletter popup Homepage 
-    setTimeout(function () {
+    //Newsletter popup Homepage 
+    /*setTimeout(function () {
         $(".bb-popnews-bg").fadeIn();
         $(".bb-popnews-box").fadeIn();
     }, 5000);
-
+ 
     $(".bb-popnews-close").click(() => {
         $(".bb-popnews-bg").fadeOut();
         $(".bb-popnews-box").fadeOut();

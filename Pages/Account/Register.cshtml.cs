@@ -44,11 +44,11 @@ namespace eticaret.Pages.Account
                     Name = registerViewModel.Name.CustomToLower().Trim(),
                     SurName = registerViewModel.SurName.CustomToLower().Trim(),
                     Email = registerViewModel.Email.Trim(),
-                    UserName = $"{registerViewModel.Name.CustomToLower()}{registerViewModel.SurName.CustomToLower()}",
+                    UserName = registerViewModel.Email.Split("@")[0], //$"{registerViewModel.Name.CustomToLower()}{registerViewModel.SurName.CustomToLower()}",
                     Flag = Guid.NewGuid().ToString(),
-                    CreateBy = $"{registerViewModel.Name.CustomToLower()}{registerViewModel.SurName.CustomToLower()}",
+                    CreateBy = $"{registerViewModel.Name.CustomToLower()} {registerViewModel.SurName.CustomToLower()}",
                     CreateDate = DateTime.Now.ToString()
-                }, registerViewModel.Psswrd);
+                }, registerViewModel.Psswrd); 
 
                 if (result.Succeeded)
                 {

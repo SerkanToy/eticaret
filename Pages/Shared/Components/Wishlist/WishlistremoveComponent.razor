@@ -1,0 +1,50 @@
+﻿@inject AuthenticationStateProvider AuthenticationStateProvider
+@inject eticaret.Domain.UnitOfWork.IUnitofWork unitofWork
+
+<span class="bb-remove-wish">
+    <a href="javascript:void(0)" @onclick="() => Remove(ProductId)">
+        <i class="ri-close-circle-fill"></i>
+    </a>
+</span>
+
+
+<script>
+    $(".bb-remove-wish").on("click", function () {
+            $(this).parents(".bb-wishlist").remove();
+            var wish_product_count = $(".bb-wishlist").length;
+            if (wish_product_count == 0) {
+                $('.bb-wish-rightside').html('<p class="bb-wishlist-msg">Ekli Favoriniz Yok.</p>');
+            }
+        });
+</script>
+
+@code {
+    [Parameter]
+    public string ProductId { get; set; } = string.Empty;
+    [Parameter]
+    public string Flag { get; set; } = string.Empty;
+    private AuthenticationState authenticationState;
+
+    public void OnInitialized()
+    {
+
+    }
+
+    public async Task Remove(string a)
+    {
+
+        authenticationState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        var user = authenticationState.User;
+        if (user.Identity?.IsAuthenticated == true)
+        {
+            var userId = unitofWork.GetUserById(user.Identity!.Name!);
+            var product = await unitofWork.GetRepository<Product>().GetFindAsync(x => x.Id == Convert.ToInt32(a));
+
+            Favorites delete = await unitofWork.GetRepository<Favorites>().GetFindAsync(v => v.UserId == userId && v.ProductId == product.Id);
+
+            unitofWork.GetRepository<Favorites>().Delete(delete);
+            unitofWork.SaveChanges();
+        }
+    }
+
+}

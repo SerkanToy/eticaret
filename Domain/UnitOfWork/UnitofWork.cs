@@ -12,13 +12,16 @@ namespace eticaret.Domain.UnitOfWork
         protected CommerceContext context;
         private ICategoryRepository catetgoryRepository;
         private IProductRepository productRepository;
+        private IFavoritesRepository favoritesRepository;
         public UnitofWork(CommerceContext context, 
             ICategoryRepository catetgoryRepository = null,
-            IProductRepository productRepository = null)
+            IProductRepository productRepository = null,
+            IFavoritesRepository favoritesRepository = null)
         {
             this.context = context;
             this.catetgoryRepository = catetgoryRepository;
             this.productRepository = productRepository;
+            this.favoritesRepository = favoritesRepository;
         }
 
         public IRepository<TEntity> GetRepository<TEntity>() where TEntity : class, new()
@@ -57,7 +60,7 @@ namespace eticaret.Domain.UnitOfWork
 
         public int GetUserById(string username)
         {
-            var user = context.User.FirstOrDefault(x => x.UserName == username);
+            var user = context.UserApp.FirstOrDefault(x => x.UserName == username);
             return user.Id;
         }
         public ICategoryRepository Catetgory()
@@ -68,6 +71,11 @@ namespace eticaret.Domain.UnitOfWork
         public IProductRepository Product()
         {
             return productRepository ??= new ProductRepository(context);
+        }
+
+        public IFavoritesRepository Favorite()
+        {
+            return favoritesRepository ??= new FavoritesRepository(context);
         }
     }
 }

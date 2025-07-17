@@ -39,22 +39,21 @@
 
 <script>
     (function ($) {
-        /* Newsletter popup Homepage */
         setTimeout(function () {
-            $(".bb-popnews-bg").fadeIn();
-            $(".bb-popnews-box").fadeIn();
-        }, 5000);
+                $(".bb-popnews-bg").fadeIn();
+                $(".bb-popnews-box").fadeIn();
+            }, 5000);
 
-        $(".bb-popnews-close").click(() => {
-            $(".bb-popnews-bg").fadeOut();
-            $(".bb-popnews-box").fadeOut();
-        });
+            $(".bb-popnews-close").click(() => {
+                $(".bb-popnews-bg").fadeOut();
+                $(".bb-popnews-box").fadeOut();
+            });
 
-        $(".bb-popnews-bg").click(() => {
-            $(".bb-popnews-bg").fadeOut();
-            $(".bb-popnews-box").fadeOut();
-        });
-    });
+            $(".bb-popnews-bg").click(() => {
+                $(".bb-popnews-bg").fadeOut();
+                $(".bb-popnews-box").fadeOut();
+            });
+        })(jQuery);
 </script>
 
 @code {
