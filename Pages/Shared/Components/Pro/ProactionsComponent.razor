@@ -15,15 +15,8 @@
         </a>
     </li>
     <li class="bb-btn-group">
-        <a href="javascript:void(0)"
-           data-link-action="quickview" title="Quick view" data-bs-toggle="modal"
-           data-bs-target="#bry_quickview_modal">
+        <a href="/product/@Flag">
             <i class="ri-eye-line"></i>
-        </a>
-    </li>
-    <li class="bb-btn-group">
-        <a href="compare.html">
-            <i class="ri-repeat-line"></i>
         </a>
     </li>
     <li class="bb-btn-group">
@@ -34,12 +27,12 @@
 </ul>
 
 @code {
-        [Parameter]
-        public string ProductId { get; set; } = string.Empty;
-        [Parameter]
-        public string Flag { get; set; } = string.Empty;
-        [Parameter]
-        public bool IsBoolean { get; set; } = false;
+    [Parameter]
+    public string ProductId { get; set; } = string.Empty;
+    [Parameter]
+    public string Flag { get; set; } = string.Empty;
+    [Parameter]
+    public bool IsBoolean { get; set; } = false;
 
 
     private AuthenticationState authenticationState;

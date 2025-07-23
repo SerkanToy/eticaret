@@ -1,5 +1,7 @@
 ﻿@using Microsoft.AspNetCore.Mvc.TagHelpers
 @inject eticaret.Domain.Repository.Interface.ICategoryRepository categoryRepository
+@inject eticaret.Domain.UnitOfWork.IUnitofWork unitofWork
+@inject AuthenticationStateProvider AuthenticationStateProvider
 @using eticaret.Domain.Core.Entities
 
 
@@ -13,7 +15,7 @@
                         <div class="cols bb-logo-detail">
                             <!-- Header Logo Start -->
                             <div class="header-logo">
-                                <a href="index.html">
+                                <a href="/">
                                     <img src="assets/img/logo/logo.png" alt="logo" class="light">
                                     <img src="assets/img/logo/logo-dark.png" alt="logo" class="dark">
                                 </a>
@@ -87,7 +89,9 @@
                                                     </div>
                                                     <div class="bb-btn-desc">
                                                         <span class="bb-btn-title">
-                                                            <b class="bb-wishlist-count">0</b>
+                                                            <b class="bb-wishlist-count">
+                                                                @FavoritesCount
+                                                            </b>
                                                             Adet
                                                         </span>
                                                         <span class="bb-btn-stitle">Favoriler</span>
@@ -349,13 +353,24 @@
 </header>
 
 @code {
-
     List<Category> categories = new List<Category>();
+    public int FavoritesCount = 0;
+    private AuthenticationState authenticationState;
 
     protected override void OnInitialized()
     {
         categories = categoryRepository.CategorySubCategory(isDelete: false);
+        authenticationState = AuthenticationStateProvider.GetAuthenticationStateAsync().Result;
+        var user = authenticationState.User;
+        if (user.Identity?.IsAuthenticated == true)
+        {
+            var userId = unitofWork.GetUserById(user.Identity!.Name!);
+            var favorites = unitofWork.GetRepository<Favorites>().GetAllIQueryable(x => x.UserId == userId);
+            if (favorites.Count() > 0)
+                FavoritesCount = favorites.ToList().Count();
+            else
+                FavoritesCount = 0;
+        }
     }
-
 }
 
