@@ -3,7 +3,7 @@
 @{
 }
 
-@(await Html.RenderComponentAsync<eticaret.Pages.Shared.Components.Breadcrumb.BreadcrumbComponent>(RenderMode.ServerPrerendered, new { Title = "Basket", Titles = new List<string> { "Basket" } }))
+@(await Html.RenderComponentAsync<eticaret.Pages.Shared.Components.Breadcrumb.BreadcrumbComponent>(RenderMode.ServerPrerendered, new { Title = "Sepet", Titles = new List<string> { "Sepet", "Ürün Listesi" } }))
 
 <section class="section-cart padding-tb-50">
     <div class="container">
@@ -11,55 +11,26 @@
             <div class="col-lg-4 mb-24">
                 <div class="bb-cart-sidebar-block" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
                     <div class="bb-sb-title">
-                        <h3>Summary</h3>
+                        <h3>Ücret Listesi</h3>
                     </div>
-                    <div class="bb-sb-blok-contact">
-                        <form action="#" method="post">
-                            <div class="input-box">
-                                <label>Country *</label>
-                                <div class="custom-select">
-                                    <select>
-                                        <option value="option1">Country 1</option>
-                                        <option value="option2">Country 2</option>
-                                        <option value="option3">Country 3</option>
-                                        <option value="option4">Country 4</option>
-                                        <option value="option5">Country 5</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="input-box">
-                                <label>State/Province *</label>
-                                <div class="custom-select">
-                                    <select>
-                                        <option value="option1">Please Select a region, state</option>
-                                        <option value="option2">Region/State 1</option>
-                                        <option value="option3">Region/State 2</option>
-                                        <option value="option4">Region/State 3</option>
-                                        <option value="option5">Region/State 4</option>
-                                        <option value="option6">Region/State 5</option>
-                                        <option value="option7">Region/State 6</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="input-box">
-                                <label for="Zip-code">Zip/Postal Code *</label>
-                                <input type="text" placeholder="Zip/Postal Code" id="Zip-code">
-                            </div>
-                        </form>
+                    <div class="bb-sb-blok-contact">                        
                         <div class="bb-cart-summary">
                             <div class="inner-summary">
                                 <ul>
-                                    <li><span class="text-left">Sub-Total</span><span class="text-right">$80.00</span></li>
-                                    <li><span class="text-left">Delivery Charges</span><span class="text-right">$80.00</span></li>
+                                    <li><span class="text-left">Ürün 1</span><span class="text-right">1.000£</span></li>
+                                    <li><span class="text-left">Ürün 1</span><span class="text-right">1.000£</span></li>
+                                    <li><span class="text-left">Ürün 1</span><span class="text-right">1.000£</span></li>
+                                    <li><span class="text-left">Ürün 1</span><span class="text-right">1.000£</span></li>
+                                    <li><span class="text-left">Kargo</span><span class="text-right">100£</span></li>
                                     <li>
-                                        <span class="text-left">Coupon Discount</span>
-                                        <span class="text-right"><a class="bb-coupon drop-coupon">Apply Coupon</a></span>
+                                        <span class="text-left">İndirim Kuponu</span>
+                                        <span class="text-right"><a class="bb-coupon drop-coupon">Ekle</a></span>
                                     </li>
                                     <li>
                                         <div class="coupon-down-box">
                                             <form method="post">
-                                                <input class="bb-coupon" type="text" placeholder="Enter Your coupon Code" name="bb-coupon" required>
-                                                <button class="bb-btn-2" type="submit">Apply</button>
+                                                <input class="bb-coupon" type="text" placeholder="İndirim Kuponu" name="bb-coupon" required>
+                                                <button class="bb-btn-2" type="submit">Ekle</button>
                                             </form>
                                         </div>
                                     </li>
@@ -67,7 +38,7 @@
                             </div>
                             <div class="summary-total">
                                 <ul>
-                                    <li><span class="text-left">Total Amount</span><span class="text-right">$80.00</span></li>
+                                    <li><span class="text-left">Toplam Fiyat</span><span class="text-right">10.100£</span></li>
                                 </ul>
                             </div>
                         </div>
@@ -79,10 +50,10 @@
                     <table>
                         <thead>
                             <tr>
-                                <th>Product</th>
-                                <th>Price</th>
-                                <th>quality</th>
-                                <th>Total</th>
+                                <th>Ürün</th>
+                                <th>Fiyat</th>
+                                <th>Adet</th>
+                                <th>Toplam</th>
                                 <th></th>
                             </tr>
                         </thead>
@@ -235,6 +206,8 @@
         </div>
     </div>
 </section>
+
+@*
 
 <!-- Related product -->
 <section class="section-related-product padding-tb-50">
@@ -494,3 +467,6 @@
         </div>
     </div>
 </section>
+
+*@
+

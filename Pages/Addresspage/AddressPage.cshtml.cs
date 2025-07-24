@@ -2,10 +2,10 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace eticaret.Pages.Basket
+namespace eticaret.Pages.Addresspage
 {
     [Authorize]
-    public class CheckoutModel : PageModel
+    public class AddressPageModel : PageModel
     {
         public void OnGet()
         {

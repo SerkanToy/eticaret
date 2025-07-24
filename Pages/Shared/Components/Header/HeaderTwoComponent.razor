@@ -77,6 +77,7 @@
                                                     <ul class="bb-dropdown-menu">
                                                         <li><a class="dropdown-item" href="register.html">Hesabim</a></li>
                                                         <li><a class="dropdown-item" href="checkout.html">Ayarlar</a></li>
+                                                        <li><a class="dropdown-item" href="/address">Adres</a></li>
                                                         <li><a class="dropdown-item" href="login?handler=Output">Çıkış Yap</a></li>
                                                     </ul>
                                                 </div>
@@ -105,7 +106,7 @@
                                                         <span class="main-label-note-new"></span>
                                                     </div>
                                                     <div class="bb-btn-desc">
-                                                        <span class="bb-btn-title"><b class="bb-cart-count">4</b> items</span>
+                                                        <span class="bb-btn-title"><b class="bb-cart-count">@basketsCount</b> items</span>
                                                         <span class="bb-btn-stitle">Sepet</span>
                                                     </div>
                                                 </a>
@@ -355,6 +356,7 @@
 @code {
     List<Category> categories = new List<Category>();
     public int FavoritesCount = 0;
+    public int basketsCount = 0;
     private AuthenticationState authenticationState;
 
     protected override void OnInitialized()
@@ -366,10 +368,18 @@
         {
             var userId = unitofWork.GetUserById(user.Identity!.Name!);
             var favorites = unitofWork.GetRepository<Favorites>().GetAllIQueryable(x => x.UserId == userId);
+            var basket = unitofWork.GetRepository<Basket>().GetAllIQueryable(x => x.UserId == userId);
             if (favorites.Count() > 0)
+            {
                 FavoritesCount = favorites.ToList().Count();
+                basketsCount = basket.ToList().Count();
+            }
             else
+            {
                 FavoritesCount = 0;
+                basketsCount = 0;
+            }
+            
         }
     }
 }

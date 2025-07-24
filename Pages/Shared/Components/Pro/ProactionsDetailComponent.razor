@@ -6,11 +6,11 @@
         <input class="qty-input" type="text" name="bb-qtybtn" value="1">
     </div>
     <div class="buttons">
-        <a href="@Flag" class="bb-btn-2">Sepete Ekle</a>
+        <a href="javascript:void(0)" class="bb-btn-2" @onclick="Favorite">Sepete Ekle</a>
     </div>
     <ul class="bb-pro-actions">
         <li class="bb-btn-group">
-            <a href="javascript:void(0)" @onclick="Favorite">
+            <a href="javascript:void(0)" @onclick="BasketAdd">
                 @if (IsBoolean)
                 {
                     <i class="ri-check-double-line"></i>
@@ -35,6 +35,8 @@
     public string Flag { get; set; } = string.Empty;
     [Parameter]
     public bool IsBoolean { get; set; } = false;
+    [Parameter]
+    public bool IsBooleanBasket { get; set; } = false;
 
 
     private AuthenticationState authenticationState;
@@ -84,5 +86,39 @@
             IsBoolean = false;
         }
         
+    }
+
+    public async Task BasketAdd()
+    {
+        authenticationState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        var user = authenticationState.User;
+        if (user.Identity?.IsAuthenticated == true)
+        {
+            var userId = unitofWork.GetUserById(user.Identity!.Name!);
+            var product = await unitofWork.GetRepository<Product>().GetFindAsync(x => x.Flag == Flag);
+
+            var basket = await unitofWork.GetRepository<Basket>().GetFindAsync(x => x.UserId == userId && x.ProductId == product.Id);
+            if (basket is not null)
+            {
+                basket.Total += 1;
+                unitofWork.GetRepository<Basket>().Update(basket);
+                await unitofWork.SaveChangesAsync();
+                IsBooleanBasket = true;
+                return;
+            }
+
+            unitofWork.GetRepository<Basket>().Insert(new Basket
+            {
+                UserId = userId,
+                ProductId = product.Id,
+                Total = 1
+            });
+            await unitofWork.SaveChangesAsync();
+            IsBooleanBasket = true;
+        }
+        else
+        {
+            IsBooleanBasket = false;
+        }
     }
 }

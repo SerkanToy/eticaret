@@ -1,0 +1,92 @@
+﻿@page "~/address"
+@model eticaret.Pages.Addresspage.AddressPageModel
+@{
+}
+
+@(await Html.RenderComponentAsync<eticaret.Pages.Shared.Components.Breadcrumb.BreadcrumbComponent>(RenderMode.ServerPrerendered, new { Title = "Adres", Titles = new List<string> { "Adres" } }))
+
+<section class="section-contact padding-tb-50">
+    <div class="container">
+        <div class="row mb-minus-24">
+            <div class="col-lg-6 col-12 mb-24" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+                <div class="bb-contact-form">
+                    <form method="post">
+                        <div class="bb-contact-wrap">
+                            <input type="text" name="firstname" placeholder="Ad Soyad">
+                        </div>
+                        <div class="bb-contact-wrap">
+                            <input type="email" name="email" placeholder="E-Posta">
+                        </div>
+                        <div class="bb-contact-wrap">
+                            <input type="text" name="phonenumber" placeholder="Telefon NUmarası">
+                        </div>
+                        <div class="bb-contact-wrap">
+                            <input type="text" name="lastname" placeholder="Konu">
+                        </div>
+                        <div class="bb-contact-wrap">
+                            <textarea name="address" placeholder="Mesaj"></textarea>
+                        </div>
+                        <div class="bb-contact-button">
+                            <button class="bb-btn-2" type="submit">Gönder</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-lg-6 col-12 mb-24" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
+                <div class="bb-faq-contact" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
+                    <div class="accordion" id="accordionExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    Ev Adresi
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show"
+                                 aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate sint atque
+                                    pariatur cupiditate beatae voluptates quidem. Et tenetur autem itaque? Eum
+                                    exercitationem assumenda enim eos voluptas. Ad incidunt laborum aliquam,
+                                    expedita, voluptatibus quo id adipisci ea ratione ut, dignissimos natus?
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    İş Adresi
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate sint atque
+                                    pariatur cupiditate beatae voluptates quidem. Et tenetur autem itaque? Eum
+                                    exercitationem assumenda enim eos voluptas. Ad incidunt laborum aliquam,
+                                    expedita, voluptatibus quo id adipisci ea ratione ut, dignissimos natus?
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingSix">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                    Exchange policy for customer
+                                </button>
+                            </h2>
+                            <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate sint atque
+                                    pariatur cupiditate beatae voluptates quidem. Et tenetur autem itaque? Eum
+                                    exercitationem assumenda enim eos voluptas. Ad incidunt laborum aliquam,
+                                    expedita, voluptatibus quo id adipisci ea ratione ut, dignissimos natus?
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -20,8 +20,15 @@
         </a>
     </li>
     <li class="bb-btn-group">
-        <a href="javascript:void(0)">
-            <i class="ri-shopping-bag-4-line"></i>
+        <a href="javascript:void(0)" @onclick="() => BasketAdd(ProductId)">
+            @if (IsBooleanBasket)
+            {
+                <i class="ri-check-double-line"></i>
+            }
+            else
+            {
+                <i class="ri-shopping-bag-4-line"></i>
+            }
         </a>
     </li>
 </ul>
@@ -33,6 +40,8 @@
     public string Flag { get; set; } = string.Empty;
     [Parameter]
     public bool IsBoolean { get; set; } = false;
+    [Parameter]
+    public bool IsBooleanBasket { get; set; } = false;
 
 
     private AuthenticationState authenticationState;
@@ -69,6 +78,41 @@
         else
         {
             IsBoolean = false;
+        }
+    }
+
+
+    public async Task BasketAdd(string a)
+    {
+        authenticationState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        var user = authenticationState.User;
+        if (user.Identity?.IsAuthenticated == true)
+        {
+            var userId = unitofWork.GetUserById(user.Identity!.Name!);
+            var product = await unitofWork.GetRepository<Product>().GetFindAsync(x => x.Id == Convert.ToInt32(a));
+
+            var basket = await unitofWork.GetRepository<Basket>().GetFindAsync(x => x.UserId == userId && x.ProductId == product.Id);
+            if (basket is not null)
+            {
+                basket.Total += 1;
+                unitofWork.GetRepository<Basket>().Update(basket);
+                await unitofWork.SaveChangesAsync();
+                IsBooleanBasket = true;
+                return;
+            }
+
+            unitofWork.GetRepository<Basket>().Insert(new Basket
+            {
+                UserId = userId,
+                ProductId = product.Id,
+                Total = 1
+            });
+            await unitofWork.SaveChangesAsync();
+            IsBooleanBasket = true;
+        }
+        else
+        {
+            IsBooleanBasket = false;
         }
     }
 }

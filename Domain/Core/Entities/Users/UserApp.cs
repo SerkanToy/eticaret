@@ -22,6 +22,7 @@ namespace eticaret.Domain.Entities.Users
         public string Flag {  get; set; }
         [NotMapped]
         public ICollection<UserRole> UserRole { get; set; }
+        public ICollection<Basket>? Baskets { get; set; }
         public ICollection<Favorites>? Favorites { get; set; }
         public ICollection<BlogInfo> BlogInfos { get; set; }
         public ICollection<BlogInfoAndComment> BlogInfoAndComment { get; set; }
