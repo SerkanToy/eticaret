@@ -631,7 +631,7 @@
         $(this).parents(".cart-sidebar-list").remove();
         var wish_product_count = $(".cart-sidebar-list").length;
         if (wish_product_count == 0) {
-            $('.bb-cart-items').html('<p class="bb-wishlist-msg">Your Cart is empty!</p>');
+            $('.bb-cart-items').html('<p class="bb-wishlist-msg">Sepette Ürün Bulunmamaktadır!</p>');
         }
     });
 

@@ -25,7 +25,7 @@ namespace eticaret.Domain.Core.Entities
         [NotMapped]
         public int RatinMax { get; set; }
         [NotMapped]
-        public int RatinCount { get; set; }
+        public int RatinCount { get; set; } 
         [NotMapped]
         public Category? Category { get; set; }
         [NotMapped]

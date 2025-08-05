@@ -11,6 +11,7 @@ namespace eticaret.Domain.Repository.Interface
         List<Product> ProductJoinTake(Expression<Func<Product, bool>> predicate = null);
         List<Product> ProductJoinCategory(Expression<Func<Product, bool>> predicate = null);
         List<Product> ProductJoinSubCategory(Expression<Func<Product, bool>> predicate = null);
+        Task<List<Product>> ProductJoinBasketAsync(Expression<Func<Product, bool>> predicate = null);
         SelectList ProductSelect(int[] ProductId = null);
 
     }

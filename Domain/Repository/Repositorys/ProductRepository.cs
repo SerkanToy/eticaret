@@ -254,5 +254,26 @@ namespace eticaret.Domain.Repository.Repositorys
                     CreateDate = x.CreateDate,
                 }).FirstOrDefault(predicate)?? new Product();
         }
+
+        public async Task<List<Product>> ProductJoinBasketAsync(Expression<Func<Product, bool>> predicate = null)
+        {
+            var pro = await context.Product.Where(predicate).
+                Include(j => j.Baskets).
+                Include(f => f.Images).Select(x => new Product
+                {
+                    Id = x.Id,
+                    Name = x.Name,
+                    IsDeleted = x.IsDeleted,
+                    OldPrice = x.OldPrice,
+                    NewPrice = x.NewPrice,
+                    Images = x.Images.Where(i => i.IsDeleted == false && i.IsShowcase == true).Select(i => new Image
+                    {
+                        Id = i.Id,
+                        Name = i.Name,
+                        IsShowcase = i.IsShowcase
+                    }).ToList()
+                }).ToListAsync();
+            return pro ?? new List<Product>();
+        }
     }
 }
