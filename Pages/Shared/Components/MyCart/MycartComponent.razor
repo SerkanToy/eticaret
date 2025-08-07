@@ -1,6 +1,6 @@
 ﻿@inject AuthenticationStateProvider AuthenticationStateProvider
 @inject eticaret.Domain.UnitOfWork.IUnitofWork unitofWork
-@inject eticaret.Domain.Repository.Interface.IProductRepository productRepository
+@inject eticaret.Domain.Repository.Interface.IBasketRepository basketRepository
 
 
 <div class="bb-side-cart-overlay"></div>
@@ -103,13 +103,13 @@
                                         foreach (var item in BasketList)
                                         {
                                             <li class="cart-sidebar-list">
-                                                <a href="javascript:void(0)" @onclick="() => RemoveBasket(item.Id.ToString())" class="cart-remove-item">
-                                                    <i class="ri-close-line"></i>
+                                                <a href="javascript:void(0)" class="cart-remove-item">
+                                                    <BasketremoveComponent Id="@item.Id.ToString()"></BasketremoveComponent>
                                                 </a>
                                                 <a href="javascript:void(0)" class="bb-cart-pro-img">
-                                                    @if(item.Images.Any())
+                                                    @if (item.Product.Images.Any())
                                                     {
-                                                        foreach (var img in item.Images)
+                                                        foreach (var img in item.Product.Images)
                                                         {
                                                             <img src="/assets/img/product/@img.Name" alt="@img.Name">
                                                         }
@@ -123,19 +123,19 @@
                                                     }
                                                 </a>
                                                 <div class="bb-cart-contact">
-                                                    <a href="product-left-sidebar.html" class="bb-cart-sub-title">@item.Name</a>
+                                                    <a href="product-left-sidebar.html" class="bb-cart-sub-title">@item.Product.Name</a>
                                                     <span class="cart-price">
-                                                        @if (item.NewPrice == 0)
+                                                        @if (item.Product.NewPrice == 0)
                                                         {
-                                                            <span class="new-price">@item.OldPrice</span>
+                                                            <span class="new-price">@item.Product.OldPrice</span>
                                                         }
                                                         else
                                                         {
-                                                            <span class="new-price">@item.OldPrice</span>
+                                                            <span class="new-price">@item.Product.OldPrice</span>
                                                         }
                                                     </span>
                                                     <div class="qty-plus-minus">
-                                                        <input class="qty-input" type="text" name="bb-qtybtn" value="1">
+                                                        <input class="qty-input" type="text" name="bb-qtybtn" value="@item.Total">
                                                     </div>
                                                 </div>
                                             </li>
@@ -149,66 +149,28 @@
                                         <tbody>
                                             <tr>
                                                 <td class="title">Toplam :</td>
-                                                <td class="price">$300.00</td>
+                                                <td class="price">@TotalPrice</td>
                                             </tr>
                                             <tr>
                                                 <td class="title">KDV (20%) :</td>
-                                                <td class="price">$60.00</td>
+                                                <td class="price">@TotalPrice</td>
                                             </tr>
                                             <tr>
                                                 <td class="title">Genel Toplam :</td>
-                                                <td class="price">$360.00</td>
+                                                <td class="price">@TotalPrice</td>
                                             </tr>
                                         </tbody>
                                     </table>
                                 </div>
                                 <div class="cart-btn">
-                                    <a href="cart.html" class="bb-btn-1">View Cart</a>
-                                    <a href="checkout.html" class="bb-btn-2">Checkout</a>
+                                    <a href="/basket" class="bb-btn-1">Sepete Git</a>
+                                    <a href="checkout.html" class="bb-btn-2">Satın Al</a>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                 </Authorized>
-                <NotAuthorized>
-                    <div class="col-md-7 col-12">
-                        <div class="bb-inner-cart">
-                            <div class="bb-top-contact">
-                                <div class="bb-cart-title">
-                                    <h4>Sepet</h4>
-                                    <a href="javascript:void(0)" class="bb-cart-close" title="Close Cart"></a>
-                                </div>
-                            </div>
-                            <div class="bb-cart-box item">
-                            </div>
-                            <div class="bb-bottom-cart">
-                                <div class="cart-sub-total">
-                                    <table class="table cart-table">
-                                        <tbody>
-                                            <tr>
-                                                <td class="title">Toplam :</td>
-                                                <td class="price">0</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="title">KDV :</td>
-                                                <td class="price">0</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="title">Genel Toplam :</td>
-                                                <td class="price">0</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <div class="cart-btn">
-                                    <a href="cart.html" class="bb-btn-1">View Cart</a>
-                                    <a href="checkout.html" class="bb-btn-2">Checkout</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </NotAuthorized>
             </Microsoft.AspNetCore.Components.Authorization.AuthorizeView>
         </Microsoft.AspNetCore.Components.Authorization.CascadingAuthenticationState>
 
@@ -219,48 +181,33 @@
 
 @code {
 
-    public List<Product> BasketList { get; set; } = new List<Product>();
-
+    [Parameter]
+    public List<Basket> BasketList { get; set; } = new List<Basket>();
+    [Parameter]
+    public int TotalPrice { get; set; }
     private AuthenticationState authenticationState;
 
     protected override async Task OnInitializedAsync()
     {
         authenticationState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
         var user = authenticationState.User;
-
+        TotalPrice = 0;
         if (user.Identity?.IsAuthenticated == true)
         {
             var userId = unitofWork.GetUserById(user.Identity!.Name!);
-            var product = await productRepository.ProductJoinBasketAsync(predicate: x => x.IsDeleted == false && x.Baskets.Any(b => b.UserId == userId));
-            BasketList = product.Select(x => new Product
+            var product = basketRepository.GetBasketJoinProduct(userId: userId);
+            BasketList = product.Select(x => new Basket
             {
-                Name = x.Name,
-                OldPrice = x.OldPrice,
-                NewPrice = x.NewPrice,
-                Images = x.Images
+                Id = x.Id,
+                Total = x.Total,
+                UserId = x.UserId,
+                ProductId = x.ProductId,
+                Product = x.Product
             }).ToList();
         }
         else
         {
-            BasketList = new List<Product>();
+            BasketList = new List<Basket>();
         }
-    }    
-
-
-    protected async Task RemoveBasket(string a)
-    {
-        authenticationState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
-        var user = authenticationState.User;
-        if (user.Identity?.IsAuthenticated == true)
-        {
-            var userId = unitofWork.GetUserById(user.Identity!.Name!);
-            var product = await unitofWork.GetRepository<Product>().GetFindAsync(x => x.Id == Convert.ToInt32(a));
-
-            Basket delete = await unitofWork.GetRepository<Basket>().GetFindAsync(v => v.UserId == userId && v.ProductId == product.Id);
-
-            unitofWork.GetRepository<Basket>().Delete(delete);
-            unitofWork.SaveChanges();
-        }
-        //await OnInitializedAsync();
     }
 }

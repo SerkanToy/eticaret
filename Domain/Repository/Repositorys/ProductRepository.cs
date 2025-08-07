@@ -266,6 +266,7 @@ namespace eticaret.Domain.Repository.Repositorys
                     IsDeleted = x.IsDeleted,
                     OldPrice = x.OldPrice,
                     NewPrice = x.NewPrice,
+                    BasketTotal = x.Baskets.FirstOrDefault(v => x.Baskets.Any(g => g.ProductId == v.ProductId) == true),                    
                     Images = x.Images.Where(i => i.IsDeleted == false && i.IsShowcase == true).Select(i => new Image
                     {
                         Id = i.Id,

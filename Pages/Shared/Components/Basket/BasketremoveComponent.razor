@@ -1,0 +1,28 @@
+﻿@inject AuthenticationStateProvider AuthenticationStateProvider
+@inject eticaret.Domain.UnitOfWork.IUnitofWork unitofWork
+
+<i class="ri-delete-bin-line" @onclick="() => Remove(Convert.ToInt32(Id))"></i>
+
+@code {
+    [Parameter]
+    public string Id { get; set; } = string.Empty;
+    private AuthenticationState authenticationState;
+
+    protected override async Task OnInitializedAsync()
+    {
+        
+    }
+
+    public async Task Remove(int a)
+    {
+        authenticationState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        var user = authenticationState.User;
+        if (user.Identity?.IsAuthenticated == true)
+        {
+            var userId = unitofWork.GetUserById(user.Identity!.Name!);
+            Basket delete = await unitofWork.GetRepository<Basket>().GetFindAsync(v => v.Id == a);
+            unitofWork.GetRepository<Basket>().Delete(delete);
+            unitofWork.SaveChanges();
+        }
+    }
+}
