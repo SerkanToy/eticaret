@@ -188,8 +188,8 @@ namespace eticaret.Migrations
                         {
                             Id = 1,
                             CreateBy = "Sistem",
-                            CreateDate = "24.07.2025 10:46:19",
-                            Flag = "63301ec1-0fb3-46b1-b86c-d1095e14c076",
+                            CreateDate = "11.08.2025 09:15:50",
+                            Flag = "69734691-a1b9-42ea-a5b3-0922388a7119",
                             IsDeleted = false,
                             Name = "Category 1"
                         },
@@ -197,8 +197,8 @@ namespace eticaret.Migrations
                         {
                             Id = 2,
                             CreateBy = "Sistem",
-                            CreateDate = "24.07.2025 10:46:19",
-                            Flag = "f577103e-f832-4321-8233-0d0d5fb4fda9",
+                            CreateDate = "11.08.2025 09:15:50",
+                            Flag = "2b990931-4de8-4f55-9476-0f78a6dca5db",
                             IsDeleted = false,
                             Name = "Category 2"
                         },
@@ -206,8 +206,8 @@ namespace eticaret.Migrations
                         {
                             Id = 3,
                             CreateBy = "Sistem",
-                            CreateDate = "24.07.2025 10:46:19",
-                            Flag = "289566f6-1a73-4276-8175-3264a2729bc5",
+                            CreateDate = "11.08.2025 09:15:50",
+                            Flag = "8618b244-9f73-4024-aa3a-6e4f2edfc5a0",
                             IsDeleted = false,
                             Name = "Category 3"
                         },
@@ -215,8 +215,8 @@ namespace eticaret.Migrations
                         {
                             Id = 4,
                             CreateBy = "Sistem",
-                            CreateDate = "24.07.2025 10:46:19",
-                            Flag = "71695b1d-734f-4e83-8c0b-739bcb042b53",
+                            CreateDate = "11.08.2025 09:15:50",
+                            Flag = "60a711dc-5409-4822-859a-dae02409a510",
                             IsDeleted = false,
                             Name = "Category 4"
                         },
@@ -224,8 +224,8 @@ namespace eticaret.Migrations
                         {
                             Id = 5,
                             CreateBy = "Sistem",
-                            CreateDate = "24.07.2025 10:46:19",
-                            Flag = "9b718724-6271-45f5-b419-27cdfd9ab05e",
+                            CreateDate = "11.08.2025 09:15:50",
+                            Flag = "b0b7b0c9-1048-44e5-ae84-8b54a234b454",
                             IsDeleted = false,
                             Name = "Category 5"
                         },
@@ -233,8 +233,8 @@ namespace eticaret.Migrations
                         {
                             Id = 6,
                             CreateBy = "Sistem",
-                            CreateDate = "24.07.2025 10:46:19",
-                            Flag = "4fc96b55-3399-4bb9-9025-19a7112afee1",
+                            CreateDate = "11.08.2025 09:15:50",
+                            Flag = "a0b99be4-f169-4d50-a2eb-6792a1cb5781",
                             IsDeleted = false,
                             Name = "Category 6"
                         });
@@ -464,7 +464,7 @@ namespace eticaret.Migrations
                             Id = 1,
                             Colorvalue = "#f0f8ff",
                             CreateBy = "System",
-                            CreateDate = "24.07.2025 10:46:19",
+                            CreateDate = "11.08.2025 09:15:50",
                             IsDeleted = false,
                             Name = "Alice Blue"
                         },
@@ -473,7 +473,7 @@ namespace eticaret.Migrations
                             Id = 2,
                             Colorvalue = "#faebd7",
                             CreateBy = "System",
-                            CreateDate = "24.07.2025 10:46:19",
+                            CreateDate = "11.08.2025 09:15:50",
                             IsDeleted = false,
                             Name = "Antik Beyaz"
                         },
@@ -482,7 +482,7 @@ namespace eticaret.Migrations
                             Id = 3,
                             Colorvalue = "#00ffff",
                             CreateBy = "System",
-                            CreateDate = "24.07.2025 10:46:19",
+                            CreateDate = "11.08.2025 09:15:50",
                             IsDeleted = false,
                             Name = "Aqua"
                         },
@@ -491,7 +491,7 @@ namespace eticaret.Migrations
                             Id = 4,
                             Colorvalue = "#7fffd4",
                             CreateBy = "System",
-                            CreateDate = "24.07.2025 10:46:19",
+                            CreateDate = "11.08.2025 09:15:50",
                             IsDeleted = false,
                             Name = "Akuamarin"
                         },
@@ -500,7 +500,7 @@ namespace eticaret.Migrations
                             Id = 5,
                             Colorvalue = "#f0ffff",
                             CreateBy = "System",
-                            CreateDate = "24.07.2025 10:46:19",
+                            CreateDate = "11.08.2025 09:15:50",
                             IsDeleted = false,
                             Name = "Masmavi"
                         },
@@ -509,7 +509,7 @@ namespace eticaret.Migrations
                             Id = 6,
                             Colorvalue = "#f5f5dc",
                             CreateBy = "System",
-                            CreateDate = "24.07.2025 10:46:19",
+                            CreateDate = "11.08.2025 09:15:50",
                             IsDeleted = false,
                             Name = "Bej"
                         },
@@ -518,7 +518,7 @@ namespace eticaret.Migrations
                             Id = 7,
                             Colorvalue = "#ffe4c4",
                             CreateBy = "System",
-                            CreateDate = "24.07.2025 10:46:19",
+                            CreateDate = "11.08.2025 09:15:50",
                             IsDeleted = false,
                             Name = "BISQUE"
                         },
@@ -527,7 +527,7 @@ namespace eticaret.Migrations
                             Id = 8,
                             Colorvalue = "#000000",
                             CreateBy = "System",
-                            CreateDate = "24.07.2025 10:46:19",
+                            CreateDate = "11.08.2025 09:15:50",
                             IsDeleted = false,
                             Name = "Siyah"
                         },
@@ -536,7 +536,7 @@ namespace eticaret.Migrations
                             Id = 9,
                             Colorvalue = "#ffebcd",
                             CreateBy = "System",
-                            CreateDate = "24.07.2025 10:46:19",
+                            CreateDate = "11.08.2025 09:15:50",
                             IsDeleted = false,
                             Name = "Blanchedalmond"
                         },
@@ -545,7 +545,7 @@ namespace eticaret.Migrations
                             Id = 10,
                             Colorvalue = "#0000ff",
                             CreateBy = "System",
-                            CreateDate = "24.07.2025 10:46:19",
+                            CreateDate = "11.08.2025 09:15:50",
                             IsDeleted = false,
                             Name = "Mavi"
                         },
@@ -554,7 +554,7 @@ namespace eticaret.Migrations
                             Id = 11,
                             Colorvalue = "#8a2be2",
                             CreateBy = "System",
-                            CreateDate = "24.07.2025 10:46:19",
+                            CreateDate = "11.08.2025 09:15:50",
                             IsDeleted = false,
                             Name = "Mavi Menekşe"
                         },
@@ -563,7 +563,7 @@ namespace eticaret.Migrations
                             Id = 12,
                             Colorvalue = "#a52a2a",
                             CreateBy = "System",
-                            CreateDate = "24.07.2025 10:46:19",
+                            CreateDate = "11.08.2025 09:15:50",
                             IsDeleted = false,
                             Name = "Kahverengi"
                         },
@@ -572,7 +572,7 @@ namespace eticaret.Migrations
                             Id = 13,
                             Colorvalue = "#deb887",
                             CreateBy = "System",
-                            CreateDate = "24.07.2025 10:46:19",
+                            CreateDate = "11.08.2025 09:15:50",
                             IsDeleted = false,
                             Name = "Burlywood"
                         },
@@ -581,7 +581,7 @@ namespace eticaret.Migrations
                             Id = 14,
                             Colorvalue = "#5f9ea0",
                             CreateBy = "System",
-                            CreateDate = "24.07.2025 10:46:19",
+                            CreateDate = "11.08.2025 09:15:50",
                             IsDeleted = false,
                             Name = "CadetBlue"
                         });
@@ -715,8 +715,8 @@ namespace eticaret.Migrations
                         {
                             Id = 1,
                             CreateBy = "Sistem",
-                            CreateDate = "24.07.2025 10:46:19",
-                            Flag = "b61dbd1c-27cf-4060-bb50-5982aa94ea62",
+                            CreateDate = "11.08.2025 09:15:50",
+                            Flag = "1968234e-c68d-4261-8184-9eccd903f769",
                             IsDeleted = false,
                             IsShowcase = true,
                             Name = "1.jpg",
@@ -726,8 +726,8 @@ namespace eticaret.Migrations
                         {
                             Id = 2,
                             CreateBy = "Sistem",
-                            CreateDate = "24.07.2025 10:46:19",
-                            Flag = "6946142e-1709-4876-a81f-159cf8c50591",
+                            CreateDate = "11.08.2025 09:15:50",
+                            Flag = "112858c7-3cc6-4e57-be48-fe578f4f1190",
                             IsDeleted = false,
                             IsShowcase = true,
                             Name = "back-1.jpg",
@@ -737,8 +737,8 @@ namespace eticaret.Migrations
                         {
                             Id = 3,
                             CreateBy = "Sistem",
-                            CreateDate = "24.07.2025 10:46:19",
-                            Flag = "3730ebca-27ef-4298-bfd6-90fa502dc016",
+                            CreateDate = "11.08.2025 09:15:50",
+                            Flag = "865e3e35-2d12-4aba-a9ce-17a26546c1a4",
                             IsDeleted = false,
                             IsShowcase = true,
                             Name = "2.jpg",
@@ -748,8 +748,8 @@ namespace eticaret.Migrations
                         {
                             Id = 4,
                             CreateBy = "Sistem",
-                            CreateDate = "24.07.2025 10:46:19",
-                            Flag = "6b83cb7f-317d-448c-8a90-bd1c626fc5f7",
+                            CreateDate = "11.08.2025 09:15:50",
+                            Flag = "a5f75ae0-737d-4351-93cc-c23c62833c4e",
                             IsDeleted = false,
                             IsShowcase = true,
                             Name = "back-2.jpg",
@@ -759,8 +759,8 @@ namespace eticaret.Migrations
                         {
                             Id = 5,
                             CreateBy = "Sistem",
-                            CreateDate = "24.07.2025 10:46:19",
-                            Flag = "44a70b27-bdc3-4388-a477-3eb58612b2dd",
+                            CreateDate = "11.08.2025 09:15:50",
+                            Flag = "cd9d162e-3280-420b-b2ee-3b1dccdb1477",
                             IsDeleted = false,
                             IsShowcase = true,
                             Name = "3.jpg",
@@ -770,8 +770,8 @@ namespace eticaret.Migrations
                         {
                             Id = 6,
                             CreateBy = "Sistem",
-                            CreateDate = "24.07.2025 10:46:19",
-                            Flag = "4438898d-7a49-4745-8688-25ca0ea5eff4",
+                            CreateDate = "11.08.2025 09:15:50",
+                            Flag = "f63af4a7-964b-41e2-a10c-8bdb6b424409",
                             IsDeleted = false,
                             IsShowcase = true,
                             Name = "back-3.jpg",
@@ -781,8 +781,8 @@ namespace eticaret.Migrations
                         {
                             Id = 7,
                             CreateBy = "Sistem",
-                            CreateDate = "24.07.2025 10:46:19",
-                            Flag = "c227ee90-4be7-4fc3-be17-7470e1e746a2",
+                            CreateDate = "11.08.2025 09:15:50",
+                            Flag = "66d20e36-1a85-48ac-89bb-99a7b8ac03e6",
                             IsDeleted = false,
                             IsShowcase = true,
                             Name = "4.jpg",
@@ -792,8 +792,8 @@ namespace eticaret.Migrations
                         {
                             Id = 8,
                             CreateBy = "Sistem",
-                            CreateDate = "24.07.2025 10:46:19",
-                            Flag = "5b9e9f9c-2a89-42d0-95d8-7796a4a590b7",
+                            CreateDate = "11.08.2025 09:15:50",
+                            Flag = "6c4e5880-0351-43a5-a7a2-0c61cce08fb5",
                             IsDeleted = false,
                             IsShowcase = true,
                             Name = "back-4.jpg",
@@ -803,8 +803,8 @@ namespace eticaret.Migrations
                         {
                             Id = 9,
                             CreateBy = "Sistem",
-                            CreateDate = "24.07.2025 10:46:19",
-                            Flag = "5a371b4b-a803-4bcd-ae28-ab21ed8f90fb",
+                            CreateDate = "11.08.2025 09:15:50",
+                            Flag = "c035391b-1284-49bc-9636-4d7dcb9f9adc",
                             IsDeleted = false,
                             IsShowcase = true,
                             Name = "5.jpg",
@@ -814,8 +814,8 @@ namespace eticaret.Migrations
                         {
                             Id = 10,
                             CreateBy = "Sistem",
-                            CreateDate = "24.07.2025 10:46:19",
-                            Flag = "38a0bcf5-4286-4c5a-a881-ec64e287af42",
+                            CreateDate = "11.08.2025 09:15:50",
+                            Flag = "9d0bc288-6694-4a58-b27e-f18554237ccc",
                             IsDeleted = false,
                             IsShowcase = true,
                             Name = "back-5.jpg",
@@ -825,8 +825,8 @@ namespace eticaret.Migrations
                         {
                             Id = 11,
                             CreateBy = "Sistem",
-                            CreateDate = "24.07.2025 10:46:19",
-                            Flag = "7d679dd2-2387-47e3-8bde-cd6c806f2323",
+                            CreateDate = "11.08.2025 09:15:50",
+                            Flag = "e506e1c7-4939-47b9-9653-bcde9a113dcb",
                             IsDeleted = false,
                             IsShowcase = true,
                             Name = "6.jpg",
@@ -836,8 +836,8 @@ namespace eticaret.Migrations
                         {
                             Id = 12,
                             CreateBy = "Sistem",
-                            CreateDate = "24.07.2025 10:46:19",
-                            Flag = "63990b5e-4110-4ef9-b076-70d3d9a325fd",
+                            CreateDate = "11.08.2025 09:15:50",
+                            Flag = "c6d0995c-497d-4ed0-beef-5869fa6f254c",
                             IsDeleted = false,
                             IsShowcase = true,
                             Name = "back-6.jpg",
@@ -847,8 +847,8 @@ namespace eticaret.Migrations
                         {
                             Id = 13,
                             CreateBy = "Sistem",
-                            CreateDate = "24.07.2025 10:46:19",
-                            Flag = "2a5a0cc3-1697-4e34-9744-4f34112840d6",
+                            CreateDate = "11.08.2025 09:15:50",
+                            Flag = "85e9d318-86a2-4837-b3d7-8a5b12ad4b02",
                             IsDeleted = false,
                             IsShowcase = true,
                             Name = "7.jpg",
@@ -858,8 +858,8 @@ namespace eticaret.Migrations
                         {
                             Id = 14,
                             CreateBy = "Sistem",
-                            CreateDate = "24.07.2025 10:46:19",
-                            Flag = "e9925c33-ba9b-4393-9d1d-b66d83ae822d",
+                            CreateDate = "11.08.2025 09:15:50",
+                            Flag = "ba42998a-6e5d-43c4-b61d-8117512217ed",
                             IsDeleted = false,
                             IsShowcase = true,
                             Name = "back-7.jpg",
@@ -869,8 +869,8 @@ namespace eticaret.Migrations
                         {
                             Id = 15,
                             CreateBy = "Sistem",
-                            CreateDate = "24.07.2025 10:46:19",
-                            Flag = "f9402085-86f0-420c-8d3a-a83d79814af0",
+                            CreateDate = "11.08.2025 09:15:50",
+                            Flag = "fdc33eec-1abd-4e2f-a8bd-caa903a421db",
                             IsDeleted = false,
                             IsShowcase = true,
                             Name = "8.jpg",
@@ -880,8 +880,8 @@ namespace eticaret.Migrations
                         {
                             Id = 16,
                             CreateBy = "Sistem",
-                            CreateDate = "24.07.2025 10:46:19",
-                            Flag = "476d11d4-4391-4be3-9603-d78711a613f5",
+                            CreateDate = "11.08.2025 09:15:50",
+                            Flag = "1cd3c8f8-3403-489f-a0a4-5b50a94d8a9d",
                             IsDeleted = false,
                             IsShowcase = true,
                             Name = "back-8.jpg",
@@ -891,8 +891,8 @@ namespace eticaret.Migrations
                         {
                             Id = 17,
                             CreateBy = "Sistem",
-                            CreateDate = "24.07.2025 10:46:19",
-                            Flag = "f7799d85-c3cd-484d-8995-c679c08844ec",
+                            CreateDate = "11.08.2025 09:15:50",
+                            Flag = "503b1832-cf53-4fa1-b429-dad8202a0d06",
                             IsDeleted = false,
                             IsShowcase = true,
                             Name = "1.jpg",
@@ -902,8 +902,8 @@ namespace eticaret.Migrations
                         {
                             Id = 18,
                             CreateBy = "Sistem",
-                            CreateDate = "24.07.2025 10:46:19",
-                            Flag = "ad69ae4d-4dc0-4c6d-8647-b8e0cf6432a7",
+                            CreateDate = "11.08.2025 09:15:50",
+                            Flag = "88a286ad-6278-4b2e-83f2-dce723106b14",
                             IsDeleted = false,
                             IsShowcase = true,
                             Name = "back-1.jpg",
@@ -913,8 +913,8 @@ namespace eticaret.Migrations
                         {
                             Id = 19,
                             CreateBy = "Sistem",
-                            CreateDate = "24.07.2025 10:46:19",
-                            Flag = "fe0cafcf-b8fd-4f06-82d7-582130651482",
+                            CreateDate = "11.08.2025 09:15:50",
+                            Flag = "2cde1ff3-c333-4de4-96b8-7cf84571a3a9",
                             IsDeleted = false,
                             IsShowcase = true,
                             Name = "2.jpg",
@@ -924,8 +924,8 @@ namespace eticaret.Migrations
                         {
                             Id = 20,
                             CreateBy = "Sistem",
-                            CreateDate = "24.07.2025 10:46:19",
-                            Flag = "6a1aa448-20a2-46b3-97d2-317c806eb7d9",
+                            CreateDate = "11.08.2025 09:15:50",
+                            Flag = "211c4e70-07a8-477b-94de-d96f23f210f4",
                             IsDeleted = false,
                             IsShowcase = false,
                             Name = "back-2.jpg",
@@ -935,8 +935,8 @@ namespace eticaret.Migrations
                         {
                             Id = 21,
                             CreateBy = "Sistem",
-                            CreateDate = "24.07.2025 10:46:19",
-                            Flag = "4b4315f3-127b-4fe8-85dc-434081e4af10",
+                            CreateDate = "11.08.2025 09:15:50",
+                            Flag = "0fae48b9-429c-4c9c-9d1e-daea47ad5e40",
                             IsDeleted = false,
                             IsShowcase = true,
                             Name = "3.jpg",
@@ -946,8 +946,8 @@ namespace eticaret.Migrations
                         {
                             Id = 22,
                             CreateBy = "Sistem",
-                            CreateDate = "24.07.2025 10:46:19",
-                            Flag = "2d18b065-055f-4490-8463-1737ad502ed7",
+                            CreateDate = "11.08.2025 09:15:50",
+                            Flag = "9bddf67a-4355-461f-ba3f-d34ecd27fd04",
                             IsDeleted = false,
                             IsShowcase = false,
                             Name = "back-3.jpg",
@@ -957,8 +957,8 @@ namespace eticaret.Migrations
                         {
                             Id = 23,
                             CreateBy = "Sistem",
-                            CreateDate = "24.07.2025 10:46:19",
-                            Flag = "d84b5876-36eb-4cb7-86f0-9ef12c73f579",
+                            CreateDate = "11.08.2025 09:15:50",
+                            Flag = "db58852f-5d3b-44ca-b7d4-fe300a74aff3",
                             IsDeleted = false,
                             IsShowcase = true,
                             Name = "4.jpg",
@@ -968,8 +968,8 @@ namespace eticaret.Migrations
                         {
                             Id = 24,
                             CreateBy = "Sistem",
-                            CreateDate = "24.07.2025 10:46:19",
-                            Flag = "12bd63ce-ecff-423c-be35-dbbe777fb96d",
+                            CreateDate = "11.08.2025 09:15:50",
+                            Flag = "d931cf26-f403-4bce-aeb9-390d32461413",
                             IsDeleted = false,
                             IsShowcase = false,
                             Name = "back-4.jpg",
@@ -979,8 +979,8 @@ namespace eticaret.Migrations
                         {
                             Id = 25,
                             CreateBy = "Sistem",
-                            CreateDate = "24.07.2025 10:46:19",
-                            Flag = "b65d3265-c33c-4f6c-9fe7-21881b3e7e97",
+                            CreateDate = "11.08.2025 09:15:50",
+                            Flag = "715f6fc1-9029-4442-811b-745e94a40bce",
                             IsDeleted = false,
                             IsShowcase = false,
                             Name = "5.jpg",
@@ -1032,10 +1032,10 @@ namespace eticaret.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("NewPrice")
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("money");
 
                     b.Property<decimal>("OldPrice")
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("money");
 
                     b.Property<int>("RatinAVG")
                         .HasColumnType("int");
@@ -1054,9 +1054,9 @@ namespace eticaret.Migrations
                         {
                             Id = 1,
                             CreateBy = "Sistem",
-                            CreateDate = "24.07.2025 10:46:19",
+                            CreateDate = "11.08.2025 09:15:50",
                             Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas nihil laboriosam voluptatem ab consectetur dolorum id, soluta sunt at culpa commodi totam quod natus qui!",
-                            Flag = "7f1fb2c4-4a2a-437a-8a44-f196bfa7f3da",
+                            Flag = "11cedb7f-846a-4ac5-bf97-b0148b5abf28",
                             IsDeleted = false,
                             Name = "Product 1",
                             NewPrice = 0m,
@@ -1068,9 +1068,9 @@ namespace eticaret.Migrations
                         {
                             Id = 2,
                             CreateBy = "Sistem",
-                            CreateDate = "24.07.2025 10:46:19",
+                            CreateDate = "11.08.2025 09:15:50",
                             Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas nihil laboriosam voluptatem ab consectetur dolorum id, soluta sunt at culpa commodi totam quod natus qui!",
-                            Flag = "a6692f30-c2af-4057-9d78-598436ed6f0c",
+                            Flag = "c4391c87-48c3-4301-89f6-bc8303979a57",
                             IsDeleted = false,
                             Name = "Product 2",
                             NewPrice = 0m,
@@ -1082,9 +1082,9 @@ namespace eticaret.Migrations
                         {
                             Id = 3,
                             CreateBy = "Sistem",
-                            CreateDate = "24.07.2025 10:46:19",
+                            CreateDate = "11.08.2025 09:15:50",
                             Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas nihil laboriosam voluptatem ab consectetur dolorum id, soluta sunt at culpa commodi totam quod natus qui!",
-                            Flag = "335f1d38-c385-492e-96c2-2e683a1bcb6e",
+                            Flag = "3e5bcd52-ec5e-4bda-942e-0991722e19a5",
                             IsDeleted = false,
                             Name = "Product 3",
                             NewPrice = 0m,
@@ -1096,9 +1096,9 @@ namespace eticaret.Migrations
                         {
                             Id = 4,
                             CreateBy = "Sistem",
-                            CreateDate = "24.07.2025 10:46:19",
+                            CreateDate = "11.08.2025 09:15:50",
                             Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas nihil laboriosam voluptatem ab consectetur dolorum id, soluta sunt at culpa commodi totam quod natus qui!",
-                            Flag = "7da37aba-fa10-476d-947c-95d66b97cb1b",
+                            Flag = "68019a47-a81c-4bca-b5c6-dbe430e2f7ec",
                             IsDeleted = false,
                             Name = "Product 4",
                             NewPrice = 0m,
@@ -1110,9 +1110,9 @@ namespace eticaret.Migrations
                         {
                             Id = 5,
                             CreateBy = "Sistem",
-                            CreateDate = "24.07.2025 10:46:19",
+                            CreateDate = "11.08.2025 09:15:50",
                             Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas nihil laboriosam voluptatem ab consectetur dolorum id, soluta sunt at culpa commodi totam quod natus qui!",
-                            Flag = "b00c2d41-4f4a-4ad9-b7ce-efce1e2b970a",
+                            Flag = "dfd13e2d-ad60-4ec4-b993-6859a47373b8",
                             IsDeleted = false,
                             Name = "Product 5",
                             NewPrice = 0m,
@@ -1124,9 +1124,9 @@ namespace eticaret.Migrations
                         {
                             Id = 6,
                             CreateBy = "Sistem",
-                            CreateDate = "24.07.2025 10:46:19",
+                            CreateDate = "11.08.2025 09:15:50",
                             Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas nihil laboriosam voluptatem ab consectetur dolorum id, soluta sunt at culpa commodi totam quod natus qui!",
-                            Flag = "29b2a7dc-7907-4795-88b5-25194a55178b",
+                            Flag = "1c411803-60ef-4c28-8d04-082456dca7dd",
                             IsDeleted = false,
                             Name = "Product 6",
                             NewPrice = 0m,
@@ -1138,9 +1138,9 @@ namespace eticaret.Migrations
                         {
                             Id = 7,
                             CreateBy = "Sistem",
-                            CreateDate = "24.07.2025 10:46:19",
+                            CreateDate = "11.08.2025 09:15:50",
                             Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas nihil laboriosam voluptatem ab consectetur dolorum id, soluta sunt at culpa commodi totam quod natus qui!",
-                            Flag = "5964e617-cc20-4649-a0aa-98296d483e43",
+                            Flag = "b6c18ad1-f9da-4176-9869-c992ece0318c",
                             IsDeleted = false,
                             Name = "Product 7",
                             NewPrice = 0m,
@@ -1152,9 +1152,9 @@ namespace eticaret.Migrations
                         {
                             Id = 8,
                             CreateBy = "Sistem",
-                            CreateDate = "24.07.2025 10:46:19",
+                            CreateDate = "11.08.2025 09:15:50",
                             Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas nihil laboriosam voluptatem ab consectetur dolorum id, soluta sunt at culpa commodi totam quod natus qui!",
-                            Flag = "09164cee-5aaf-4b39-8c4f-1921257f1207",
+                            Flag = "290e197a-ac44-4885-a7e7-1339eaff5151",
                             IsDeleted = false,
                             Name = "Product 8",
                             NewPrice = 0m,
@@ -1166,9 +1166,9 @@ namespace eticaret.Migrations
                         {
                             Id = 9,
                             CreateBy = "Sistem",
-                            CreateDate = "24.07.2025 10:46:19",
+                            CreateDate = "11.08.2025 09:15:50",
                             Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas nihil laboriosam voluptatem ab consectetur dolorum id, soluta sunt at culpa commodi totam quod natus qui!",
-                            Flag = "6aed9f1d-1cab-43d6-9f2d-6ac8aac9bea1",
+                            Flag = "d6d65bb3-5c4a-40ff-b4ca-3a24b80ee7f1",
                             IsDeleted = false,
                             Name = "Product 9",
                             NewPrice = 0m,
@@ -1180,9 +1180,9 @@ namespace eticaret.Migrations
                         {
                             Id = 10,
                             CreateBy = "Sistem",
-                            CreateDate = "24.07.2025 10:46:19",
+                            CreateDate = "11.08.2025 09:15:50",
                             Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas nihil laboriosam voluptatem ab consectetur dolorum id, soluta sunt at culpa commodi totam quod natus qui!",
-                            Flag = "70ce163e-28ac-4702-a629-b06a4364e9f9",
+                            Flag = "08ea9170-d2fb-4743-a6df-195567e35475",
                             IsDeleted = false,
                             Name = "Product 10",
                             NewPrice = 0m,
@@ -1194,9 +1194,9 @@ namespace eticaret.Migrations
                         {
                             Id = 11,
                             CreateBy = "Sistem",
-                            CreateDate = "24.07.2025 10:46:19",
+                            CreateDate = "11.08.2025 09:15:50",
                             Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas nihil laboriosam voluptatem ab consectetur dolorum id, soluta sunt at culpa commodi totam quod natus qui!",
-                            Flag = "c9683c1f-82ed-433a-af44-fc94117832c6",
+                            Flag = "63308a09-2b68-4321-8f11-bb34772a1269",
                             IsDeleted = false,
                             Name = "Product 11",
                             NewPrice = 0m,
@@ -1208,9 +1208,9 @@ namespace eticaret.Migrations
                         {
                             Id = 12,
                             CreateBy = "Sistem",
-                            CreateDate = "24.07.2025 10:46:19",
+                            CreateDate = "11.08.2025 09:15:50",
                             Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas nihil laboriosam voluptatem ab consectetur dolorum id, soluta sunt at culpa commodi totam quod natus qui!",
-                            Flag = "39c6c8e5-64ef-4b7b-9592-9452f337021d",
+                            Flag = "caae9ea8-2269-48a7-bc67-e995692c3315",
                             IsDeleted = false,
                             Name = "Product 12",
                             NewPrice = 0m,
@@ -1222,9 +1222,9 @@ namespace eticaret.Migrations
                         {
                             Id = 13,
                             CreateBy = "Sistem",
-                            CreateDate = "24.07.2025 10:46:19",
+                            CreateDate = "11.08.2025 09:15:50",
                             Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas nihil laboriosam voluptatem ab consectetur dolorum id, soluta sunt at culpa commodi totam quod natus qui!",
-                            Flag = "300f3145-8da7-4922-ae88-9c5131f533b1",
+                            Flag = "dd038741-0633-42c1-af09-4e98c02ee93e",
                             IsDeleted = false,
                             Name = "Product 13",
                             NewPrice = 0m,
@@ -1236,9 +1236,9 @@ namespace eticaret.Migrations
                         {
                             Id = 14,
                             CreateBy = "Sistem",
-                            CreateDate = "24.07.2025 10:46:19",
+                            CreateDate = "11.08.2025 09:15:50",
                             Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas nihil laboriosam voluptatem ab consectetur dolorum id, soluta sunt at culpa commodi totam quod natus qui!",
-                            Flag = "9584a90d-6cdf-4e36-8ced-0a8d375d1d4f",
+                            Flag = "98f24730-683b-45c8-ac6f-33180c21227a",
                             IsDeleted = false,
                             Name = "Product 14",
                             NewPrice = 0m,
@@ -1250,9 +1250,9 @@ namespace eticaret.Migrations
                         {
                             Id = 15,
                             CreateBy = "Sistem",
-                            CreateDate = "24.07.2025 10:46:19",
+                            CreateDate = "11.08.2025 09:15:50",
                             Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas nihil laboriosam voluptatem ab consectetur dolorum id, soluta sunt at culpa commodi totam quod natus qui!",
-                            Flag = "174bc248-6875-4128-b5a6-d98d652e84ba",
+                            Flag = "c875e7e2-4a63-43b2-8b1c-8416bb186f79",
                             IsDeleted = false,
                             Name = "Product 15",
                             NewPrice = 0m,
@@ -1264,9 +1264,9 @@ namespace eticaret.Migrations
                         {
                             Id = 16,
                             CreateBy = "Sistem",
-                            CreateDate = "24.07.2025 10:46:19",
+                            CreateDate = "11.08.2025 09:15:50",
                             Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas nihil laboriosam voluptatem ab consectetur dolorum id, soluta sunt at culpa commodi totam quod natus qui!",
-                            Flag = "fb878721-99ea-4fc7-94d1-735c85ee17fe",
+                            Flag = "df1ed8b2-14c6-4ea7-8f57-1bf3ed3b38fe",
                             IsDeleted = false,
                             Name = "Product 16",
                             NewPrice = 0m,
@@ -1278,9 +1278,9 @@ namespace eticaret.Migrations
                         {
                             Id = 17,
                             CreateBy = "Sistem",
-                            CreateDate = "24.07.2025 10:46:19",
+                            CreateDate = "11.08.2025 09:15:50",
                             Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas nihil laboriosam voluptatem ab consectetur dolorum id, soluta sunt at culpa commodi totam quod natus qui!",
-                            Flag = "2e40c2d0-7230-437d-97b3-a304b6fb916c",
+                            Flag = "1afa27b1-c1ff-465b-aace-fce0dfedd917",
                             IsDeleted = false,
                             Name = "Product 17",
                             NewPrice = 0m,
@@ -1292,9 +1292,9 @@ namespace eticaret.Migrations
                         {
                             Id = 18,
                             CreateBy = "Sistem",
-                            CreateDate = "24.07.2025 10:46:19",
+                            CreateDate = "11.08.2025 09:15:50",
                             Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas nihil laboriosam voluptatem ab consectetur dolorum id, soluta sunt at culpa commodi totam quod natus qui!",
-                            Flag = "daad9767-5b48-489b-95ad-50c625679e6f",
+                            Flag = "5420fdf0-d769-4724-a5ac-cd02d84d0b8a",
                             IsDeleted = false,
                             Name = "Product 18",
                             NewPrice = 0m,
@@ -1306,9 +1306,9 @@ namespace eticaret.Migrations
                         {
                             Id = 19,
                             CreateBy = "Sistem",
-                            CreateDate = "24.07.2025 10:46:19",
+                            CreateDate = "11.08.2025 09:15:50",
                             Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas nihil laboriosam voluptatem ab consectetur dolorum id, soluta sunt at culpa commodi totam quod natus qui!",
-                            Flag = "9a66e89f-2f01-4e3f-8aa9-5896bb3d9978",
+                            Flag = "b4ba755f-5a96-493e-af9c-c7db1c6ec608",
                             IsDeleted = false,
                             Name = "Product 19",
                             NewPrice = 0m,
@@ -1320,9 +1320,9 @@ namespace eticaret.Migrations
                         {
                             Id = 20,
                             CreateBy = "Sistem",
-                            CreateDate = "24.07.2025 10:46:19",
+                            CreateDate = "11.08.2025 09:15:50",
                             Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas nihil laboriosam voluptatem ab consectetur dolorum id, soluta sunt at culpa commodi totam quod natus qui!",
-                            Flag = "bfbf1a79-7e68-43e7-bc76-5e622c1b490f",
+                            Flag = "b2e83d2d-c068-421f-b04a-e34d3316bc56",
                             IsDeleted = false,
                             Name = "Product 20",
                             NewPrice = 0m,
@@ -1334,9 +1334,9 @@ namespace eticaret.Migrations
                         {
                             Id = 21,
                             CreateBy = "Sistem",
-                            CreateDate = "24.07.2025 10:46:19",
+                            CreateDate = "11.08.2025 09:15:50",
                             Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas nihil laboriosam voluptatem ab consectetur dolorum id, soluta sunt at culpa commodi totam quod natus qui!",
-                            Flag = "ce8eec73-e6e6-4048-8560-0a5a108275a6",
+                            Flag = "a31bf637-a503-41e8-a53e-a8f5bd0dc81b",
                             IsDeleted = false,
                             Name = "Product 21",
                             NewPrice = 0m,
@@ -1348,9 +1348,9 @@ namespace eticaret.Migrations
                         {
                             Id = 22,
                             CreateBy = "Sistem",
-                            CreateDate = "24.07.2025 10:46:19",
+                            CreateDate = "11.08.2025 09:15:50",
                             Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas nihil laboriosam voluptatem ab consectetur dolorum id, soluta sunt at culpa commodi totam quod natus qui!",
-                            Flag = "43da18d1-dce9-487e-b75e-b2152752d0eb",
+                            Flag = "608d4a8c-656a-4913-b994-6df7d652e5df",
                             IsDeleted = false,
                             Name = "Product 22",
                             NewPrice = 0m,
@@ -1362,9 +1362,9 @@ namespace eticaret.Migrations
                         {
                             Id = 23,
                             CreateBy = "Sistem",
-                            CreateDate = "24.07.2025 10:46:19",
+                            CreateDate = "11.08.2025 09:15:50",
                             Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas nihil laboriosam voluptatem ab consectetur dolorum id, soluta sunt at culpa commodi totam quod natus qui!",
-                            Flag = "69fd60ca-5add-42af-8fbd-80a8c9d0c764",
+                            Flag = "a02e081b-6e67-4188-9fc8-f3bc5fe7cbcb",
                             IsDeleted = false,
                             Name = "Product 23",
                             NewPrice = 0m,
@@ -1376,9 +1376,9 @@ namespace eticaret.Migrations
                         {
                             Id = 24,
                             CreateBy = "Sistem",
-                            CreateDate = "24.07.2025 10:46:19",
+                            CreateDate = "11.08.2025 09:15:50",
                             Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas nihil laboriosam voluptatem ab consectetur dolorum id, soluta sunt at culpa commodi totam quod natus qui!",
-                            Flag = "42571b73-edc9-4a82-804c-fef9f8edf42f",
+                            Flag = "65eaea1c-8cae-4c3b-82e0-0c9d4490e3d4",
                             IsDeleted = false,
                             Name = "Product 24",
                             NewPrice = 0m,
@@ -1390,9 +1390,9 @@ namespace eticaret.Migrations
                         {
                             Id = 25,
                             CreateBy = "Sistem",
-                            CreateDate = "24.07.2025 10:46:19",
+                            CreateDate = "11.08.2025 09:15:50",
                             Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas nihil laboriosam voluptatem ab consectetur dolorum id, soluta sunt at culpa commodi totam quod natus qui!",
-                            Flag = "808f0e91-cab6-4291-96c4-dc6afa5f5ce9",
+                            Flag = "0c7101aa-0e3a-4128-b842-6e755f2b3b25",
                             IsDeleted = false,
                             Name = "Product 25",
                             NewPrice = 0m,
@@ -1561,8 +1561,8 @@ namespace eticaret.Migrations
                             Id = 1,
                             CategoryId = 1,
                             CreateBy = "Sistem",
-                            CreateDate = "24.07.2025 10:46:19",
-                            Flag = "dd19b9f1-e98d-4d19-a7b5-3d1b18a8f56c",
+                            CreateDate = "11.08.2025 09:15:50",
+                            Flag = "b37b1f2a-4ef8-4258-8e82-7b1e87b56a09",
                             IsDeleted = false,
                             Name = "Çanta"
                         },
@@ -1571,8 +1571,8 @@ namespace eticaret.Migrations
                             Id = 2,
                             CategoryId = 2,
                             CreateBy = "Sistem",
-                            CreateDate = "24.07.2025 10:46:19",
-                            Flag = "cf47a44f-8bf3-4261-b12b-bf522420a2b3",
+                            CreateDate = "11.08.2025 09:15:50",
+                            Flag = "06f810f9-6e78-4692-bba2-fc04b5f2691a",
                             IsDeleted = false,
                             Name = "Halı"
                         },
@@ -1581,8 +1581,8 @@ namespace eticaret.Migrations
                             Id = 3,
                             CategoryId = 3,
                             CreateBy = "Sistem",
-                            CreateDate = "24.07.2025 10:46:19",
-                            Flag = "f1e47e21-91f2-4737-acc5-e2d6e6132858",
+                            CreateDate = "11.08.2025 09:15:50",
+                            Flag = "7822b31c-11e9-48ec-9c02-a3bb92a40cb2",
                             IsDeleted = false,
                             Name = "Aksesuar"
                         },
@@ -1591,8 +1591,8 @@ namespace eticaret.Migrations
                             Id = 4,
                             CategoryId = 4,
                             CreateBy = "Sistem",
-                            CreateDate = "24.07.2025 10:46:19",
-                            Flag = "7f1c39a8-6992-49b4-8cc5-e3798e80c592",
+                            CreateDate = "11.08.2025 09:15:50",
+                            Flag = "6a1ab3b3-67ad-4619-b48a-06fada2086ea",
                             IsDeleted = false,
                             Name = "Spor"
                         },
@@ -1601,8 +1601,8 @@ namespace eticaret.Migrations
                             Id = 5,
                             CategoryId = 5,
                             CreateBy = "Sistem",
-                            CreateDate = "24.07.2025 10:46:19",
-                            Flag = "2afa4d43-064e-4cfc-ada6-5e0bea4ee061",
+                            CreateDate = "11.08.2025 09:15:50",
+                            Flag = "b9e605f7-ae2c-49aa-a4ba-e2cc1fdc52b9",
                             IsDeleted = false,
                             Name = "Giyim"
                         },
@@ -1611,8 +1611,8 @@ namespace eticaret.Migrations
                             Id = 6,
                             CategoryId = 6,
                             CreateBy = "Sistem",
-                            CreateDate = "24.07.2025 10:46:19",
-                            Flag = "2cb0b3fa-9756-4fef-b8c7-719ceeaf3589",
+                            CreateDate = "11.08.2025 09:15:50",
+                            Flag = "76407f95-8890-490c-9e5c-013debc133e8",
                             IsDeleted = false,
                             Name = "Outdoor"
                         });
@@ -1802,7 +1802,7 @@ namespace eticaret.Migrations
                             Id = 1,
                             ConcurrencyStamp = "924B836D-B087-4D37-A52D-210ABD72CD96",
                             CreateBy = "Sistem",
-                            CreateDate = "24.07.2025 10:46:19",
+                            CreateDate = "11.08.2025 09:15:50",
                             Flag = "46D16588-9420-4F85-A768-D21419075284",
                             IsDeleted = false,
                             Name = "superuser",
@@ -1813,7 +1813,7 @@ namespace eticaret.Migrations
                             Id = 2,
                             ConcurrencyStamp = "232D9C58-01CE-466A-90D0-EB7039C75465",
                             CreateBy = "Sistem",
-                            CreateDate = "24.07.2025 10:46:19",
+                            CreateDate = "11.08.2025 09:15:50",
                             Flag = "70449BCD-A6DC-4601-867E-35AD80657B28",
                             IsDeleted = false,
                             Name = "admin",
@@ -1958,9 +1958,9 @@ namespace eticaret.Migrations
                         {
                             Id = 1,
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "1ccccb76-ceb4-44df-9f59-1ede5dc2f699",
+                            ConcurrencyStamp = "b5a47dc9-d091-4921-9e77-7c7ad34bfd6c",
                             CreateBy = "Sistem",
-                            CreateDate = "24.07.2025 10:46:19",
+                            CreateDate = "11.08.2025 09:15:50",
                             Email = "stoy@windowslive.com",
                             EmailConfirmed = false,
                             Flag = "D90E65E6-9611-4B5F-9F24-BBD468398D51",
@@ -1970,7 +1970,7 @@ namespace eticaret.Migrations
                             Name = "Serkan",
                             NormalizedEmail = "STOY@WINDOWSLIVE.COM",
                             NormalizedUserName = "STOY",
-                            PasswordHash = "AQAAAAIAAYagAAAAELsaZ59H2F9ehjtx0ORulry9MxkCrSYn4qJDF1ezuDsFsTKPtav1UsugedhLFz5b8Q==",
+                            PasswordHash = "AQAAAAIAAYagAAAAENbdk82pu9A4EP6sm8eawpwsJvZNcNWF9jdFSG6s2bw+6WRTNtI9Q+e9UL74K6V5Gw==",
                             PhoneNumber = "0(533) 656 30 95",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "63742240-5787-4E6A-8AE2-FE8BA5381630",

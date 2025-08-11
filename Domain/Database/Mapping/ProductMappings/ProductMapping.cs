@@ -9,6 +9,8 @@ namespace eticaret.Domain.Database.Mapping.ProductMappings
         public void Configure(EntityTypeBuilder<Product> builder)
         {
             builder.HasKey(x => x.Id);
+            builder.Property(d => d.OldPrice).HasColumnType("money");
+            builder.Property(d => d.NewPrice).HasColumnType("money");
             builder.HasOne(x => x.SubCategory).WithMany(y => y.Products).OnDelete(DeleteBehavior.NoAction);
             builder.HasMany(x => x.RatinProducts).WithOne(y => y.Product).OnDelete(deleteBehavior: DeleteBehavior.NoAction);
             builder.HasMany(x => x.ColorProduct).WithOne(y => y.Product).OnDelete(deleteBehavior: DeleteBehavior.NoAction);
