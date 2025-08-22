@@ -1,0 +1,37 @@
+﻿@inject AuthenticationStateProvider AuthenticationStateProvider
+@inject eticaret.Domain.UnitOfWork.IUnitofWork unitofWork
+@inject NavigationManager _navigationManager
+
+<div class="qty-plus-minus">
+    <div>@total.ToString()</div>
+</div>
+
+@code {
+    [Parameter]
+    public int id { get; set; } = 0;
+    [Parameter]
+    public int total { get; set; } = 0;
+    private AuthenticationState authenticationState;
+
+    public async Task OnInitializedAsync()
+    {
+
+    }
+
+    public async Task AddTotal(string a)
+    {
+        authenticationState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        var user = authenticationState.User;
+        if (user.Identity?.IsAuthenticated == true)
+        {
+            /*var userId = unitofWork.GetUserById(user.Identity!.Name!);
+            var basket = await unitofWork.GetRepository<Basket>().GetFindAsync(x => x.Id == Convert.ToInt32(a));*/
+
+            Basket update = await unitofWork.GetRepository<Basket>().GetFindAsync(v => v.Id == Convert.ToInt32(a));
+            update.Total = Convert.ToInt32(total);
+            unitofWork.GetRepository<Basket>().Update(update);
+            unitofWork.SaveChanges();
+        }
+        _navigationManager.Refresh();
+    }
+}

@@ -15,9 +15,7 @@ namespace eticaret.Domain.Core.Entities
         public string? ModifiedDate { get; set; }
         public string? DeleteDate { get; set; }
         public bool IsDeleted { get; set; }
-        [DisplayFormat(DataFormatString = "{18:2}")]
         public decimal OldPrice { get; set; } = 0;
-        [DisplayFormat(DataFormatString = "{18:2}")]
         public decimal NewPrice { get; set; } = 0;
         public string Description { get; set; }
         public string Flag { get; set; }

@@ -1,4 +1,5 @@
 ﻿@page "~/product-list/{handler?}/{flag?}"
+@using System.Globalization
 @model eticaret.Pages.Products.ProductListModel
 @{
     ViewData["Title"] = "Ürün Listesi";
@@ -31,7 +32,7 @@
                                         <div class="bb-select-inner">
                                             <div class="custom-select">
                                                 <select>
-                                                    <option selected disabled>Sırala</option>
+                                                    <option selected disabled>Sırala @Model.value</option>
                                                     <option value="1">Ürünler, A - Z</option>
                                                     <option value="2">Ürünler, Z - A</option>
                                                     <option value="5">Yüksek'ten Düşüğe</option>
@@ -104,12 +105,12 @@
                                                 <div class="inner-price">
                                                     @if (item.NewPrice == 0)
                                                     {
-                                                        <span class="new-price">@item.OldPrice</span>
+                                                        <span class="new-price">@item.OldPrice.ToString(CultureInfo.CreateSpecificCulture("tr"))</span>
                                                     }
                                                     else
                                                     {
-                                                        <span class="new-price">@item.NewPrice</span>
-                                                        <span class="old-price">@item.OldPrice</span>
+                                                        <span class="new-price">@item.NewPrice.ToString(CultureInfo.CreateSpecificCulture("tr"))</span>
+                                                        <span class="old-price">@item.OldPrice.ToString(CultureInfo.CreateSpecificCulture("tr"))</span>
                                                     }                                                    
                                                 </div>
                                             </div>

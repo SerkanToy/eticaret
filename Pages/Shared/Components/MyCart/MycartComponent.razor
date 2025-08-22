@@ -3,6 +3,7 @@
 @inject eticaret.Domain.Repository.Interface.IBasketRepository basketRepository
 
 
+
 <div class="bb-side-cart-overlay"></div>
 <div class="bb-side-cart">
     <div class="row h-full">
@@ -103,9 +104,6 @@
                                         foreach (var item in BasketList)
                                         {
                                             <li class="cart-sidebar-list">
-                                                <a href="javascript:void(0)" class="cart-remove-item">
-                                                    <BasketremoveComponent Id="@item.Id.ToString()"></BasketremoveComponent>
-                                                </a>
                                                 <a href="javascript:void(0)" class="bb-cart-pro-img">
                                                     @if (item.Product.Images.Any())
                                                     {
@@ -127,11 +125,11 @@
                                                     <span class="cart-price">
                                                         @if (item.Product.NewPrice == 0)
                                                         {
-                                                            <span class="new-price">@item.Product.OldPrice</span>
+                                                            <span class="new-price">@(item.Product.OldPrice * item.Total)</span>
                                                         }
                                                         else
                                                         {
-                                                            <span class="new-price">@item.Product.OldPrice</span>
+                                                            <span class="new-price">@(item.Product.NewPrice * item.Total)</span>
                                                         }
                                                     </span>
                                                     <div class="qty-plus-minus">
@@ -153,11 +151,15 @@
                                             </tr>
                                             <tr>
                                                 <td class="title">KDV (20%) :</td>
-                                                <td class="price">@TotalPrice</td>
+                                                <td class="price">@KDV</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="title">Kargo :</td>
+                                                <td class="price">@Transfer</td>
                                             </tr>
                                             <tr>
                                                 <td class="title">Genel Toplam :</td>
-                                                <td class="price">@TotalPrice</td>
+                                                <td class="price">@KDVTotal</td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -184,7 +186,10 @@
     [Parameter]
     public List<Basket> BasketList { get; set; } = new List<Basket>();
     [Parameter]
-    public int TotalPrice { get; set; }
+    public decimal TotalPrice { get; set; }
+    public decimal KDV { get; set; }
+    public decimal KDVTotal { get; set; }
+    public decimal Transfer { get; set; }
     private AuthenticationState authenticationState;
 
     protected override async Task OnInitializedAsync()
@@ -204,6 +209,11 @@
                 ProductId = x.ProductId,
                 Product = x.Product
             }).ToList();
+
+            TotalPrice += BasketList.Sum(x => (x.Product.NewPrice != 0 ? x.Product.NewPrice : x.Product.OldPrice) * x.Total);
+            KDV = TotalPrice * 0.2m; 
+            Transfer = TotalPrice > 2000 ? 0 : 100;
+            KDVTotal = TotalPrice + KDV + Transfer;            
         }
         else
         {

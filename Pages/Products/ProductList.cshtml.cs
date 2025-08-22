@@ -1,9 +1,13 @@
 ﻿using eticaret.Domain.Core.Entities;
 using eticaret.Domain.Repository.Interface;
 using eticaret.Domain.UnitOfWork;
+using eticaret.Hubs;
 using eticaret.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.SignalR;
+using System.Threading.Tasks;
+using Timer = System.Timers.Timer;
 
 namespace eticaret.Pages.Products
 {
@@ -17,11 +21,14 @@ namespace eticaret.Pages.Products
         public IEnumerable<SubCategory> categoryViewModel { get; set; }
         [BindProperty]
         public IEnumerable<Colors> colorsViewModel { get; set; }
+        [BindProperty]
+        public int value { get; set; }
         [BindProperty(SupportsGet = true)]
         public string? flag { get; set; }
 
         private IUnitofWork unitofWork;
         private IProductRepository productRepository;
+
 
         public ProductListModel(IUnitofWork unitofWork, IProductRepository productRepository)
         {
@@ -31,6 +38,7 @@ namespace eticaret.Pages.Products
             categoryViewModel = unitofWork.GetRepository<SubCategory>().GetAllIQueryable(x => x.IsDeleted == false); // unitofWork.Catetgory().CategorySubCategory(); //unitofWork.GetRepository<Category>().GetAllIQueryable(x => x.IsDeleted == false);
             colorsViewModel = unitofWork.GetRepository<Colors>().GetAllIQueryable(x => x.IsDeleted == false);
             productViewModel = productRepository.ProductJoin(predicate: x => x.IsDeleted == false);
+
         }
 
         public async Task OnGet()
@@ -38,6 +46,8 @@ namespace eticaret.Pages.Products
             /*categoryViewModel = unitofWork.GetRepository<SubCategory>().GetAllIQueryable(x => x.IsDeleted == false); // unitofWork.Catetgory().CategorySubCategory(); //unitofWork.GetRepository<Category>().GetAllIQueryable(x => x.IsDeleted == false);
             productViewModel = productRepository.ProductJoin(predicate: x => x.IsDeleted == false);
             colorsViewModel = unitofWork.GetRepository<Colors>().GetAllIQueryable(x => x.IsDeleted == false);*/
+
+
             productExpandoObject = productViewModel.Select(c => new Dynamic
             {
                 ["Id"] = c.Id,

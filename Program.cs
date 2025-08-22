@@ -1,6 +1,8 @@
 ﻿using eticaret.Domain.Database.Context;
 using eticaret.Domain.Extensions;
+using eticaret.Hubs;
 using eticaret.Models.MailMessageSend;
+using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.SignalR;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -13,13 +15,22 @@ builder.Services.Configure<EmailConfiguration>(builder.Configuration.GetSection(
 
 builder.Services.AddDbContext<CommerceContext>();
 builder.Services.AddServerSideBlazor()
-    .AddInteractiveServerComponents();
+    .AddInteractiveServerComponents().AddInteractiveWebAssemblyComponents();
+
 
 builder.Services.IdentityAdd();
 builder.Services.PolicyAdd();
 
 builder.Services.TransientAdd();
 builder.Services.ScopedAdd();
+builder.Services.AddSignalR();
+/*builder.Services.AddSignalR()
+    .AddHubOptions<eticaret.Hubs.BasketCountHub>(options =>
+    {
+        //options.EnableDetailedErrors = true;
+        //options.MaximumReceiveMessageSize = 2048 * 2048; // 2MB
+        options.MaximumReceiveMessageSize = null; // no limit or use a number
+    });*/
 
 builder.Services.Configure<HubOptions>(options =>
 {
@@ -48,6 +59,7 @@ app.UseAuthorization();
 app.MapStaticAssets();
 app.MapRazorPages().WithStaticAssets();
 
+app.MapHub<WebHub>("/WebHub");
 app.MapBlazorHub();
 //app.MapRazorComponents<ProactionsComponent>().AddInteractiveServerRenderMode(o => o.DisableWebSocketCompression = true);
 //app.MapRazorComponents<NewsletterComponent>().AddInteractiveServerRenderMode(o => o.DisableWebSocketCompression = true);

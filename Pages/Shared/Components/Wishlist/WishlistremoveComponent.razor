@@ -1,5 +1,6 @@
 ﻿@inject AuthenticationStateProvider AuthenticationStateProvider
 @inject eticaret.Domain.UnitOfWork.IUnitofWork unitofWork
+@inject NavigationManager _navigationManager
 
 <span class="bb-remove-wish">
     <a href="javascript:void(0)" @onclick="() => Remove(ProductId)">
@@ -44,6 +45,7 @@
             unitofWork.GetRepository<Favorites>().Delete(delete);
             unitofWork.SaveChanges();
         }
+        _navigationManager.Refresh();
     }
 
 }

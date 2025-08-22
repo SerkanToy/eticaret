@@ -1,5 +1,6 @@
 ﻿@inject AuthenticationStateProvider AuthenticationStateProvider
 @inject eticaret.Domain.UnitOfWork.IUnitofWork unitofWork
+@inject NavigationManager _navigationManager
 
 <ul class="bb-pro-actions">
     <li class="bb-btn-group">
@@ -73,12 +74,13 @@
                 ProductId = product.Id
             });
             await unitofWork.SaveChangesAsync();
-            IsBoolean = true;
+            IsBoolean = true;            
         }
         else
         {
             IsBoolean = false;
         }
+        _navigationManager.Refresh();
     }
 
 
@@ -109,10 +111,13 @@
             });
             await unitofWork.SaveChangesAsync();
             IsBooleanBasket = true;
+
         }
         else
         {
             IsBooleanBasket = false;
         }
+
+        //_navigationManager.Refresh();
     }
 }

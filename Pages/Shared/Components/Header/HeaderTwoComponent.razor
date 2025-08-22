@@ -1,12 +1,14 @@
 ﻿@using Microsoft.AspNetCore.Mvc.TagHelpers
+@using Microsoft.EntityFrameworkCore.Metadata.Internal
+@inject IJSRuntime JS
 @inject eticaret.Domain.Repository.Interface.ICategoryRepository categoryRepository
 @inject eticaret.Domain.UnitOfWork.IUnitofWork unitofWork
 @inject AuthenticationStateProvider AuthenticationStateProvider
-@using eticaret.Domain.Core.Entities
+
 
 
 <header class="bb-header">
-    
+
     <div class="bottom-header">
         <div class="container">
             <div class="row">
@@ -106,7 +108,7 @@
                                                         <span class="main-label-note-new"></span>
                                                     </div>
                                                     <div class="bb-btn-desc">
-                                                        <span class="bb-btn-title"><b class="bb-cart-count">@basketsCount</b> items</span>
+                                                        <span class="bb-btn-title"><b class="bb-cart-count" id="basketcount"></b> Adet</span>
                                                         <span class="bb-btn-stitle">Sepet</span>
                                                     </div>
                                                 </a>
@@ -163,7 +165,7 @@
                                                         <span class="main-label-note-new"></span>
                                                     </div>
                                                     <div class="bb-btn-desc">
-                                                        <span class="bb-btn-title"><b class="bb-cart-count">0</b> Adet</span>
+                                                        <span class="bb-btn-title"><b class="bb-cart-count" id="basketcount">1</b> Adet</span>
                                                         <span class="bb-btn-stitle">Sepet</span>
                                                     </div>
                                                 </a>
@@ -353,13 +355,21 @@
     </div>
 </header>
 
+
+
+
+
 @code {
+
     List<Category> categories = new List<Category>();
     public int FavoritesCount = 0;
     public int basketsCount = 0;
     private AuthenticationState authenticationState;
 
-    protected override void OnInitialized()
+
+
+
+    /*protected override async Task OnInitializedAsync()
     {
         categories = categoryRepository.CategorySubCategory(isDelete: false);
         authenticationState = AuthenticationStateProvider.GetAuthenticationStateAsync().Result;
@@ -367,20 +377,45 @@
         if (user.Identity?.IsAuthenticated == true)
         {
             var userId = unitofWork.GetUserById(user.Identity!.Name!);
-            var favorites = unitofWork.GetRepository<Favorites>().GetAllIQueryable(x => x.UserId == userId);
-            var basket = unitofWork.GetRepository<Basket>().GetAllIQueryable(x => x.UserId == userId);
+    var favorites = unitofWork.GetRepository<Favorites>().GetAllIQueryable(x => x.UserId == userId);
+    var basket = unitofWork.GetRepository<Basket>().GetAllIQueryable(x => x.UserId == userId);
             if (favorites.Count() > 0)
             {
                 FavoritesCount = favorites.ToList().Count();
-                basketsCount = basket.ToList().Count();
-            }
+    basketsCount = basket.ToList().Count();
+    }
             else
             {
                 FavoritesCount = 0;
                 basketsCount = 0;
             }
-            
+
         }
+    }*/
+
+    protected async override Task OnInitializedAsync()
+    {
+        //await JS.InvokeVoidAsync("Testing");
+
     }
+
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await JS.InvokeVoidAsync("basketCount");
+            categories = categoryRepository.CategorySubCategory(isDelete: false);
+            authenticationState = AuthenticationStateProvider.GetAuthenticationStateAsync().Result;
+            var user = authenticationState.User;
+
+            if (user.Identity?.IsAuthenticated == true)
+            {
+                await JS.InvokeVoidAsync("basketCount");
+            }
+        }
+        //await JS.InvokeVoidAsync("Testing");
+    }
+
 }
 

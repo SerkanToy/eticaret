@@ -1,7 +1,9 @@
 ﻿@inject AuthenticationStateProvider AuthenticationStateProvider
 @inject eticaret.Domain.UnitOfWork.IUnitofWork unitofWork
+@inject NavigationManager _navigationManager
 
-<i class="ri-delete-bin-line" @onclick="() => Remove(Convert.ToInt32(Id))"></i>
+
+<i class="ri-delete-bin-line" @onclick="(async () => await Remove(Convert.ToInt32(Id)))"></i>
 
 @code {
     [Parameter]
@@ -10,7 +12,7 @@
 
     protected override async Task OnInitializedAsync()
     {
-        
+
     }
 
     public async Task Remove(int a)
@@ -24,5 +26,6 @@
             unitofWork.GetRepository<Basket>().Delete(delete);
             unitofWork.SaveChanges();
         }
+        _navigationManager.Refresh();
     }
 }

@@ -1,5 +1,6 @@
 ﻿@inject AuthenticationStateProvider AuthenticationStateProvider
 @inject eticaret.Domain.UnitOfWork.IUnitofWork unitofWork
+@inject NavigationManager _navigationManager
 
 <div class="bb-single-qty">
     <div class="qty-plus-minus">
@@ -85,7 +86,7 @@
         {
             IsBoolean = false;
         }
-        
+        _navigationManager.Refresh();
     }
 
     public async Task BasketAdd()
@@ -120,5 +121,6 @@
         {
             IsBooleanBasket = false;
         }
+        _navigationManager.Refresh();
     }
 }
