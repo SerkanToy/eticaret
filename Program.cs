@@ -16,21 +16,20 @@ builder.Services.Configure<EmailConfiguration>(builder.Configuration.GetSection(
 builder.Services.AddDbContext<CommerceContext>();
 builder.Services.AddServerSideBlazor()
     .AddInteractiveServerComponents().AddInteractiveWebAssemblyComponents();
-
+builder.Services.AddRazorPages();
 
 builder.Services.IdentityAdd();
 builder.Services.PolicyAdd();
 
 builder.Services.TransientAdd();
 builder.Services.ScopedAdd();
-builder.Services.AddSignalR();
-/*builder.Services.AddSignalR()
-    .AddHubOptions<eticaret.Hubs.BasketCountHub>(options =>
+builder.Services.AddSignalR()
+    .AddHubOptions<eticaret.Hubs.WebHub>(options =>
     {
         //options.EnableDetailedErrors = true;
         //options.MaximumReceiveMessageSize = 2048 * 2048; // 2MB
         options.MaximumReceiveMessageSize = null; // no limit or use a number
-    });*/
+    });
 
 builder.Services.Configure<HubOptions>(options =>
 {

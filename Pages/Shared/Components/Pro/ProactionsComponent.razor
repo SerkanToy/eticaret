@@ -1,6 +1,6 @@
 ﻿@inject AuthenticationStateProvider AuthenticationStateProvider
 @inject eticaret.Domain.UnitOfWork.IUnitofWork unitofWork
-@inject NavigationManager _navigationManager
+@*@inject NavigationManager _navigationManager*@
 
 <ul class="bb-pro-actions">
     <li class="bb-btn-group">
@@ -80,7 +80,7 @@
         {
             IsBoolean = false;
         }
-        _navigationManager.Refresh();
+        //_navigationManager.Refresh();
     }
 
 

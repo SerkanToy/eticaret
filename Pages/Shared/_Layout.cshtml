@@ -140,28 +140,7 @@
 
     @await RenderSectionAsync("Scripts", required: false)
 
-    <script type="text/javascript">
-
-        function basketCount () {
-                  
-            var connection = new signalR.HubConnectionBuilder().withUrl("https://localhost:7102/WebHub").build();
-                  $("#basketcount").text(connection.state);
-
-                  connection.start().then(() => {
-                      $("#basketcount").text(connection.state);
-                      setInterval(() => {
-                          connection.invoke("SendBasketCount");
-                      }, 1000);
-                  }).catch((err) => { console.log(err) });
-
-
-                  connection.on("BasketCount", (basketcount) => {
-                      $("#basketcount").text(basketcount);                      
-                   });
-                   
-              }
-
-    </script>
+    
     
 </body>
 </html>
