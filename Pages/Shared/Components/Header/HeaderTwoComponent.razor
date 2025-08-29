@@ -1,13 +1,10 @@
 ﻿@using Microsoft.AspNetCore.Mvc.TagHelpers
 @using Microsoft.EntityFrameworkCore.Metadata.Internal
 @inject IJSRuntime JS
-@inject eticaret.Domain.Repository.Interface.ICategoryRepository categoryRepository
-@inject eticaret.Domain.UnitOfWork.IUnitofWork unitofWork
 @inject AuthenticationStateProvider AuthenticationStateProvider
 
 
 
-<header class="bb-header">
 
     <div class="bottom-header">
         <div class="container">
@@ -62,7 +59,7 @@
                                                         </div>
                                                     </a>
                                                     <ul class="bb-dropdown-menu">
-                                                        <li><a class="dropdown-item" href="register.html">Hesabim</a></li>
+                                                        <li><a class="dropdown-item" href="/siparislerim">Siparişlerim</a></li>
                                                         <li><a class="dropdown-item" href="checkout.html">Ayarlar</a></li>
                                                         <li><a class="dropdown-item" href="/address">Adres</a></li>
                                                         <li><a class="dropdown-item" href="login?handler=Output">Çıkış Yap</a></li>
@@ -162,6 +159,8 @@
                                         </NotAuthorized>
                                     </Microsoft.AspNetCore.Components.Authorization.AuthorizeView>
                                 </Microsoft.AspNetCore.Components.Authorization.CascadingAuthenticationState>
+                            
+                            
                             </div>
                         </div>
                     </div>
@@ -169,180 +168,15 @@
             </div>
         </div>
     </div>
-    <div class="bb-main-menu-desk">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="bb-inner-menu-desk">
-                        <a href="javascript:void(0)" class="bb-header-btn bb-sidebar-toggle bb-category-toggle">
-                            <svg class="svg-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M384 928H192a96 96 0 0 1-96-96V640a96 96 0 0 1 96-96h192a96 96 0 0 1 96 96v192a96 96 0 0 1-96 96zM192 608a32 32 0 0 0-32 32v192a32 32 0 0 0 32 32h192a32 32 0 0 0 32-32V640a32 32 0 0 0-32-32H192zM784 928H640a96 96 0 0 1-96-96V640a96 96 0 0 1 96-96h192a96 96 0 0 1 96 96v144a32 32 0 0 1-64 0V640a32 32 0 0 0-32-32H640a32 32 0 0 0-32 32v192a32 32 0 0 0 32 32h144a32 32 0 0 1 0 64zM384 480H192a96 96 0 0 1-96-96V192a96 96 0 0 1 96-96h192a96 96 0 0 1 96 96v192a96 96 0 0 1-96 96zM192 160a32 32 0 0 0-32 32v192a32 32 0 0 0 32 32h192a32 32 0 0 0 32-32V192a32 32 0 0 0-32-32H192zM832 480H640a96 96 0 0 1-96-96V192a96 96 0 0 1 96-96h192a96 96 0 0 1 96 96v192a96 96 0 0 1-96 96zM640 160a32 32 0 0 0-32 32v192a32 32 0 0 0 32 32h192a32 32 0 0 0 32-32V192a32 32 0 0 0-32-32H640z" />
-                            </svg>
-                        </a>
-                        <button class="navbar-toggler shadow-none" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                                aria-expanded="false" aria-label="Toggle navigation">
-                            <i class="ri-menu-2-line"></i>
-                        </button>
-                        <NavbarComponent />
-                        <div class="bb-dropdown-menu">
-                            <div class="inner-select">
-                                <svg class="svg-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M511.614214 958.708971c-21.76163 0-41.744753-9.781784-54.865586-26.862811L222.50156 626.526383c-3.540639-4.044106-5.872754-7.978718-7.349385-10.461259-41.72838-58.515718-63.959707-127.685078-63.959707-199.699228 0.87288-193.650465 162.903184-351.075891 361.209691-351.075891 198.726064 0 360.40435 157.49194 360.40435 351.075891-0.839111 72.190159-23.070438 140.856052-64.345494 199.053522-1.962701 3.288906-4.312212 7.189749-7.735171 11.098779L566.479799 931.847184c-13.120832 17.080004-33.103956 26.861788-54.865585 26.861787zM273.525654 580.51956a33.707706 33.707706 0 0 1 2.63399 3.037173L511.278569 890.00931 747.068783 583.556733c0.435928-0.569982 0.889253-1.124614 1.358951-1.669013l2.51631-4.102434c0.285502-0.453325 0.587378-0.89744 0.889253-1.325182 33.507138-46.921659 51.577702-102.416578 52.248991-160.487158 0-155.294902-130.839931-281.95565-291.679105-281.95565-160.571069 0-291.780413 126.72931-292.484448 282.501073 0 57.450457 17.802458 112.811322 51.460022 159.933549l2.90312 4.580318c0.418532 0.73678-0.186242 0.032746-0.756223-0.512676z m476.059439 0.100284v0z m0.066515-0.058329c-0.016373 0.016373-0.033769 0.025583-0.033769 0.041956 0.001023-0.016373 0.017396-0.025583 0.033769-0.041956z m0.051166-0.041955a0.227174 0.227174 0 0 0-0.050142 0.041955c0.016373-0.016373 0.032746-0.033769 0.050142-0.041955z"
-                                          fill="#444444" />
-                                    <path d="M512 577.206094c-90.000803 0-163.222455-73.221652-163.222455-163.222455s73.221652-163.222455 163.222455-163.222455S675.222455 323.982836 675.222455 413.983639s-73.222675 163.222455-163.222455 163.222455z m0-240.538355c-42.634006 0-77.3159 34.68087-77.3159 77.3159s34.68087 77.3159 77.3159 77.3159 77.3159-34.681894 77.3159-77.3159-34.681894-77.3159-77.3159-77.3159z"
-                                          fill="#00D8A0" />
-                                </svg>
-                                <div class="custom-select">
-                                    <select>
-                                        <option value="option1">Konum</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="bb-mobile-menu-overlay"></div>
-    <div id="bb-mobile-menu" class="bb-mobile-menu">
-        <div class="bb-menu-title">
-            <span class="menu_title">My Menu</span>
-            <button type="button" class="bb-close-menu">×</button>
-        </div>
-        <div class="bb-menu-inner">
-            <div class="bb-menu-content">
-                <ul>
-                    <li>
-                        <a href="/">Anasayfa</a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0)">Categories</a>
-                        <ul class="sub-menu">
-                            <li>
-                                <a href="javascript:void(0)">Classic</a>
-                                <ul class="sub-menu">
-                                    <li><a href="shop-left-sidebar-col-3.html">Left sidebar 3 column</a></li>
-                                    <li><a href="shop-left-sidebar-col-4.html">Left sidebar 4 column</a></li>
-                                    <li><a href="shop-right-sidebar-col-3.html">Right sidebar 3 column</a></li>
-                                    <li><a href="shop-right-sidebar-col-4.html">Right sidebar 4 column</a></li>
-                                    <li><a href="shop-full-width.html">Full width 4 column</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)">Banner</a>
-                                <ul class="sub-menu">
-                                    <li><a href="shop-banner-left-sidebar-col-3.html">Left sidebar 3 column</a></li>
-                                    <li><a href="shop-banner-left-sidebar-col-4.html">Left sidebar 4 column</a></li>
-                                    <li>
-                                        <a href="shop-banner-right-sidebar-col-3.html">Right sidebar 3 column</a>
-                                    </li>
-                                    <li>
-                                        <a href="shop-banner-right-sidebar-col-4.html">Right sidebar 4 column</a>
-                                    </li>
-                                    <li><a href="shop-banner-full-width.html">Full width 4 column</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)">Columns</a>
-                                <ul class="sub-menu">
-                                    <li><a href="shop-full-width-col-3.html">3 Columns full width</a></li>
-                                    <li><a href="shop-full-width-col-4.html">4 Columns full width</a></li>
-                                    <li><a href="shop-full-width-col-5.html">5 Columns full width</a></li>
-                                    <li><a href="shop-full-width-col-6.html">6 Columns full width</a></li>
-                                    <li><a href="shop-banner-full-width-col-3.html">Banner 3 Columns</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)">List</a>
-                                <ul class="sub-menu">
-                                    <li><a href="shop-list-left-sidebar.html">Shop left sidebar</a></li>
-                                    <li><a href="shop-list-right-sidebar.html">Shop right sidebar</a></li>
-                                    <li><a href="shop-list-banner-left-sidebar.html">Banner left sidebar</a></li>
-                                    <li><a href="shop-list-banner-right-sidebar.html">Banner right sidebar</a></li>
-                                    <li><a href="shop-list-full-col-2.html">Full width 2 columns</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0)">Products</a>
-                        <ul class="sub-menu">
-                            <li>
-                                <a href="javascript:void(0)">Product page</a>
-                                <ul class="sub-menu">
-                                    <li><a href="product-left-sidebar.html">Product left sidebar</a></li>
-                                    <li><a href="product-right-sidebar.html">Product right sidebar</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)">Product Accordion</a>
-                                <ul class="sub-menu">
-                                    <li><a href="product-accordion-left-sidebar.html">left sidebar</a></li>
-                                    <li><a href="product-accordion-right-sidebar.html">right sidebar</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="product-full-width.html">Product full width</a></li>
-                            <li><a href="product-accordion-full-width.html">accordion full width</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0)">Pages</a>
-                        <ul class="sub-menu">
-                            <li><a href="about-us.html">About Us</a></li>
-                            <li><a href="contact-us.html">Contact Us</a></li>
-                            <li><a href="cart.html">Cart</a></li>
-                            <li><a href="checkout.html">Checkout</a></li>
-                            <li><a href="compare.html">Compare</a></li>
-                            <li><a href="faq.html">Faq</a></li>
-                            <li><a href="login.html">Login</a></li>
-                            <li><a href="register.html">Register</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0)">Blog</a>
-                        <ul class="sub-menu">
-                            <li><a href="blog-left-sidebar.html">Left Sidebar</a></li>
-                            <li><a href="blog-right-sidebar.html">Right Sidebar</a></li>
-                            <li><a href="blog-full-width.html">Full Width</a></li>
-                            <li><a href="blog-detail-left-sidebar.html">Detail Left Sidebar</a></li>
-                            <li><a href="blog-detail-right-sidebar.html">Detail Right Sidebar</a></li>
-                            <li><a href="blog-detail-full-width.html">Detail Full Width</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-            <div class="header-res-lan-curr">
-                <!-- Social Start -->
-                <div class="header-res-social">
-                    <div class="header-top-social">
-                        <ul class="mb-0">
-                            <li class="list-inline-item">
-                                <a href="#"><i class="ri-facebook-fill"></i></a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="#"><i class="ri-twitter-fill"></i></a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="#"><i class="ri-instagram-line"></i></a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="#"><i class="ri-linkedin-fill"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- Social End -->
-            </div>
-        </div>
-    </div>
-</header>
+
+    
+
+    
 
 
 <script type="text/javascript">
 
-    function Count () {
+    function Count() {
         var connection = new signalR.HubConnectionBuilder().withUrl("https://localhost:7102/WebHub").build();
               //$("#basketcount").text(connection.state);
 
@@ -375,8 +209,6 @@
 
 
 @code {
-
-    List<Category> categories = new List<Category>();
     public int FavoritesCount = 0;
     public int basketsCount = 0;
     private AuthenticationState authenticationState;
@@ -417,7 +249,6 @@
         if (firstRender)
         {
             await JS.InvokeVoidAsync("Count");
-            categories = categoryRepository.CategorySubCategory(isDelete: false);
             authenticationState = AuthenticationStateProvider.GetAuthenticationStateAsync().Result;
             var user = authenticationState.User;
 
