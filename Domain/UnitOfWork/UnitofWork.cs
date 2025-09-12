@@ -63,6 +63,13 @@ namespace eticaret.Domain.UnitOfWork
             var user = context.UserApp.FirstOrDefault(x => x.UserName == username);
             return user.Id;
         }
+
+        public UserApp GetUserBy(string username)
+        {
+            var user = context.UserApp.FirstOrDefault(x => x.UserName == username);
+            return user;
+        }
+
         public ICategoryRepository Catetgory()
         {
             return catetgoryRepository ??= new CategoryRepository(context);

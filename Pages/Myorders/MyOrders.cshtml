@@ -3,137 +3,199 @@
 @{
 }
 
+<style>
+    
+   /* * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    html, body {
+        display: grid;
+        height: 100%;
+        width: 100%;
+        place-items: center;
+        background: linear-gradient(375deg, #1cc7d0, #2ede98);
+    }*/
+
+    ::selection {
+        color: #fff;
+        background: #1cc7d0;
+    }
+
+    .wrapper {
+        height: 350px;
+        width: 100%;
+        position: relative;
+        transform-style: preserve-3d;
+        perspective: 1000px;
+    }
+
+        .wrapper .card {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            padding: 5px;
+            background: #fff;
+            border-radius: 10px;
+            transform: translateY(0deg);
+            transform-style: preserve-3d;
+            backface-visibility: hidden;
+            box-shadow: 0px 10px 15px rgba(0,0,0,0.1);
+            transition: transform 0.7s cubic-bezier(0.4,0.2,0.2,1);
+        }
+
+        .wrapper:hover > .front-face {
+            transform: rotateY(-180deg);
+        }
+
+        .wrapper .card img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .wrapper .back-face {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            flex-direction: column;
+            transform: rotateY(180deg);
+        }
+
+        .wrapper:hover > .back-face {
+            transform: rotateY(0deg);
+        }
+
+        .wrapper .back-face img {
+            height: 150px;
+            width: 150px;
+            padding: 5px;
+            border-radius: 50%;
+            background: linear-gradient(375deg, #6c7fd8, #6c7fd8);
+        }
+
+        .wrapper .back-face .info {
+            text-align: center;
+        }
+
+    .back-face .info .title {
+        font-size: 20px;
+        font-weight: 500;
+    }
+
+    .back-face ul {
+        display: flex;
+    }
+
+        .back-face ul a {
+            display: block;
+            height: 40px;
+            width: 40px;
+            color: #fff;
+            text-align: center;
+            margin: 0 5px;
+            line-height: 38px;
+            border: 2px solid transparent;
+            border-radius: 50%;
+            background: linear-gradient(375deg, #6c7fd8, #6c7fd0);
+            transition: all 0.5s ease;
+        }
+
+            .back-face ul a:hover {
+                color: #6c7fd8;
+                border-color: #6c7fd8;
+                background: linear-gradient(375deg, transparent, transparent);
+            }
+</style>
 
 <section class="section-checkout padding-tb-50">
     <div class="container">
         <div class="row mb-minus-24">
-            <div class="col-lg-4 col-12 mb-24">
+
+          <div class="col-lg-3 col-12 mb-24">
+
                 <div class="bb-checkout-sidebar">
-                    <div class="checkout-items" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
-                        <div class="sub-title">
-                            <h4>summary</h4>
-                        </div>
-                        <div class="checkout-summary">
-                            <ul>
-                                <li><span class="left-item">sub-total</span><span>$56</span></li>
-                                <li><span class="left-item">Delivery Charges</span><span>$56</span></li>
-                                <li>
-                                    <span class="left-item">Coupon Discount</span>
-                                    <span><a href="javascript:void(0)" class="apply drop-coupon">Apply Coupon</a></span>
-                                </li>
-                                <li>
-                                    <div class="coupon-down-box">
-                                        <form method="post">
-                                            <input class="bb-coupon" type="text" placeholder="Enter Your coupon Code" name="bb-coupon" required>
-                                            <button class="bb-btn-2" type="submit">Apply</button>
-                                        </form>
+                    <div class="checkout-items" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200" style="padding:0;border:0;">
+
+                        <div class="wrapper" style="height:220px">
+                            <div class="card front-face">
+                                <img src="~/assets/img/profil.jpg">
+                            </div>
+                            <div class="card back-face">
+                                <img src="~/assets/img/profil.jpg">
+                                <div class="info">
+                                    <div class="title">
+                                        @User.FindFirst("FullName")?.Value
                                     </div>
-                                </li>
+                                    <!--<p>
+                                        User interface designer and <br>front-end developer
+                                    </p>-->
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="sub-title">
+                            <br />
+                        </div>
+
+                        <div class="checkout-summary" style="padding-left:20px;padding-right:20px;border-radius:20px;">
+                            <ul>
+                                <li><span class="left-item">@User.FindFirst("FullName")?.Value</span></li>
+                                <li><span class="left-item">@Model.userViewModel.Email</span></li>
                             </ul>
                         </div>
-                        <div class="bb-checkout-pro">
-                            <div class="pro-items">
-                                <div class="image">
-                                    <img src="assets/img/new-product/1.jpg" alt="new-product-1">
-                                </div>
-                                <div class="items-contact">
-                                    <h4><a href="javascript:void(0)">Ground Nuts Oil Pack</a></h4>
-                                    <span class="bb-pro-rating">
-                                        <i class="ri-star-fill"></i>
-                                        <i class="ri-star-fill"></i>
-                                        <i class="ri-star-fill"></i>
-                                        <i class="ri-star-fill"></i>
-                                        <i class="ri-star-line"></i>
-                                    </span>
-                                    <div class="inner-price">
-                                        <span class="new-price">$15</span>
-                                        <span class="old-price">$22</span>
-                                    </div>
-                                    <div class="bb-pro-variation">
-                                        <ul>
-                                            <li class="active">
-                                                <a href="javascript:void(0)" class="bb-opt-sz"
-                                                   data-tooltip="Small">250g</a>
-                                            </li>
-                                            <li>
-                                                <a href="javascript:void(0)" class="bb-opt-sz"
-                                                   data-tooltip="Medium">500g</a>
-                                            </li>
-                                            <li>
-                                                <a href="javascript:void(0)" class="bb-opt-sz"
-                                                   data-tooltip="Large">1kg</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="pro-items">
-                                <div class="image">
-                                    <img src="assets/img/new-product/2.jpg" alt="new-product-2">
-                                </div>
-                                <div class="items-contact">
-                                    <h4><a href="javascript:void(0)">Organic Litchi Juice Pack</a></h4>
-                                    <span class="bb-pro-rating">
-                                        <i class="ri-star-fill"></i>
-                                        <i class="ri-star-fill"></i>
-                                        <i class="ri-star-fill"></i>
-                                        <i class="ri-star-fill"></i>
-                                        <i class="ri-star-line"></i>
-                                    </span>
-                                    <div class="inner-price">
-                                        <span class="new-price">$25</span>
-                                        <span class="old-price">$30</span>
-                                    </div>
-                                    <div class="bb-pro-variation">
-                                        <ul>
-                                            <li class="active">
-                                                <a href="javascript:void(0)" class="bb-opt-sz" data-tooltip="Small">250g</a>
-                                            </li>
-                                            <li>
-                                                <a href="javascript:void(0)" class="bb-opt-sz" data-tooltip="Medium">500g</a>
-                                            </li>
-                                            <li>
-                                                <a href="javascript:void(0)" class="bb-opt-sz" data-tooltip="Large">1kg</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="pro-items">
-                                <div class="image">
-                                    <img src="assets/img/new-product/3.jpg" alt="new-product-3">
-                                </div>
-                                <div class="items-contact">
-                                    <h4><a href="javascript:void(0)">Crunchy Banana Chips</a></h4>
-                                    <span class="bb-pro-rating">
-                                        <i class="ri-star-fill"></i>
-                                        <i class="ri-star-fill"></i>
-                                        <i class="ri-star-fill"></i>
-                                        <i class="ri-star-fill"></i>
-                                        <i class="ri-star-line"></i>
-                                    </span>
-                                    <div class="inner-price">
-                                        <span class="new-price">$01</span>
-                                        <span class="old-price">$02</span>
-                                    </div>
-                                    <div class="bb-pro-variation">
-                                        <ul>
-                                            <li class="active">
-                                                <a href="javascript:void(0)" class="bb-opt-sz" data-tooltip="Small">250g</a>
-                                            </li>
-                                            <li>
-                                                <a href="javascript:void(0)" class="bb-opt-sz" data-tooltip="Medium">500g</a>
-                                            </li>
-                                            <li>
-                                                <a href="javascript:void(0)" class="bb-opt-sz" data-tooltip="Large">1kg</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
-                    <div class="checkout-items" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+                </div>
+
+                <br />
+
+                <div class="bb-checkout-sidebar">
+                    <div class="checkout-items" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                        <div class="checkout-summary">
+                            <ul>
+                                <li>
+                                    <a href="/address">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8" />
+                                        </svg>
+                                        &nbsp;
+                                        <span class="left-item">Adres</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8" />
+                                        </svg>
+                                        &nbsp;
+                                        <span class="left-item">Ayarlar</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8" />
+                                        </svg>
+                                        &nbsp;
+                                        <span class="left-item">Favoriler</span>
+                                    </a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+                        <div class="sub-title">
+                            <h4>Ödeme Seçenekleri</h4>
+                        </div>
+                        <div class="payment-img">
+                            <img src="assets/img/payment/payment.png" alt="payment">
+                        </div>
+
+                    </div>
+                    <!--<div class="checkout-items" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
                         <div class="sub-title">
                             <h4>Delivery Method</h4>
                         </div>
@@ -186,148 +248,71 @@
                             <h5>Add Comments About Your Order</h5>
                             <textarea name="your-commemt" placeholder="Comments"></textarea>
                         </div>
-                    </div>
-                    <div class="checkout-items" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="800">
-                        <div class="sub-title">
-                            <h4>Payment Method</h4>
-                        </div>
-                        <div class="payment-img">
-                            <img src="assets/img/payment/payment.png" alt="payment">
-                        </div>
-                    </div>
+                    </div>-->
                 </div>
             </div>
-            <div class="col-lg-8 col-12 mb-24">
+
+            <div class="col-lg-9 col-12 mb-24">
                 <div class="bb-checkout-contact" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
                     <div class="main-title">
-                        <h4>New Customer</h4>
+                        <h4>Siparişlerim</h4>
                     </div>
-                    <label class="inner-title">Checkout Options</label>
-                    <div class="checkout-radio">
-                        <div class="radio-itens">
-                            <input type="radio" id="del1" name="account" checked>
-                            <label for="del1">Register Account</label>
-                        </div>
-                        <div class="radio-itens">
-                            <input type="radio" id="del2" name="account">
-                            <label for="del2">Guest Account</label>
-                        </div>
-                    </div>
-                    <p>
-                        By creating an account you will be able to shop faster, be up to date on an order's status,
-                        and keep track of the orders you have previously made.
-                    </p>
-                    <div class="inner-button">
-                        <a href="javascript:void(0)" class="bb-btn-2">Continue</a>
-                    </div>
-                    <div class="main-title">
-                        <h4>Returning Customer</h4>
-                    </div>
-                    <form method="post">
-                        <div class="input-item">
-                            <label>Email Address</label>
-                            <input type="text" name="name" placeholder="Enter your email address" required>
-                        </div>
-                        <div class="input-item">
-                            <label>Password</label>
-                            <input type="password" name="password" placeholder="Enter your password" required>
-                        </div>
-                        <div class="input-button">
-                            <button type="button" class="bb-btn-2">Login</button>
-                        </div>
-                    </form>
-                    <div class="main-title">
-                        <h4>Billing Details</h4>
-                    </div>
-                    <div class="checkout-radio">
-                        <div class="radio-itens">
-                            <input type="radio" id="address1" name="address" checked>
-                            <label for="address1">I want to use an existing address</label>
-                        </div>
-                        <div class="radio-itens">
-                            <input type="radio" id="address2" name="address">
-                            <label for="address2">I want to use new address</label>
-                        </div>
-                    </div>
-                    <div class="input-box-form">
-                        <form method="post">
-                            <div class="row">
-                                <div class="col-lg-6 col-12">
-                                    <div class="input-item">
-                                        <label>First Name *</label>
-                                        <input type="text" name="name" placeholder="Enter your First Name" required>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-12">
-                                    <div class="input-item">
-                                        <label>Last Name *</label>
-                                        <input type="text" name="name" placeholder="Enter your Last Name" required>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="input-item">
-                                        <label>Address *</label>
-                                        <input type="text" name="name" placeholder="Address Line 1" required>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-12">
-                                    <div class="input-item">
-                                        <label>City *</label>
-                                        <div class="custom-select">
-                                            <select>
-                                                <option value="option1">City</option>
-                                                <option value="option1">City 1</option>
-                                                <option value="option2">City 2</option>
-                                                <option value="option3">City 3</option>
-                                                <option value="option4">City 4</option>
-                                            </select>
+
+
+                    <div class="accordion" id="accordionExample">
+
+                        @if (Model.orderViewModel.Any())
+                        {
+                            foreach (var item in Model.orderViewModel)
+                            {
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#@item.Flag" aria-expanded="false" aria-controls="@item.Flag">
+                                            <img src="/assets/img/new-product/1.jpg" class="rounded float-start" alt="@item.Product.Name" style="width: 5%;margin:0 10px 0 0;"> @item.Product.Name
+                                        </button>
+                                    </h2>
+                                    <div id="@item.Flag" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+
+                                            <div class="card mb-3" style="max-width: 100%;border:0px;">
+                                                <div class="row g-0">
+                                                    <div class="col-md-4">
+                                                        <img src="/assets/img/new-product/1.jpg" class="img-fluid rounded-start" alt="@item.Product.Name">
+                                                    </div>
+                                                    <div class="col-md-8">
+                                                        <div class="card-body">
+                                                            <h5 class="card-title">@item.Product.Name</h5>
+                                                            <p class="card-text">
+                                                                @item.Product.Description
+                                                            </p>
+
+                                                            <ul class="list-group list-group-flush">
+                                                                <li class="list-group-item" style="padding: 0">Adet         : @item.Quantity</li>
+                                                                <li class="list-group-item" style="padding: 0">Birim Fiyat  : @item.Price TL</li>
+                                                                <li class="list-group-item" style="padding: 0">Toplam Fiyat : @item.Total TL</li>
+                                                            </ul>
+                                                            <p class="card-text"><small class="text-body-secondary">@item.Product.CreateDate</small></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-6 col-12">
-                                    <div class="input-item">
-                                        <label>Post Code *</label>
-                                        <input type="text" name="name" placeholder="Post Code" required>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-12">
-                                    <div class="input-item">
-                                        <label>Country *</label>
-                                        <div class="custom-select">
-                                            <select>
-                                                <option value="option1">Country</option>
-                                                <option value="option1">Country 1</option>
-                                                <option value="option2">Country 2</option>
-                                                <option value="option3">Country 3</option>
-                                                <option value="option4">Country 4</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-12">
-                                    <div class="input-item">
-                                        <label>Region State *</label>
-                                        <div class="custom-select">
-                                            <select>
-                                                <option value="option1">Region/State</option>
-                                                <option value="option1">Region/State 1</option>
-                                                <option value="option2">Region/State 2</option>
-                                                <option value="option3">Region/State 3</option>
-                                                <option value="option4">Region/State 4</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="input-button">
-                                        <button type="button" class="bb-btn-2">Place Order</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
+                            }
+                        }
+
+                        
+                        
+                        
                     </div>
+
                 </div>
             </div>
+
+          
         </div>
     </div>
 </section>

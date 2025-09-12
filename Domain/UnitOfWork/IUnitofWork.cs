@@ -8,6 +8,7 @@ namespace eticaret.Domain.UnitOfWork
     {
         IRepository<TEntity> GetRepository<TEntity>() where TEntity : class, new();
         int GetUserById(string username);
+        UserApp GetUserBy(string username);
         ICategoryRepository Catetgory();
         IProductRepository Product();
         Task SaveChangesAsync();

@@ -25,13 +25,14 @@ namespace eticaret.Domain.Core.Entities
         [NotMapped]
         public int RatinCount { get; set; }
         [NotMapped]
-        public Basket BasketTotal { get; set; }
+        public Basket? BasketTotal { get; set; }
         [NotMapped]
         public Category? Category { get; set; }
         [NotMapped]
         public ICollection<Colors>? Colors { get; set; }
         public ICollection<Favorites>? Favorites { get; set; }
         public ICollection<Basket>? Baskets { get; set; }
+        public ICollection<Order>? Orders { get; set; }
         public ICollection<ColorProduct> ColorProduct { get; set; }
         public int SubCategoryId { get; set; }
         public SubCategory SubCategory { get; set; }

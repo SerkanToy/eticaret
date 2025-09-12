@@ -8,82 +8,56 @@
 <section class="section-contact padding-tb-50">
     <div class="container">
         <div class="row mb-minus-24">
-            <div class="col-lg-6 col-12 mb-24" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+            <div class="col-lg-4 col-12 mb-24" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
                 <div class="bb-contact-form">
-                    <form method="post">
+                    <form method="post" asp-page-handler="AddAddress" autocomplete="off">
+                        <div asp-validation-summary="ModelOnly"></div>
                         <div class="bb-contact-wrap">
-                            <input type="text" name="firstname" placeholder="Ad Soyad">
+                            <input type="text" asp-for="@Model.addressAddViewModel.Title" placeholder="Adres Başlığı">
+                            <span asp-validation-for="@Model.addressAddViewModel.Title"></span>
                         </div>
                         <div class="bb-contact-wrap">
-                            <input type="email" name="email" placeholder="E-Posta">
-                        </div>
-                        <div class="bb-contact-wrap">
-                            <input type="text" name="phonenumber" placeholder="Telefon NUmarası">
-                        </div>
-                        <div class="bb-contact-wrap">
-                            <input type="text" name="lastname" placeholder="Konu">
-                        </div>
-                        <div class="bb-contact-wrap">
-                            <textarea name="address" placeholder="Mesaj"></textarea>
+                            <textarea asp-for="@Model.addressAddViewModel.Name" placeholder="Adres" rows="10"></textarea>
+                            <span asp-validation-for="@Model.addressAddViewModel.Name"></span>
                         </div>
                         <div class="bb-contact-button">
-                            <button class="bb-btn-2" type="submit">Gönder</button>
+                            <button class="bb-btn-2" type="submit">Kaydet</button>
                         </div>
                     </form>
                 </div>
             </div>
-            <div class="col-lg-6 col-12 mb-24" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
+            <div class="col-lg-8 col-12 mb-24" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
                 <div class="bb-faq-contact" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
                     <div class="accordion" id="accordionExample">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingOne">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    Ev Adresi
-                                </button>
-                            </h2>
-                            <div id="collapseOne" class="accordion-collapse collapse show"
-                                 aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                                <div class="accordion-body">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate sint atque
-                                    pariatur cupiditate beatae voluptates quidem. Et tenetur autem itaque? Eum
-                                    exercitationem assumenda enim eos voluptas. Ad incidunt laborum aliquam,
-                                    expedita, voluptatibus quo id adipisci ea ratione ut, dignissimos natus?
+
+                        @if(Model.addressViewModel.Any())
+                        {
+                            @foreach (var item in Model.addressViewModel)
+                            {
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingOne">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                                data-bs-target="#@item.Flag" aria-expanded="true" aria-controls="collapseOne">
+                                            @item.Title
+                                        </button>
+                                    </h2>
+                                    <div id="@item.Flag" class="accordion-collapse collapse"
+                                         aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            @item.Name
+                                        </div>
+                                    </div>
                                 </div>
+                            }
+                        }
+                        else
+                        {
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingOne">
+                                    Kayıtlı dres bulunamadı.
+                                </h2>
                             </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingTwo">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                    İş Adresi
-                                </button>
-                            </h2>
-                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                                <div class="accordion-body">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate sint atque
-                                    pariatur cupiditate beatae voluptates quidem. Et tenetur autem itaque? Eum
-                                    exercitationem assumenda enim eos voluptas. Ad incidunt laborum aliquam,
-                                    expedita, voluptatibus quo id adipisci ea ratione ut, dignissimos natus?
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingSix">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-                                    Exchange policy for customer
-                                </button>
-                            </h2>
-                            <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample">
-                                <div class="accordion-body">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate sint atque
-                                    pariatur cupiditate beatae voluptates quidem. Et tenetur autem itaque? Eum
-                                    exercitationem assumenda enim eos voluptas. Ad incidunt laborum aliquam,
-                                    expedita, voluptatibus quo id adipisci ea ratione ut, dignissimos natus?
-                                </div>
-                            </div>
-                        </div>
+                        }
                     </div>
                 </div>
             </div>

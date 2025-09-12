@@ -1,10 +1,10 @@
-﻿using eticaret.Domain.Core.Entities;
-using eticaret.Domain.Repository.Interface;
+﻿using eticaret.Domain.Repository.Interface;
 using eticaret.Domain.UnitOfWork;
+using eticaret.Hubs;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using System.Security.Cryptography.Xml;
+using Microsoft.AspNetCore.SignalR;
 using basket = eticaret.Domain.Core.Entities;
 
 namespace eticaret.Pages.Basket
@@ -22,7 +22,6 @@ namespace eticaret.Pages.Basket
         public decimal KDVTotal { get; set; }
         [BindProperty]
         public decimal Transfer { get; set; }
-
         [BindProperty(SupportsGet = true)]
         public string? flag { get; set; }
 
@@ -33,8 +32,6 @@ namespace eticaret.Pages.Basket
         {
             this.unitofWork = unitofWork;
             this.basketRepository = basketRepository;
-
-           
             //productViewModel = productRepository.ProductJoin(predicate: x => x.IsDeleted == false);
         }
         public async Task OnGet()
@@ -42,8 +39,6 @@ namespace eticaret.Pages.Basket
             var userId = unitofWork.GetUserById(User.Identity?.Name);
             //productViewModel = await productRepository.ProductJoinBasketAsync(predicate: x => x.IsDeleted == false && x.Baskets.Any(b => b.UserId == userId));
             basketViewModel = basketRepository.GetBasketJoinProduct(userId:userId);
-
-
             TotalPrice += basketViewModel.Sum(x => (x.Product.NewPrice != 0 ? x.Product.NewPrice : x.Product.OldPrice) * x.Total);
             KDV = TotalPrice * 0.2m;
             Transfer = TotalPrice > 2000 ? 0 : 100;

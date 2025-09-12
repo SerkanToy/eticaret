@@ -26,5 +26,6 @@ namespace eticaret.Domain.Entities.Users
         public ICollection<Favorites>? Favorites { get; set; }
         public ICollection<BlogInfo> BlogInfos { get; set; }
         public ICollection<BlogInfoAndComment> BlogInfoAndComment { get; set; }
+        public ICollection<Order>? Orders { get; set; }
     }
 }
