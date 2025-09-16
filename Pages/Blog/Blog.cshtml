@@ -20,7 +20,7 @@
                                 <img src="assets/img/blog/1.jpg" alt="blog-1">
                             </div>
                             <div class="blog-contact">
-                                <h5><a asp-page="BlogDetail">@blog.Title</a></h5>
+                                <h5><a asp-page="BlogDetail" asp-route-id="@blog.Id">@blog.Title</a></h5>
                                 <p>
                                     @blog.Description.Substring(0, 135)
                                 </p>
