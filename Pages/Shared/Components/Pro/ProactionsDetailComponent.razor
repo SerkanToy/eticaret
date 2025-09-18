@@ -7,11 +7,11 @@
         <input class="qty-input" type="text" name="bb-qtybtn" value="1">
     </div>
     <div class="buttons">
-        <a href="javascript:void(0)" class="bb-btn-2" @onclick="Favorite">Sepete Ekle</a>
+        <a href="javascript:void(0)" class="bb-btn-2" @onclick="BasketAdd">Sepete Ekle</a>
     </div>
     <ul class="bb-pro-actions">
         <li class="bb-btn-group">
-            <a href="javascript:void(0)" @onclick="BasketAdd">
+            <a href="javascript:void(0)" @onclick="Favorite">
                 @if (IsBoolean)
                 {
                     <i class="ri-check-double-line"></i>

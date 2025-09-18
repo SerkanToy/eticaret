@@ -1,72 +1,14 @@
-﻿@inject eticaret.Domain.UnitOfWork.IUnitofWork unitofWork
-@using eticaret.Domain.Core.Entities
-
-@if (unitofWork.GetRepository<BlogInfo>().GetAllIQueryable(x => x.IsDeleted == false).Any())
-{
-    <section class="section-instagram padding-tb-50">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="bb-title">
-                        <h3>#Blog</h3>
-                    </div>
-                    <div class="bb-instagram-slider owl-carousel">
-
-                        @foreach (var item in unitofWork.GetRepository<BlogInfo>().GetAllIQueryable(x => x.IsDeleted == false))
-                        {
-                            <div class="bb-instagram-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
-                                <div class="instagram-img">
-                                    <a asp-page="BlogDetail" asp-route-id="@item.Id">
-                                        <img src="assets/img/blog/1.jpg" alt="Blog">
-                                    </a>
-                                </div>
-                            </div>
-
-                        }
-
-                        
-                        <div class="bb-instagram-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
-                            <div class="instagram-img">
-                                <a href="javascript:void(0)">
-                                    <img src="assets/img/instagram/8.jpg" alt="instagram-2">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="bb-instagram-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
-                            <div class="instagram-img">
-                                <a href="javascript:void(0)">
-                                    <img src="assets/img/instagram/9.jpg" alt="instagram-3">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="bb-instagram-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">
-                            <div class="instagram-img">
-                                <a href="javascript:void(0)">
-                                    <img src="assets/img/instagram/10.jpg" alt="instagram-4">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="bb-instagram-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
-                            <div class="instagram-img">
-                                <a href="javascript:void(0)">
-                                    <img src="assets/img/instagram/11.jpg" alt="instagram-5">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="bb-instagram-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="700">
-                            <div class="instagram-img">
-                                <a href="javascript:void(0)">
-                                    <img src="assets/img/instagram/12.jpg" alt="instagram-6">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+﻿<section class="section-instagram padding-tb-50">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="bb-title">
+                    <h3>#Blog</h3>
                 </div>
             </div>
         </div>
-    </section>
-}
-
+    </div>
+</section>
 
 
 @code {
