@@ -17,9 +17,9 @@
                         <div class="bb-cart-summary">
                             <div class="inner-summary">
                                 <ul>
-                                    <li><span class="text-left">Fiyat</span><span class="text-right">@Model.TotalPrice</span></li>
-                                    <li><span class="text-left">KDV</span><span class="text-right">@Model.KDV</span></li>
-                                    <li><span class="text-left">Kargo</span><span class="text-right">@Model.Transfer</span></li>
+                                    <li><span class="text-left">Fiyat</span><span class="text-right">@Model.TotalPrice.ToString("C")</span></li>
+                                    <li><span class="text-left">KDV</span><span class="text-right">@Model.KDV.ToString("C")</span></li>
+                                    <li><span class="text-left">Kargo</span><span class="text-right">@Model.Transfer.ToString("C")</span></li>
                                     <li>
                                         <span class="text-left">İndirim Kuponu</span>
                                         <span class="text-right"><a class="bb-coupon drop-coupon">Ekle</a></span>
@@ -36,7 +36,7 @@
                             </div>
                             <div class="summary-total">
                                 <ul>
-                                    <li><span class="text-left">Toplam Fiyat</span><span class="text-right">@Model.KDVTotal</span></li>
+                                    <li><span class="text-left">Toplam Fiyat</span><span class="text-right">@Model.KDVTotal.ToString("C")</span></li>
                                 </ul>
                             </div>
                         </div>
@@ -83,7 +83,7 @@
                                             </a>
                                         </td>
                                         <td>
-                                            <span class="price">@(basket.Product.NewPrice == 0 ? basket.Product.OldPrice : basket.Product.NewPrice)</span>
+                                            <span class="price">@(basket.Product.NewPrice == 0 ? basket.Product.OldPrice.ToString("C") : basket.Product.NewPrice.ToString("C"))</span>
                                         </td>
                                         <td>
                                             <div class="qty-plus-minus">
@@ -91,7 +91,7 @@
                                             </div>
                                         </td>
                                         <td>
-                                            <span class="price">@(basket.Product.NewPrice == 0 ? basket.Product.OldPrice * basket.Total : basket.Product.NewPrice * basket.Total)</span>
+                                            <span class="price">@(basket.Product.NewPrice == 0 ? (basket.Product.OldPrice * basket.Total).ToString("C") : (basket.Product.NewPrice * basket.Total).ToString("C"))</span>
                                         </td>
                                         <td>
                                             <div class="pro-remove">

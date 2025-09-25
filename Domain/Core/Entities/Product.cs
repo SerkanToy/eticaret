@@ -15,7 +15,9 @@ namespace eticaret.Domain.Core.Entities
         public string? ModifiedDate { get; set; }
         public string? DeleteDate { get; set; }
         public bool IsDeleted { get; set; }
+        [DisplayFormat(DataFormatString = "{0:C}", ApplyFormatInEditMode = true)]
         public decimal OldPrice { get; set; } = 0;
+        [DisplayFormat(DataFormatString = "{0:C}", ApplyFormatInEditMode = true)]
         public decimal NewPrice { get; set; } = 0;
         public string Description { get; set; }
         public string Descriptions { get; set; } = string.Empty;

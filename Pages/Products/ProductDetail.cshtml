@@ -78,16 +78,16 @@
                                         @if (Model.productViewModel.NewPrice == 0)
                                         {
                                             <div class="price">
-                                                <h5>@Model.productViewModel.OldPrice TL</h5>
+                                                <h5>@Model.productViewModel.OldPrice.ToString("C") TL</h5>
                                             </div>
                                         }
                                         else
                                         {
                                             <div class="price">
-                                                <h5>@Model.productViewModel.NewPrice TL</h5>
+                                                <h5>@Model.productViewModel.NewPrice.ToString("C") TL</h5>
                                             </div>
                                             <div class="mrp">
-                                                <p>Eski Fiyat : <span>@Model.productViewModel.OldPrice TL</span></p>
+                                                <p>Eski Fiyat : <span>@Model.productViewModel.OldPrice.ToString("C") TL</span></p>
                                             </div>
                                         }
 

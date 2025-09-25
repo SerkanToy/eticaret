@@ -104,12 +104,12 @@
                                                 <div class="inner-price">
                                                     @if (item.NewPrice == 0)
                                                     {
-                                                        <span class="new-price">@item.OldPrice.ToString(CultureInfo.CreateSpecificCulture("tr"))</span>
+                                                        <span class="new-price">@item.OldPrice.ToString("C")</span>
                                                     }
                                                     else
                                                     {
-                                                        <span class="new-price">@item.NewPrice.ToString(CultureInfo.CreateSpecificCulture("tr"))</span>
-                                                        <span class="old-price">@item.OldPrice.ToString(CultureInfo.CreateSpecificCulture("tr"))</span>
+                                                        <span class="new-price">@item.NewPrice.ToString("C")</span>
+                                                        <span class="old-price">@item.OldPrice.ToString("C")</span>
                                                     }                                                    
                                                 </div>
                                             </div>

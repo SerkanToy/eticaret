@@ -10,7 +10,7 @@ namespace eticaret.Domain.Core.Entities
         public int UserId { get; set; }
         public UserApp User { get; set; }
         public decimal Price { get; set; }
-        public string Total { get; set; }
+        public decimal Total { get; set; }
         public string Quantity { get; set; }
         public string CreateBy { get; set; }
         public string? ModifiedBy { get; set; }
