@@ -34,17 +34,16 @@
                                             </div>
                                         }
                                     </div>
-
                                 }
                                 else
                                 {
                                     <div class="single-product-cover">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="rgba(173,184,194,1)">
-                                                            <path d="M5 11.1005L7 9.1005L12.5 14.6005L16 11.1005L19 14.1005V5H5V11.1005ZM5 13.9289V19H8.1005L11.0858 16.0147L7 11.9289L5 13.9289ZM10.9289 19H19V16.9289L16 13.9289L10.9289 19ZM4 3H20C20.5523 3 21 3.44772 21 4V20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V4C3 3.44772 3.44772 3 4 3ZM15.5 10C14.6716 10 14 9.32843 14 8.5C14 7.67157 14.6716 7 15.5 7C16.3284 7 17 7.67157 17 8.5C17 9.32843 16.3284 10 15.5 10Z">
-                                                            </path>
-                                                        </svg>
+                                            <path d="M5 11.1005L7 9.1005L12.5 14.6005L16 11.1005L19 14.1005V5H5V11.1005ZM5 13.9289V19H8.1005L11.0858 16.0147L7 11.9289L5 13.9289ZM10.9289 19H19V16.9289L16 13.9289L10.9289 19ZM4 3H20C20.5523 3 21 3.44772 21 4V20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V4C3 3.44772 3.44772 3 4 3ZM15.5 10C14.6716 10 14 9.32843 14 8.5C14 7.67157 14.6716 7 15.5 7C16.3284 7 17 7.67157 17 8.5C17 9.32843 16.3284 10 15.5 10Z">
+                                            </path>
+                                        </svg>
                                     </div>
-                                }                                
+                                }
                             </div>
                         </div>
                         <div class="col-lg-7 col-12 mb-24">
@@ -91,21 +90,27 @@
                                                 <p>Eski Fiyat : <span>@Model.productViewModel.OldPrice TL</span></p>
                                             </div>
                                         }
-                                                                                
+
                                     </div>
                                 </div>
-                                <div class="bb-single-list">
-                                    <ul>
-                                        <li><span>Closure :</span> Hook & Loop</li>
-                                        <li><span>Sole :</span> Polyvinyl Chloride</li>
-                                        <li><span>Width :</span> Medium</li>
-                                        <li><span>Outer Material :</span> A-Grade Standard Quality</li>
-                                    </ul>
-                                </div>
+
+                                @if (Model.productViewModel.Descriptions is not null)
+                                {
+                                    <div class="bb-single-list">
+                                        <ul>
+                                            @for (int i = 0; i > Model.productViewModel.Descriptions.Split(",").Length; i++)
+                                            {
+                                                <li>@Model.productViewModel.Descriptions.Split(",")[i].Trim()</li>
+                                            }
+                                        </ul>
+                                    </div>
+                                }
+
+
                                 <div class="bb-single-pro-weight">
                                     <div class="bb-pro-variation-contant">
                                         <ul>
-                                            @foreach(var item in Model.productViewModel.Colors)
+                                            @foreach (var item in Model.productViewModel.Colors)
                                             {
                                                 <li class="variation" style="background-color: @item.Colorvalue;witdh:32px;height:32px;border-radius:32px;">
                                                 </li>

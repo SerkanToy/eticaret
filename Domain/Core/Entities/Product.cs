@@ -18,6 +18,7 @@ namespace eticaret.Domain.Core.Entities
         public decimal OldPrice { get; set; } = 0;
         public decimal NewPrice { get; set; } = 0;
         public string Description { get; set; }
+        public string Descriptions { get; set; } = string.Empty;
         public string Flag { get; set; }
         public int RatinAVG { get; set; }
         [NotMapped]

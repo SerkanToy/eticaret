@@ -233,6 +233,7 @@ namespace eticaret.Domain.Repository.Repositorys
                     NewPrice = x.NewPrice,
                     OldPrice = x.OldPrice,
                     Description = x.Description,
+                    Descriptions = x.Descriptions,
                     Images = x.Images.Where(x => x.IsDeleted == false).Select(i => new Image
                     {
                         Id = i.Id,

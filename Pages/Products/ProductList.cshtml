@@ -55,7 +55,6 @@
                                 <div class="col-md-4 col-6 mb-24 bb-product-box pro-bb-content" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
                                     <div class="bb-pro-box">
                                         <div class="bb-pro-img" style="width:100%;">
-                                            @(await Html.RenderComponentAsync<eticaret.Pages.Shared.Components.News.NewComponent>(RenderMode.ServerPrerendered))
                                             @if (item.Images is not null)
                                             {
                                                 foreach (var img in item.Images)

@@ -1,0 +1,93 @@
+﻿@page "~/payment"
+@model eticaret.Pages.Payment.PaymentModel
+@{
+}
+
+
+<section class="section-checkout padding-tb-50">
+	<div class="container">
+
+		<div class="row mb-minus-24">
+			<form method="post" class="row mb-minus-24">
+				<div class="col-lg-8 col-12 mb-24">
+					<div class="bb-checkout-contact" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+						<div class="main-title">
+							<h4>Ödeme Bilgileri</h4>
+						</div>
+
+						<div class="checkout-radio">
+							@if (Model.addressViewModel.Any())
+							{
+								foreach (var item in Model.addressViewModel)
+								{
+									<div class="radio-itens">
+										<input type="radio" id="@item.Flag" name="address">
+										<label for="@item.Flag">@item.Title</label>
+									</div>
+								}
+							}
+							else
+							{
+								<p>Kayıtlı Adres Yok.</p>
+							}
+						</div>
+
+						<div class="input-box-form">
+							<div class="row">
+								<div class="col-12 pb-3">
+									<div class="input-item">
+										<label class="pb-2">Ad Soyad *</label>
+										<input type="text" name="name" placeholder="Ad Soyad" required>
+									</div>
+								</div>
+
+								<div class="col-12 pb-3">
+									<div class="input-item">
+										<label class="pb-2">Kart Numarası *</label>
+										<input type="text" name="name" placeholder="**** **** **** ****" required>
+									</div>
+								</div>
+								<div class="col-lg-6 col-12 pb-3">
+									<div class="input-item">
+										<label class="pb-2">Ay/Yıl *</label>
+										<input type="text" name="name" placeholder="Ay/Yıl" required>
+									</div>
+								</div>
+								<div class="col-lg-6 col-12 pb-3">
+									<div class="input-item">
+										<label class="pb-2">Cvc *</label>
+										<input type="text" name="name" placeholder="CVC" required>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+				<div class="col-lg-4 col-12 mb-24">
+					<div class="bb-checkout-sidebar">
+						<div class="checkout-items" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+							<div class="sub-title">
+								<h4>Ödenecek Tutar</h4>
+							</div>
+							<div class="checkout-summary" style="border:0px;">
+								<ul>
+									<li><h2 class="mb-2">$56</h2></li>
+									<li>
+										<input type="checkbox" placeholder="*" required style="width:8%;margin-right:10px;}">
+										Ön bilgilendirme formu'nu ve Mesafeli satış sözleşmesi'ni onaylıyorum.
+									</li>
+									<li>
+										<button type="button" class="bb-btn-2" style="width:100%;margin:20px 20px;}">Siparışı Onayla</button>
+									</li>
+									<li><span class="left-item">Ürünler</span><span>$56</span></li>
+									<li><span class="left-item">Kargo</span><span>$56</span></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</section>
