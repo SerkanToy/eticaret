@@ -86,8 +86,10 @@
                                             <span class="price">@(basket.Product.NewPrice == 0 ? basket.Product.OldPrice.ToString("C") : basket.Product.NewPrice.ToString("C"))</span>
                                         </td>
                                         <td>
-                                            <div class="qty-plus-minus">
-                                                <div>@basket.Total</div>
+                                            <div>
+                                                @(await Html.RenderComponentAsync<eticaret.Pages.Shared.Components.PlusAndMinus.MinusComponent>(RenderMode.ServerPrerendered, new { id = basket.Id.ToString() }))
+												@basket.Total
+                                                @(await Html.RenderComponentAsync<eticaret.Pages.Shared.Components.PlusAndMinus.PlusComponent>(RenderMode.ServerPrerendered, new { id = basket.Id.ToString() }))
                                             </div>
                                         </td>
                                         <td>
