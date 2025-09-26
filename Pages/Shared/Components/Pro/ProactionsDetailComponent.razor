@@ -3,9 +3,24 @@
 @inject NavigationManager _navigationManager
 
 <div class="bb-single-qty">
-    <div class="qty-plus-minus">
-        <input class="qty-input" type="text" name="bb-qtybtn" value="1">
-    </div>
+
+    <ul class="bb-pro-actions">
+        <li class="bb-btn-group">
+            <a href="javascript:void(0);" @onclick="(async () => await Minus())" style="font-size:12px;color:black;border:0px;background-color:white;">
+				<i class="ri-subtract-fill" style="color:#686e7d;background-color:white;"></i>
+            </a>
+        </li>
+		<li class="bb-btn-group" style="padding:0px;">
+            <a href="javascript:void(0);" style="font-size:12px;color:black;border:0px;background-color:white;">
+                @Count
+            </a>
+        </li>
+        <li class="bb-btn-group">
+            <a href="javascript:void(0);" @onclick="(async () => await Plus())" style="font-size:12px;color:black;border:0px;background-color:white;">
+				<i class="ri-add-fill" style="color:#686e7d;background-color:white;"></i>
+            </a>
+        </li>
+    </ul>
     <div class="buttons">
         <a href="javascript:void(0)" class="bb-btn-2" @onclick="BasketAdd">Sepete Ekle</a>
     </div>
@@ -38,6 +53,8 @@
     public bool IsBoolean { get; set; } = false;
     [Parameter]
     public bool IsBooleanBasket { get; set; } = false;
+    [Parameter]
+    public int Count { get; set; } = 1;
 
 
     private AuthenticationState authenticationState;
@@ -112,7 +129,7 @@
             {
                 UserId = userId,
                 ProductId = product.Id,
-                Total = 1
+                Total = Count
             });
             await unitofWork.SaveChangesAsync();
             IsBooleanBasket = true;
@@ -122,5 +139,16 @@
             IsBooleanBasket = false;
         }
         _navigationManager.Refresh();
+    }
+
+    public async Task Plus()
+    {
+		Count += 1;
+    }
+
+    public async Task Minus()
+    {
+		if (Count > 1)
+            Count -= 1;
     }
 }
