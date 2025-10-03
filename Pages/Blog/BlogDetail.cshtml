@@ -78,39 +78,41 @@
                     <br />
                     <br />
 
-                    <div class="bb-blog-details-comment">
-                        <div class="main-title">
-                            <h4>Comments</h4>
+
+                    @if (Model.blogDetailViewModel.BlogInfoAndComment.Any())
+                    {
+                        <div class="bb-blog-details-comment">
+                            <div class="main-title">
+                                <h4>Yorumlar</h4>
+                            </div>
+
+                            @foreach (var item in Model.blogDetailViewModel.BlogInfoAndComment)
+                            {
+                                <div class="bb-comment-box">
+                                    <div class="inner-image" style="background-color: #6c7fd8;color: white;height: 45px;padding: 10px 15px;border-radius: 10px;font-size: 30px;">
+                                        @item.Comment.FN
+                                    </div>
+                                    <div class="inner-contact">
+                                        <h5 class="sub-title">@item.Comment.CreateBy</h5>
+                                        <span>@item.Comment.CreateDate</span>
+                                        <p>
+                                            @item.Comment.Description
+                                        </p>
+                                        <a href="javascript:void(0)" class="bb-details-btn">Yorum Yap <i class="ri-arrow-right-line"></i></a>
+                                    </div>
+                                </div>
+                            }
                         </div>
-                        <div class="bb-comment-box">
-                            <div class="inner-image">
-                                <img src="assets/img/reviews/1.jpg" alt="reviews-1">
-                            </div>
-                            <div class="inner-contact">
-                                <h5 class="sub-title">Mariya Lykra</h5>
-                                <span>May 14,2020</span>
-                                <p>
-                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo, et? Quam eius
-                                    facere optio explicabo consequatur aut ad. Magnam, aspernatur!
-                                </p>
-                                <a href="javascript:void(0)" class="bb-details-btn">Reply <i class="ri-arrow-right-line"></i></a>
+                    }
+                    else
+                    {
+                        <div class="bb-blog-details-comment">
+                            <div class="main-title">
+                                <h4>Bu blog için henüz yorum yapılmamış.</h4>
                             </div>
                         </div>
-                        <div class="bb-comment-box bb-pl-50">
-                            <div class="inner-image">
-                                <img src="assets/img/reviews/2.jpg" alt="reviews-1">
-                            </div>
-                            <div class="inner-contact">
-                                <h5 class="sub-title">Saddika Alard</h5>
-                                <span>May 14,2020</span>
-                                <p>
-                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo, et? Quam eius
-                                    facere optio explicabo consequatur aut ad. Magnam, aspernatur!
-                                </p>
-                                <a href="javascript:void(0)" class="bb-details-btn">Reply <i class="ri-arrow-right-line"></i></a>
-                            </div>
-                        </div>
-                    </div>
+					}
+                    
                     <div class="bb-blog-details-comment">
                         <div class="main-title">
                             <h4>Leave A Reply</h4>

@@ -1,13 +1,16 @@
 ﻿using eticaret.Domain.Core.Entities;
+using eticaret.Domain.Repository.Interface;
 using eticaret.Domain.UnitOfWork;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.EntityFrameworkCore;
 
 namespace eticaret.Pages.Blog
 {
     public class BlogDetailModel : PageModel
     {
         private IUnitofWork unitofWork;
+        private IBlogRepository blogRepository;
         [BindProperty]
         public BlogInfo blogDetailViewModel { get; set; }
         [BindProperty]
@@ -18,13 +21,15 @@ namespace eticaret.Pages.Blog
         public int back { get; set; }
         [BindProperty]
         public int next { get; set; }
-        public BlogDetailModel(IUnitofWork unitofWork)
+        public BlogDetailModel(IUnitofWork unitofWork, IBlogRepository blogRepository)
         {
             this.unitofWork = unitofWork;
+            this.blogRepository = blogRepository;
         }
-        public void OnGet(int id = 0)
+        public async Task OnGet(int id = 0)
         {
-            blogDetailViewModel = unitofWork.GetRepository<BlogInfo>().GetAllIQueryable(x => x.IsDeleted == false).FirstOrDefault(x => x.Id == id);
+            //blogDetailViewModel = unitofWork.GetRepository<BlogInfo>().GetAllIQueryable(x => x.IsDeleted == false).FirstOrDefault(x => x.Id == id);
+            blogDetailViewModel = blogRepository.GetBlogInfoJoin(id);
             blogViewModel = unitofWork.GetRepository<BlogInfo>().GetAllIQueryable(x => x.IsDeleted == false)
                 .OrderBy(o => o.CreateDate).Where(x => x.Id != id)
                 .Take(4);

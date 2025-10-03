@@ -25,7 +25,13 @@
             var userId = unitofWork.GetUserById(user.Identity!.Name!);
             Basket update = await unitofWork.GetRepository<Basket>().GetFindAsync(v => v.Id == Convert.ToInt32(Id));
             if (update.Total > 1)
+            {
                 update.Total -= 1;
+            }
+            else
+            {
+                return;
+            }
 
             unitofWork.GetRepository<Basket>().Update(update);
             unitofWork.SaveChanges();

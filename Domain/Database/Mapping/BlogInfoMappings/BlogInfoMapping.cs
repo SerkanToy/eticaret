@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace eticaret.Domain.Database.Context.Mapping.BlogInfoMappings
 {
-    public class BlogInfoAndCommentMapping : IEntityTypeConfiguration<BlogInfo>
+    public class BlogInfoMapping : IEntityTypeConfiguration<BlogInfo>
     {
         public void Configure(EntityTypeBuilder<BlogInfo> builder)
         {

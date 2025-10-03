@@ -1,5 +1,6 @@
 ﻿using eticaret.Domain.Entities.Users;
 using eticaret.Domain.Interfaced;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace eticaret.Domain.Core.Entities
 {
@@ -23,5 +24,6 @@ namespace eticaret.Domain.Core.Entities
         public string? ModifiedDate { get; set; }
         public string? DeleteDate { get; set; }
         public bool IsDeleted { get; set; }
+        
     }
 }

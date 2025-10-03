@@ -24,5 +24,7 @@ namespace eticaret.Domain.Core.Entities
         public string? ModifiedDate { get; set; }
         public string? DeleteDate { get; set; }
         public bool IsDeleted { get; set; }
+        [NotMapped]
+        public string FN { get; set; }
     }
 }

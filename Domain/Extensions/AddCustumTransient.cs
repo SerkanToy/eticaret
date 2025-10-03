@@ -18,6 +18,7 @@ namespace eticaret.Domain.Extensions
             services.AddTransient(typeof(IFavoritesRepository), typeof(FavoritesRepository));
             services.AddTransient(typeof(IBasketRepository), typeof(BasketRepository)); 
             services.AddTransient(typeof(IOrderRepository), typeof(OrderRepository)); 
+            services.AddTransient(typeof(IBlogRepository), typeof(BlogInfoRepository)); 
         }
     }
 }
