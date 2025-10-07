@@ -15,7 +15,7 @@ namespace eticaret.Domain.Repository.Repositorys
 
         public BlogInfo GetBlogInfoJoin(int userId)
         {
-            var blog = context.BlogInfo.Include(j => j.BlogInfoAndComment).ThenInclude(y => y.Comment).FirstOrDefault(b => b.Id == userId);
+            var blog = context.BlogInfo.Include(j => j.BlogInfoAndComment).ThenInclude(y => y.Comment).ThenInclude(g => g.Replys).FirstOrDefault(b => b.Id == userId);
 
 
             return new BlogInfo
@@ -32,7 +32,7 @@ namespace eticaret.Domain.Repository.Repositorys
                     Comment = new Comments
                     {
                         Id = v.Comment.Id,
-                        Title = v.Comment.Title,
+                        Title = v.Comment.Title, 
                         Description = v.Comment.Description,
                         CreateBy = v.Comment.CreateBy,
                         CreateDate = v.Comment.CreateDate,
