@@ -78,70 +78,44 @@
                     <br />
                     <br />
 
+                    @*
+                        @if (Model.blogDetailViewModel.BlogInfoAndComment.Any())
+                        {
+                            <div class="bb-blog-details-comment">
+                                <div class="main-title">
+                                    <h4>Yorumlar</h4>
+                                </div>
 
-                    @if (Model.blogDetailViewModel.BlogInfoAndComment.Any())
-                    {
-                        <div class="bb-blog-details-comment">
-                            <div class="main-title">
-                                <h4>Yorumlar</h4>
+                                @foreach (var item in Model.blogDetailViewModel.BlogInfoAndComment)
+                                {
+                                    <div class="bb-comment-box">
+                                        <div class="inner-image" style="background-color: #6c7fd8;color: white;height: 45px;padding: 10px 15px;border-radius: 10px;font-size: 30px;">
+                                            @item.Comment.FN
+                                        </div>
+                                        <div class="inner-contact">
+                                            <h5 class="sub-title">@item.Comment.CreateBy</h5>
+                                            <span>@item.Comment.CreateDate</span>
+                                            <p>
+                                                @item.Comment.Description
+                                            </p>
+                                            <a href="javascript:void(0)" class="bb-details-btn">Yorum Yap <i class="ri-arrow-right-line"></i></a>
+                                        </div>
+                                    </div>             
+                                }
                             </div>
+                        }
+                        else
+                        {
+                            <div class="bb-blog-details-comment">
+                                <div class="main-title">
+                                    <h4>Bu blog için henüz yorum yapılmamış.</h4>
+                                </div>
+                            </div>
+					    }
+                    *@
 
-                            @foreach (var item in Model.blogDetailViewModel.BlogInfoAndComment)
-                            {
-                                <div class="bb-comment-box">
-                                    <div class="inner-image" style="background-color: #6c7fd8;color: white;height: 45px;padding: 10px 15px;border-radius: 10px;font-size: 30px;">
-                                        @item.Comment.FN
-                                    </div>
-                                    <div class="inner-contact">
-                                        <h5 class="sub-title">@item.Comment.CreateBy</h5>
-                                        <span>@item.Comment.CreateDate</span>
-                                        <p>
-                                            @item.Comment.Description
-                                        </p>
-                                        <a href="javascript:void(0)" class="bb-details-btn">Yorum Yap <i class="ri-arrow-right-line"></i></a>
-                                    </div>
-                                </div>             
-                            }
-                        </div>
-                    }
-                    else
-                    {
-                        <div class="bb-blog-details-comment">
-                            <div class="main-title">
-                                <h4>Bu blog için henüz yorum yapılmamış.</h4>
-                            </div>
-                        </div>
-					}
-                    
-                    <div class="bb-blog-details-comment">
-                        <div class="main-title">
-                            <h4>Leave A Reply</h4>
-                        </div>
-                        <form method="post">
-                            <div class="row">
-                                <div class="col-lg-6 col-12">
-                                    <div class="bb-details-input">
-                                        <input type="text" placeholder="Enter Your Name">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-12">
-                                    <div class="bb-details-input">
-                                        <input type="email" placeholder="Enter Your Email">
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="bb-details-input">
-                                        <textarea placeholder="Message"></textarea>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="bb-details-buttons">
-                                        <a href="javascript:void(0)" class="bb-btn-2">Yorum Yap</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
+                    <component type="typeof(eticaret.Pages.Shared.Components.Comment.CommentComponent)" render-mode="ServerPrerendered" />
+
                 </div>
             </div>
         </div>

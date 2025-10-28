@@ -1,8 +1,8 @@
 ﻿using eticaret.Domain.Core.Entities;
+using eticaret.Domain.Repository.Interface;
 using eticaret.Domain.UnitOfWork;
-using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.SignalR;
-using System.Linq;
+using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
 
 namespace eticaret.Hubs
@@ -10,9 +10,11 @@ namespace eticaret.Hubs
     public class WebHub: Hub
     {
         private readonly IUnitofWork unitofWork;
-        public WebHub(IUnitofWork unitofWork)
+        private IBlogRepository blogRepository;
+        public WebHub(IUnitofWork unitofWork, IBlogRepository blogRepository = null)
         {
              this.unitofWork = unitofWork;
+             this.blogRepository = blogRepository;
         }
            
         public async Task SendBasketCount()
@@ -21,7 +23,7 @@ namespace eticaret.Hubs
             int userId = 0;
             if (Context.User!.Identity!.IsAuthenticated == true)
             {
-                userId = unitofWork.GetUserById(Context.User.FindFirst(ClaimTypes.Name)!.Value); ;
+                userId = unitofWork.GetUserById(Context.User.FindFirst(ClaimTypes.Name)!.Value); 
                 basketcount = unitofWork.GetRepository<Basket>().GetAllIQueryable(x => x.UserId == userId).Select(x => x.Total).Sum();
                 await Clients.User(userId.ToString()).SendAsync("BasketCount", basketcount);
             }
@@ -37,7 +39,7 @@ namespace eticaret.Hubs
             int userId = 0;
             if (Context.User!.Identity!.IsAuthenticated == true)
             {
-                userId = unitofWork.GetUserById(Context.User.FindFirst(ClaimTypes.Name)!.Value); ;
+                userId = unitofWork.GetUserById(Context.User.FindFirst(ClaimTypes.Name)!.Value); 
                 favoritecount = unitofWork.GetRepository<Favorites>().GetAllIQueryable(x => x.UserId == userId).Count();
                 await Clients.User(userId.ToString()).SendAsync("FavoriteCount", favoritecount);
             }
@@ -45,6 +47,19 @@ namespace eticaret.Hubs
             {
                 await Clients.User(userId.ToString()).SendAsync("FavoriteCount", favoritecount);
             }
+        }
+
+        public async Task SendBlogComment()
+        {
+            var blogAll = unitofWork.GetRepository<Comments>().GetAllIQueryable(x => x.IsDeleted == false).Select(x => new Comments()
+            {
+                Title = x.Title,
+                CreateDate = x.CreateDate,
+                CreateBy = x.CreateBy,
+                Description = x.Description
+            });
+            //var blogAll = "Serkan TOY";
+            await Clients.All.SendAsync("BlogComment", blogAll);
         }
 
         /*public async Task SendCategories()

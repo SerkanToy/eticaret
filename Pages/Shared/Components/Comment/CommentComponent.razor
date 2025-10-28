@@ -1,0 +1,93 @@
+﻿@using Microsoft.AspNetCore.Mvc.TagHelpers
+@using Microsoft.EntityFrameworkCore.Metadata.Internal
+@using eticaret.Domain.Repository.Interface
+@inject IJSRuntime JS
+
+
+<div class="bb-blog-details-comment" id="commentlist">
+    
+
+	
+    
+</div>
+
+
+<div class="bb-blog-details-comment">
+    <div class="main-title">
+        <h4>Yorum Yap</h4>
+    </div>
+    <form method="post">
+        <div class="row">
+            <div class="col-lg-6 col-12">
+                <div class="bb-details-input">
+                    <input type="text" placeholder="Enter Your Name">
+                </div>
+            </div>
+            <div class="col-lg-6 col-12">
+                <div class="bb-details-input">
+                    <input type="email" placeholder="Enter Your Email">
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="bb-details-input">
+                    <textarea placeholder="Message"></textarea>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="bb-details-buttons">
+                    <a href="javascript:void(0)" class="bb-btn-2">Yorum Yap</a>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<script type="text/javascript">
+    function comment() {
+            var html = '';
+            var connection = new signalR.HubConnectionBuilder().withUrl("https://localhost:7102/WebHub").build();
+              connection.start().then(() => {
+                  //$("#deneme").text(connection.state);
+                  setInterval(() => {
+                      connection.invoke("SendBlogComment");
+                  }, 1000);
+              }).catch((err) => { console.log(err) });
+
+              connection.on("BlogComment", (blogcomment) => {
+                      html = `<div class="main-title"><h4>Yorumlar</h4></div><br/>`;
+                      $.each(blogcomment, function( key, value ) {
+                          //alert( key + ": " + value.title );
+                           html += `<div class="bb-comment-box">
+                                        <div class="inner-image" style="background-color: #6c7fd8;color: white;height: 45px;padding: 10px 15px;border-radius: 10px;font-size: 30px;">
+                                            ${value.createBy.substring(0, 1)}
+                                        </div>
+                                        <div class="inner-contact">
+                                            <h5 class="sub-title">${value.createBy}</h5>
+                                            <span>${value.title}</span>
+                                            <p>
+                                                ${value.description}
+                                            </p>
+                                        </div>
+                                    </div><br/>`
+                                });
+                  $('#commentlist').html(html);
+                  
+                  //$("#commentlist").text(blogcomment)
+				  //console.log(blogcomment);
+                  //alert(blogcomment);
+               });
+    }
+</script>
+@code {
+
+    protected async override Task OnInitializedAsync()
+    {
+        //await JS.InvokeVoidAsync("Testing");
+
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        await JS.InvokeVoidAsync("comment");        
+    }
+
+}

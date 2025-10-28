@@ -13,15 +13,18 @@ namespace eticaret.Domain.UnitOfWork
         private ICategoryRepository catetgoryRepository;
         private IProductRepository productRepository;
         private IFavoritesRepository favoritesRepository;
+        private ICommentsRepository commentsRepository;
         public UnitofWork(CommerceContext context, 
             ICategoryRepository catetgoryRepository = null,
             IProductRepository productRepository = null,
-            IFavoritesRepository favoritesRepository = null)
+            IFavoritesRepository favoritesRepository = null,
+            ICommentsRepository commentsRepository = null)
         {
             this.context = context;
             this.catetgoryRepository = catetgoryRepository;
             this.productRepository = productRepository;
             this.favoritesRepository = favoritesRepository;
+            this.commentsRepository = commentsRepository;
         }
 
         public IRepository<TEntity> GetRepository<TEntity>() where TEntity : class, new()
