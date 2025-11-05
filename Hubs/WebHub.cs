@@ -2,7 +2,6 @@
 using eticaret.Domain.Repository.Interface;
 using eticaret.Domain.UnitOfWork;
 using Microsoft.AspNetCore.SignalR;
-using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
 
 namespace eticaret.Hubs
@@ -11,10 +10,12 @@ namespace eticaret.Hubs
     {
         private readonly IUnitofWork unitofWork;
         private IBlogRepository blogRepository;
-        public WebHub(IUnitofWork unitofWork, IBlogRepository blogRepository = null)
+        private ICommentsRepository commentsRepository;
+        public WebHub(IUnitofWork unitofWork, IBlogRepository blogRepository = null, ICommentsRepository commentsRepository = null)
         {
              this.unitofWork = unitofWork;
              this.blogRepository = blogRepository;
+             this.commentsRepository = commentsRepository;
         }
            
         public async Task SendBasketCount()
@@ -49,16 +50,26 @@ namespace eticaret.Hubs
             }
         }
 
-        public async Task SendBlogComment()
+        public async Task SendBlogComment(string id)
         {
-            var blogAll = unitofWork.GetRepository<Comments>().GetAllIQueryable(x => x.IsDeleted == false).Select(x => new Comments()
+            var blogAll = commentsRepository.CommerceJoinBlog(v => v.IsDeleted == false, Convert.ToInt32(id)).Select(x => new Comments
             {
                 Title = x.Title,
-                CreateDate = x.CreateDate,
+                Description = x.Description,
                 CreateBy = x.CreateBy,
-                Description = x.Description
-            });
-            //var blogAll = "Serkan TOY";
+                CreateDate = x.CreateDate,
+            }).ToList();
+            /*var blogAll = unitofWork.GetRepository<Comments>().GetAllIQueryable(predicate: v => v.IsDeleted == false)
+                .Select(x => new Comments
+                {
+                    Title = x.Title,
+                    Description = x.Description,
+                    CreateBy = x.CreateBy,
+                    CreateDate = x.CreateDate,
+                }).ToList();*/
+            /*var blogAll = new List<Comments> { 
+                new Comments { Id = 1, Title = "Sample Comment", Description = "This is a sample comment.", CreateBy = "User1", CreateDate = DateTime.Now.ToString(), IsDeleted = false, FN = "SampleFN" }
+            };*/
             await Clients.All.SendAsync("BlogComment", blogAll);
         }
 

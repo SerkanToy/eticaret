@@ -14,7 +14,7 @@
 
 <div class="bb-blog-details-comment">
     <div class="main-title">
-        <h4>Yorum Yap</h4>
+        <h4 id="deneme">Yorum Yap</h4>
     </div>
     <form method="post">
         <div class="row">
@@ -42,20 +42,19 @@
     </form>
 </div>
 <script type="text/javascript">
-    function comment() {
+    function comment(id) {
             var html = '';
             var connection = new signalR.HubConnectionBuilder().withUrl("https://localhost:7102/WebHub").build();
               connection.start().then(() => {
-                  //$("#deneme").text(connection.state);
+                  $("#commentlist").text(connection.state);
                   setInterval(() => {
-                      connection.invoke("SendBlogComment");
+                      connection.invoke("SendBlogComment",id);
                   }, 1000);
               }).catch((err) => { console.log(err) });
 
               connection.on("BlogComment", (blogcomment) => {
                       html = `<div class="main-title"><h4>Yorumlar</h4></div><br/>`;
                       $.each(blogcomment, function( key, value ) {
-                          //alert( key + ": " + value.title );
                            html += `<div class="bb-comment-box">
                                         <div class="inner-image" style="background-color: #6c7fd8;color: white;height: 45px;padding: 10px 15px;border-radius: 10px;font-size: 30px;">
                                             ${value.createBy.substring(0, 1)}
@@ -70,14 +69,12 @@
                                     </div><br/>`
                                 });
                   $('#commentlist').html(html);
-                  
-                  //$("#commentlist").text(blogcomment)
-				  //console.log(blogcomment);
-                  //alert(blogcomment);
                });
     }
 </script>
 @code {
+    [Parameter]
+    public string? id { get; set; }
 
     protected async override Task OnInitializedAsync()
     {
@@ -87,7 +84,7 @@
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
-        await JS.InvokeVoidAsync("comment");        
+        await JS.InvokeVoidAsync("comment",id);        
     }
 
 }

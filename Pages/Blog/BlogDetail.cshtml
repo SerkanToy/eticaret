@@ -114,7 +114,9 @@
 					    }
                     *@
 
-                    <component type="typeof(eticaret.Pages.Shared.Components.Comment.CommentComponent)" render-mode="ServerPrerendered" />
+                  
+                    @(await Html.RenderComponentAsync<eticaret.Pages.Shared.Components.Comment.CommentComponent>(RenderMode.ServerPrerendered, new { id = $"{Model.blogDetailViewModel.Id}" }))
+
 
                 </div>
             </div>
