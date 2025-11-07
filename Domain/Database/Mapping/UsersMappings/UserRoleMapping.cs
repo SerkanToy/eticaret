@@ -17,8 +17,8 @@ namespace eticaret.Domain.Database.Context.Mapping.UsersMappings
         {
             return new List<UserRole>
             {
-                new UserRole { RoleId = 1, UserId = 1 },
-                new UserRole { RoleId = 2, UserId = 1 }
+                new UserRole { RoleId = "3B1DAF66-67E0-4F2A-BB56-03DA7178C814", UserId = "9E400748-88B1-40DE-965C-CD6D005B1A62" },
+                new UserRole { RoleId = "58975898-C79C-404B-AC1B-C586036C55E9", UserId = "9E400748-88B1-40DE-965C-CD6D005B1A62" }
             };
         }
     }

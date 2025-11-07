@@ -3,7 +3,7 @@
 @inject NavigationManager _navigationManager
 
 
-<i class="ri-delete-bin-line" @onclick="(async () => await Remove(Convert.ToInt32(Id)))"></i>
+<i class="ri-delete-bin-line" @onclick="(async () => await Remove(Id))"></i>
 
 @code {
     [Parameter]
@@ -15,7 +15,7 @@
 
     }
 
-    public async Task Remove(int a)
+    public async Task Remove(string a)
     {
         authenticationState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
         var user = authenticationState.User;

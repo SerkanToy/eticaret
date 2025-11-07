@@ -4,6 +4,6 @@ namespace eticaret.Domain.Repository.Interface
 {
     public interface IBasketRepository : IRepository<Basket>
     {
-        List<Basket> GetBasketJoinProduct(int userId);
+        List<Basket> GetBasketJoinProduct(string userId);
     }
 }

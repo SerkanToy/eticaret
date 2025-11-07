@@ -8,10 +8,11 @@ namespace eticaret.Domain.Core.Entities
     {
         public BlogInfo()
         {
+            Id = Guid.NewGuid().ToString();
             CreateDate = DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss");
             BlogInfoAndComment = new List<BlogInfoAndComment>();
         }
-        public int Id { get; set; }
+        public string Id { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
         public ICollection<BlogInfoAndComment> BlogInfoAndComment { get; set; }

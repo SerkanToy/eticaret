@@ -9,14 +9,14 @@ namespace eticaret.Domain.Entities
     {
         public Address() 
         {
-            
+            Id = Guid.NewGuid().ToString();
         }
-        public int Id { get; set; }
+        public string Id { get; set; }
         [Required(ErrorMessage = "Boş Bırakmayın")]
         public string Title { get; set; }
         [Required(ErrorMessage = "Boş Bırakmayın")]
         public string Name { get; set; }
-        public int UserId { get; set; }
+        public string UserId { get; set; }
         [NotMapped]
         public UserApp? User { get; set; }
         public string? CreateBy { get; set; }

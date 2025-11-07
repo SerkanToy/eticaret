@@ -2,7 +2,7 @@
 
 namespace eticaret.Domain.Entities.Users
 {
-    public class UserClaim : IdentityUserClaim<int>
+    public class UserClaim : IdentityUserClaim<string>
     {
         public string Flag { get; set; }
     }

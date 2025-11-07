@@ -2,8 +2,8 @@
 
 namespace eticaret.Domain.Entities.Users
 {
-    public class UserLogin: IdentityUserLogin<int>
+    public class UserLogin: IdentityUserLogin<string>
     {
-
+        
     }
 }

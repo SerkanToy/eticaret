@@ -12,7 +12,7 @@ namespace eticaret.Domain.Repository.Repositorys
             
         }
 
-        public List<Basket> GetBasketJoinProduct(int userId)
+        public List<Basket> GetBasketJoinProduct(string userId)
         {
             return context.Baskets.Where(b => b.UserId == userId).Include(j => j.Product).ThenInclude(i => i.Images.Where(h => h.IsShowcase == true)).ToList();
         }

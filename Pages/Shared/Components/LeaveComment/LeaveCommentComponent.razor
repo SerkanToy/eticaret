@@ -1,0 +1,104 @@
+﻿@using System.Text.RegularExpressions
+@attribute [RequireAntiforgeryToken(required: false)]
+@inject AuthenticationStateProvider AuthenticationStateProvider
+
+@inject eticaret.Domain.UnitOfWork.IUnitofWork unitofWork
+
+<div class="bb-blog-details-comment">
+    <div class="main-title">
+        <h4 id="deneme">Yorum Yap</h4>
+    </div>
+
+    @if (error is not null)
+    {
+        foreach (var item in error)
+        {
+            <div class="alert alert-danger" role="alert">
+                @item
+            </div>
+        }
+    }
+        <div class="row" style="margin-top:35px">
+            <div class="col-lg-12 col-12">
+                <div class="bb-details-input">
+                <input type="text" placeholder="Konu" autocomplete="off" name="comments.Title" @bind="comments.Title">
+                </div>
+            </div>
+            <div class="col-12" style="margin-top:35px">
+                <div class="bb-details-input">
+                <textarea placeholder="Yorum'u Burada Yazınız." rows="8" autocomplete="off" name="comments.Description" @bind="comments.Description"></textarea>
+                </div>
+            </div>
+            <div class="col-12" style="margin-top:35px">
+                <div class="bb-details-buttons">
+                    <button class="bb-btn-2" @onclick="NewComments">Yorum Yap</button>
+                </div>
+            </div>
+        </div>
+</div>
+
+@code {
+    [SupplyParameterFromForm(FormName = "CommentsAdd")]
+    private Comments comments { get; set; } = new Comments();
+
+    private string[]? error { get; set; }
+    private bool success { get; set; } = false;
+    private AuthenticationState authenticationState;
+
+    [Parameter]
+    public string? CommetId { get; set; }
+
+    private async Task NewComments()
+    {
+        authenticationState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        var user = authenticationState.User;
+        if (user.Identity?.IsAuthenticated == true)
+        {
+            if (comments.Description is null)
+            {
+                error = new string[] { "Lütfen Boş Bırakmayın!" };
+                return;
+            }
+
+			var userId = unitofWork.GetUserBy(user.Identity!.Name!);
+
+            var CommentsEntity = new Comments
+            {
+				Title = comments.Title,
+                CreateBy = $"{userId.Name} {userId.SurName}",
+				CreateDate = DateTime.Now.ToString(),
+                CommentsId = Convert.ToInt32(CommetId),
+                Description = comments.Description,
+                IsDeleted =false
+            };
+            var blogInfoAndCommentEntity = new BlogInfoAndComment
+            {
+                BlogInfoId = CommetId,
+                CommentId = CommentsEntity.Id,
+				UserId = userId.Id,
+                CreateBy = $"{user.Identity!.Name!}",
+                CreateDate = DateTime.Now.ToString(),
+                IsDeleted = false
+			};
+
+			unitofWork.GetRepository<Comments>().Insert(CommentsEntity);
+            unitofWork.GetRepository<BlogInfoAndComment>().Insert(blogInfoAndCommentEntity);
+            await unitofWork.SaveChangesAsync();
+            success = true;
+        }
+        else
+        {
+            error = new string[] { "Lütfen yorum yapmak için giriş yapın!" };
+		}
+        /*Regex regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
+        Match match = regex.Match(comments.Description);
+        if (!match.Success)
+        {
+            error = new string[] { "Lütfen E-Posta Adresinizi Doğru Formatta Giriniz!" };
+            //ModelState.AddModelError("subscribe.Name", "Lütfen E-Posta Adresinizi Giriniz!");
+            return;
+        }*/
+       
+        //navigation.NavigateTo("/");
+    }
+}

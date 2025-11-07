@@ -4,7 +4,11 @@ namespace eticaret.Domain.Core.Entities
 {
     public class SubCategory : IModel
     {
-        public int Id { get; set; }
+        public SubCategory()
+        {
+            Id = Guid.NewGuid().ToString();
+        }
+        public string Id { get; set; }
         public string Name { get; set; }
         public string Flag { get; set; }
         public string CreateBy { get; set; }
@@ -14,7 +18,7 @@ namespace eticaret.Domain.Core.Entities
         public string? ModifiedDate { get; set; }
         public string? DeleteDate { get; set; }
         public bool IsDeleted { get; set; }
-        public int CategoryId { get; set; }
+        public string CategoryId { get; set; }
         public Category Category { get; set; }
         public ICollection<Product> Products { get; set; }
     }

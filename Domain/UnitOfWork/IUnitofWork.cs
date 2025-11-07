@@ -7,7 +7,7 @@ namespace eticaret.Domain.UnitOfWork
     public interface IUnitofWork : IDisposable
     {
         IRepository<TEntity> GetRepository<TEntity>() where TEntity : class, new();
-        int GetUserById(string username);
+        string GetUserById(string username);
         UserApp GetUserBy(string username);
         ICategoryRepository Catetgory();
         IProductRepository Product();

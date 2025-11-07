@@ -21,7 +21,7 @@ namespace eticaret.Hubs
         public async Task SendBasketCount()
         {
             var basketcount = 0;
-            int userId = 0;
+            string userId = null;
             if (Context.User!.Identity!.IsAuthenticated == true)
             {
                 userId = unitofWork.GetUserById(Context.User.FindFirst(ClaimTypes.Name)!.Value); 
@@ -37,7 +37,7 @@ namespace eticaret.Hubs
         public async Task SendFavoriteCount()
         {
             var favoritecount = 0;
-            int userId = 0;
+            string userId = null;
             if (Context.User!.Identity!.IsAuthenticated == true)
             {
                 userId = unitofWork.GetUserById(Context.User.FindFirst(ClaimTypes.Name)!.Value); 
@@ -52,7 +52,7 @@ namespace eticaret.Hubs
 
         public async Task SendBlogComment(string id)
         {
-            var blogAll = commentsRepository.CommerceJoinBlog(v => v.IsDeleted == false, Convert.ToInt32(id)).Select(x => new Comments
+            var blogAll = commentsRepository.CommerceJoinBlog(v => v.IsDeleted == false, id).Select(x => new Comments
             {
                 Title = x.Title,
                 Description = x.Description,

@@ -4,10 +4,14 @@ namespace eticaret.Domain.Core.Entities
 {
     public class Favorites
     {
-        public int Id { get; set; }
+        public Favorites()
+        {
+            Id = Guid.NewGuid().ToString();
+        }
+        public string Id { get; set; }
         public Product Product { get; set; }
-        public int ProductId { get; set; }
+        public string ProductId { get; set; }
         public UserApp User { get; set; }
-        public int UserId { get; set; }
+        public string UserId { get; set; }
     }
 }

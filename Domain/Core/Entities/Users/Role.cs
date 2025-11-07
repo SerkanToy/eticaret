@@ -4,8 +4,12 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace eticaret.Domain.Entities.Users
 {
-    public class Role : IdentityRole<int>, IModel
+    public class Role : IdentityRole<string>, IModel
     {
+        public Role()
+        {
+            Id = Guid.NewGuid().ToString();
+        }
         [NotMapped]
         public virtual ICollection<UserRole> UserRoles { get; set; }
         public string Flag { get; set; }

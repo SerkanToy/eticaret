@@ -27,7 +27,7 @@
             /*var userId = unitofWork.GetUserById(user.Identity!.Name!);
             var basket = await unitofWork.GetRepository<Basket>().GetFindAsync(x => x.Id == Convert.ToInt32(a));*/
 
-            Basket update = await unitofWork.GetRepository<Basket>().GetFindAsync(v => v.Id == Convert.ToInt32(a));
+            Basket update = await unitofWork.GetRepository<Basket>().GetFindAsync(v => v.Id == a);
             update.Total = Convert.ToInt32(total);
             unitofWork.GetRepository<Basket>().Update(update);
             unitofWork.SaveChanges();

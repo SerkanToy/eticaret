@@ -2,7 +2,11 @@
 {
     public class Ratin
     {
-        public int Id { get; set; }
+        public Ratin()
+        {
+            Id = Guid.NewGuid().ToString();
+        }
+        public string Id { get; set; }
         public int Rating { get; set; }
         public ICollection<RatinProduct> RatinProducts { get; set; }
     }

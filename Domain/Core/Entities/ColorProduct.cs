@@ -2,10 +2,14 @@
 {
     public class ColorProduct
     {
-        public int Id { get; set; }
-        public int ProductId { get; set; }
+        public ColorProduct()
+        {
+            Id = Guid.NewGuid().ToString();
+        }
+        public string Id { get; set; }
+        public string ProductId { get; set; }
         public Product Product { get; set; }
-        public int ColorsId { get; set; }
+        public string ColorsId { get; set; }
         public Colors Colors { get; set; }
     }
 }

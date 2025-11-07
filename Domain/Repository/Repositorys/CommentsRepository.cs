@@ -14,7 +14,7 @@ namespace eticaret.Domain.Repository.Repositorys
             
         }
 
-        public List<Comments> CommerceJoinBlog(Expression<Func<Comments, bool>> predicate = null, int id = 0)
+        public List<Comments> CommerceJoinBlog(Expression<Func<Comments, bool>> predicate = null, string id = null)
         {
             return context.BlogInfoAndComment.Include(v => v.Comment)
                 .Include(v => v.BlogInfo)

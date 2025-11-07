@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace eticaret.Domain.Entities.Users
 {
-    public class UserRole : IdentityUserRole<int>
+    public class UserRole : IdentityUserRole<string>
     {
         //public override int UserId { get; set; } = default!;
         [NotMapped]

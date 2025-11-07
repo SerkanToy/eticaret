@@ -131,7 +131,7 @@ namespace eticaret.Pages.Products
         }
 
         [ActionName(name: "color")]
-        public async Task OnGetColor(int flag = 0)
+        public async Task OnGetColor(string flag = null)
         {
             /*categoryViewModel = unitofWork.GetRepository<SubCategory>().GetAllIQueryable(x => x.IsDeleted == false); // unitofWork.Catetgory().CategorySubCategory(); //unitofWork.GetRepository<Category>().GetAllIQueryable(x => x.IsDeleted == false);
             productViewModel = productRepository.ProductJoin(predicate: x => x.IsDeleted == false);*/

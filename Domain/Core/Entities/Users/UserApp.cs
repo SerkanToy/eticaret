@@ -5,8 +5,12 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace eticaret.Domain.Entities.Users
 {
-    public class UserApp : IdentityUser<int>, IModel
+    public class UserApp : IdentityUser<string>, IModel
     {
+        public UserApp()
+        {
+            Id = Guid.NewGuid().ToString();
+        }
         public string Name { get; set; }
         public string SurName { get; set; }
         public string? TC { get; set; }

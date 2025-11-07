@@ -19,8 +19,8 @@ namespace eticaret.Domain.Repository.Repositorys
         public List<Product> FavoritesJoin(Expression<Func<Product, bool>> predicate = null)
         {
             var name = _httpConAcsr.HttpContext?.User?.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-            var identityuser = context.UserApp.FirstOrDefault(x => x.Id == Convert.ToInt32(name));
-            var wishlistViewModel = context.Favorites.Where(x => x.UserId == Convert.ToInt32(name))
+            var identityuser = context.UserApp.FirstOrDefault(x => x.Id == name);
+            var wishlistViewModel = context.Favorites.Where(x => x.UserId == name)
                 .Include(x => x.Product).ThenInclude(x => x.SubCategory).ThenInclude(x => x.Category)
                 .Include(i => i.Product.Images).Include(i => i.Product.RatinProducts)
                 .Select(c => new Product

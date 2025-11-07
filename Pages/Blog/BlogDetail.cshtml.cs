@@ -26,7 +26,7 @@ namespace eticaret.Pages.Blog
             this.unitofWork = unitofWork;
             this.blogRepository = blogRepository;
         }
-        public async Task OnGet(int id = 0)
+        public async Task OnGet(string id = null)
         {
             //blogDetailViewModel = unitofWork.GetRepository<BlogInfo>().GetAllIQueryable(x => x.IsDeleted == false).FirstOrDefault(x => x.Id == id);
             blogDetailViewModel = blogRepository.GetBlogInfoJoin(id);

@@ -61,7 +61,7 @@ namespace eticaret.Domain.UnitOfWork
             GC.SuppressFinalize(this);
         }
 
-        public int GetUserById(string username)
+        public string GetUserById(string username)
         {
             var user = context.UserApp.FirstOrDefault(x => x.UserName == username);
             return user.Id;

@@ -5,6 +5,6 @@ namespace eticaret.Domain.Repository.Interface
 {
     public interface ICommentsRepository : IRepository<Comments>
     {
-        List<Comments> CommerceJoinBlog(Expression<Func<Comments, bool>> predicate = null, int id = 0);
+        List<Comments> CommerceJoinBlog(Expression<Func<Comments, bool>> predicate = null, string id = null);
     }
 }

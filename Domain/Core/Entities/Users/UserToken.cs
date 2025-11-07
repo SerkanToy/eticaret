@@ -2,7 +2,7 @@
 
 namespace eticaret.Domain.Entities.Users
 {
-    public class UserToken: IdentityUserToken<int>
+    public class UserToken: IdentityUserToken<string>
     {
         //public virtual AppUser User { get; set; }
         public string Flag { get; set; }

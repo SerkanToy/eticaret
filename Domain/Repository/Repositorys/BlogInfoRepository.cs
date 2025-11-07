@@ -13,7 +13,7 @@ namespace eticaret.Domain.Repository.Repositorys
             
         }
 
-        public BlogInfo GetBlogInfoJoin(int userId)
+        public BlogInfo GetBlogInfoJoin(string userId)
         {
             var blog = context.BlogInfo.FirstOrDefault(b => b.Id == userId);
 

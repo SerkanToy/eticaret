@@ -19,7 +19,7 @@ namespace eticaret.Domain.Database.Context.Mapping.UsersMappings
         {
             var user = new UserApp
             {
-                Id = 1,
+                Id = "9E400748-88B1-40DE-965C-CD6D005B1A62",
                 Email = "stoy@windowslive.com",
                 NormalizedEmail = "STOY@WINDOWSLIVE.COM",
                 Name = "Serkan",

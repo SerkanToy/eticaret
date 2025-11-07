@@ -5,11 +5,11 @@ namespace eticaret.Domain.Core.Entities
 {
     public class BlogInfoAndComment : IModel
     {
-        public int BlogInfoId { get; set; }
+        public string BlogInfoId { get; set; }
         public BlogInfo BlogInfo { get; set; }
-        public int CommentId { get; set; }
+        public string CommentId { get; set; }
         public Comments Comment { get; set; }
-        public int UserId { get; set; }
+        public string UserId { get; set; }
         public UserApp User { get; set; }
         public string CreateBy { get; set; }
         public string? ModifiedBy { get; set; }

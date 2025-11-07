@@ -4,10 +4,14 @@ namespace eticaret.Domain.Core.Entities
 {
     public class Order
     {
-        public int Id { get; set; }
+        public Order()
+        {
+            Id = Guid.NewGuid().ToString();
+        }
+        public string Id { get; set; }
         public int ProductId { get; set; }
         public Product Product { get; set; }
-        public int UserId { get; set; }
+        public string UserId { get; set; }
         public UserApp User { get; set; }
         public decimal Price { get; set; }
         public decimal Total { get; set; }

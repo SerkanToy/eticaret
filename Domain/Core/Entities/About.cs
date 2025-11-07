@@ -6,10 +6,10 @@ namespace eticaret.Domain.Entities
     {
         public About() 
         {
-            
+            Id = Guid.NewGuid().ToString();
         }
 
-        public int Id { get; set; }
+        public string Id { get; set; }
         public string Name { get; set; }
         public string Slogan { get; set; }
         public string Description { get; set; }

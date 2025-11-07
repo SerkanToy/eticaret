@@ -4,6 +4,6 @@ namespace eticaret.Domain.Repository.Interface
 {
     public interface IBlogRepository : IRepository<BlogInfo>
     {
-        BlogInfo GetBlogInfoJoin(int userId);
+        BlogInfo GetBlogInfoJoin(string userId);
     }
 }

@@ -4,7 +4,11 @@ namespace eticaret.Domain.Core.Entities
 {
     public class Colors : IModel
     {
-        public int Id { get; set; }
+        public Colors()
+        {
+            Id = Guid.NewGuid().ToString();
+        }
+        public string Id { get; set; }
         public string Name { get; set; }
         public string Colorvalue { get; set; }
         public string CreateBy { get; set; }

@@ -60,7 +60,7 @@
         if (user.Identity?.IsAuthenticated == true)
         {
             var userId = unitofWork.GetUserById(user.Identity!.Name!);
-            var product = await unitofWork.GetRepository<Product>().GetFindAsync(x => x.Id == Convert.ToInt32(a));
+            var product = await unitofWork.GetRepository<Product>().GetFindAsync(x => x.Id == a);
             var favorite = await unitofWork.GetRepository<Favorites>().GetFindAsync(x => x.UserId == userId && x.ProductId == product.Id);
             if (favorite is not null)
             {
@@ -91,7 +91,7 @@
         if (user.Identity?.IsAuthenticated == true)
         {
             var userId = unitofWork.GetUserById(user.Identity!.Name!);
-            var product = await unitofWork.GetRepository<Product>().GetFindAsync(x => x.Id == Convert.ToInt32(a));
+            var product = await unitofWork.GetRepository<Product>().GetFindAsync(x => x.Id == a);
 
             var basket = await unitofWork.GetRepository<Basket>().GetFindAsync(x => x.UserId == userId && x.ProductId == product.Id);
             if (basket is not null)
