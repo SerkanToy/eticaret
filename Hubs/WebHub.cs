@@ -20,8 +20,8 @@ namespace eticaret.Hubs
            
         public async Task SendBasketCount()
         {
-            var basketcount = 0;
-            string userId = null;
+            int basketcount = 0;
+            string userId = "0A670E37-AC6A-402B-9FDB-2633823E45DF";
             if (Context.User!.Identity!.IsAuthenticated == true)
             {
                 userId = unitofWork.GetUserById(Context.User.FindFirst(ClaimTypes.Name)!.Value); 
@@ -36,8 +36,8 @@ namespace eticaret.Hubs
 
         public async Task SendFavoriteCount()
         {
-            var favoritecount = 0;
-            string userId = null;
+            int favoritecount = 0;
+            string userId = "E6CD8719-4A90-44C1-B966-E030962F9DD5";
             if (Context.User!.Identity!.IsAuthenticated == true)
             {
                 userId = unitofWork.GetUserById(Context.User.FindFirst(ClaimTypes.Name)!.Value); 
@@ -46,7 +46,7 @@ namespace eticaret.Hubs
             }
             else
             {
-                await Clients.User(userId.ToString()).SendAsync("FavoriteCount", favoritecount);
+                await Clients.User(userId).SendAsync("FavoriteCount", favoritecount);
             }
         }
 

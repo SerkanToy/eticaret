@@ -12,6 +12,8 @@ namespace eticaret.Domain.Database.Context.Mapping.AboutMappings
         public void Configure(EntityTypeBuilder<Colors> builder)
         {
             builder.HasKey(x => x.Id);
+            builder.HasMany(x => x.ColorProduct).WithOne(y => y.Colors).OnDelete(DeleteBehavior.NoAction);
+           
             builder.HasData(ColorValues.GetColorValues());
         }
     }

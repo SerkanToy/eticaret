@@ -1,4 +1,5 @@
 ﻿@using System.Text.RegularExpressions
+@using eticaret.Domain
 @attribute [RequireAntiforgeryToken(required: false)]
 @inject AuthenticationStateProvider AuthenticationStateProvider
 
@@ -65,15 +66,14 @@
             var CommentsEntity = new Comments
             {
 				Title = comments.Title,
-                CreateBy = $"{userId.Name} {userId.SurName}",
+                CreateBy = $"{userId.Name.CustomToTitleCase()} {userId.SurName.CustomToUpper()}",
 				CreateDate = DateTime.Now.ToString(),
-                CommentsId = Convert.ToInt32(CommetId),
                 Description = comments.Description,
                 IsDeleted =false
             };
             var blogInfoAndCommentEntity = new BlogInfoAndComment
             {
-                BlogInfoId = CommetId,
+                BlogInfoId = CommetId!,
                 CommentId = CommentsEntity.Id,
 				UserId = userId.Id,
                 CreateBy = $"{user.Identity!.Name!}",

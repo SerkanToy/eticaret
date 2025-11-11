@@ -14,10 +14,6 @@ namespace eticaret.Domain.Core.Entities
         public string Title { get; set; }
         public string Description { get; set; }
         public ICollection<BlogInfoAndComment> BlogInfoAndComment { get; set; }
-        [ForeignKey(nameof(Reply))]
-        public int? CommentsId { get; set; }
-        public Comments? Reply { get; set; }
-        public ICollection<Comments>? Replys { get; set; }
         public string CreateBy { get; set; }
         public string? ModifiedBy { get; set; }
         public string? DeleteBy { get; set; }

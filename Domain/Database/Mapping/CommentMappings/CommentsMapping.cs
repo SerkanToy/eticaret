@@ -13,12 +13,6 @@ namespace eticaret.Domain.Database.Context.Mapping.CommentsMappings
             builder.HasMany(x => x.BlogInfoAndComment)
                    .WithOne(x => x.Comment)
                    .OnDelete(DeleteBehavior.NoAction);
-            builder.HasOne(x => x.Reply)
-                   .WithMany(x => x.Replys)
-                   .OnDelete(DeleteBehavior.NoAction);
-            builder.HasMany(x => x.Replys)
-                   .WithOne(x => x.Reply)
-                   .OnDelete(DeleteBehavior.NoAction);
         }
     }
 }

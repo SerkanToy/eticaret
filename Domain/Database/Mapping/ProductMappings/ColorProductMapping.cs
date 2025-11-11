@@ -41,8 +41,8 @@ namespace eticaret.Domain.Database.Mapping.ProductMappings
                 new ColorProduct { Id = "1227DA62-6872-46AC-BF32-3DFB8D5E6BF5", ColorsId = "390E0394-7160-49FF-917D-FD44971610FF", ProductId = "80240430-AD39-4492-A6BB-3FB6FEBF071D"},                
                 new ColorProduct { Id = "16AA4376-DC85-42FE-BD2B-31D36FDB1D86", ColorsId = "68751A54-0433-41DE-8527-5F17B341195A", ProductId = "D739C019-C701-456A-9F21-8A2394F6FA65"},                
                 new ColorProduct { Id = "9203E95B-59AD-40BE-8434-5DF155404287", ColorsId = "6A8FAC7A-590A-47CA-B018-EBDB824822B6", ProductId = "56C29C94-2D94-4D69-A556-23F43412C465"},                
-                new ColorProduct { Id = "9203E95B-59AD-40BE-8434-5DF155404287", ColorsId = "294A4FD6-7614-4205-B6F0-4162F33EAEB4", ProductId = "6BD8DFA5-F0AC-403B-BC3B-2F67857837B7"},                
-                new ColorProduct { Id = "816BEBC0-30AC-4377-B83E-6EA3A2E1F195", ColorsId = "F8A97944-AE75-4093-866D-C286A355BD23", ProductId = "7444427B-F8DE-44D1-844B-AEFC86E3062B"},                
+                new ColorProduct { Id = "44043EFB-E0C6-4CB0-9FA1-D1CEFA44E9A7", ColorsId = "294A4FD6-7614-4205-B6F0-4162F33EAEB4", ProductId = "6BD8DFA5-F0AC-403B-BC3B-2F67857837B7"},                
+                new ColorProduct { Id = "816BEBC0-30AC-4377-B83E-6EA3A2E1F195", ColorsId = "F8A97944-AE75-4093-866D-C286A355BD23", ProductId = "7444427B-F8DE-44D1-844B-AEFC86E3062B"}            
             };
         }
 

@@ -87,9 +87,9 @@
                                         </td>
                                         <td>
                                             <div>
-                                                @(await Html.RenderComponentAsync<eticaret.Pages.Shared.Components.PlusAndMinus.MinusComponent>(RenderMode.ServerPrerendered, new { id = basket.Id.ToString() }))
+                                                @(await Html.RenderComponentAsync<eticaret.Pages.Shared.Components.PlusAndMinus.MinusComponent>(RenderMode.ServerPrerendered, new { Id = basket.Id.ToString() }))
 												@basket.Total
-                                                @(await Html.RenderComponentAsync<eticaret.Pages.Shared.Components.PlusAndMinus.PlusComponent>(RenderMode.ServerPrerendered, new { id = basket.Id.ToString() }))
+                                                @(await Html.RenderComponentAsync<eticaret.Pages.Shared.Components.PlusAndMinus.PlusComponent>(RenderMode.ServerPrerendered, new { Id = basket.Id.ToString() }))
                                             </div>
                                         </td>
                                         <td>
@@ -98,7 +98,7 @@
                                         <td>
                                             <div class="pro-remove">
                                                 <a href="javascript:void(0)">
-                                                    @(await Html.RenderComponentAsync<eticaret.Pages.Shared.Components.Basket.BasketremoveComponent>(RenderMode.ServerPrerendered, new { id = basket.Id.ToString() }))
+                                                    @(await Html.RenderComponentAsync<eticaret.Pages.Shared.Components.Basket.BasketremoveComponent>(RenderMode.ServerPrerendered, new { Id = basket.Id.ToString() }))
                                                 </a>
                                             </div>
                                         </td>

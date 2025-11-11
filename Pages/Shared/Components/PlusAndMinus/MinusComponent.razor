@@ -4,7 +4,7 @@
 
 <a href="javascript:void(0);" class="bb-btn-2 check-btn" data-aos="fade-up" data-aos-duration="1000"
    data-aos-delay="400" style="width: 5px;padding: 10px;height: 5px;border-radius: 5px;margin-right: 10px;" 
-   @onclick="(async () => await Minus(Convert.ToInt32(Id)))">-</a>
+   @onclick="(async () => await Minus(Id))">-</a>
 
 @code {
     [Parameter]
@@ -16,7 +16,7 @@
 
     }
 
-    public async Task Minus(int a)
+    public async Task Minus(string a)
     {
         authenticationState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
         var user = authenticationState.User;

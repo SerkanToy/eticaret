@@ -24,20 +24,19 @@ namespace eticaret.Migrations
 
             modelBuilder.Entity("eticaret.Domain.Core.Entities.Basket", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("ProductId")
-                        .HasColumnType("int");
+                    b.Property<string>("ProductId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("Total")
                         .HasColumnType("int");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
@@ -50,11 +49,8 @@ namespace eticaret.Migrations
 
             modelBuilder.Entity("eticaret.Domain.Core.Entities.BlogInfo", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("CreateBy")
                         .IsRequired()
@@ -87,8 +83,9 @@ namespace eticaret.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
@@ -99,11 +96,11 @@ namespace eticaret.Migrations
 
             modelBuilder.Entity("eticaret.Domain.Core.Entities.BlogInfoAndComment", b =>
                 {
-                    b.Property<int>("BlogInfoId")
-                        .HasColumnType("int");
+                    b.Property<string>("BlogInfoId")
+                        .HasColumnType("nvarchar(450)");
 
-                    b.Property<int>("CommentId")
-                        .HasColumnType("int");
+                    b.Property<string>("CommentId")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("CreateBy")
                         .IsRequired()
@@ -128,8 +125,9 @@ namespace eticaret.Migrations
                     b.Property<string>("ModifiedDate")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("BlogInfoId", "CommentId");
 
@@ -142,11 +140,8 @@ namespace eticaret.Migrations
 
             modelBuilder.Entity("eticaret.Domain.Core.Entities.Category", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("CreateBy")
                         .IsRequired()
@@ -186,55 +181,55 @@ namespace eticaret.Migrations
                     b.HasData(
                         new
                         {
-                            Id = 1,
+                            Id = "2FC12E63-4E2C-451B-92D3-076ECF63B722",
                             CreateBy = "Sistem",
-                            CreateDate = "5.11.2025 10:43:25",
-                            Flag = "db337428-0bc4-4333-a314-047ec4804285",
+                            CreateDate = "7.11.2025 15:20:50",
+                            Flag = "1420a42e-c579-4bcb-86df-d399de300619",
                             IsDeleted = false,
                             Name = "Category 1"
                         },
                         new
                         {
-                            Id = 2,
+                            Id = "8CDE771D-1EFF-4CC6-A7C1-3CB86D19743B",
                             CreateBy = "Sistem",
-                            CreateDate = "5.11.2025 10:43:25",
-                            Flag = "4c844688-1800-4d9d-bdbe-fca1823b8265",
+                            CreateDate = "7.11.2025 15:20:50",
+                            Flag = "b8862a88-b75c-49fe-ab87-fa0f7a7c4516",
                             IsDeleted = false,
                             Name = "Category 2"
                         },
                         new
                         {
-                            Id = 3,
+                            Id = "64105586-51F5-4800-AC47-A25D96A38D2A",
                             CreateBy = "Sistem",
-                            CreateDate = "5.11.2025 10:43:25",
-                            Flag = "87a8c7ef-6481-4cf3-b13d-1dc1380b4157",
+                            CreateDate = "7.11.2025 15:20:50",
+                            Flag = "f132907f-0b99-4532-a399-0c70dc388fe3",
                             IsDeleted = false,
                             Name = "Category 3"
                         },
                         new
                         {
-                            Id = 4,
+                            Id = "467DFE4A-40D0-455D-875A-758A776D49C9",
                             CreateBy = "Sistem",
-                            CreateDate = "5.11.2025 10:43:25",
-                            Flag = "12efdb12-2fbc-4422-8292-28e8be5d14a0",
+                            CreateDate = "7.11.2025 15:20:50",
+                            Flag = "d3739ce4-427e-451a-8f1e-1643375e14ed",
                             IsDeleted = false,
                             Name = "Category 4"
                         },
                         new
                         {
-                            Id = 5,
+                            Id = "ADB4AC66-F8B7-4316-89CB-F638E723498D",
                             CreateBy = "Sistem",
-                            CreateDate = "5.11.2025 10:43:25",
-                            Flag = "72f78111-9d68-4df8-a7ab-f37a092d9210",
+                            CreateDate = "7.11.2025 15:20:50",
+                            Flag = "0f37475a-7070-4bd1-a307-e93281b01776",
                             IsDeleted = false,
                             Name = "Category 5"
                         },
                         new
                         {
-                            Id = 6,
+                            Id = "A7DA7883-9C55-424B-ACC6-8A1DE6C14881",
                             CreateBy = "Sistem",
-                            CreateDate = "5.11.2025 10:43:25",
-                            Flag = "c74c7a2d-2636-43aa-9af8-f795bff8ed32",
+                            CreateDate = "7.11.2025 15:20:50",
+                            Flag = "736c0208-c5d9-47cb-affe-28c168da51f6",
                             IsDeleted = false,
                             Name = "Category 6"
                         });
@@ -242,17 +237,16 @@ namespace eticaret.Migrations
 
             modelBuilder.Entity("eticaret.Domain.Core.Entities.ColorProduct", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    b.Property<string>("ColorsId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
-                    b.Property<int>("ColorsId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ProductId")
-                        .HasColumnType("int");
+                    b.Property<string>("ProductId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
@@ -265,163 +259,160 @@ namespace eticaret.Migrations
                     b.HasData(
                         new
                         {
-                            Id = 1,
-                            ColorsId = 1,
-                            ProductId = 1
+                            Id = "D8E1F71A-08EA-4A30-AC59-D0D23663714E",
+                            ColorsId = "1BA90E67-7F3C-44AA-AC7A-54F9E9225E04",
+                            ProductId = "DD292E73-C940-452A-BCA2-6B2AFA551475"
                         },
                         new
                         {
-                            Id = 2,
-                            ColorsId = 2,
-                            ProductId = 2
+                            Id = "109E30D7-1254-481C-9152-0E42A653CDBB",
+                            ColorsId = "DCB6324E-7154-4E44-91C7-FFABA3B28B5E",
+                            ProductId = "D4573119-644C-4F5F-B861-57FA481722AA"
                         },
                         new
                         {
-                            Id = 3,
-                            ColorsId = 3,
-                            ProductId = 3
+                            Id = "3669EACA-F9CB-4914-8973-9AE8BBB36BFB",
+                            ColorsId = "70305E3C-CE16-4154-AF57-B9C4C458E5EA",
+                            ProductId = "4F89BCAF-DA9A-45D3-9BF5-2C1FD540327B"
                         },
                         new
                         {
-                            Id = 4,
-                            ColorsId = 4,
-                            ProductId = 4
+                            Id = "5D97F616-3968-45F3-8C5D-F6BCB14E45CC",
+                            ColorsId = "5F6C3716-C9A0-4BE0-9FAF-8C7A1AB5EC42",
+                            ProductId = "519905D0-34A6-4B48-BCDB-7F4CD073C4DE"
                         },
                         new
                         {
-                            Id = 5,
-                            ColorsId = 5,
-                            ProductId = 5
+                            Id = "6C38D2C4-C11A-48F0-8AA1-F4F9A8D976AD",
+                            ColorsId = "E9212F8E-B877-4178-8539-20FB7AB5E00C",
+                            ProductId = "39E30FFA-9035-447B-9191-71DA795F082F"
                         },
                         new
                         {
-                            Id = 6,
-                            ColorsId = 6,
-                            ProductId = 6
+                            Id = "C17E33A9-24CC-4F93-BB45-EDFECE8D1EB7",
+                            ColorsId = "9C381C16-3198-47F8-A47F-D218DEFDA64F",
+                            ProductId = "05699C19-3945-4501-A946-683A171DC7BD"
                         },
                         new
                         {
-                            Id = 7,
-                            ColorsId = 7,
-                            ProductId = 7
+                            Id = "314E1713-573C-4B7C-ADE2-B55A76242A9C",
+                            ColorsId = "390E0394-7160-49FF-917D-FD44971610FF",
+                            ProductId = "854AD4D3-0465-47AD-8D07-98E8ECAA8C5D"
                         },
                         new
                         {
-                            Id = 8,
-                            ColorsId = 8,
-                            ProductId = 8
+                            Id = "E8A7786E-F248-4AEE-97D9-0A57FF3FFE60",
+                            ColorsId = "68751A54-0433-41DE-8527-5F17B341195A",
+                            ProductId = "0F94273F-721C-40C7-8053-9F68A4CC5333"
                         },
                         new
                         {
-                            Id = 9,
-                            ColorsId = 9,
-                            ProductId = 9
+                            Id = "AB960EC3-C47F-4C60-AE94-64287BC6C1D3",
+                            ColorsId = "6A8FAC7A-590A-47CA-B018-EBDB824822B6",
+                            ProductId = "7E4E0809-7ECB-43BD-8198-29404B3F46FE"
                         },
                         new
                         {
-                            Id = 10,
-                            ColorsId = 10,
-                            ProductId = 10
+                            Id = "E8A188DC-26C9-4B77-ABA8-85A24BA5D060",
+                            ColorsId = "294A4FD6-7614-4205-B6F0-4162F33EAEB4",
+                            ProductId = "EBBBDDD7-9DCB-4F64-A3A6-67115A98040A"
                         },
                         new
                         {
-                            Id = 11,
-                            ColorsId = 11,
-                            ProductId = 11
+                            Id = "04AE709C-9D3C-4077-A4F7-C57107567693",
+                            ColorsId = "F8A97944-AE75-4093-866D-C286A355BD23",
+                            ProductId = "84A16343-4EB7-4BB0-91C9-DC9CAF520A70"
                         },
                         new
                         {
-                            Id = 12,
-                            ColorsId = 12,
-                            ProductId = 12
+                            Id = "7F5991E4-A435-4E08-B987-5A458F133C8A",
+                            ColorsId = "E51833F7-A3A5-4EC7-B8C2-9A22F87F1D39",
+                            ProductId = "E464C491-88A5-4B3A-BFA1-A6D2ADFF2AEF"
                         },
                         new
                         {
-                            Id = 13,
-                            ColorsId = 13,
-                            ProductId = 13
+                            Id = "D75B12ED-EB14-4EBD-9670-28FE6EBD5EA7",
+                            ColorsId = "AEF3C637-1CA0-4CC2-81E8-0639E55F9B97",
+                            ProductId = "CAC4CF1A-9C0F-4ED2-9D70-39C47F25CABE"
                         },
                         new
                         {
-                            Id = 14,
-                            ColorsId = 14,
-                            ProductId = 14
+                            Id = "4C32BC1E-8A4C-4AD1-A331-3687D46C83B0",
+                            ColorsId = "7DD698F2-37A7-44B6-BB3B-60673B13E226",
+                            ProductId = "A2AE5665-6E4A-4187-8A94-80FC03FBB11D"
                         },
                         new
                         {
-                            Id = 15,
-                            ColorsId = 1,
-                            ProductId = 15
+                            Id = "C5135EFF-A521-4A12-9285-57F5309CE713",
+                            ColorsId = "1BA90E67-7F3C-44AA-AC7A-54F9E9225E04",
+                            ProductId = "7B86DFEE-775E-465E-88A1-C115B7905FDB"
                         },
                         new
                         {
-                            Id = 16,
-                            ColorsId = 2,
-                            ProductId = 16
+                            Id = "C2C6553B-D116-4406-90C1-24BC0E0DC1BA",
+                            ColorsId = "DCB6324E-7154-4E44-91C7-FFABA3B28B5E",
+                            ProductId = "F6406AFB-73E1-4082-87A9-AEE1CC9C1BC4"
                         },
                         new
                         {
-                            Id = 17,
-                            ColorsId = 3,
-                            ProductId = 17
+                            Id = "285221C2-4134-46A8-B96F-6300E848B445",
+                            ColorsId = "70305E3C-CE16-4154-AF57-B9C4C458E5EA",
+                            ProductId = "2846EA3F-AA52-41B5-AD48-46C08605106B"
                         },
                         new
                         {
-                            Id = 18,
-                            ColorsId = 4,
-                            ProductId = 18
+                            Id = "9CE042CB-CE72-4717-8731-897393021D2B",
+                            ColorsId = "5F6C3716-C9A0-4BE0-9FAF-8C7A1AB5EC42",
+                            ProductId = "CBDB1054-A9C0-477E-9EF8-AD8D7480F6C1"
                         },
                         new
                         {
-                            Id = 19,
-                            ColorsId = 5,
-                            ProductId = 19
+                            Id = "762F9A4D-FEC7-4CC6-AE0D-404A8BEBD3CF",
+                            ColorsId = "E9212F8E-B877-4178-8539-20FB7AB5E00C",
+                            ProductId = "0D6C0D47-A4F3-43E9-BD44-090C4584281B"
                         },
                         new
                         {
-                            Id = 20,
-                            ColorsId = 6,
-                            ProductId = 20
+                            Id = "0FCAEF4A-FB2C-49CE-B3C8-9C44E525D71C",
+                            ColorsId = "9C381C16-3198-47F8-A47F-D218DEFDA64F",
+                            ProductId = "FD52A470-AD14-4D61-B0F3-1D154FE14E26"
                         },
                         new
                         {
-                            Id = 21,
-                            ColorsId = 7,
-                            ProductId = 21
+                            Id = "1227DA62-6872-46AC-BF32-3DFB8D5E6BF5",
+                            ColorsId = "390E0394-7160-49FF-917D-FD44971610FF",
+                            ProductId = "80240430-AD39-4492-A6BB-3FB6FEBF071D"
                         },
                         new
                         {
-                            Id = 22,
-                            ColorsId = 8,
-                            ProductId = 22
+                            Id = "16AA4376-DC85-42FE-BD2B-31D36FDB1D86",
+                            ColorsId = "68751A54-0433-41DE-8527-5F17B341195A",
+                            ProductId = "D739C019-C701-456A-9F21-8A2394F6FA65"
                         },
                         new
                         {
-                            Id = 23,
-                            ColorsId = 9,
-                            ProductId = 23
+                            Id = "9203E95B-59AD-40BE-8434-5DF155404287",
+                            ColorsId = "6A8FAC7A-590A-47CA-B018-EBDB824822B6",
+                            ProductId = "56C29C94-2D94-4D69-A556-23F43412C465"
                         },
                         new
                         {
-                            Id = 24,
-                            ColorsId = 10,
-                            ProductId = 24
+                            Id = "44043EFB-E0C6-4CB0-9FA1-D1CEFA44E9A7",
+                            ColorsId = "294A4FD6-7614-4205-B6F0-4162F33EAEB4",
+                            ProductId = "6BD8DFA5-F0AC-403B-BC3B-2F67857837B7"
                         },
                         new
                         {
-                            Id = 25,
-                            ColorsId = 11,
-                            ProductId = 25
+                            Id = "816BEBC0-30AC-4377-B83E-6EA3A2E1F195",
+                            ColorsId = "F8A97944-AE75-4093-866D-C286A355BD23",
+                            ProductId = "7444427B-F8DE-44D1-844B-AEFC86E3062B"
                         });
                 });
 
             modelBuilder.Entity("eticaret.Domain.Core.Entities.Colors", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Colorvalue")
                         .IsRequired()
@@ -461,127 +452,127 @@ namespace eticaret.Migrations
                     b.HasData(
                         new
                         {
-                            Id = 1,
+                            Id = "1BA90E67-7F3C-44AA-AC7A-54F9E9225E04",
                             Colorvalue = "#f0f8ff",
                             CreateBy = "System",
-                            CreateDate = "5.11.2025 10:43:25",
+                            CreateDate = "7.11.2025 15:20:50",
                             IsDeleted = false,
                             Name = "Alice Blue"
                         },
                         new
                         {
-                            Id = 2,
+                            Id = "DCB6324E-7154-4E44-91C7-FFABA3B28B5E",
                             Colorvalue = "#faebd7",
                             CreateBy = "System",
-                            CreateDate = "5.11.2025 10:43:25",
+                            CreateDate = "7.11.2025 15:20:50",
                             IsDeleted = false,
                             Name = "Antik Beyaz"
                         },
                         new
                         {
-                            Id = 3,
+                            Id = "70305E3C-CE16-4154-AF57-B9C4C458E5EA",
                             Colorvalue = "#00ffff",
                             CreateBy = "System",
-                            CreateDate = "5.11.2025 10:43:25",
+                            CreateDate = "7.11.2025 15:20:50",
                             IsDeleted = false,
                             Name = "Aqua"
                         },
                         new
                         {
-                            Id = 4,
+                            Id = "5F6C3716-C9A0-4BE0-9FAF-8C7A1AB5EC42",
                             Colorvalue = "#7fffd4",
                             CreateBy = "System",
-                            CreateDate = "5.11.2025 10:43:25",
+                            CreateDate = "7.11.2025 15:20:50",
                             IsDeleted = false,
                             Name = "Akuamarin"
                         },
                         new
                         {
-                            Id = 5,
+                            Id = "E9212F8E-B877-4178-8539-20FB7AB5E00C",
                             Colorvalue = "#f0ffff",
                             CreateBy = "System",
-                            CreateDate = "5.11.2025 10:43:25",
+                            CreateDate = "7.11.2025 15:20:50",
                             IsDeleted = false,
                             Name = "Masmavi"
                         },
                         new
                         {
-                            Id = 6,
+                            Id = "9C381C16-3198-47F8-A47F-D218DEFDA64F",
                             Colorvalue = "#f5f5dc",
                             CreateBy = "System",
-                            CreateDate = "5.11.2025 10:43:25",
+                            CreateDate = "7.11.2025 15:20:50",
                             IsDeleted = false,
                             Name = "Bej"
                         },
                         new
                         {
-                            Id = 7,
+                            Id = "390E0394-7160-49FF-917D-FD44971610FF",
                             Colorvalue = "#ffe4c4",
                             CreateBy = "System",
-                            CreateDate = "5.11.2025 10:43:25",
+                            CreateDate = "7.11.2025 15:20:50",
                             IsDeleted = false,
                             Name = "BISQUE"
                         },
                         new
                         {
-                            Id = 8,
+                            Id = "68751A54-0433-41DE-8527-5F17B341195A",
                             Colorvalue = "#000000",
                             CreateBy = "System",
-                            CreateDate = "5.11.2025 10:43:25",
+                            CreateDate = "7.11.2025 15:20:50",
                             IsDeleted = false,
                             Name = "Siyah"
                         },
                         new
                         {
-                            Id = 9,
+                            Id = "6A8FAC7A-590A-47CA-B018-EBDB824822B6",
                             Colorvalue = "#ffebcd",
                             CreateBy = "System",
-                            CreateDate = "5.11.2025 10:43:25",
+                            CreateDate = "7.11.2025 15:20:50",
                             IsDeleted = false,
                             Name = "Blanchedalmond"
                         },
                         new
                         {
-                            Id = 10,
+                            Id = "294A4FD6-7614-4205-B6F0-4162F33EAEB4",
                             Colorvalue = "#0000ff",
                             CreateBy = "System",
-                            CreateDate = "5.11.2025 10:43:25",
+                            CreateDate = "7.11.2025 15:20:50",
                             IsDeleted = false,
                             Name = "Mavi"
                         },
                         new
                         {
-                            Id = 11,
+                            Id = "F8A97944-AE75-4093-866D-C286A355BD23",
                             Colorvalue = "#8a2be2",
                             CreateBy = "System",
-                            CreateDate = "5.11.2025 10:43:25",
+                            CreateDate = "7.11.2025 15:20:50",
                             IsDeleted = false,
                             Name = "Mavi Menekşe"
                         },
                         new
                         {
-                            Id = 12,
+                            Id = "E51833F7-A3A5-4EC7-B8C2-9A22F87F1D39",
                             Colorvalue = "#a52a2a",
                             CreateBy = "System",
-                            CreateDate = "5.11.2025 10:43:25",
+                            CreateDate = "7.11.2025 15:20:50",
                             IsDeleted = false,
                             Name = "Kahverengi"
                         },
                         new
                         {
-                            Id = 13,
+                            Id = "AEF3C637-1CA0-4CC2-81E8-0639E55F9B97",
                             Colorvalue = "#deb887",
                             CreateBy = "System",
-                            CreateDate = "5.11.2025 10:43:25",
+                            CreateDate = "7.11.2025 15:20:50",
                             IsDeleted = false,
                             Name = "Burlywood"
                         },
                         new
                         {
-                            Id = 14,
+                            Id = "7DD698F2-37A7-44B6-BB3B-60673B13E226",
                             Colorvalue = "#5f9ea0",
                             CreateBy = "System",
-                            CreateDate = "5.11.2025 10:43:25",
+                            CreateDate = "7.11.2025 15:20:50",
                             IsDeleted = false,
                             Name = "CadetBlue"
                         });
@@ -589,14 +580,8 @@ namespace eticaret.Migrations
 
             modelBuilder.Entity("eticaret.Domain.Core.Entities.Comments", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int?>("CommentsId")
-                        .HasColumnType("int");
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("CreateBy")
                         .IsRequired()
@@ -631,24 +616,21 @@ namespace eticaret.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CommentsId");
-
                     b.ToTable("Comment");
                 });
 
             modelBuilder.Entity("eticaret.Domain.Core.Entities.Favorites", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    b.Property<string>("ProductId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
-                    b.Property<int>("ProductId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
@@ -661,11 +643,8 @@ namespace eticaret.Migrations
 
             modelBuilder.Entity("eticaret.Domain.Core.Entities.Image", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("CreateBy")
                         .IsRequired()
@@ -701,8 +680,9 @@ namespace eticaret.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("ProductId")
-                        .HasColumnType("int");
+                    b.Property<string>("ProductId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
@@ -713,288 +693,285 @@ namespace eticaret.Migrations
                     b.HasData(
                         new
                         {
-                            Id = 1,
+                            Id = "55B71743-A6C4-4619-9857-0446AEB59AE7",
                             CreateBy = "Sistem",
-                            CreateDate = "5.11.2025 10:43:25",
-                            Flag = "11e9153d-cc58-4479-b112-bb3605cd7eb9",
+                            CreateDate = "7.11.2025 15:20:50",
+                            Flag = "75d58b5c-e264-473c-adcf-ae92a6314ff1",
                             IsDeleted = false,
                             IsShowcase = true,
                             Name = "1.jpg",
-                            ProductId = 1
+                            ProductId = "DD292E73-C940-452A-BCA2-6B2AFA551475"
                         },
                         new
                         {
-                            Id = 2,
+                            Id = "C7CE4F0A-22A1-4D9C-87D8-2FBE3D243FC2",
                             CreateBy = "Sistem",
-                            CreateDate = "5.11.2025 10:43:25",
-                            Flag = "eedcbeb4-9917-4d26-9330-be98020cd58f",
+                            CreateDate = "7.11.2025 15:20:50",
+                            Flag = "858650e0-fa07-4eb5-9f5b-e31dba03fb27",
                             IsDeleted = false,
                             IsShowcase = true,
                             Name = "back-1.jpg",
-                            ProductId = 2
+                            ProductId = "D4573119-644C-4F5F-B861-57FA481722AA"
                         },
                         new
                         {
-                            Id = 3,
+                            Id = "91C0D743-5F78-4BFD-89FA-272CB89030F5",
                             CreateBy = "Sistem",
-                            CreateDate = "5.11.2025 10:43:25",
-                            Flag = "63f41e95-be9f-43ee-b2e4-2d6564b816c4",
+                            CreateDate = "7.11.2025 15:20:50",
+                            Flag = "1c3ba915-da3b-4810-a9c9-f7ec868529f1",
                             IsDeleted = false,
                             IsShowcase = true,
                             Name = "2.jpg",
-                            ProductId = 3
+                            ProductId = "4F89BCAF-DA9A-45D3-9BF5-2C1FD540327B"
                         },
                         new
                         {
-                            Id = 4,
+                            Id = "2DCB40A4-2282-4774-ABBB-802784FF4B0C",
                             CreateBy = "Sistem",
-                            CreateDate = "5.11.2025 10:43:25",
-                            Flag = "f56fd70c-93c3-4d51-8416-fa125b7f71a4",
+                            CreateDate = "7.11.2025 15:20:50",
+                            Flag = "530b5e1b-69c5-4c91-aa99-7d6881a3ebb7",
                             IsDeleted = false,
                             IsShowcase = true,
                             Name = "back-2.jpg",
-                            ProductId = 4
+                            ProductId = "519905D0-34A6-4B48-BCDB-7F4CD073C4DE"
                         },
                         new
                         {
-                            Id = 5,
+                            Id = "BB92D949-FB4F-4B90-A45B-D3702C6A9CAC",
                             CreateBy = "Sistem",
-                            CreateDate = "5.11.2025 10:43:25",
-                            Flag = "78e75bdd-72d9-4daf-a501-e68d36c557c0",
+                            CreateDate = "7.11.2025 15:20:50",
+                            Flag = "eeb1f6bf-6952-4d14-a290-5d37909a5e60",
                             IsDeleted = false,
                             IsShowcase = true,
                             Name = "3.jpg",
-                            ProductId = 5
+                            ProductId = "39E30FFA-9035-447B-9191-71DA795F082F"
                         },
                         new
                         {
-                            Id = 6,
+                            Id = "46127C3F-E3ED-4F4D-B7A9-CEF5F37A7D05",
                             CreateBy = "Sistem",
-                            CreateDate = "5.11.2025 10:43:25",
-                            Flag = "dcbb0565-ff24-4ce1-bd05-cc3d8357dc52",
+                            CreateDate = "7.11.2025 15:20:50",
+                            Flag = "cd324dff-a2d5-4b33-bcd0-47901c82eebc",
                             IsDeleted = false,
                             IsShowcase = true,
                             Name = "back-3.jpg",
-                            ProductId = 6
+                            ProductId = "05699C19-3945-4501-A946-683A171DC7BD"
                         },
                         new
                         {
-                            Id = 7,
+                            Id = "02365BB3-9DDA-4B4B-B128-A328396E9D83",
                             CreateBy = "Sistem",
-                            CreateDate = "5.11.2025 10:43:25",
-                            Flag = "7cb6fc52-bee0-40c6-b220-cbd8c0d08dc6",
+                            CreateDate = "7.11.2025 15:20:50",
+                            Flag = "169595fb-6372-47a7-bab5-ad22e495a9bf",
                             IsDeleted = false,
                             IsShowcase = true,
                             Name = "4.jpg",
-                            ProductId = 7
+                            ProductId = "854AD4D3-0465-47AD-8D07-98E8ECAA8C5D"
                         },
                         new
                         {
-                            Id = 8,
+                            Id = "BE1EE8C4-54FC-4895-960E-A04555317CF1",
                             CreateBy = "Sistem",
-                            CreateDate = "5.11.2025 10:43:25",
-                            Flag = "d3539458-f5cb-4f0f-aef8-5bba29c6dd4e",
+                            CreateDate = "7.11.2025 15:20:50",
+                            Flag = "a16fade2-731f-454d-b5f7-1825756b0d81",
                             IsDeleted = false,
                             IsShowcase = true,
                             Name = "back-4.jpg",
-                            ProductId = 8
+                            ProductId = "0F94273F-721C-40C7-8053-9F68A4CC5333"
                         },
                         new
                         {
-                            Id = 9,
+                            Id = "628ECE28-BC05-4F9E-8D11-4987E5EAEA7E",
                             CreateBy = "Sistem",
-                            CreateDate = "5.11.2025 10:43:25",
-                            Flag = "3e340ce3-3c1a-44f8-8fc0-16603e63c84f",
+                            CreateDate = "7.11.2025 15:20:50",
+                            Flag = "53483102-9d71-446c-ab46-4f33e4ecf6fe",
                             IsDeleted = false,
                             IsShowcase = true,
                             Name = "5.jpg",
-                            ProductId = 9
+                            ProductId = "7E4E0809-7ECB-43BD-8198-29404B3F46FE"
                         },
                         new
                         {
-                            Id = 10,
+                            Id = "66E7D9A7-5C36-4C3E-86F2-FADC94B63AA4",
                             CreateBy = "Sistem",
-                            CreateDate = "5.11.2025 10:43:25",
-                            Flag = "3fc825ac-2260-41f9-b37b-ddb8f3712e9a",
+                            CreateDate = "7.11.2025 15:20:50",
+                            Flag = "aaf9945e-b7b6-472d-9b16-24904a73bf5c",
                             IsDeleted = false,
                             IsShowcase = true,
                             Name = "back-5.jpg",
-                            ProductId = 10
+                            ProductId = "EBBBDDD7-9DCB-4F64-A3A6-67115A98040A"
                         },
                         new
                         {
-                            Id = 11,
+                            Id = "F21CCB4E-FDD0-4B4D-8A4F-099476754D07",
                             CreateBy = "Sistem",
-                            CreateDate = "5.11.2025 10:43:25",
-                            Flag = "770fd4ae-0dce-47f4-a20d-9d77ee233f98",
+                            CreateDate = "7.11.2025 15:20:50",
+                            Flag = "d04f8046-52c9-4c0f-ae34-869297bff230",
                             IsDeleted = false,
                             IsShowcase = true,
                             Name = "6.jpg",
-                            ProductId = 11
+                            ProductId = "84A16343-4EB7-4BB0-91C9-DC9CAF520A70"
                         },
                         new
                         {
-                            Id = 12,
+                            Id = "E00B9151-AFE4-4E54-ABC3-2AA1850E1936",
                             CreateBy = "Sistem",
-                            CreateDate = "5.11.2025 10:43:25",
-                            Flag = "1c3890f8-f9e9-461a-9303-950b12247068",
+                            CreateDate = "7.11.2025 15:20:50",
+                            Flag = "9a7574b2-7f23-404e-9048-68000619a409",
                             IsDeleted = false,
                             IsShowcase = true,
                             Name = "back-6.jpg",
-                            ProductId = 12
+                            ProductId = "E464C491-88A5-4B3A-BFA1-A6D2ADFF2AEF"
                         },
                         new
                         {
-                            Id = 13,
+                            Id = "413F96B9-3A36-4677-B8FB-348F3F00A07B",
                             CreateBy = "Sistem",
-                            CreateDate = "5.11.2025 10:43:25",
-                            Flag = "471dde39-766e-4e4b-8d2e-a72c44a7d5de",
+                            CreateDate = "7.11.2025 15:20:50",
+                            Flag = "151ec20e-da8c-445e-916d-6191bd33b2aa",
                             IsDeleted = false,
                             IsShowcase = true,
                             Name = "7.jpg",
-                            ProductId = 13
+                            ProductId = "CAC4CF1A-9C0F-4ED2-9D70-39C47F25CABE"
                         },
                         new
                         {
-                            Id = 14,
+                            Id = "7DD2F442-C1B9-4E4A-A37D-DB929961E531",
                             CreateBy = "Sistem",
-                            CreateDate = "5.11.2025 10:43:25",
-                            Flag = "6f804923-c1fb-4689-9428-3fd70d35f58c",
+                            CreateDate = "7.11.2025 15:20:50",
+                            Flag = "61073e33-96c2-4830-ac9e-7cc6e23124fb",
                             IsDeleted = false,
                             IsShowcase = true,
                             Name = "back-7.jpg",
-                            ProductId = 14
+                            ProductId = "A2AE5665-6E4A-4187-8A94-80FC03FBB11D"
                         },
                         new
                         {
-                            Id = 15,
+                            Id = "AA8434B8-EDB6-4378-A4AD-39B7E73E9227",
                             CreateBy = "Sistem",
-                            CreateDate = "5.11.2025 10:43:25",
-                            Flag = "695fdd55-c28b-4ea3-9f20-5939192c6e07",
+                            CreateDate = "7.11.2025 15:20:50",
+                            Flag = "2bf284ef-2152-4b4c-a8e7-13a2a13290c6",
                             IsDeleted = false,
                             IsShowcase = true,
                             Name = "8.jpg",
-                            ProductId = 14
+                            ProductId = "7B86DFEE-775E-465E-88A1-C115B7905FDB"
                         },
                         new
                         {
-                            Id = 16,
+                            Id = "DFE8298A-ADCD-4624-A2C2-A6E2FBB70561",
                             CreateBy = "Sistem",
-                            CreateDate = "5.11.2025 10:43:25",
-                            Flag = "c1d49238-c91e-491a-936d-ec768f9511fd",
+                            CreateDate = "7.11.2025 15:20:50",
+                            Flag = "8bcc9630-da3b-40a5-a80e-76537dbafaa1",
                             IsDeleted = false,
                             IsShowcase = true,
                             Name = "back-8.jpg",
-                            ProductId = 16
+                            ProductId = "F6406AFB-73E1-4082-87A9-AEE1CC9C1BC4"
                         },
                         new
                         {
-                            Id = 17,
+                            Id = "E9B76408-2A4D-4A82-ABE5-662393EC712F",
                             CreateBy = "Sistem",
-                            CreateDate = "5.11.2025 10:43:25",
-                            Flag = "ed85836e-a554-4c1f-938b-04b8b1961aa5",
+                            CreateDate = "7.11.2025 15:20:50",
+                            Flag = "7d8fec36-44d8-426b-9e20-f981ef44bf5b",
                             IsDeleted = false,
                             IsShowcase = true,
                             Name = "1.jpg",
-                            ProductId = 17
+                            ProductId = "2846EA3F-AA52-41B5-AD48-46C08605106B"
                         },
                         new
                         {
-                            Id = 18,
+                            Id = "986EAEF9-F86B-4025-9ABF-D8A176E4BF3C",
                             CreateBy = "Sistem",
-                            CreateDate = "5.11.2025 10:43:25",
-                            Flag = "2e9760fb-666b-416b-b2a0-1463cfa460c0",
+                            CreateDate = "7.11.2025 15:20:50",
+                            Flag = "f9a07baf-7547-4098-bad0-9c12c847dbd8",
                             IsDeleted = false,
                             IsShowcase = true,
                             Name = "back-1.jpg",
-                            ProductId = 18
+                            ProductId = "CBDB1054-A9C0-477E-9EF8-AD8D7480F6C1"
                         },
                         new
                         {
-                            Id = 19,
+                            Id = "66640387-1B7A-4762-A359-E325E9EE2B53",
                             CreateBy = "Sistem",
-                            CreateDate = "5.11.2025 10:43:25",
-                            Flag = "071ae64e-b491-42f2-9c4c-d7a277801011",
+                            CreateDate = "7.11.2025 15:20:50",
+                            Flag = "7f8ba422-8535-42c3-bce3-6189dbc02415",
                             IsDeleted = false,
                             IsShowcase = true,
                             Name = "2.jpg",
-                            ProductId = 19
+                            ProductId = "0D6C0D47-A4F3-43E9-BD44-090C4584281B"
                         },
                         new
                         {
-                            Id = 20,
+                            Id = "126D8D55-5796-4460-BC30-FDD613018EED",
                             CreateBy = "Sistem",
-                            CreateDate = "5.11.2025 10:43:25",
-                            Flag = "2bc7cc96-5040-4b13-a556-21d82893b954",
+                            CreateDate = "7.11.2025 15:20:50",
+                            Flag = "04a72977-2a1f-4005-92fe-ec08f92be101",
                             IsDeleted = false,
                             IsShowcase = false,
                             Name = "back-2.jpg",
-                            ProductId = 20
+                            ProductId = "FD52A470-AD14-4D61-B0F3-1D154FE14E26"
                         },
                         new
                         {
-                            Id = 21,
+                            Id = "E4E251BC-033E-47AD-9233-30DA8D2D9246",
                             CreateBy = "Sistem",
-                            CreateDate = "5.11.2025 10:43:25",
-                            Flag = "83ad05a3-a74a-48d8-bc9a-f6e23afff306",
+                            CreateDate = "7.11.2025 15:20:50",
+                            Flag = "702100e2-4bdb-4836-ad94-2a6c11d5ef75",
                             IsDeleted = false,
                             IsShowcase = true,
                             Name = "3.jpg",
-                            ProductId = 21
+                            ProductId = "80240430-AD39-4492-A6BB-3FB6FEBF071D"
                         },
                         new
                         {
-                            Id = 22,
+                            Id = "0B606C0A-70D1-4840-B654-969068ABFCF6",
                             CreateBy = "Sistem",
-                            CreateDate = "5.11.2025 10:43:25",
-                            Flag = "f902270e-5a08-426a-a969-992e3ff3bb45",
+                            CreateDate = "7.11.2025 15:20:50",
+                            Flag = "ca288a43-7362-45ab-841a-285bda9c3fe5",
                             IsDeleted = false,
                             IsShowcase = false,
                             Name = "back-3.jpg",
-                            ProductId = 22
+                            ProductId = "D739C019-C701-456A-9F21-8A2394F6FA65"
                         },
                         new
                         {
-                            Id = 23,
+                            Id = "E18491CB-882A-48DA-9101-549146FEFE95",
                             CreateBy = "Sistem",
-                            CreateDate = "5.11.2025 10:43:25",
-                            Flag = "f7704edf-682c-4dcc-a022-b538f2a689b7",
+                            CreateDate = "7.11.2025 15:20:50",
+                            Flag = "8d20f388-e765-4e9a-aefc-b4469cb59e15",
                             IsDeleted = false,
                             IsShowcase = true,
                             Name = "4.jpg",
-                            ProductId = 23
+                            ProductId = "56C29C94-2D94-4D69-A556-23F43412C465"
                         },
                         new
                         {
-                            Id = 24,
+                            Id = "DFA01602-B1C7-4620-B922-633210BF0AD7",
                             CreateBy = "Sistem",
-                            CreateDate = "5.11.2025 10:43:25",
-                            Flag = "72c411c7-4933-40d6-86ae-f43bb958a867",
+                            CreateDate = "7.11.2025 15:20:50",
+                            Flag = "7dd52f32-fcbb-498f-a2bf-5355b9e22b9c",
                             IsDeleted = false,
                             IsShowcase = false,
                             Name = "back-4.jpg",
-                            ProductId = 24
+                            ProductId = "6BD8DFA5-F0AC-403B-BC3B-2F67857837B7"
                         },
                         new
                         {
-                            Id = 25,
+                            Id = "8285701D-3311-42BA-9FDA-4D0241C1309F",
                             CreateBy = "Sistem",
-                            CreateDate = "5.11.2025 10:43:25",
-                            Flag = "7cffc038-35e8-426f-8a43-643ef293b0a3",
+                            CreateDate = "7.11.2025 15:20:50",
+                            Flag = "fece8ca7-68f8-4a23-b4a5-95782d2bf253",
                             IsDeleted = false,
                             IsShowcase = false,
                             Name = "5.jpg",
-                            ProductId = 25
+                            ProductId = "7444427B-F8DE-44D1-844B-AEFC86E3062B"
                         });
                 });
 
             modelBuilder.Entity("eticaret.Domain.Core.Entities.Order", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("CreateBy")
                         .IsRequired()
@@ -1029,6 +1006,10 @@ namespace eticaret.Migrations
                     b.Property<int>("ProductId")
                         .HasColumnType("int");
 
+                    b.Property<string>("ProductId1")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<string>("Quantity")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -1036,12 +1017,13 @@ namespace eticaret.Migrations
                     b.Property<decimal>("Total")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ProductId");
+                    b.HasIndex("ProductId1");
 
                     b.HasIndex("UserId");
 
@@ -1050,11 +1032,8 @@ namespace eticaret.Migrations
 
             modelBuilder.Entity("eticaret.Domain.Core.Entities.Product", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("CreateBy")
                         .IsRequired()
@@ -1104,8 +1083,9 @@ namespace eticaret.Migrations
                     b.Property<int>("RatinAVG")
                         .HasColumnType("int");
 
-                    b.Property<int>("SubCategoryId")
-                        .HasColumnType("int");
+                    b.Property<string>("SubCategoryId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
@@ -1116,388 +1096,385 @@ namespace eticaret.Migrations
                     b.HasData(
                         new
                         {
-                            Id = 1,
+                            Id = "DD292E73-C940-452A-BCA2-6B2AFA551475",
                             CreateBy = "Sistem",
-                            CreateDate = "5.11.2025 10:43:25",
+                            CreateDate = "7.11.2025 15:20:50",
                             Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas nihil laboriosam voluptatem ab consectetur dolorum id, soluta sunt at culpa commodi totam quod natus qui!",
                             Descriptions = "",
-                            Flag = "03141a7b-a11e-4359-8e5d-d4d305105d0f",
+                            Flag = "12c5f462-6ccf-488d-a822-df5cd7854edb",
                             IsDeleted = false,
                             Name = "Product 1",
                             NewPrice = 0m,
                             OldPrice = 340588m,
                             RatinAVG = 0,
-                            SubCategoryId = 1
+                            SubCategoryId = "7FC9EA1E-D197-4491-8875-A897A9C9B261"
                         },
                         new
                         {
-                            Id = 2,
+                            Id = "D4573119-644C-4F5F-B861-57FA481722AA",
                             CreateBy = "Sistem",
-                            CreateDate = "5.11.2025 10:43:25",
+                            CreateDate = "7.11.2025 15:20:50",
                             Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas nihil laboriosam voluptatem ab consectetur dolorum id, soluta sunt at culpa commodi totam quod natus qui!",
                             Descriptions = "",
-                            Flag = "898474af-0782-4ba8-8a66-95cac5f65a30",
+                            Flag = "9e6c4f36-8153-4b3a-8090-22a32d1a7ba0",
                             IsDeleted = false,
                             Name = "Product 2",
                             NewPrice = 0m,
                             OldPrice = 340588m,
                             RatinAVG = 0,
-                            SubCategoryId = 1
+                            SubCategoryId = "444949DB-680E-4903-9557-E3D83F38B582"
                         },
                         new
                         {
-                            Id = 3,
+                            Id = "4F89BCAF-DA9A-45D3-9BF5-2C1FD540327B",
                             CreateBy = "Sistem",
-                            CreateDate = "5.11.2025 10:43:25",
+                            CreateDate = "7.11.2025 15:20:50",
                             Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas nihil laboriosam voluptatem ab consectetur dolorum id, soluta sunt at culpa commodi totam quod natus qui!",
                             Descriptions = "",
-                            Flag = "65efd928-29f3-4eb7-b042-7e3a31ea3d59",
+                            Flag = "23053cad-601c-4df5-a1bf-14240774ff09",
                             IsDeleted = false,
                             Name = "Product 3",
                             NewPrice = 0m,
                             OldPrice = 340588m,
                             RatinAVG = 0,
-                            SubCategoryId = 1
+                            SubCategoryId = "4A83D6EA-E13B-4EB2-9982-C9E35B6BDCCC"
                         },
                         new
                         {
-                            Id = 4,
+                            Id = "519905D0-34A6-4B48-BCDB-7F4CD073C4DE",
                             CreateBy = "Sistem",
-                            CreateDate = "5.11.2025 10:43:25",
+                            CreateDate = "7.11.2025 15:20:50",
                             Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas nihil laboriosam voluptatem ab consectetur dolorum id, soluta sunt at culpa commodi totam quod natus qui!",
                             Descriptions = "",
-                            Flag = "db54a829-5332-4396-89b4-862308088f49",
+                            Flag = "cefba515-a39b-4360-86bd-35ec559f0ba3",
                             IsDeleted = false,
                             Name = "Product 4",
                             NewPrice = 0m,
                             OldPrice = 340588m,
                             RatinAVG = 0,
-                            SubCategoryId = 1
+                            SubCategoryId = "06795889-6183-4DC6-B1CA-7F49C8DD4E28"
                         },
                         new
                         {
-                            Id = 5,
+                            Id = "39E30FFA-9035-447B-9191-71DA795F082F",
                             CreateBy = "Sistem",
-                            CreateDate = "5.11.2025 10:43:25",
+                            CreateDate = "7.11.2025 15:20:50",
                             Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas nihil laboriosam voluptatem ab consectetur dolorum id, soluta sunt at culpa commodi totam quod natus qui!",
                             Descriptions = "",
-                            Flag = "bee9fb7e-32a8-4636-97bc-a2406e231922",
+                            Flag = "0fb9e21c-cb53-4f32-bd6f-fa2de8421faf",
                             IsDeleted = false,
                             Name = "Product 5",
                             NewPrice = 0m,
                             OldPrice = 340588m,
                             RatinAVG = 0,
-                            SubCategoryId = 2
+                            SubCategoryId = "539413DA-64BA-4CFB-AFC7-8981F9EC763A"
                         },
                         new
                         {
-                            Id = 6,
+                            Id = "05699C19-3945-4501-A946-683A171DC7BD",
                             CreateBy = "Sistem",
-                            CreateDate = "5.11.2025 10:43:25",
+                            CreateDate = "7.11.2025 15:20:50",
                             Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas nihil laboriosam voluptatem ab consectetur dolorum id, soluta sunt at culpa commodi totam quod natus qui!",
                             Descriptions = "",
-                            Flag = "6745eb3d-005a-4f61-a680-335faaad3bc6",
+                            Flag = "9965dc7c-8cec-4916-85ec-956b1022032f",
                             IsDeleted = false,
                             Name = "Product 6",
                             NewPrice = 0m,
                             OldPrice = 340588m,
                             RatinAVG = 0,
-                            SubCategoryId = 2
+                            SubCategoryId = "1FDA6B9A-0BD6-42FF-9DC0-C141B637A095"
                         },
                         new
                         {
-                            Id = 7,
+                            Id = "854AD4D3-0465-47AD-8D07-98E8ECAA8C5D",
                             CreateBy = "Sistem",
-                            CreateDate = "5.11.2025 10:43:25",
+                            CreateDate = "7.11.2025 15:20:50",
                             Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas nihil laboriosam voluptatem ab consectetur dolorum id, soluta sunt at culpa commodi totam quod natus qui!",
                             Descriptions = "",
-                            Flag = "13ebe707-a663-4b65-a067-81ec6216543c",
+                            Flag = "04935607-8a97-4ccf-b919-4f45eca60faa",
                             IsDeleted = false,
                             Name = "Product 7",
                             NewPrice = 0m,
                             OldPrice = 340588m,
                             RatinAVG = 0,
-                            SubCategoryId = 2
+                            SubCategoryId = "7FC9EA1E-D197-4491-8875-A897A9C9B261"
                         },
                         new
                         {
-                            Id = 8,
+                            Id = "0F94273F-721C-40C7-8053-9F68A4CC5333",
                             CreateBy = "Sistem",
-                            CreateDate = "5.11.2025 10:43:25",
+                            CreateDate = "7.11.2025 15:20:50",
                             Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas nihil laboriosam voluptatem ab consectetur dolorum id, soluta sunt at culpa commodi totam quod natus qui!",
                             Descriptions = "",
-                            Flag = "a75bd8fb-e6f7-49fd-b4e6-1823d29fe1c6",
+                            Flag = "e9fbc19f-22f2-4d71-93bf-44ec0780cf74",
                             IsDeleted = false,
                             Name = "Product 8",
                             NewPrice = 0m,
                             OldPrice = 340588m,
                             RatinAVG = 0,
-                            SubCategoryId = 2
+                            SubCategoryId = "7FC9EA1E-D197-4491-8875-A897A9C9B261"
                         },
                         new
                         {
-                            Id = 9,
+                            Id = "7E4E0809-7ECB-43BD-8198-29404B3F46FE",
                             CreateBy = "Sistem",
-                            CreateDate = "5.11.2025 10:43:25",
+                            CreateDate = "7.11.2025 15:20:50",
                             Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas nihil laboriosam voluptatem ab consectetur dolorum id, soluta sunt at culpa commodi totam quod natus qui!",
                             Descriptions = "",
-                            Flag = "3ae23e26-8f96-4cc9-86f9-8764a727f7f2",
+                            Flag = "7c4d439a-2c0f-4591-a1ee-bae4c2c07b58",
                             IsDeleted = false,
                             Name = "Product 9",
                             NewPrice = 0m,
                             OldPrice = 340588m,
                             RatinAVG = 0,
-                            SubCategoryId = 3
+                            SubCategoryId = "444949DB-680E-4903-9557-E3D83F38B582"
                         },
                         new
                         {
-                            Id = 10,
+                            Id = "EBBBDDD7-9DCB-4F64-A3A6-67115A98040A",
                             CreateBy = "Sistem",
-                            CreateDate = "5.11.2025 10:43:25",
+                            CreateDate = "7.11.2025 15:20:50",
                             Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas nihil laboriosam voluptatem ab consectetur dolorum id, soluta sunt at culpa commodi totam quod natus qui!",
                             Descriptions = "",
-                            Flag = "bb4d9502-5369-4540-bf71-1736480e5df4",
+                            Flag = "efef1a7a-ba4d-4b1c-b4a7-9bbb5387951e",
                             IsDeleted = false,
                             Name = "Product 10",
                             NewPrice = 0m,
                             OldPrice = 340588m,
                             RatinAVG = 0,
-                            SubCategoryId = 3
+                            SubCategoryId = "444949DB-680E-4903-9557-E3D83F38B582"
                         },
                         new
                         {
-                            Id = 11,
+                            Id = "84A16343-4EB7-4BB0-91C9-DC9CAF520A70",
                             CreateBy = "Sistem",
-                            CreateDate = "5.11.2025 10:43:25",
+                            CreateDate = "7.11.2025 15:20:50",
                             Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas nihil laboriosam voluptatem ab consectetur dolorum id, soluta sunt at culpa commodi totam quod natus qui!",
                             Descriptions = "",
-                            Flag = "7f7fcd35-c49c-4657-93a5-71ca015d91fe",
+                            Flag = "ef7d6e24-83a3-4223-96fb-0bc4da46f012",
                             IsDeleted = false,
                             Name = "Product 11",
                             NewPrice = 0m,
                             OldPrice = 340588m,
                             RatinAVG = 0,
-                            SubCategoryId = 3
+                            SubCategoryId = "4A83D6EA-E13B-4EB2-9982-C9E35B6BDCCC"
                         },
                         new
                         {
-                            Id = 12,
+                            Id = "E464C491-88A5-4B3A-BFA1-A6D2ADFF2AEF",
                             CreateBy = "Sistem",
-                            CreateDate = "5.11.2025 10:43:25",
+                            CreateDate = "7.11.2025 15:20:50",
                             Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas nihil laboriosam voluptatem ab consectetur dolorum id, soluta sunt at culpa commodi totam quod natus qui!",
                             Descriptions = "",
-                            Flag = "88924cf1-dc55-4138-ab1e-017754ef6d02",
+                            Flag = "4e023348-3cf4-48b2-96a4-18dd6ce94fc5",
                             IsDeleted = false,
                             Name = "Product 12",
                             NewPrice = 0m,
                             OldPrice = 340588m,
                             RatinAVG = 0,
-                            SubCategoryId = 3
+                            SubCategoryId = "4A83D6EA-E13B-4EB2-9982-C9E35B6BDCCC"
                         },
                         new
                         {
-                            Id = 13,
+                            Id = "CAC4CF1A-9C0F-4ED2-9D70-39C47F25CABE",
                             CreateBy = "Sistem",
-                            CreateDate = "5.11.2025 10:43:25",
+                            CreateDate = "7.11.2025 15:20:50",
                             Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas nihil laboriosam voluptatem ab consectetur dolorum id, soluta sunt at culpa commodi totam quod natus qui!",
                             Descriptions = "",
-                            Flag = "182ec40f-af30-48b9-9035-4a792371c186",
+                            Flag = "455b7c50-c7a8-4790-8ad1-8e21614c60b5",
                             IsDeleted = false,
                             Name = "Product 13",
                             NewPrice = 0m,
                             OldPrice = 340588m,
                             RatinAVG = 0,
-                            SubCategoryId = 4
+                            SubCategoryId = "06795889-6183-4DC6-B1CA-7F49C8DD4E28"
                         },
                         new
                         {
-                            Id = 14,
+                            Id = "A2AE5665-6E4A-4187-8A94-80FC03FBB11D",
                             CreateBy = "Sistem",
-                            CreateDate = "5.11.2025 10:43:25",
+                            CreateDate = "7.11.2025 15:20:50",
                             Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas nihil laboriosam voluptatem ab consectetur dolorum id, soluta sunt at culpa commodi totam quod natus qui!",
                             Descriptions = "",
-                            Flag = "0c6a238b-cd1b-4c1f-a5e1-aacba8667de6",
+                            Flag = "790bd3a3-6305-4fa9-b3da-a4150d3e85f8",
                             IsDeleted = false,
                             Name = "Product 14",
                             NewPrice = 0m,
                             OldPrice = 340588m,
                             RatinAVG = 0,
-                            SubCategoryId = 4
+                            SubCategoryId = "06795889-6183-4DC6-B1CA-7F49C8DD4E28"
                         },
                         new
                         {
-                            Id = 15,
+                            Id = "7B86DFEE-775E-465E-88A1-C115B7905FDB",
                             CreateBy = "Sistem",
-                            CreateDate = "5.11.2025 10:43:25",
+                            CreateDate = "7.11.2025 15:20:50",
                             Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas nihil laboriosam voluptatem ab consectetur dolorum id, soluta sunt at culpa commodi totam quod natus qui!",
                             Descriptions = "",
-                            Flag = "09839648-fe1e-4c80-b001-6f7f6ec8bca8",
+                            Flag = "ece41433-2bc5-42c8-a372-e373824ca36d",
                             IsDeleted = false,
                             Name = "Product 15",
                             NewPrice = 0m,
                             OldPrice = 340588m,
                             RatinAVG = 0,
-                            SubCategoryId = 4
+                            SubCategoryId = "539413DA-64BA-4CFB-AFC7-8981F9EC763A"
                         },
                         new
                         {
-                            Id = 16,
+                            Id = "F6406AFB-73E1-4082-87A9-AEE1CC9C1BC4",
                             CreateBy = "Sistem",
-                            CreateDate = "5.11.2025 10:43:25",
+                            CreateDate = "7.11.2025 15:20:50",
                             Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas nihil laboriosam voluptatem ab consectetur dolorum id, soluta sunt at culpa commodi totam quod natus qui!",
                             Descriptions = "",
-                            Flag = "344050a6-3c78-4255-ad18-b669f4fcfeba",
+                            Flag = "81a6f5a2-12f3-46bd-9cea-118dabfac5fe",
                             IsDeleted = false,
                             Name = "Product 16",
                             NewPrice = 0m,
                             OldPrice = 340588m,
                             RatinAVG = 0,
-                            SubCategoryId = 4
+                            SubCategoryId = "539413DA-64BA-4CFB-AFC7-8981F9EC763A"
                         },
                         new
                         {
-                            Id = 17,
+                            Id = "2846EA3F-AA52-41B5-AD48-46C08605106B",
                             CreateBy = "Sistem",
-                            CreateDate = "5.11.2025 10:43:25",
+                            CreateDate = "7.11.2025 15:20:50",
                             Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas nihil laboriosam voluptatem ab consectetur dolorum id, soluta sunt at culpa commodi totam quod natus qui!",
                             Descriptions = "",
-                            Flag = "27c81dd6-b034-4269-8984-1970a9905976",
+                            Flag = "8a7585b9-5c16-410f-8525-9ebe68050ddd",
                             IsDeleted = false,
                             Name = "Product 17",
                             NewPrice = 0m,
                             OldPrice = 340588m,
                             RatinAVG = 0,
-                            SubCategoryId = 5
+                            SubCategoryId = "1FDA6B9A-0BD6-42FF-9DC0-C141B637A095"
                         },
                         new
                         {
-                            Id = 18,
+                            Id = "CBDB1054-A9C0-477E-9EF8-AD8D7480F6C1",
                             CreateBy = "Sistem",
-                            CreateDate = "5.11.2025 10:43:25",
+                            CreateDate = "7.11.2025 15:20:50",
                             Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas nihil laboriosam voluptatem ab consectetur dolorum id, soluta sunt at culpa commodi totam quod natus qui!",
                             Descriptions = "",
-                            Flag = "81611eae-0fc4-4eb2-b4e9-408df45103f9",
+                            Flag = "748b5f3f-4971-450a-83e6-1f95fd3e00fa",
                             IsDeleted = false,
                             Name = "Product 18",
                             NewPrice = 0m,
                             OldPrice = 340588m,
                             RatinAVG = 0,
-                            SubCategoryId = 5
+                            SubCategoryId = "1FDA6B9A-0BD6-42FF-9DC0-C141B637A095"
                         },
                         new
                         {
-                            Id = 19,
+                            Id = "0D6C0D47-A4F3-43E9-BD44-090C4584281B",
                             CreateBy = "Sistem",
-                            CreateDate = "5.11.2025 10:43:25",
+                            CreateDate = "7.11.2025 15:20:50",
                             Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas nihil laboriosam voluptatem ab consectetur dolorum id, soluta sunt at culpa commodi totam quod natus qui!",
                             Descriptions = "",
-                            Flag = "3dfeac0b-4c0b-4e9d-88ca-d650f9a23a6e",
+                            Flag = "de7bf2d8-6b60-4913-b51f-e97146adb619",
                             IsDeleted = false,
                             Name = "Product 19",
                             NewPrice = 0m,
                             OldPrice = 340588m,
                             RatinAVG = 0,
-                            SubCategoryId = 5
+                            SubCategoryId = "7FC9EA1E-D197-4491-8875-A897A9C9B261"
                         },
                         new
                         {
-                            Id = 20,
+                            Id = "FD52A470-AD14-4D61-B0F3-1D154FE14E26",
                             CreateBy = "Sistem",
-                            CreateDate = "5.11.2025 10:43:25",
+                            CreateDate = "7.11.2025 15:20:50",
                             Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas nihil laboriosam voluptatem ab consectetur dolorum id, soluta sunt at culpa commodi totam quod natus qui!",
                             Descriptions = "",
-                            Flag = "fe309fa4-650a-4f39-8597-65438285e794",
+                            Flag = "4f805dee-77e9-40c7-b33b-44ae1de95a62",
                             IsDeleted = false,
                             Name = "Product 20",
                             NewPrice = 0m,
                             OldPrice = 340588m,
                             RatinAVG = 0,
-                            SubCategoryId = 5
+                            SubCategoryId = "7FC9EA1E-D197-4491-8875-A897A9C9B261"
                         },
                         new
                         {
-                            Id = 21,
+                            Id = "80240430-AD39-4492-A6BB-3FB6FEBF071D",
                             CreateBy = "Sistem",
-                            CreateDate = "5.11.2025 10:43:25",
+                            CreateDate = "7.11.2025 15:20:50",
                             Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas nihil laboriosam voluptatem ab consectetur dolorum id, soluta sunt at culpa commodi totam quod natus qui!",
                             Descriptions = "",
-                            Flag = "9684a71d-d462-440d-b4bb-9bf30bcd8f52",
+                            Flag = "c764f526-a203-49ef-b16b-7abb0b8b733e",
                             IsDeleted = false,
                             Name = "Product 21",
                             NewPrice = 0m,
                             OldPrice = 340588m,
                             RatinAVG = 0,
-                            SubCategoryId = 6
+                            SubCategoryId = "444949DB-680E-4903-9557-E3D83F38B582"
                         },
                         new
                         {
-                            Id = 22,
+                            Id = "D739C019-C701-456A-9F21-8A2394F6FA65",
                             CreateBy = "Sistem",
-                            CreateDate = "5.11.2025 10:43:25",
+                            CreateDate = "7.11.2025 15:20:50",
                             Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas nihil laboriosam voluptatem ab consectetur dolorum id, soluta sunt at culpa commodi totam quod natus qui!",
                             Descriptions = "",
-                            Flag = "8fcadf57-df09-40f1-9827-72503f8b6930",
+                            Flag = "ecc30d18-e31d-4e7e-9c97-07f2759086a6",
                             IsDeleted = false,
                             Name = "Product 22",
                             NewPrice = 0m,
                             OldPrice = 340588m,
                             RatinAVG = 0,
-                            SubCategoryId = 6
+                            SubCategoryId = "444949DB-680E-4903-9557-E3D83F38B582"
                         },
                         new
                         {
-                            Id = 23,
+                            Id = "56C29C94-2D94-4D69-A556-23F43412C465",
                             CreateBy = "Sistem",
-                            CreateDate = "5.11.2025 10:43:25",
+                            CreateDate = "7.11.2025 15:20:50",
                             Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas nihil laboriosam voluptatem ab consectetur dolorum id, soluta sunt at culpa commodi totam quod natus qui!",
                             Descriptions = "",
-                            Flag = "6d9428f2-9b8b-4d1a-a8e5-b569f5e3fdf5",
+                            Flag = "a13405da-ae5e-4862-aa0c-ec742614ec6f",
                             IsDeleted = false,
                             Name = "Product 23",
                             NewPrice = 0m,
                             OldPrice = 340588m,
                             RatinAVG = 0,
-                            SubCategoryId = 6
+                            SubCategoryId = "4A83D6EA-E13B-4EB2-9982-C9E35B6BDCCC"
                         },
                         new
                         {
-                            Id = 24,
+                            Id = "6BD8DFA5-F0AC-403B-BC3B-2F67857837B7",
                             CreateBy = "Sistem",
-                            CreateDate = "5.11.2025 10:43:25",
+                            CreateDate = "7.11.2025 15:20:50",
                             Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas nihil laboriosam voluptatem ab consectetur dolorum id, soluta sunt at culpa commodi totam quod natus qui!",
                             Descriptions = "",
-                            Flag = "0d5190c0-d171-4591-8f1b-018bf3b0903f",
+                            Flag = "ad64bb89-cb2c-418d-8287-2b2287061bd9",
                             IsDeleted = false,
                             Name = "Product 24",
                             NewPrice = 0m,
                             OldPrice = 340588m,
                             RatinAVG = 0,
-                            SubCategoryId = 6
+                            SubCategoryId = "06795889-6183-4DC6-B1CA-7F49C8DD4E28"
                         },
                         new
                         {
-                            Id = 25,
+                            Id = "7444427B-F8DE-44D1-844B-AEFC86E3062B",
                             CreateBy = "Sistem",
-                            CreateDate = "5.11.2025 10:43:25",
+                            CreateDate = "7.11.2025 15:20:50",
                             Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas nihil laboriosam voluptatem ab consectetur dolorum id, soluta sunt at culpa commodi totam quod natus qui!",
                             Descriptions = "",
-                            Flag = "da0d2482-1857-4edb-a385-c59a095da259",
+                            Flag = "3e0c39b3-e08f-429e-8fd2-4c7b170d682c",
                             IsDeleted = false,
                             Name = "Product 25",
                             NewPrice = 0m,
                             OldPrice = 340588m,
                             RatinAVG = 0,
-                            SubCategoryId = 6
+                            SubCategoryId = "539413DA-64BA-4CFB-AFC7-8981F9EC763A"
                         });
                 });
 
             modelBuilder.Entity("eticaret.Domain.Core.Entities.Ratin", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("Rating")
                         .HasColumnType("int");
@@ -1509,44 +1486,46 @@ namespace eticaret.Migrations
                     b.HasData(
                         new
                         {
-                            Id = 1,
+                            Id = "22A85231-588D-42A0-A959-5F761396EDBE",
                             Rating = 1
                         },
                         new
                         {
-                            Id = 2,
+                            Id = "1D7E99B3-7CD3-4819-BDDC-7C1C82CC4BED",
                             Rating = 2
                         },
                         new
                         {
-                            Id = 3,
+                            Id = "C49DCFAB-1E84-4D02-A033-5EA063DD1909",
                             Rating = 3
                         },
                         new
                         {
-                            Id = 4,
+                            Id = "44EBDD14-56BD-4689-AB3A-91EB6A521248",
                             Rating = 4
                         },
                         new
                         {
-                            Id = 5,
+                            Id = "FDBAC08B-35C8-4072-97ED-35ECAC1F4910",
                             Rating = 5
                         });
                 });
 
             modelBuilder.Entity("eticaret.Domain.Core.Entities.RatinProduct", b =>
                 {
-                    b.Property<int>("Id")
-                        .HasColumnType("int");
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
 
-                    b.Property<int>("ProductId")
-                        .HasColumnType("int");
+                    b.Property<string>("ProductId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
-                    b.Property<int>("RatinId")
-                        .HasColumnType("int");
+                    b.Property<string>("RatinId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id", "UserId");
 
@@ -1561,51 +1540,49 @@ namespace eticaret.Migrations
                     b.HasData(
                         new
                         {
-                            Id = 1,
-                            UserId = 1,
-                            ProductId = 1,
-                            RatinId = 1
+                            Id = "6A127394-11E9-4A2C-BE65-84F0C9A10430",
+                            UserId = "9E400748-88B1-40DE-965C-CD6D005B1A62",
+                            ProductId = "DD292E73-C940-452A-BCA2-6B2AFA551475",
+                            RatinId = "22A85231-588D-42A0-A959-5F761396EDBE"
                         },
                         new
                         {
-                            Id = 2,
-                            UserId = 1,
-                            ProductId = 2,
-                            RatinId = 2
+                            Id = "1A00ED89-5044-474C-B5C5-01227B210195",
+                            UserId = "9E400748-88B1-40DE-965C-CD6D005B1A62",
+                            ProductId = "D4573119-644C-4F5F-B861-57FA481722AA",
+                            RatinId = "1D7E99B3-7CD3-4819-BDDC-7C1C82CC4BED"
                         },
                         new
                         {
-                            Id = 3,
-                            UserId = 1,
-                            ProductId = 3,
-                            RatinId = 3
+                            Id = "6DEF28FF-FCF7-4F32-811A-A89789B3D1F6",
+                            UserId = "9E400748-88B1-40DE-965C-CD6D005B1A62",
+                            ProductId = "4F89BCAF-DA9A-45D3-9BF5-2C1FD540327B",
+                            RatinId = "C49DCFAB-1E84-4D02-A033-5EA063DD1909"
                         },
                         new
                         {
-                            Id = 4,
-                            UserId = 1,
-                            ProductId = 4,
-                            RatinId = 4
+                            Id = "F2A25BAA-011A-4904-8877-5E90ACC9CA4B",
+                            UserId = "9E400748-88B1-40DE-965C-CD6D005B1A62",
+                            ProductId = "519905D0-34A6-4B48-BCDB-7F4CD073C4DE",
+                            RatinId = "44EBDD14-56BD-4689-AB3A-91EB6A521248"
                         },
                         new
                         {
-                            Id = 5,
-                            UserId = 1,
-                            ProductId = 5,
-                            RatinId = 5
+                            Id = "B05C3FF4-7755-401B-85DF-11B8FF0DC4FC",
+                            UserId = "9E400748-88B1-40DE-965C-CD6D005B1A62",
+                            ProductId = "DD292E73-C940-452A-BCA2-6B2AFA551475",
+                            RatinId = "FDBAC08B-35C8-4072-97ED-35ECAC1F4910"
                         });
                 });
 
             modelBuilder.Entity("eticaret.Domain.Core.Entities.SubCategory", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("CategoryId")
-                        .HasColumnType("int");
+                    b.Property<string>("CategoryId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("CreateBy")
                         .IsRequired()
@@ -1647,61 +1624,61 @@ namespace eticaret.Migrations
                     b.HasData(
                         new
                         {
-                            Id = 1,
-                            CategoryId = 1,
+                            Id = "7FC9EA1E-D197-4491-8875-A897A9C9B261",
+                            CategoryId = "2FC12E63-4E2C-451B-92D3-076ECF63B722",
                             CreateBy = "Sistem",
-                            CreateDate = "5.11.2025 10:43:25",
-                            Flag = "e33a1a5c-97d3-4b04-9534-31f7c132325c",
+                            CreateDate = "7.11.2025 15:20:50",
+                            Flag = "d42dade5-2d35-4a70-ae81-ee507d85cee0",
                             IsDeleted = false,
                             Name = "Çanta"
                         },
                         new
                         {
-                            Id = 2,
-                            CategoryId = 2,
+                            Id = "444949DB-680E-4903-9557-E3D83F38B582",
+                            CategoryId = "8CDE771D-1EFF-4CC6-A7C1-3CB86D19743B",
                             CreateBy = "Sistem",
-                            CreateDate = "5.11.2025 10:43:25",
-                            Flag = "fa49ce55-8c85-4637-a158-892f6a81c855",
+                            CreateDate = "7.11.2025 15:20:50",
+                            Flag = "5609c54a-8ec0-47a5-aaf8-ae27b1bfdb52",
                             IsDeleted = false,
                             Name = "Halı"
                         },
                         new
                         {
-                            Id = 3,
-                            CategoryId = 3,
+                            Id = "4A83D6EA-E13B-4EB2-9982-C9E35B6BDCCC",
+                            CategoryId = "64105586-51F5-4800-AC47-A25D96A38D2A",
                             CreateBy = "Sistem",
-                            CreateDate = "5.11.2025 10:43:25",
-                            Flag = "9d78aef3-28ff-49ea-9430-a2b719d780cd",
+                            CreateDate = "7.11.2025 15:20:50",
+                            Flag = "6abc0d7c-4297-468a-9f87-1e73d4310f4b",
                             IsDeleted = false,
                             Name = "Aksesuar"
                         },
                         new
                         {
-                            Id = 4,
-                            CategoryId = 4,
+                            Id = "06795889-6183-4DC6-B1CA-7F49C8DD4E28",
+                            CategoryId = "467DFE4A-40D0-455D-875A-758A776D49C9",
                             CreateBy = "Sistem",
-                            CreateDate = "5.11.2025 10:43:25",
-                            Flag = "b8144f9b-1bd6-4c3c-8e59-4f5a9eb1926f",
+                            CreateDate = "7.11.2025 15:20:50",
+                            Flag = "4e00cb37-9e22-44c8-84a3-aa34761b03fb",
                             IsDeleted = false,
                             Name = "Spor"
                         },
                         new
                         {
-                            Id = 5,
-                            CategoryId = 5,
+                            Id = "539413DA-64BA-4CFB-AFC7-8981F9EC763A",
+                            CategoryId = "ADB4AC66-F8B7-4316-89CB-F638E723498D",
                             CreateBy = "Sistem",
-                            CreateDate = "5.11.2025 10:43:25",
-                            Flag = "529190ce-b145-433b-bcf5-f3f2acbda3d8",
+                            CreateDate = "7.11.2025 15:20:50",
+                            Flag = "877f3c60-cb36-42fa-97d4-5233ac23e3d0",
                             IsDeleted = false,
                             Name = "Giyim"
                         },
                         new
                         {
-                            Id = 6,
-                            CategoryId = 6,
+                            Id = "1FDA6B9A-0BD6-42FF-9DC0-C141B637A095",
+                            CategoryId = "A7DA7883-9C55-424B-ACC6-8A1DE6C14881",
                             CreateBy = "Sistem",
-                            CreateDate = "5.11.2025 10:43:25",
-                            Flag = "90232bcc-1cb9-46ac-ab90-9ceea392ea49",
+                            CreateDate = "7.11.2025 15:20:50",
+                            Flag = "bdefddba-d0d4-4d16-9627-1f402c57974b",
                             IsDeleted = false,
                             Name = "Outdoor"
                         });
@@ -1709,11 +1686,8 @@ namespace eticaret.Migrations
 
             modelBuilder.Entity("eticaret.Domain.Core.Entities.Subscribe", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -1726,11 +1700,8 @@ namespace eticaret.Migrations
 
             modelBuilder.Entity("eticaret.Domain.Entities.About", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("CreateBy")
                         .IsRequired()
@@ -1778,11 +1749,8 @@ namespace eticaret.Migrations
 
             modelBuilder.Entity("eticaret.Domain.Entities.Address", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("CreateBy")
                         .HasColumnType("nvarchar(max)");
@@ -1816,8 +1784,9 @@ namespace eticaret.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
@@ -1828,11 +1797,8 @@ namespace eticaret.Migrations
 
             modelBuilder.Entity("eticaret.Domain.Entities.Users.Role", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
@@ -1885,10 +1851,10 @@ namespace eticaret.Migrations
                     b.HasData(
                         new
                         {
-                            Id = 1,
+                            Id = "3B1DAF66-67E0-4F2A-BB56-03DA7178C814",
                             ConcurrencyStamp = "924B836D-B087-4D37-A52D-210ABD72CD96",
                             CreateBy = "Sistem",
-                            CreateDate = "5.11.2025 10:43:26",
+                            CreateDate = "7.11.2025 15:20:50",
                             Flag = "46D16588-9420-4F85-A768-D21419075284",
                             IsDeleted = false,
                             Name = "superuser",
@@ -1896,10 +1862,10 @@ namespace eticaret.Migrations
                         },
                         new
                         {
-                            Id = 2,
+                            Id = "58975898-C79C-404B-AC1B-C586036C55E9",
                             ConcurrencyStamp = "232D9C58-01CE-466A-90D0-EB7039C75465",
                             CreateBy = "Sistem",
-                            CreateDate = "5.11.2025 10:43:26",
+                            CreateDate = "7.11.2025 15:20:50",
                             Flag = "70449BCD-A6DC-4601-867E-35AD80657B28",
                             IsDeleted = false,
                             Name = "admin",
@@ -1921,8 +1887,9 @@ namespace eticaret.Migrations
                     b.Property<string>("ClaimValue")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("RoleId")
-                        .HasColumnType("int");
+                    b.Property<string>("RoleId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
@@ -1933,11 +1900,8 @@ namespace eticaret.Migrations
 
             modelBuilder.Entity("eticaret.Domain.Entities.Users.UserApp", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("int");
@@ -2042,11 +2006,11 @@ namespace eticaret.Migrations
                     b.HasData(
                         new
                         {
-                            Id = 1,
+                            Id = "9E400748-88B1-40DE-965C-CD6D005B1A62",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "9122e59f-e053-467a-8211-d01cd6086b6b",
+                            ConcurrencyStamp = "805875e1-ec27-4712-b9da-9bad3d02e536",
                             CreateBy = "Sistem",
-                            CreateDate = "5.11.2025 10:43:25",
+                            CreateDate = "7.11.2025 15:20:50",
                             Email = "stoy@windowslive.com",
                             EmailConfirmed = false,
                             Flag = "D90E65E6-9611-4B5F-9F24-BBD468398D51",
@@ -2056,7 +2020,7 @@ namespace eticaret.Migrations
                             Name = "Serkan",
                             NormalizedEmail = "STOY@WINDOWSLIVE.COM",
                             NormalizedUserName = "STOY",
-                            PasswordHash = "AQAAAAIAAYagAAAAELo60bQ0R65TjdpG7nlGZrc65nWLnEyt7FdhFL3rLQiu7tz4lSPDTAUiRkj8DIevSA==",
+                            PasswordHash = "AQAAAAIAAYagAAAAECouVfW871t8EwgQK0EoRvHtxVfxsSiUTMjkCbS5jo3o28V0Ng5XlwQo6hKHnJyCQw==",
                             PhoneNumber = "0(533) 656 30 95",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "63742240-5787-4E6A-8AE2-FE8BA5381630",
@@ -2085,8 +2049,9 @@ namespace eticaret.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
@@ -2106,8 +2071,9 @@ namespace eticaret.Migrations
                     b.Property<string>("ProviderDisplayName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("LoginProvider", "ProviderKey");
 
@@ -2118,11 +2084,11 @@ namespace eticaret.Migrations
 
             modelBuilder.Entity("eticaret.Domain.Entities.Users.UserRole", b =>
                 {
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
 
-                    b.Property<int>("RoleId")
-                        .HasColumnType("int");
+                    b.Property<string>("RoleId")
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("UserId", "RoleId");
 
@@ -2133,20 +2099,20 @@ namespace eticaret.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = 1,
-                            RoleId = 1
+                            UserId = "9E400748-88B1-40DE-965C-CD6D005B1A62",
+                            RoleId = "3B1DAF66-67E0-4F2A-BB56-03DA7178C814"
                         },
                         new
                         {
-                            UserId = 1,
-                            RoleId = 2
+                            UserId = "9E400748-88B1-40DE-965C-CD6D005B1A62",
+                            RoleId = "58975898-C79C-404B-AC1B-C586036C55E9"
                         });
                 });
 
             modelBuilder.Entity("eticaret.Domain.Entities.Users.UserToken", b =>
                 {
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("LoginProvider")
                         .HasColumnType("nvarchar(450)");
@@ -2242,16 +2208,6 @@ namespace eticaret.Migrations
                     b.Navigation("Product");
                 });
 
-            modelBuilder.Entity("eticaret.Domain.Core.Entities.Comments", b =>
-                {
-                    b.HasOne("eticaret.Domain.Core.Entities.Comments", "Reply")
-                        .WithMany("Replys")
-                        .HasForeignKey("CommentsId")
-                        .OnDelete(DeleteBehavior.NoAction);
-
-                    b.Navigation("Reply");
-                });
-
             modelBuilder.Entity("eticaret.Domain.Core.Entities.Favorites", b =>
                 {
                     b.HasOne("eticaret.Domain.Core.Entities.Product", "Product")
@@ -2286,7 +2242,7 @@ namespace eticaret.Migrations
                 {
                     b.HasOne("eticaret.Domain.Core.Entities.Product", "Product")
                         .WithMany("Orders")
-                        .HasForeignKey("ProductId")
+                        .HasForeignKey("ProductId1")
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
@@ -2430,8 +2386,6 @@ namespace eticaret.Migrations
             modelBuilder.Entity("eticaret.Domain.Core.Entities.Comments", b =>
                 {
                     b.Navigation("BlogInfoAndComment");
-
-                    b.Navigation("Replys");
                 });
 
             modelBuilder.Entity("eticaret.Domain.Core.Entities.Product", b =>

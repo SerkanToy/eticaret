@@ -41,7 +41,7 @@ namespace eticaret.Domain.Core.Entities
         public ICollection<Basket>? Baskets { get; set; }
         public ICollection<Order>? Orders { get; set; }
         public ICollection<ColorProduct> ColorProduct { get; set; }
-        public int SubCategoryId { get; set; }
+        public string SubCategoryId { get; set; }
         public SubCategory SubCategory { get; set; }
         public ICollection<RatinProduct> RatinProducts { get; set; }
         public ICollection<Image>? Images { get; set; }
