@@ -39,16 +39,26 @@ namespace eticaret.Pages.Account
 				
 				if (!hasUser!.IsLocked && !hasUser.IsDeleted)
 				{
-					Microsoft.AspNetCore.Identity.SignInResult result = await _signInManager.PasswordSignInAsync(user: hasUser, password: loginViewModel.Password, isPersistent: loginViewModel.RememberMe, lockoutOnFailure: true);
+                    Microsoft.AspNetCore.Identity.SignInResult result = await _signInManager.PasswordSignInAsync(user: hasUser, password: loginViewModel.Password, isPersistent: loginViewModel.RememberMe, lockoutOnFailure: true);
 
 					if (result.IsLockedOut)
 					{
 						ModelState.AddModelError("", "3 Hatalı Giriş'ten Sonra 5 Dakika Süre ile Hesabiniz Kilitlenmiştir. Lütfen 5 Dakika Bekleyin.");
                     }
 
-					if (result.Succeeded)
+                    if (result.Succeeded)
 					{
-						await _userManager.ResetAccessFailedCountAsync(hasUser);
+                        var role = await _userManager.GetRolesAsync(hasUser);
+                        List<Claim> claim = new List<Claim>();
+                        if (role is not null)
+                        {
+                            foreach (var item in role)
+                            {
+                                claim.Add(new Claim(ClaimTypes.Role, item));
+                            }
+                        }
+
+                        await _userManager.ResetAccessFailedCountAsync(hasUser);
 						var claims = new List<Claim>
 						{
 							new Claim(ClaimTypes.Email, hasUser!.Email!),
@@ -56,9 +66,10 @@ namespace eticaret.Pages.Account
 							new Claim("FullName", $"{hasUser.Name.CustomToTitleCase()} {hasUser.SurName.CustomToUpper()}"),
 							new Claim("PhoneNumber", $"{hasUser.PhoneNumber}"),
 							new Claim("Flag", $"{hasUser.Flag}"),
-							new Claim("EPosta", $"{hasUser.Email.CustomToLower()}")
+							new Claim("EPosta", $"{hasUser.Email!.CustomToLower()}")
 						};
-						await _signInManager.SignInWithClaimsAsync(hasUser, false, claims);
+						claims.AddRange(claim);
+                        await _signInManager.SignInWithClaimsAsync(hasUser, false, claims);
                         var context = new Microsoft.AspNetCore.Http.HttpContextAccessor();
 						context.HttpContext.Response.Redirect("/", true);
                         //return RedirectToPage("");

@@ -17,6 +17,7 @@ namespace eticaret.Domain.Database.Context.Mapping.UsersMappings
         {
             return new List<Role>
             {
+                new Role { Id = "8D4F70CB-01A3-4820-BFE8-3A6683490C1A", Name = "normaluser", NormalizedName = "NORMALUSER", Flag = "E47005CB-FBC3-4D8A-8576-CD73EAF29424", ConcurrencyStamp = "1CBAC8D4-8668-4D2A-B9AE-D90AF9718938", CreateBy = "Sistem", CreateDate = DateTime.Now.ToString() },
                 new Role { Id = "3B1DAF66-67E0-4F2A-BB56-03DA7178C814", Name = "superuser", NormalizedName = "SUPERUSER", Flag = "46D16588-9420-4F85-A768-D21419075284", ConcurrencyStamp = "924B836D-B087-4D37-A52D-210ABD72CD96", CreateBy = "Sistem", CreateDate = DateTime.Now.ToString() },
                 new Role { Id = "58975898-C79C-404B-AC1B-C586036C55E9", Name = "admin", NormalizedName = "ADMIN", Flag = "70449BCD-A6DC-4601-867E-35AD80657B28", ConcurrencyStamp = "232D9C58-01CE-466A-90D0-EB7039C75465", CreateBy = "Sistem", CreateDate = DateTime.Now.ToString() }
             };

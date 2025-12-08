@@ -55,7 +55,7 @@
         var user = authenticationState.User;
         if (user.Identity?.IsAuthenticated == true)
         {
-            if (comments.Description is null)
+            if (comments.Description is null || comments.Title is null)
             {
                 error = new string[] { "Lütfen Boş Bırakmayın!" };
                 return;

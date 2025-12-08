@@ -23,7 +23,8 @@ namespace eticaret.Domain.Repository.Repositorys
                 Id = blog.Id,
                 Title = blog.Title,
                 Description = blog.Description,
-                CreateBy = blog.CreateBy
+                CreateBy = blog.CreateBy,
+                CreateDate = blog.CreateDate
             };
         }
     }
